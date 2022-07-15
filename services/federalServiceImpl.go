@@ -26,12 +26,15 @@ type FederalServiceImpl struct {
 // constructor to return this implementation of the federal service
 func GetFederalServiceImpl(daoImpl dao.DaoInterface) (FederalServiceInterface, *apperrors.AppError) {
 	// use dao to retrieve the federaltaxlist
+	logger.Info("Getting federal tax data from data access layer")
 	federalTaxList, err := daoImpl.GetFederalTaxData()
 	if err != nil {
 		return nil, err
 	}
 
+	logger.Info("Caching the response")
 	federalTaxInfo := buildCachedResponse(federalTaxList)
+	logger.Info("Federal tax cache created")
 
 	return &FederalServiceImpl{federalTaxInfo: federalTaxInfo}, nil
 

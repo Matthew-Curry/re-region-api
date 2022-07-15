@@ -13,6 +13,7 @@ type Logger struct {
 	infoLogger *log.Logger
 	warnLogger *log.Logger
 	errorLogger *log.Logger
+	fatalLogger *log.Logger
 }
 
 func (l *Logger) Info(s string, a ...interface{}) {
@@ -24,6 +25,10 @@ func (l *Logger) Warn(s string, a ...interface{}) {
 }
 
 func (l *Logger) Error(s string, a ...interface{}) {
+	l.errorLogger.Printf(s, a...)
+}
+
+func (l *Logger) Fatal(s string, a ...interface{}) {
 	l.errorLogger.Panicf(s, a...)
 }
 
@@ -41,8 +46,9 @@ func GetLogger(logPath string) (Logger, *os.File) {
 	infoLogger := log.New(mw, "INFO ", flags)
 	warnLogger := log.New(mw, "WARN ", flags)
 	errorLogger := log.New(mw, "ERROR ", flags)
+	fatalLogger := log.New(mw, "FATAL ", flags)
 
-	return Logger{infoLogger: infoLogger, warnLogger: warnLogger, errorLogger: errorLogger}, file
+	return Logger{infoLogger: infoLogger, warnLogger: warnLogger, errorLogger: errorLogger, fatalLogger: fatalLogger}, file
 }
 
 // helper method to check if given log file already exists

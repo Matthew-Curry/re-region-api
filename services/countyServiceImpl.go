@@ -92,18 +92,19 @@ func (c *CountyServiceImpl) GetCountyById(id int, fs model.FilingStatus, residen
 	county, ok := c.countyIdMp[id]
 	if ok {
 		// populate the tax information
-		// TODO: RAISE CUSTOM ERROR HER IF ID IS NOT IN THE INFO MAP
+		logger.Info("County %s found in cache", id)
 		countyTaxInfo := c.countyTaxIdMp[id]
 
 		return c.appendLocalTaxToCounty(county, countyTaxInfo, fs, resident, dependents, income), nil
 	}
-
+	logger.Info("County %s not found in cache, querying data access layer", id)
 	countyData, err := c.daoImpl.GetCountyDataById(id)
 	if err != nil {
 		return nil, err
 	}
 
 	// place the data in the maps and return the county
+	logger.Info("Recieved response, placing data into the appropriate caches")
 	county, _, _ = c.placeCountyDataInMaps(countyData, fs, resident, dependents, income)
 
 	return county, nil
@@ -163,9 +164,11 @@ func (c *CountyServiceImpl) placeCountyDataInMaps(countyData [][]interface{}, fs
 
 		// process tax liabilities for the given parameters
 		if resident {
+			logger.Info("Getting resident tax liability")
 			tl, fl, sl, ll = c.getTaxLiability(tli, tln, stateId, fs, dependents, income, resStateRate,
 				resMonthFee, resYearFee, resPayPeriod, resStateRate)
 		} else {
+			logger.Info("Getting non-resident tax liability")
 			tl, fl, sl, ll = c.getTaxLiability(tli, tln, stateId, fs, dependents, income, nonResStateRate,
 				nonResMonthFee, nonResYearFee, nonResPayPeriod, nonResStateRate)
 		}
@@ -205,6 +208,7 @@ func (c *CountyServiceImpl) placeCountyDataInMaps(countyData [][]interface{}, fs
 // helper method to get the local tax liability
 func (c *CountyServiceImpl) getTaxLiability(tli int, tln string, stateId int, fs model.FilingStatus, dep int, income int, rate, monthFee, yearFee, payPeriodFee, stateRate float64) (int, int, int, int) {
 	tl, sl, fl := c.stateService.processTaxLiabilityById(stateId, fs, dep, income)
+	logger.Info("Getting county liability")
 	ll := int(float64(income)*rate) + int(12*monthFee) + int(yearFee) + int(payPeriodFee*26) + sl*int(stateRate)
 	tl = tl + ll
 
@@ -251,18 +255,19 @@ func (c *CountyServiceImpl) GetCountyByName(name string, fs model.FilingStatus, 
 	county, ok := c.countyNameMp[name]
 	if ok {
 		// populate the tax information
-		// TODO: RAISE CUSTOM ERROR HER IF ID IS NOT IN THE INFO MAP
+		logger.Info("County %s found in cache", name)
 		countyTaxInfo := c.countyTaxNameMp[name]
 
 		return c.appendLocalTaxToCounty(county, countyTaxInfo, fs, resident, dependents, income), nil
 	}
-
+	logger.Info("County %s not found in cache, querying data access layer", name)
 	countyData, err := c.daoImpl.GetCountyDataByName(name)
 	if err != nil {
 		return nil, err
 	}
 
 	// place the data in the maps and return the county
+	logger.Info("Recieved response, placing data into the appropriate caches")
 	county, _, _ = c.placeCountyDataInMaps(countyData, fs, resident, dependents, income)
 
 	return county, nil
@@ -270,12 +275,14 @@ func (c *CountyServiceImpl) GetCountyByName(name string, fs model.FilingStatus, 
 
 func (c *CountyServiceImpl) GetCountyList(metricName string, n int) (*model.CountyList, *apperrors.AppError) {
 	// request list from dao
+	logger.Info("Querying data access layer for list of counties ranked by metric %s", metricName)
 	countyListData, err := c.daoImpl.GetCountyList(metricName, n)
 	if err != nil {
 		return nil, err
 	}
 
 	// pass over rows and append to ranked list
+	logger.Info("Processing the response")
 	countyList := model.GetMetricCountyList(metricName)
 	for _, countyData := range countyListData {
 		stateId := countyData[COUNTY_LIST_STATE_ID].(int)
@@ -303,15 +310,17 @@ func (c *CountyServiceImpl) GetCountyTaxListById(id int) (*model.CountyTaxList, 
 	// check if name in map, if not get from db
 	countyTax, ok := c.countyTaxIdMp[id]
 	if ok {
+		logger.Info("Found county %s in the tax cache", id)
 		return countyTax, nil
 	}
-
+	logger.Info("Did not find county %s in the tax cache. Querying data access layer", id)
 	countyData, err := c.daoImpl.GetCountyDataById(id)
 	if err != nil {
 		return nil, err
 	}
 
 	// place the data in the maps and return the tax information list
+	logger.Info("Placing county %s data in the correct maps", id)
 	_, countyTax, _ = c.placeCountyDataInMaps(countyData, "H", false, 0, 0)
 
 	return countyTax, nil
@@ -321,15 +330,17 @@ func (c *CountyServiceImpl) GetCountyTaxListByName(name string) (*model.CountyTa
 	// check if name in map, if not get from db
 	countyTax, ok := c.countyTaxNameMp[name]
 	if ok {
+		logger.Info("Found county %s in the tax cache", name)
 		return countyTax, nil
 	}
-
+	logger.Info("Did not find county %s in the tax cache. Querying data access layer", name)
 	countyData, err := c.daoImpl.GetCountyDataByName(name)
 	if err != nil {
 		return nil, err
 	}
 
 	// place the data in the maps and return the tax information list
+	logger.Info("Placing county %s data in the correct maps", name)
 	_, countyTax, _ = c.placeCountyDataInMaps(countyData, "H", false, 0, 0)
 
 	return countyTax, nil

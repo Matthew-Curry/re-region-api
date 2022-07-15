@@ -66,12 +66,14 @@ type StateServiceImpl struct {
 func GetStateServiceImpl(daoImpl dao.DaoInterface, federalService FederalServiceInterface) (StateServiceInterface, *apperrors.AppError) {
 	// use the dao to retrieve data needed for caches
 	// fetch data required for the caches from the database
+	logger.Info("Getting state census data from the data access layer")
 	stateCensusData, err := daoImpl.GetStateCensusData()
 
 	if err != nil {
 		return nil, err
 	}
 
+	logger.Info("Getting state tax data from the data access layer")
 	stateTaxData, err := daoImpl.GetStateTax()
 
 	if err != nil {
@@ -79,11 +81,16 @@ func GetStateServiceImpl(daoImpl dao.DaoInterface, federalService FederalService
 	}
 
 	// build caches
+	logger.Info("Building caches")
 	stateIdMp, stateNameMp := buildStateCaches(stateCensusData)
+	logger.Info("State cache created")
 
 	metricListMp := buildStateListCaches(stateCensusData)
+	logger.Info("State list cache created")
 
 	stateTaxIdMp, stateTaxNameMp := buildStateTaxCaches(stateTaxData)
+	logger.Info("State tax cache created")
+	logger.Info("All state caches are now created")
 
 	// return the constructed service
 	return &StateServiceImpl{stateNameMp: stateNameMp,
@@ -169,9 +176,11 @@ func (s *StateServiceImpl) GetStateById(id int, fs model.FilingStatus, dependent
 	// retrieve state census information using the given id
 	sc, ok := s.stateIdMp[id]
 	if !ok {
+		logger.Warn("State id %s not in the cache", id)
 		return nil, apperrors.StateIDNotFound(id)
 	}
 	// process the yearly tax estimate given this income
+	logger.Info("Processing the tax liability for %s", id)
 	t, st, ft := s.processTaxLiabilityById(id, fs, dependents, income)
 
 	return s.buildState(sc, t, st, ft), nil
@@ -211,6 +220,7 @@ func (s *StateServiceImpl) processTaxLiabilityByName(name string, fs model.Filin
 // core logic to process state tax liability
 func (s *StateServiceImpl) processTaxLiability(fs model.FilingStatus, dependents int, income int, ti *model.StateTaxInfo) (int, int, int) {
 	// use filing status to determine state deduction and exemption
+	logger.Info("Processing state liability")
 	stateTax := 0
 	switch fs {
 	case model.Head, model.Single:
@@ -221,6 +231,7 @@ func (s *StateServiceImpl) processTaxLiability(fs model.FilingStatus, dependents
 		stateTax = ti.GetMarriedTaxLiability(income)
 	}
 	// apply the rate to the income for the state tax amount
+	logger.Info("Processing federal liability")
 	federalTax := s.federalService.GetFederalLiability(fs, dependents, income)
 
 	return stateTax + federalTax, stateTax, federalTax
@@ -231,9 +242,11 @@ func (s *StateServiceImpl) GetStateByName(name string, fs model.FilingStatus, de
 	// retrieve state census information using the given name
 	sc, ok := s.stateNameMp[name]
 	if !ok {
+		logger.Warn("State %s not in the cache", name)
 		return nil, apperrors.StateNameNotFound(name)
 	}
 	// process the yearly tax estimate given this income
+	logger.Info("Processing the tax liability for %s", name)
 	t, st, ft := s.processTaxLiabilityByName(name, fs, dependents, income)
 
 	return s.buildState(sc, t, st, ft), nil
@@ -243,6 +256,7 @@ func (s *StateServiceImpl) GetStateByName(name string, fs model.FilingStatus, de
 func (s *StateServiceImpl) GetStateList(metricName string, n int) (*model.StateList, *apperrors.AppError) {
 	res, ok := s.metricListMp[metricName]
 	if !ok {
+		logger.Warn("Metric %s not found in the state list cache", metricName)
 		return nil, apperrors.StateListNotFound(metricName)
 	}
 
@@ -254,6 +268,7 @@ func (s *StateServiceImpl) GetStateList(metricName string, n int) (*model.StateL
 func (s *StateServiceImpl) GetStateTaxInfoById(id int) (*model.StateTaxInfo, *apperrors.AppError) {
 	res, ok := s.stateTaxIdMp[id]
 	if !ok {
+		logger.Warn("State %s not found in the state tax cache", id)
 		return nil, apperrors.StateIDNotInTaxCache(id)
 	}
 	return res, nil
@@ -264,6 +279,7 @@ func (s *StateServiceImpl) GetStateTaxInfoByName(name string) (*model.StateTaxIn
 
 	res, ok := s.stateTaxNameMp[name]
 	if !ok {
+		logger.Warn("State %s not found in the state tax cache", name)
 		return nil, apperrors.StateNameNotInTaxCache(name)
 	}
 
@@ -276,6 +292,7 @@ func (s *StateServiceImpl) getStateNameById(id int) (string, *apperrors.AppError
 
 	res, ok := s.stateTaxIdMp[id]
 	if !ok {
+		logger.Warn("State %s not found in the state tax cache", id)
 		return "", apperrors.StateIDNotFound(id)
 	}
 

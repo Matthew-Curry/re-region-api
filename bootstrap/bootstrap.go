@@ -4,6 +4,7 @@ package bootstrap
 
 import (
 	"net/http"
+	"fmt"
 
 	"github.com/Matthew-Curry/re-region-api/logging"
 	"github.com/Matthew-Curry/re-region-api/controller"
@@ -11,12 +12,13 @@ import (
 )
 
 var logger, _ = logging.GetLogger("file.log")
+var port string = ":8080"
 
 func RunApp() {
 	// initialize services in the controller package
 	err := controller.InitServices()
 	if err != nil {
-		logger.Error("Unable to intiialize core services", err)
+		logger.Fatal("Unable to intiialize core services", err.Error())
 	}
 
 	// the multiplexer to handle requests
@@ -38,6 +40,6 @@ func RunApp() {
 	// health endpoint
 	mux.HandleFunc("/health", controller.HealthHandler)
 
-	logger.Info("Listening...")
-	http.ListenAndServe(":8080", mux)
+	logger.Info(fmt.Sprintf("Listening at %s", port))
+	http.ListenAndServe(port, mux)
 }

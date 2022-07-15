@@ -23,29 +23,41 @@ func InitServices() error {
 	if daoImpl == nil {
 		daoImpl, err = dao.GetPostgresDao()
 		if err != nil {
+			logger.Error("Could not initialize dao service")
 			return err
 		}
+
+		logger.Info("Successfully initialized dao service")
 	}
 
 	if federalService == nil {
 		federalService, err = services.GetFederalServiceImpl(daoImpl)
 		if err != nil {
+			logger.Error("Could not initialize federal service")
 			return err
 		}
+
+		logger.Info("Successfully initialized federal service")
 	}
 
 	if stateService == nil {
 		stateService, err = services.GetStateServiceImpl(daoImpl, federalService)
 		if err != nil {
+			logger.Error("Could not initialize state service")
 			return err
 		}
+
+		logger.Info("Successfully initialized state service")
 	}
 
 	if countyService == nil {
 		countyService, err = services.GetCountyServiceImpl(daoImpl, stateService)
 		if err != nil {
+			logger.Error("Could not initialize county service")
 			return err
 		}
+
+		logger.Info("Successfully initialized county service")
 	}
 
 	return nil
