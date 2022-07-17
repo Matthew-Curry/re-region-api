@@ -3,6 +3,8 @@ package model
 import (
     "sort"
 	"encoding/json"
+
+	"github.com/Matthew-Curry/re-region-api/apperrors"
 )
 
 type FederalTaxInfo struct {
@@ -22,12 +24,12 @@ type FederalBracket struct {
 }
 
 // constructor for a FederalTaxInfo, bracket list is private to enforce ordering
-func GetFederalTaxInfo(sd, md, hd int) *FederalTaxInfo {
+func GetFederalTaxInfo(sd, md, hd int, bracketList []FederalBracket) *FederalTaxInfo {
 	return &FederalTaxInfo {
 		Single_deduction :sd,
 		Married_deduction :md,
 		Head_deduction :hd,
-        bracket_list: []FederalBracket{}}
+        bracket_list: bracketList}
 }
 
 // public method to use private bracket list to get the single state tax liability
@@ -69,8 +71,8 @@ func (f *FederalTaxInfo) AppendToOrderedList(bracket FederalBracket) {
 }
 
 // getter method for the controller to be able to marhsall private fields
-func (f *FederalTaxInfo) MarshallFederalTaxInfo() ([]byte, error) {
-	return json.Marshal(struct{
+func (f *FederalTaxInfo) MarshallFederalTaxInfo() ([]byte, *apperrors.AppError) {
+	r, err := json.Marshal(struct{
 		Single_deduction int
 		Married_deduction int
 		Head_deduction int
@@ -81,4 +83,10 @@ func (f *FederalTaxInfo) MarshallFederalTaxInfo() ([]byte, error) {
 		Head_deduction: f.Head_deduction,
 		Bracket_list: f.bracket_list,
     })
+
+	if err != nil {
+		return nil, apperrors.UnableToMarshall(err)
+	}
+
+	return r, nil
 }

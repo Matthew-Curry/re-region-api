@@ -1,1 +1,2067 @@
 INFO 2022/07/04 18:58:19 logging.go:19: Listening...
+INFO 2022/07/16 12:25:34 logging.go:20: App started
+INFO 2022/07/16 12:25:34 logging.go:20: Reading in environment variables
+INFO 2022/07/16 12:25:34 logging.go:20: Opening connection to postgres DB
+ERROR 2022/07/16 12:25:34 logging.go:28: Could not initialize dao service
+ERROR 2022/07/16 12:25:34 logging.go:32: Unable to intiialize core services%!(EXTRA string=Cannot connect to the DB.:sql: unknown driver "postgres" (forgotten import?))
+INFO 2022/07/16 12:26:37 logging.go:20: App started
+INFO 2022/07/16 12:26:37 logging.go:20: Reading in environment variables
+INFO 2022/07/16 12:26:37 logging.go:20: Opening connection to postgres DB
+INFO 2022/07/16 12:26:37 logging.go:20: Successfully instantiated DB connection
+INFO 2022/07/16 12:26:37 logging.go:20: Successfully initialized dao service
+INFO 2022/07/16 12:26:37 logging.go:20: Getting federal tax data from data access layer
+INFO 2022/07/16 12:26:37 logging.go:20: Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 12:26:37 logging.go:20: Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 12:26:37 logging.go:20: Executing Federal tax query
+INFO 2022/07/16 12:26:37 logging.go:20: Executing the query
+ERROR 2022/07/16 12:26:37 logging.go:28: Could not initialize federal service
+ERROR 2022/07/16 12:26:37 logging.go:32: Unable to intiialize core services%!(EXTRA string=Unable to retrieve federal tax data from DB: Could not run query due to error:pq: password authentication failed for user "password=":pq: password authentication failed for user "password=")
+INFO 2022/07/16 12:27:28 logging.go:20: App started
+INFO 2022/07/16 12:27:28 logging.go:20: Reading in environment variables
+INFO 2022/07/16 12:27:28 logging.go:20: Opening connection to postgres DB
+INFO 2022/07/16 12:27:28 logging.go:20: Successfully instantiated DB connection
+INFO 2022/07/16 12:27:28 logging.go:20: Successfully initialized dao service
+INFO 2022/07/16 12:27:28 logging.go:20: Getting federal tax data from data access layer
+INFO 2022/07/16 12:27:28 logging.go:20: Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 12:27:28 logging.go:20: Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 12:27:28 logging.go:20: Executing Federal tax query
+INFO 2022/07/16 12:27:28 logging.go:20: Executing the query
+ERROR 2022/07/16 12:27:28 logging.go:28: Could not initialize federal service
+ERROR 2022/07/16 12:27:28 logging.go:32: Unable to intiialize core services%!(EXTRA string=Unable to retrieve federal tax data from DB: Could not run query due to error:pq: password authentication failed for user "re_region_api":pq: password authentication failed for user "re_region_api")
+INFO 2022/07/16 12:27:59 logging.go:20: App started
+INFO 2022/07/16 12:27:59 logging.go:20: Reading in environment variables
+INFO 2022/07/16 12:27:59 logging.go:20: Opening connection to postgres DB
+INFO 2022/07/16 12:27:59 logging.go:20: Successfully instantiated DB connection
+INFO 2022/07/16 12:27:59 logging.go:20: Successfully initialized dao service
+INFO 2022/07/16 12:27:59 logging.go:20: Getting federal tax data from data access layer
+INFO 2022/07/16 12:27:59 logging.go:20: Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 12:27:59 logging.go:20: Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 12:27:59 logging.go:20: Executing Federal tax query
+INFO 2022/07/16 12:27:59 logging.go:20: Executing the query
+ERROR 2022/07/16 12:27:59 logging.go:28: Could not initialize federal service
+ERROR 2022/07/16 12:27:59 logging.go:32: Unable to intiialize core services%!(EXTRA string=Unable to retrieve federal tax data from DB: Could not run query due to error:sql: converting argument $1 type: unsupported type []string, a slice of string:sql: converting argument $1 type: unsupported type []string, a slice of string)
+INFO 2022/07/16 12:59:30 App started
+INFO 2022/07/16 12:59:30 Reading in environment variables
+INFO 2022/07/16 12:59:30 Opening connection to postgres DB
+INFO 2022/07/16 12:59:30 Successfully instantiated DB connection
+INFO 2022/07/16 12:59:30 Successfully initialized dao service
+INFO 2022/07/16 12:59:30 Getting federal tax data from data access layer
+INFO 2022/07/16 12:59:30 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 12:59:30 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 12:59:30 Executing Federal tax query
+INFO 2022/07/16 12:59:30 Executing the query
+ERROR 2022/07/16 12:59:30 Could not initialize federal service
+ERROR 2022/07/16 12:59:30 Unable to intiialize core services%!(EXTRA string=Unable to retrieve federal tax data from DB: Could not run query due to error:sql: converting argument $1 type: unsupported type []string, a slice of string:sql: converting argument $1 type: unsupported type []string, a slice of string)
+INFO 2022/07/16 13:02:52 /home/matthew/Documents/Projects/re-region/re-region-api/logging/logging.go 22 App started
+INFO 2022/07/16 13:02:52 /home/matthew/Documents/Projects/re-region/re-region-api/logging/logging.go 22 Reading in environment variables
+INFO 2022/07/16 13:02:52 /home/matthew/Documents/Projects/re-region/re-region-api/logging/logging.go 22 Opening connection to postgres DB
+INFO 2022/07/16 13:02:52 /home/matthew/Documents/Projects/re-region/re-region-api/logging/logging.go 22 Successfully instantiated DB connection
+INFO 2022/07/16 13:02:52 /home/matthew/Documents/Projects/re-region/re-region-api/logging/logging.go 22 Successfully initialized dao service
+INFO 2022/07/16 13:02:52 /home/matthew/Documents/Projects/re-region/re-region-api/logging/logging.go 22 Getting federal tax data from data access layer
+INFO 2022/07/16 13:02:52 /home/matthew/Documents/Projects/re-region/re-region-api/logging/logging.go 22 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 13:02:52 /home/matthew/Documents/Projects/re-region/re-region-api/logging/logging.go 22 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 13:02:52 /home/matthew/Documents/Projects/re-region/re-region-api/logging/logging.go 22 Executing Federal tax query
+INFO 2022/07/16 13:02:52 /home/matthew/Documents/Projects/re-region/re-region-api/logging/logging.go 22 Executing the query
+ERROR 2022/07/16 13:02:52 Could not initialize federal service
+ERROR 2022/07/16 13:02:52 Unable to intiialize core services%!(EXTRA string=Unable to retrieve federal tax data from DB: Could not run query due to error:sql: converting argument $1 type: unsupported type []string, a slice of string:sql: converting argument $1 type: unsupported type []string, a slice of string)
+INFO 2022/07/16 13:03:14 /home/matthew/Documents/Projects/re-region/re-region-api/main.go 11 App started
+INFO 2022/07/16 13:03:14 /home/matthew/Documents/Projects/re-region/re-region-api/dao/daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 13:03:14 /home/matthew/Documents/Projects/re-region/re-region-api/dao/daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 13:03:14 /home/matthew/Documents/Projects/re-region/re-region-api/dao/daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 13:03:14 /home/matthew/Documents/Projects/re-region/re-region-api/controller/init.go 30 Successfully initialized dao service
+INFO 2022/07/16 13:03:14 /home/matthew/Documents/Projects/re-region/re-region-api/services/federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/16 13:03:14 /home/matthew/Documents/Projects/re-region/re-region-api/dao/daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 13:03:14 /home/matthew/Documents/Projects/re-region/re-region-api/dao/daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 13:03:14 /home/matthew/Documents/Projects/re-region/re-region-api/dao/daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 13:03:14 /home/matthew/Documents/Projects/re-region/re-region-api/dao/daoPostrges.go 204 Executing the query
+ERROR 2022/07/16 13:03:14 Could not initialize federal service
+ERROR 2022/07/16 13:03:14 Unable to intiialize core services%!(EXTRA string=Unable to retrieve federal tax data from DB: Could not run query due to error:sql: converting argument $1 type: unsupported type []string, a slice of string:sql: converting argument $1 type: unsupported type []string, a slice of string)
+INFO 2022/07/16 13:05:12 main.go 11 App started
+INFO 2022/07/16 13:05:12 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 13:05:12 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 13:05:12 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 13:05:12 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 13:05:12 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/16 13:05:12 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 13:05:12 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 13:05:12 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 13:05:12 daoPostrges.go 204 Executing the query
+ERROR 2022/07/16 13:05:12 Could not initialize federal service
+ERROR 2022/07/16 13:05:12 Unable to intiialize core services%!(EXTRA string=Unable to retrieve federal tax data from DB: Could not run query due to error:sql: converting argument $1 type: unsupported type []string, a slice of string:sql: converting argument $1 type: unsupported type []string, a slice of string)
+INFO 2022/07/16 13:06:29 main.go 11 App started
+INFO 2022/07/16 13:06:29 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 13:06:29 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 13:06:29 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 13:06:29 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 13:06:29 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/16 13:06:29 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 13:06:29 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 13:06:29 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 13:06:29 daoPostrges.go 204 Executing the query
+ERROR 2022/07/16 13:06:29 init.go 36 Could not initialize federal service
+ERROR 2022/07/16 13:06:29 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve federal tax data from DB: Could not run query due to error:sql: converting argument $1 type: unsupported type []string, a slice of string:sql: converting argument $1 type: unsupported type []string, a slice of string)
+INFO 2022/07/16 13:10:56 main.go 11 App started
+INFO 2022/07/16 13:10:56 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 13:10:56 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 13:10:56 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 13:10:56 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 13:10:56 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/16 13:10:56 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 13:10:56 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 13:10:56 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 13:10:56 daoPostrges.go 204 Executing the query
+ERROR 2022/07/16 13:10:56 init.go 36 Could not initialize federal service
+ERROR 2022/07/16 13:10:56 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve federal tax data from DB: Could not run query due to error:pq: got 1 parameters but the statement requires 0:pq: got 1 parameters but the statement requires 0)
+INFO 2022/07/16 13:12:35 main.go 11 App started
+INFO 2022/07/16 13:12:35 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 13:12:35 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 13:12:35 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 13:12:35 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 13:12:35 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/16 13:12:35 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 13:12:35 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 13:12:35 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 13:12:35 daoPostrges.go 208 Executing the query with params
+ERROR 2022/07/16 13:12:35 init.go 36 Could not initialize federal service
+ERROR 2022/07/16 13:12:35 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve federal tax data from DB: Could not run query due to error:pq: got 1 parameters but the statement requires 0:pq: got 1 parameters but the statement requires 0)
+INFO 2022/07/16 13:13:07 main.go 11 App started
+INFO 2022/07/16 13:13:07 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 13:13:07 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 13:13:07 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 13:13:07 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 13:13:07 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/16 13:13:07 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 13:13:07 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 13:13:07 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 13:13:07 daoPostrges.go 205 Executing the query with no params
+ERROR 2022/07/16 13:13:07 init.go 36 Could not initialize federal service
+ERROR 2022/07/16 13:13:07 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve federal tax data from DB: Could not run query due to error:pq: permission denied for table federal_brackets:pq: permission denied for table federal_brackets)
+INFO 2022/07/16 13:25:34 main.go 11 App started
+INFO 2022/07/16 13:25:34 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 13:25:34 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 13:25:34 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 13:25:34 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 13:25:34 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/16 13:25:34 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 13:25:34 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 13:25:34 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 13:25:34 daoPostrges.go 205 Executing the query with no params
+ERROR 2022/07/16 13:25:34 init.go 36 Could not initialize federal service
+ERROR 2022/07/16 13:25:34 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve federal tax data from DB: Could not run query due to error:pq: permission denied for table federal_brackets:pq: permission denied for table federal_brackets)
+INFO 2022/07/16 13:27:48 main.go 11 App started
+INFO 2022/07/16 13:27:48 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 13:27:48 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 13:27:48 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 13:27:48 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 13:27:48 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/16 13:27:48 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 13:27:48 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 13:27:48 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 13:27:48 daoPostrges.go 205 Executing the query with no params
+ERROR 2022/07/16 13:27:48 init.go 36 Could not initialize federal service
+ERROR 2022/07/16 13:27:48 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve federal tax data from DB: Could not run query due to error:pq: permission denied for table federal_brackets:pq: permission denied for table federal_brackets)
+INFO 2022/07/16 13:33:50 main.go 11 App started
+INFO 2022/07/16 13:33:50 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 13:33:50 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 13:33:50 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 13:33:50 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 13:33:50 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/16 13:33:50 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 13:33:50 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 13:33:50 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 13:33:50 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/16 13:33:50 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/16 13:33:50 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/16 13:35:27 main.go 11 App started
+INFO 2022/07/16 13:35:27 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 13:35:27 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 13:35:27 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 13:35:27 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 13:35:27 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/16 13:35:27 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 13:35:27 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 13:35:27 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 13:35:27 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/16 13:35:27 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/16 13:35:27 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/16 14:33:55 main.go 11 App started
+INFO 2022/07/16 14:33:55 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 14:33:55 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 14:33:55 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 14:33:55 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 14:33:55 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/16 14:33:55 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 14:33:55 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 14:33:55 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 14:33:55 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/16 14:33:55 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/16 14:33:55 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/16 19:18:52 main.go 11 App started
+INFO 2022/07/16 19:18:52 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 19:18:52 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 19:18:52 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 19:18:52 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 19:18:52 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/16 19:18:52 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 19:18:52 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 19:18:52 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 19:18:52 daoPostrges.go 205 Executing the query with no params
+ERROR 2022/07/16 19:18:52 init.go 36 Could not initialize federal service
+ERROR 2022/07/16 19:18:52 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve federal tax data from DB: Could not run query due to error:pq: permission denied for table federal_brackets:pq: permission denied for table federal_brackets)
+INFO 2022/07/16 19:20:17 main.go 11 App started
+INFO 2022/07/16 19:20:17 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 19:20:17 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 19:20:17 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 19:20:17 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 19:20:17 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/16 19:20:17 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 19:20:17 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 19:20:17 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 19:20:17 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/16 19:20:17 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/16 19:20:17 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/16 19:33:10 main.go 11 App started
+INFO 2022/07/16 19:33:10 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 19:33:10 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 19:33:10 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 19:33:10 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 19:33:10 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/16 19:33:10 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 19:33:10 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 19:33:10 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 19:33:10 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/16 19:33:10 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/16 19:33:10 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/16 19:34:12 main.go 11 App started
+INFO 2022/07/16 19:34:12 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 19:34:12 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 19:34:12 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 19:34:12 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 19:34:12 federalServiceImpl.go 33 Getting federal tax data from data access layer
+INFO 2022/07/16 19:34:12 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 19:34:12 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 19:34:12 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 19:34:12 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/16 19:34:12 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/16 19:34:12 federalServiceImpl.go 39 Caching the response
+INFO 2022/07/16 19:34:44 main.go 11 App started
+INFO 2022/07/16 19:34:44 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 19:34:44 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 19:34:44 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 19:34:44 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 19:34:44 federalServiceImpl.go 33 Getting federal tax data from data access layer
+INFO 2022/07/16 19:34:44 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 19:34:44 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 19:34:44 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 19:34:44 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/16 19:34:44 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/16 19:34:44 federalServiceImpl.go 39 Caching the response
+INFO 2022/07/16 20:14:38 main.go 11 App started
+INFO 2022/07/16 20:14:38 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 20:14:38 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 20:14:38 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 20:14:38 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 20:14:38 federalServiceImpl.go 33 Getting federal tax data from data access layer
+INFO 2022/07/16 20:14:38 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 20:14:38 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 20:14:38 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 20:14:38 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/16 20:14:38 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/16 20:14:38 federalServiceImpl.go 39 Caching the response
+INFO 2022/07/16 20:14:38 federalServiceImpl.go 41 Federal tax cache created
+ERROR 2022/07/16 20:14:38 init.go 36 Could not initialize federal service
+INFO 2022/07/16 20:17:58 main.go 11 App started
+INFO 2022/07/16 20:17:58 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 20:17:58 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 20:17:58 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 20:17:58 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 20:17:58 federalServiceImpl.go 33 Getting federal tax data from data access layer
+INFO 2022/07/16 20:17:58 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 20:17:58 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 20:17:58 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 20:17:58 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/16 20:17:58 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/16 20:17:58 federalServiceImpl.go 39 Caching the response
+INFO 2022/07/16 20:17:58 federalServiceImpl.go 41 Federal tax cache created
+ERROR 2022/07/16 20:17:58 init.go 36 Could not initialize federal service
+INFO 2022/07/16 20:18:25 main.go 11 App started
+INFO 2022/07/16 20:18:25 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 20:18:25 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 20:18:25 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 20:18:25 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 20:18:25 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/16 20:18:25 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 20:18:25 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 20:18:25 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 20:18:25 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/16 20:18:25 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/16 20:18:25 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/16 20:18:25 federalServiceImpl.go 39 Federal tax cache created
+ERROR 2022/07/16 20:18:25 init.go 36 Could not initialize federal service
+INFO 2022/07/16 20:20:39 main.go 11 App started
+INFO 2022/07/16 20:20:39 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 20:20:39 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 20:20:39 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 20:20:39 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 20:20:39 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/16 20:20:39 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 20:20:39 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 20:20:39 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 20:20:39 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/16 20:20:39 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/16 20:20:39 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/16 20:20:39 federalServiceImpl.go 39 Federal tax cache created
+ERROR 2022/07/16 20:20:39 init.go 36 Could not initialize federal service
+INFO 2022/07/16 20:26:14 main.go 11 App started
+INFO 2022/07/16 20:26:14 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 20:26:14 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 20:26:14 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 20:26:14 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 20:26:14 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/16 20:26:14 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 20:26:14 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 20:26:14 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 20:26:14 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/16 20:26:15 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/16 20:26:15 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/16 20:26:15 federalServiceImpl.go 42 Federal tax cache created
+INFO 2022/07/16 20:26:15 init.go 40 Successfully initialized federal service
+INFO 2022/07/16 20:26:15 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/16 20:26:15 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/16 20:26:15 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/16 20:26:15 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/16 20:26:15 daoPostrges.go 208 Executing the query with params
+ERROR 2022/07/16 20:26:15 init.go 46 Could not initialize state service
+ERROR 2022/07/16 20:26:15 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve state census data from DB: Could not run query due to error:pq: got 1 parameters but the statement requires 0:pq: got 1 parameters but the statement requires 0)
+INFO 2022/07/16 20:28:59 main.go 11 App started
+INFO 2022/07/16 20:28:59 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 20:28:59 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 20:28:59 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 20:28:59 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 20:28:59 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/16 20:28:59 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 20:28:59 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 20:28:59 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 20:28:59 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/16 20:28:59 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/16 20:28:59 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/16 20:28:59 federalServiceImpl.go 42 Federal tax cache created
+INFO 2022/07/16 20:28:59 init.go 40 Successfully initialized federal service
+INFO 2022/07/16 20:28:59 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/16 20:28:59 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/16 20:28:59 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/16 20:28:59 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/16 20:28:59 daoPostrges.go 208 Executing the query with params
+ERROR 2022/07/16 20:28:59 init.go 46 Could not initialize state service
+ERROR 2022/07/16 20:28:59 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve state census data from DB: Could not run query due to error:pq: got 1 parameters but the statement requires 0:pq: got 1 parameters but the statement requires 0)
+INFO 2022/07/16 20:29:33 main.go 11 App started
+INFO 2022/07/16 20:29:33 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 20:29:33 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 20:29:33 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 20:29:33 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 20:29:33 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/16 20:29:33 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 20:29:33 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 20:29:33 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 20:29:33 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/16 20:29:33 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/16 20:29:33 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/16 20:29:33 federalServiceImpl.go 42 Federal tax cache created
+INFO 2022/07/16 20:29:33 init.go 40 Successfully initialized federal service
+INFO 2022/07/16 20:29:33 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/16 20:29:33 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/16 20:29:33 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/16 20:29:33 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/16 20:29:33 daoPostrges.go 208 Executing the query with params
+ERROR 2022/07/16 20:29:33 init.go 46 Could not initialize state service
+ERROR 2022/07/16 20:29:33 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve state census data from DB: Could not run query due to error:pq: got 1 parameters but the statement requires 0:pq: got 1 parameters but the statement requires 0)
+INFO 2022/07/16 20:30:22 main.go 11 App started
+INFO 2022/07/16 20:30:22 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 20:30:22 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 20:30:22 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 20:30:22 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 20:30:22 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/16 20:30:22 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 20:30:22 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 20:30:22 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 20:30:22 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/16 20:30:22 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/16 20:30:22 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/16 20:30:22 federalServiceImpl.go 42 Federal tax cache created
+ERROR 2022/07/16 20:30:22 init.go 36 Could not initialize federal service
+INFO 2022/07/16 20:37:14 main.go 11 App started
+INFO 2022/07/16 20:37:14 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 20:37:14 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 20:37:14 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 20:37:14 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 20:37:14 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/16 20:37:14 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 20:37:14 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 20:37:14 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 20:37:14 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/16 20:37:14 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/16 20:37:14 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/16 20:37:14 federalServiceImpl.go 42 Federal tax cache created
+ERROR 2022/07/16 20:37:14 init.go 36 Could not initialize federal service
+INFO 2022/07/16 20:37:31 main.go 11 App started
+INFO 2022/07/16 20:37:31 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 20:37:31 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 20:37:31 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 20:37:31 init.go 30 Successfully initialized dao service
+INFO 2022/07/16 20:37:31 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/16 20:37:31 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 20:37:31 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 20:37:31 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 20:37:31 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/16 20:37:31 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/16 20:37:31 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/16 20:37:31 federalServiceImpl.go 42 Federal tax cache created
+INFO 2022/07/16 20:37:31 init.go 40 Successfully initialized federal service
+INFO 2022/07/16 20:37:31 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/16 20:37:31 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/16 20:37:31 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/16 20:37:31 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/16 20:37:31 daoPostrges.go 208 Executing the query with params
+ERROR 2022/07/16 20:37:31 init.go 46 Could not initialize state service
+ERROR 2022/07/16 20:37:31 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve state census data from DB: Could not run query due to error:pq: got 1 parameters but the statement requires 0:pq: got 1 parameters but the statement requires 0)
+INFO 2022/07/16 20:42:29 main.go 11 App started
+INFO 2022/07/16 20:42:29 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/16 20:42:29 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/16 20:42:29 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/16 20:42:29 init.go 32 Successfully initialized dao service
+INFO 2022/07/16 20:42:29 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/16 20:42:29 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/16 20:42:29 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/16 20:42:29 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/16 20:42:29 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/16 20:42:29 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/16 20:42:29 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/16 20:42:29 federalServiceImpl.go 42 Federal tax cache created
+INFO 2022/07/17 08:25:15 main.go 11 App started
+INFO 2022/07/17 08:25:15 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 08:25:15 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 08:25:15 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 08:25:15 init.go 32 Successfully initialized dao service
+INFO 2022/07/17 08:25:15 federalServiceImpl.go 33 Getting federal tax data from data access layer
+INFO 2022/07/17 08:25:15 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 08:25:15 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 08:25:15 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 08:25:15 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 08:25:15 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 08:25:15 federalServiceImpl.go 40 Caching the response
+INFO 2022/07/17 08:25:15 federalServiceImpl.go 45 Federal tax cache created
+INFO 2022/07/17 08:26:00 main.go 11 App started
+INFO 2022/07/17 08:26:00 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 08:26:00 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 08:26:00 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 08:26:00 init.go 32 Successfully initialized dao service
+INFO 2022/07/17 08:26:00 federalServiceImpl.go 33 Getting federal tax data from data access layer
+INFO 2022/07/17 08:26:00 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 08:26:00 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 08:26:00 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 08:26:00 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 08:26:00 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 08:26:00 federalServiceImpl.go 40 Caching the response
+INFO 2022/07/17 08:26:00 federalServiceImpl.go 45 Federal tax cache created
+ERROR 2022/07/17 08:26:00 init.go 39 Could not initialize federal service
+INFO 2022/07/17 08:26:45 main.go 11 App started
+INFO 2022/07/17 08:26:45 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 08:26:45 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 08:26:45 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 08:26:45 init.go 32 Successfully initialized dao service
+INFO 2022/07/17 08:26:45 federalServiceImpl.go 33 Getting federal tax data from data access layer
+INFO 2022/07/17 08:26:45 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 08:26:45 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 08:26:45 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 08:26:45 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 08:26:45 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 08:26:45 federalServiceImpl.go 40 Caching the response
+INFO 2022/07/17 08:26:45 federalServiceImpl.go 45 Federal tax cache created
+INFO 2022/07/17 08:26:45 init.go 43 Successfully initialized federal service
+INFO 2022/07/17 08:26:45 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 08:26:45 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 08:26:45 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 08:26:45 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 08:26:45 daoPostrges.go 208 Executing the query with params
+ERROR 2022/07/17 08:26:45 init.go 49 Could not initialize state service
+ERROR 2022/07/17 08:26:45 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve state census data from DB: Could not run query due to error:pq: got 1 parameters but the statement requires 0:pq: got 1 parameters but the statement requires 0)
+INFO 2022/07/17 08:27:10 main.go 11 App started
+INFO 2022/07/17 08:27:10 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 08:27:10 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 08:27:10 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 08:27:10 init.go 32 Successfully initialized dao service
+INFO 2022/07/17 08:27:10 federalServiceImpl.go 33 Getting federal tax data from data access layer
+INFO 2022/07/17 08:27:10 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 08:27:10 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 08:27:10 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 08:27:10 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 08:27:10 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 08:27:10 federalServiceImpl.go 40 Caching the response
+INFO 2022/07/17 08:27:10 federalServiceImpl.go 45 Federal tax cache created
+ERROR 2022/07/17 08:27:10 init.go 39 Could not initialize federal service
+INFO 2022/07/17 08:36:51 main.go 11 App started
+INFO 2022/07/17 08:37:14 main.go 11 App started
+INFO 2022/07/17 08:37:36 main.go 11 App started
+INFO 2022/07/17 08:37:51 main.go 11 App started
+INFO 2022/07/17 08:41:36 main.go 11 App started
+INFO 2022/07/17 08:44:04 main.go 11 App started
+INFO 2022/07/17 08:44:31 main.go 11 App started
+INFO 2022/07/17 08:49:00 main.go 11 App started
+INFO 2022/07/17 08:49:00 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 08:49:00 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 08:49:00 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 08:49:00 init.go 38 Successfully initialized dao service
+INFO 2022/07/17 08:49:00 federalServiceImpl.go 33 Getting federal tax data from data access layer
+INFO 2022/07/17 08:49:00 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 08:49:00 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 08:49:00 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 08:49:00 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 08:49:00 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 08:49:00 federalServiceImpl.go 40 Caching the response
+INFO 2022/07/17 08:49:00 federalServiceImpl.go 45 Federal tax cache created
+ERROR 2022/07/17 08:49:00 init.go 45 Could not initialize federal service
+INFO 2022/07/17 08:50:28 main.go 11 App started
+INFO 2022/07/17 08:50:28 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 08:50:28 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 08:50:28 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 08:50:28 init.go 38 Successfully initialized dao service
+INFO 2022/07/17 08:50:28 federalServiceImpl.go 33 Getting federal tax data from data access layer
+INFO 2022/07/17 08:50:28 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 08:50:28 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 08:50:28 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 08:50:28 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 08:50:28 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 08:50:28 federalServiceImpl.go 40 Caching the response
+INFO 2022/07/17 08:50:28 federalServiceImpl.go 45 Federal tax cache created
+ERROR 2022/07/17 08:50:28 init.go 45 Could not initialize federal service
+INFO 2022/07/17 09:29:11 main.go 11 App started
+INFO 2022/07/17 09:29:11 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 09:29:11 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 09:29:11 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 09:29:11 init.go 39 Successfully initialized dao service
+INFO 2022/07/17 09:29:11 federalServiceImpl.go 33 Getting federal tax data from data access layer
+INFO 2022/07/17 09:29:11 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 09:29:11 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 09:29:11 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 09:29:11 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 09:29:11 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 09:29:11 federalServiceImpl.go 40 Caching the response
+INFO 2022/07/17 09:29:11 federalServiceImpl.go 45 Federal tax cache created
+INFO 2022/07/17 09:29:11 init.go 50 Successfully initialized federal service
+INFO 2022/07/17 09:29:11 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 09:29:11 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 09:29:11 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 09:29:11 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 09:29:11 daoPostrges.go 208 Executing the query with params
+ERROR 2022/07/17 09:29:11 init.go 56 Could not initialize state service
+ERROR 2022/07/17 09:29:11 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve state census data from DB: Could not run query due to error:pq: got 1 parameters but the statement requires 0:pq: got 1 parameters but the statement requires 0)
+INFO 2022/07/17 09:52:07 main.go 11 App started
+INFO 2022/07/17 09:52:07 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 09:52:07 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 09:52:07 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 09:52:07 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 09:52:07 federalServiceImpl.go 33 Getting federal tax data from data access layer
+INFO 2022/07/17 09:52:07 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 09:52:07 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 09:52:07 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 09:52:07 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 09:52:07 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 09:52:07 federalServiceImpl.go 40 Caching the response
+INFO 2022/07/17 09:52:07 federalServiceImpl.go 45 Federal tax cache created
+INFO 2022/07/17 09:52:07 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 09:52:07 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 09:52:07 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 09:52:07 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 09:52:07 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 09:52:07 daoPostrges.go 208 Executing the query with params
+ERROR 2022/07/17 09:52:07 init.go 47 Could not initialize state service
+ERROR 2022/07/17 09:52:07 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve state census data from DB: Could not run query due to error:pq: got 1 parameters but the statement requires 0:pq: got 1 parameters but the statement requires 0)
+INFO 2022/07/17 09:53:17 main.go 11 App started
+INFO 2022/07/17 09:53:17 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 09:53:17 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 09:53:17 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 09:53:17 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 09:53:17 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 09:53:17 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 09:53:17 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 09:53:17 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 09:53:17 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 09:53:17 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 09:53:17 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 09:53:17 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 09:53:17 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 09:53:17 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 09:53:17 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 09:53:17 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 09:53:17 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 09:53:17 daoPostrges.go 208 Executing the query with params
+ERROR 2022/07/17 09:53:17 init.go 47 Could not initialize state service
+ERROR 2022/07/17 09:53:17 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve state census data from DB: Could not run query due to error:pq: got 1 parameters but the statement requires 0:pq: got 1 parameters but the statement requires 0)
+INFO 2022/07/17 09:54:18 main.go 11 App started
+INFO 2022/07/17 09:54:18 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 09:54:18 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 09:54:18 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 09:54:18 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 09:54:18 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 09:54:18 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 09:54:18 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 09:54:18 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 09:54:18 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 09:54:19 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 09:54:19 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 09:54:19 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 09:54:19 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 09:54:19 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 09:54:19 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 09:54:19 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 09:54:19 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 09:54:19 daoPostrges.go 205 Executing the query with no params
+ERROR 2022/07/17 09:54:19 init.go 47 Could not initialize state service
+ERROR 2022/07/17 09:54:19 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve state census data from DB: Could not run query due to error:pq: permission denied for view state_metrics:pq: permission denied for view state_metrics)
+INFO 2022/07/17 09:56:37 main.go 11 App started
+INFO 2022/07/17 09:56:37 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 09:56:37 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 09:56:37 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 09:56:37 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 09:56:37 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 09:56:37 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 09:56:37 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 09:56:37 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 09:56:37 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 09:56:37 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 09:56:37 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 09:56:37 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 09:56:37 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 09:56:37 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 09:56:37 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 09:56:37 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 09:56:37 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 09:56:37 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 09:56:37 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 09:56:37 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 09:56:37 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 09:56:37 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 09:56:37 daoPostrges.go 122 Executing State tax query query
+INFO 2022/07/17 09:56:37 daoPostrges.go 205 Executing the query with no params
+ERROR 2022/07/17 09:56:37 init.go 47 Could not initialize state service
+ERROR 2022/07/17 09:56:37 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve state tax data from DB: Could not run query due to error:pq: syntax error at or near ".":pq: syntax error at or near ".")
+INFO 2022/07/17 10:14:52 main.go 11 App started
+INFO 2022/07/17 10:14:52 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 10:14:52 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 10:14:52 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 10:14:52 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 10:14:52 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 10:14:52 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 10:14:52 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 10:14:52 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 10:14:52 daoPostrges.go 205 Executing the query with no params
+ERROR 2022/07/17 10:14:52 init.go 37 Could not initialize federal service
+ERROR 2022/07/17 10:14:52 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve federal tax data from DB: Could not run query due to error:pq: permission denied for table federal_brackets:pq: permission denied for table federal_brackets)
+INFO 2022/07/17 10:16:22 main.go 11 App started
+INFO 2022/07/17 10:16:22 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 10:16:22 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 10:16:22 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 10:16:22 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 10:16:22 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 10:16:22 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 10:16:22 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 10:16:22 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 10:16:22 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:16:22 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:16:22 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 10:16:22 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 10:16:22 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 10:16:22 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 10:16:22 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 10:16:22 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 10:16:22 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 10:16:22 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:16:22 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:16:22 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 10:16:22 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 10:16:22 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 10:16:22 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 10:16:22 daoPostrges.go 205 Executing the query with no params
+ERROR 2022/07/17 10:16:22 init.go 47 Could not initialize state service
+ERROR 2022/07/17 10:16:22 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve state tax data from DB: Could not run query due to error:pq: syntax error at or near ".":pq: syntax error at or near ".")
+INFO 2022/07/17 10:17:48 main.go 11 App started
+INFO 2022/07/17 10:17:48 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 10:17:48 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 10:17:48 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 10:17:48 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 10:17:48 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 10:17:48 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 10:17:48 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 10:17:48 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 10:17:48 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:17:48 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:17:48 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 10:17:48 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 10:17:48 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 10:17:48 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 10:17:48 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 10:17:48 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 10:17:48 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 10:17:48 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:17:48 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:17:48 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 10:17:48 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 10:17:48 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 10:17:48 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 10:17:48 daoPostrges.go 205 Executing the query with no params
+ERROR 2022/07/17 10:17:48 init.go 47 Could not initialize state service
+ERROR 2022/07/17 10:17:48 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve state tax data from DB: Could not run query due to error:pq: syntax error at or near ".":pq: syntax error at or near ".")
+INFO 2022/07/17 10:18:09 main.go 11 App started
+INFO 2022/07/17 10:18:09 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 10:18:09 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 10:18:09 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 10:18:09 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 10:18:09 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 10:18:09 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 10:18:09 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 10:18:09 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 10:18:09 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:18:09 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:18:09 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 10:18:09 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 10:18:09 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 10:18:09 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 10:18:09 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 10:18:09 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 10:18:09 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 10:18:09 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:18:09 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:18:09 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 10:18:09 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 10:18:09 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 10:18:09 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 10:18:09 daoPostrges.go 205 Executing the query with no params
+ERROR 2022/07/17 10:18:09 init.go 47 Could not initialize state service
+ERROR 2022/07/17 10:18:09 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve state tax data from DB: Could not run query due to error:pq: syntax error at or near ".":pq: syntax error at or near ".")
+INFO 2022/07/17 10:18:16 main.go 11 App started
+INFO 2022/07/17 10:18:16 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 10:18:16 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 10:18:16 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 10:18:16 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 10:18:16 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 10:18:16 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 10:18:16 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 10:18:16 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 10:18:16 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:18:16 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:18:16 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 10:18:16 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 10:18:16 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 10:18:16 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 10:18:16 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 10:18:16 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 10:18:16 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 10:18:16 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:18:16 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:18:16 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 10:18:16 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 10:18:16 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 10:18:16 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 10:18:16 daoPostrges.go 205 Executing the query with no params
+ERROR 2022/07/17 10:18:16 init.go 47 Could not initialize state service
+ERROR 2022/07/17 10:18:16 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve state tax data from DB: Could not run query due to error:pq: syntax error at or near ".":pq: syntax error at or near ".")
+INFO 2022/07/17 10:19:05 main.go 11 App started
+INFO 2022/07/17 10:19:05 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 10:19:05 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 10:19:05 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 10:19:05 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 10:19:05 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 10:19:05 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 10:19:05 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 10:19:05 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 10:19:05 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:19:05 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:19:05 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 10:19:05 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 10:19:05 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 10:19:05 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 10:19:05 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 10:19:05 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 10:19:05 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 10:19:05 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:19:05 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:19:05 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 10:19:05 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 10:19:05 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 10:19:05 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 10:19:05 daoPostrges.go 205 Executing the query with no params
+ERROR 2022/07/17 10:19:05 init.go 47 Could not initialize state service
+ERROR 2022/07/17 10:19:05 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve state tax data from DB: Could not run query due to error:pq: missing FROM-clause entry for table "state_bracket":pq: missing FROM-clause entry for table "state_bracket")
+INFO 2022/07/17 10:20:07 main.go 11 App started
+INFO 2022/07/17 10:20:07 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 10:20:07 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 10:20:07 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 10:20:07 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 10:20:07 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 10:20:07 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 10:20:07 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 10:20:07 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 10:20:07 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:20:07 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:20:07 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 10:20:07 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 10:20:07 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 10:20:07 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 10:20:07 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 10:20:07 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 10:20:07 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 10:20:07 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:20:07 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:20:07 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 10:20:07 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 10:20:07 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 10:20:07 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 10:20:07 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:20:07 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:20:07 stateServiceImpl.go 84 Building caches
+INFO 2022/07/17 10:29:33 main.go 11 App started
+INFO 2022/07/17 10:29:33 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 10:29:33 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 10:29:33 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 10:29:33 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 10:29:33 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 10:29:33 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 10:29:33 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 10:29:33 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 10:29:33 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:29:33 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:29:33 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 10:29:33 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 10:29:33 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 10:29:33 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/17 10:29:33 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 10:29:33 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 10:29:33 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 10:29:33 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:29:33 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:29:33 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/17 10:29:33 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 10:29:33 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 10:29:33 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 10:29:33 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:29:33 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:29:33 stateServiceImpl.go 86 Building caches
+INFO 2022/07/17 10:29:33 stateServiceImpl.go 88 State cache created
+INFO 2022/07/17 10:32:17 main.go 11 App started
+INFO 2022/07/17 10:32:17 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 10:32:17 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 10:32:17 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 10:32:17 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 10:32:17 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 10:32:17 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 10:32:17 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 10:32:17 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 10:32:17 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:32:17 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:32:17 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 10:32:17 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 10:32:17 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 10:32:17 stateServiceImpl.go 73 Getting state census data from the data access layer
+INFO 2022/07/17 10:32:17 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 10:32:17 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 10:32:17 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 10:32:17 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:32:17 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:32:17 stateServiceImpl.go 80 Getting state tax data from the data access layer
+INFO 2022/07/17 10:32:17 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 10:32:17 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 10:32:17 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 10:32:17 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:32:17 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:32:17 stateServiceImpl.go 88 Building caches
+INFO 2022/07/17 10:32:17 stateServiceImpl.go 90 State cache created
+INFO 2022/07/17 10:33:20 main.go 11 App started
+INFO 2022/07/17 10:33:20 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 10:33:20 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 10:33:20 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 10:33:20 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 10:33:20 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 10:33:20 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 10:33:20 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 10:33:20 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 10:33:20 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:33:20 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:33:20 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 10:33:20 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 10:33:20 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 10:33:20 stateServiceImpl.go 73 Getting state census data from the data access layer
+INFO 2022/07/17 10:33:20 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 10:33:20 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 10:33:20 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 10:33:20 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:33:20 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:33:20 stateServiceImpl.go 80 Getting state tax data from the data access layer
+INFO 2022/07/17 10:33:20 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 10:33:20 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 10:33:20 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 10:33:20 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:33:20 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:33:20 stateServiceImpl.go 88 Building caches
+INFO 2022/07/17 10:33:20 stateServiceImpl.go 90 State cache created
+INFO 2022/07/17 10:33:48 main.go 11 App started
+INFO 2022/07/17 10:33:48 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 10:33:48 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 10:33:48 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 10:33:48 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 10:33:48 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 10:33:48 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 10:33:48 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 10:33:48 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 10:33:48 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:33:48 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:33:48 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 10:33:48 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 10:33:48 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 10:33:48 stateServiceImpl.go 73 Getting state census data from the data access layer
+INFO 2022/07/17 10:33:48 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 10:33:48 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 10:33:48 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 10:33:48 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:33:48 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:33:48 stateServiceImpl.go 80 Getting state tax data from the data access layer
+INFO 2022/07/17 10:33:48 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 10:33:48 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 10:33:48 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 10:33:48 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:33:48 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:33:48 stateServiceImpl.go 88 Building caches
+INFO 2022/07/17 10:33:48 stateServiceImpl.go 90 State cache created
+INFO 2022/07/17 10:34:54 main.go 11 App started
+INFO 2022/07/17 10:34:54 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 10:34:54 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 10:34:54 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 10:34:54 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 10:34:54 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 10:34:54 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 10:34:54 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 10:34:54 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 10:34:54 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:34:54 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:34:54 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 10:34:54 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 10:34:54 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 10:34:54 stateServiceImpl.go 73 Getting state census data from the data access layer
+INFO 2022/07/17 10:34:54 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 10:34:54 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 10:34:54 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 10:34:54 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:34:54 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:34:54 stateServiceImpl.go 80 Getting state tax data from the data access layer
+INFO 2022/07/17 10:34:54 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 10:34:54 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 10:34:54 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 10:34:54 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:34:54 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:34:54 stateServiceImpl.go 88 Building caches
+INFO 2022/07/17 10:34:54 stateServiceImpl.go 90 State cache created
+INFO 2022/07/17 10:38:55 main.go 11 App started
+INFO 2022/07/17 10:38:55 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 10:38:55 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 10:38:55 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 10:38:55 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 10:38:55 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 10:38:55 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 10:38:55 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 10:38:55 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 10:38:55 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:38:55 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:38:55 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 10:38:55 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 10:38:55 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 10:38:55 stateServiceImpl.go 73 Getting state census data from the data access layer
+INFO 2022/07/17 10:38:55 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 10:38:55 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 10:38:55 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 10:38:55 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:38:55 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:38:55 stateServiceImpl.go 80 Getting state tax data from the data access layer
+INFO 2022/07/17 10:38:55 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 10:38:55 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 10:38:55 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 10:38:55 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:38:55 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:38:55 stateServiceImpl.go 88 Building caches
+INFO 2022/07/17 10:38:55 stateServiceImpl.go 90 State cache created
+INFO 2022/07/17 10:39:28 main.go 11 App started
+INFO 2022/07/17 10:39:28 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 10:39:28 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 10:39:28 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 10:39:28 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 10:39:28 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 10:39:28 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 10:39:28 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 10:39:28 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 10:39:28 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:39:28 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:39:28 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 10:39:28 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 10:39:28 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 10:39:28 stateServiceImpl.go 73 Getting state census data from the data access layer
+INFO 2022/07/17 10:39:28 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 10:39:28 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 10:39:28 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 10:39:28 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:39:28 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:39:28 stateServiceImpl.go 80 Getting state tax data from the data access layer
+INFO 2022/07/17 10:39:28 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 10:39:28 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 10:39:28 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 10:39:28 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:39:28 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:39:28 stateServiceImpl.go 88 Building caches
+INFO 2022/07/17 10:39:28 stateServiceImpl.go 90 State cache created
+INFO 2022/07/17 10:44:31 main.go 11 App started
+INFO 2022/07/17 10:44:31 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 10:44:31 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 10:44:31 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 10:44:31 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 10:44:31 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 10:44:31 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 10:44:31 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 10:44:31 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 10:44:31 daoPostrges.go 205 Executing the query with no params
+ERROR 2022/07/17 10:44:31 init.go 37 Could not initialize federal service
+ERROR 2022/07/17 10:44:31 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve federal tax data from DB: Could not run query due to error:pq: permission denied for table federal_brackets:pq: permission denied for table federal_brackets)
+INFO 2022/07/17 10:45:57 main.go 11 App started
+INFO 2022/07/17 10:45:57 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 10:45:57 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 10:45:57 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 10:45:57 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 10:45:57 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 10:45:57 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 10:45:57 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 10:45:57 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 10:45:57 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:45:57 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:45:57 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 10:45:57 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 10:45:57 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 10:45:57 stateServiceImpl.go 73 Getting state census data from the data access layer
+INFO 2022/07/17 10:45:57 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 10:45:57 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 10:45:57 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 10:45:57 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:45:57 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:45:57 stateServiceImpl.go 80 Getting state tax data from the data access layer
+INFO 2022/07/17 10:45:57 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 10:45:57 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 10:45:57 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 10:45:57 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:45:57 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:45:57 stateServiceImpl.go 88 Building caches
+INFO 2022/07/17 10:45:57 stateServiceImpl.go 90 State cache created
+INFO 2022/07/17 10:52:27 main.go 11 App started
+INFO 2022/07/17 10:52:27 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 10:52:27 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 10:52:27 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 10:52:27 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 10:52:27 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 10:52:27 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 10:52:27 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 10:52:27 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 10:52:27 daoPostrges.go 205 Executing the query with no params
+ERROR 2022/07/17 10:52:27 init.go 37 Could not initialize federal service
+ERROR 2022/07/17 10:52:27 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve federal tax data from DB: Could not run query due to error:pq: permission denied for table federal_brackets:pq: permission denied for table federal_brackets)
+INFO 2022/07/17 10:55:02 main.go 11 App started
+INFO 2022/07/17 10:55:02 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 10:55:02 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 10:55:02 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 10:55:02 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 10:55:02 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 10:55:02 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 10:55:02 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 10:55:02 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 10:55:02 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:55:02 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:55:02 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 10:55:02 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 10:55:02 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 10:55:02 stateServiceImpl.go 73 Getting state census data from the data access layer
+INFO 2022/07/17 10:55:02 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 10:55:02 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 10:55:02 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 10:55:02 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:55:02 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:55:02 stateServiceImpl.go 80 Getting state tax data from the data access layer
+INFO 2022/07/17 10:55:02 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 10:55:02 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 10:55:02 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 10:55:02 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 10:55:02 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 10:55:02 stateServiceImpl.go 88 Building caches
+INFO 2022/07/17 10:55:02 stateServiceImpl.go 90 State cache created
+INFO 2022/07/17 10:55:02 stateServiceImpl.go 93 State list cache created
+INFO 2022/07/17 12:01:13 main.go 11 App started
+INFO 2022/07/17 12:01:13 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 12:01:13 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 12:01:13 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 12:01:13 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 12:01:13 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 12:01:13 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 12:01:13 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 12:01:13 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 12:01:13 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 12:01:13 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 12:01:13 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 12:01:13 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 12:01:13 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 12:01:13 stateServiceImpl.go 73 Getting state census data from the data access layer
+INFO 2022/07/17 12:01:13 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 12:01:13 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 12:01:13 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 12:01:13 daoPostrges.go 205 Executing the query with no params
+ERROR 2022/07/17 12:01:13 init.go 47 Could not initialize state service
+ERROR 2022/07/17 12:01:13 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve state census data from DB: Could not run query due to error:pq: permission denied for view state_metrics:pq: permission denied for view state_metrics)
+INFO 2022/07/17 12:01:35 main.go 11 App started
+INFO 2022/07/17 12:01:35 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 12:01:35 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 12:01:35 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 12:01:35 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 12:01:35 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 12:01:35 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 12:01:35 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 12:01:35 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 12:01:35 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 12:01:35 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 12:01:35 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 12:01:35 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 12:01:35 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 12:01:35 stateServiceImpl.go 73 Getting state census data from the data access layer
+INFO 2022/07/17 12:01:35 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 12:01:35 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 12:01:35 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 12:01:35 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 12:01:35 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 12:01:35 stateServiceImpl.go 80 Getting state tax data from the data access layer
+INFO 2022/07/17 12:01:35 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 12:01:35 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 12:01:35 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 12:01:35 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 12:01:35 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 12:01:35 stateServiceImpl.go 88 Building caches
+INFO 2022/07/17 12:01:35 stateServiceImpl.go 90 State cache created
+INFO 2022/07/17 12:01:35 stateServiceImpl.go 93 State list cache created
+INFO 2022/07/17 12:02:48 main.go 11 App started
+INFO 2022/07/17 12:02:48 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 12:02:48 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 12:02:48 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 12:02:48 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 12:02:48 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 12:02:48 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 12:02:48 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 12:02:48 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 12:02:48 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 12:02:48 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 12:02:48 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 12:02:48 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 12:02:48 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 12:02:48 stateServiceImpl.go 73 Getting state census data from the data access layer
+INFO 2022/07/17 12:02:48 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 12:02:48 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 12:02:48 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 12:02:48 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 12:02:48 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 12:02:48 stateServiceImpl.go 80 Getting state tax data from the data access layer
+INFO 2022/07/17 12:02:48 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 12:02:48 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 12:02:48 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 12:02:48 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 12:02:48 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 12:02:48 stateServiceImpl.go 88 Building caches
+INFO 2022/07/17 12:02:48 stateServiceImpl.go 90 State cache created
+INFO 2022/07/17 12:02:48 stateServiceImpl.go 93 State list cache created
+INFO 2022/07/17 12:03:28 main.go 11 App started
+INFO 2022/07/17 12:03:28 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 12:03:28 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 12:03:28 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 12:03:28 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 12:03:28 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 12:03:28 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 12:03:28 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 12:03:28 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 12:03:28 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 12:03:28 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 12:03:28 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 12:03:28 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 12:03:28 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 12:03:28 stateServiceImpl.go 73 Getting state census data from the data access layer
+INFO 2022/07/17 12:03:28 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 12:03:28 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 12:03:28 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 12:03:28 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 12:03:28 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 12:03:28 stateServiceImpl.go 80 Getting state tax data from the data access layer
+INFO 2022/07/17 12:03:28 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 12:03:28 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 12:03:28 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 12:03:28 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 12:03:28 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 12:03:28 stateServiceImpl.go 88 Building caches
+INFO 2022/07/17 12:03:28 stateServiceImpl.go 90 State cache created
+INFO 2022/07/17 12:03:28 stateServiceImpl.go 93 State list cache created
+INFO 2022/07/17 12:03:28 stateServiceImpl.go 96 State tax cache created
+INFO 2022/07/17 12:03:28 stateServiceImpl.go 97 All state caches are now created
+INFO 2022/07/17 12:03:28 init.go 51 Successfully initialized state service
+INFO 2022/07/17 12:03:28 init.go 61 Successfully initialized county service
+INFO 2022/07/17 12:03:28 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 12:04:39 main.go 11 App started
+INFO 2022/07/17 12:04:39 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 12:04:39 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 12:04:39 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 12:04:39 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 12:04:39 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 12:04:39 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 12:04:39 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 12:04:39 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 12:04:39 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 12:04:39 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 12:04:39 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 12:04:39 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 12:04:39 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 12:04:39 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/17 12:04:39 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 12:04:39 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 12:04:39 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 12:04:39 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 12:04:39 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 12:04:39 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/17 12:04:39 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 12:04:39 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 12:04:39 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 12:04:39 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 12:04:39 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 12:04:39 stateServiceImpl.go 86 Building caches
+INFO 2022/07/17 12:04:39 stateServiceImpl.go 88 State cache created
+INFO 2022/07/17 12:04:39 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/17 12:04:39 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/17 12:04:39 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/17 12:04:39 init.go 51 Successfully initialized state service
+INFO 2022/07/17 12:04:39 init.go 61 Successfully initialized county service
+INFO 2022/07/17 12:04:39 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 13:17:58 main.go 11 App started
+INFO 2022/07/17 13:17:58 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 13:17:58 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 13:17:58 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 13:17:58 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 13:17:58 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/17 13:17:58 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 13:17:58 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 13:17:58 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 13:17:58 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 13:17:59 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 13:17:59 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/17 13:17:59 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/17 13:17:59 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 13:17:59 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/17 13:17:59 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 13:17:59 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 13:17:59 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 13:17:59 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 13:17:59 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 13:17:59 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/17 13:17:59 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 13:17:59 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 13:17:59 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 13:17:59 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 13:17:59 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 13:17:59 stateServiceImpl.go 86 Building caches
+INFO 2022/07/17 13:17:59 stateServiceImpl.go 88 State cache created
+INFO 2022/07/17 13:17:59 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/17 13:17:59 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/17 13:17:59 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/17 13:17:59 init.go 51 Successfully initialized state service
+INFO 2022/07/17 13:17:59 init.go 61 Successfully initialized county service
+INFO 2022/07/17 13:17:59 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 13:23:08 main.go 11 App started
+INFO 2022/07/17 13:23:08 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 13:23:08 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 13:23:08 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 13:23:08 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 13:23:08 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/17 13:23:08 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 13:23:08 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 13:23:08 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 13:23:08 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 13:23:08 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 13:23:08 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/17 13:23:08 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/17 13:23:08 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 13:23:08 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 13:23:08 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 13:23:08 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 13:23:08 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 13:23:08 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 13:23:08 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 13:23:08 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 13:23:08 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 13:23:08 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 13:23:08 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 13:23:08 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 13:23:08 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 13:23:08 stateServiceImpl.go 84 Building caches
+INFO 2022/07/17 13:23:08 stateServiceImpl.go 86 State cache created
+INFO 2022/07/17 13:23:08 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/17 13:23:08 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/17 13:23:08 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/17 13:23:08 init.go 51 Successfully initialized state service
+INFO 2022/07/17 13:23:08 init.go 61 Successfully initialized county service
+INFO 2022/07/17 13:23:08 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 13:31:02 main.go 11 App started
+INFO 2022/07/17 13:31:02 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 13:31:02 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 13:31:02 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 13:31:02 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 13:31:02 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/17 13:31:02 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 13:31:02 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 13:31:02 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 13:31:02 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 13:31:02 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 13:31:02 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/17 13:31:02 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/17 13:31:02 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 13:31:02 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 13:31:02 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 13:31:02 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 13:31:02 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 13:31:02 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 13:31:02 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 13:31:02 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 13:31:02 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 13:31:02 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 13:31:02 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 13:31:02 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 13:31:02 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 13:31:02 stateServiceImpl.go 84 Building caches
+INFO 2022/07/17 13:31:02 stateServiceImpl.go 86 State cache created
+INFO 2022/07/17 13:31:02 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/17 13:31:02 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/17 13:31:02 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/17 13:31:02 init.go 51 Successfully initialized state service
+INFO 2022/07/17 13:31:02 init.go 61 Successfully initialized county service
+INFO 2022/07/17 13:31:02 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 13:37:27 controller.go 272 Get federal tax info called
+INFO 2022/07/17 13:37:27 controller.go 279 Getting federal tax info
+INFO 2022/07/17 13:37:27 controller.go 272 Get federal tax info called
+INFO 2022/07/17 13:37:27 controller.go 279 Getting federal tax info
+INFO 2022/07/17 13:37:28 controller.go 272 Get federal tax info called
+INFO 2022/07/17 13:37:28 controller.go 279 Getting federal tax info
+INFO 2022/07/17 13:37:33 controller.go 272 Get federal tax info called
+INFO 2022/07/17 13:37:33 controller.go 279 Getting federal tax info
+INFO 2022/07/17 13:45:36 main.go 11 App started
+INFO 2022/07/17 13:45:36 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 13:45:36 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 13:45:36 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 13:45:36 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 13:45:36 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/17 13:45:36 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 13:45:36 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 13:45:36 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 13:45:36 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 13:45:36 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 13:45:36 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/17 13:45:36 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/17 13:45:36 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 13:45:36 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 13:45:36 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 13:45:36 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 13:45:36 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 13:45:36 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 13:45:36 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 13:45:36 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 13:45:36 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 13:45:36 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 13:45:36 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 13:45:36 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 13:45:36 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 13:45:36 stateServiceImpl.go 84 Building caches
+INFO 2022/07/17 13:45:36 stateServiceImpl.go 86 State cache created
+INFO 2022/07/17 13:45:36 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/17 13:45:36 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/17 13:45:36 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/17 13:45:36 init.go 51 Successfully initialized state service
+INFO 2022/07/17 13:45:36 init.go 61 Successfully initialized county service
+INFO 2022/07/17 13:45:36 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 13:46:25 controller.go 272 Get federal tax info called
+INFO 2022/07/17 13:46:25 controller.go 279 Getting federal tax info
+INFO 2022/07/17 13:46:25 writers.go 66 Returned 200 response in 91.1µs
+INFO 2022/07/17 13:50:47 main.go 11 App started
+INFO 2022/07/17 13:50:47 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 13:50:47 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 13:50:47 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 13:50:47 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 13:50:47 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/17 13:50:47 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 13:50:47 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 13:50:47 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 13:50:47 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 13:50:47 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 13:50:47 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/17 13:50:47 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/17 13:50:47 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 13:50:47 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 13:50:47 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 13:50:47 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 13:50:47 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 13:50:47 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 13:50:47 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 13:50:47 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 13:50:47 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 13:50:47 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 13:50:47 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 13:50:47 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 13:50:47 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 13:50:47 stateServiceImpl.go 84 Building caches
+INFO 2022/07/17 13:50:47 stateServiceImpl.go 86 State cache created
+INFO 2022/07/17 13:50:47 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/17 13:50:47 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/17 13:50:47 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/17 13:50:47 init.go 51 Successfully initialized state service
+INFO 2022/07/17 13:50:47 init.go 61 Successfully initialized county service
+INFO 2022/07/17 13:50:47 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 13:50:50 controller.go 272 Get federal tax info called
+INFO 2022/07/17 13:50:50 controller.go 279 Getting federal tax info
+INFO 2022/07/17 13:50:50 writers.go 66 Returned 200 response in 127.032µs
+INFO 2022/07/17 14:18:21 main.go 11 App started
+INFO 2022/07/17 14:18:21 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 14:18:21 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 14:18:21 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 14:18:21 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 14:18:21 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/17 14:18:21 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 14:18:21 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 14:18:21 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 14:18:21 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:18:21 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:18:21 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/17 14:18:21 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/17 14:18:21 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 14:18:21 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 14:18:21 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 14:18:21 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 14:18:21 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 14:18:21 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:18:21 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:18:21 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 14:18:21 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 14:18:21 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 14:18:21 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 14:18:21 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:18:21 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:18:21 stateServiceImpl.go 84 Building caches
+INFO 2022/07/17 14:18:21 stateServiceImpl.go 86 State cache created
+INFO 2022/07/17 14:18:21 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/17 14:18:21 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/17 14:18:21 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/17 14:18:21 init.go 51 Successfully initialized state service
+INFO 2022/07/17 14:18:21 init.go 61 Successfully initialized county service
+INFO 2022/07/17 14:18:21 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 14:18:26 controller.go 272 Get federal tax info called
+INFO 2022/07/17 14:18:26 controller.go 279 Getting federal tax info
+INFO 2022/07/17 14:18:26 writers.go 66 Returned 200 response in 95.384µs
+INFO 2022/07/17 14:19:29 main.go 11 App started
+INFO 2022/07/17 14:19:29 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 14:19:29 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 14:19:29 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 14:19:29 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 14:19:29 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 14:19:29 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 14:19:29 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 14:19:29 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 14:19:29 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:19:29 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:19:29 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 14:19:29 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 14:19:29 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 14:19:29 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 14:19:29 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 14:19:29 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 14:19:29 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 14:19:29 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:19:29 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:19:29 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 14:19:29 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 14:19:29 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 14:19:29 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 14:19:29 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:19:29 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:19:29 stateServiceImpl.go 84 Building caches
+INFO 2022/07/17 14:19:29 stateServiceImpl.go 86 State cache created
+INFO 2022/07/17 14:19:29 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/17 14:19:29 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/17 14:19:29 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/17 14:19:29 init.go 51 Successfully initialized state service
+INFO 2022/07/17 14:19:29 init.go 61 Successfully initialized county service
+INFO 2022/07/17 14:19:29 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 14:26:39 main.go 11 App started
+INFO 2022/07/17 14:26:39 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 14:26:39 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 14:26:39 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 14:26:39 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 14:26:39 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 14:26:39 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 14:26:39 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 14:26:39 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 14:26:39 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:26:39 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:26:39 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 14:26:39 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 14:26:39 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 14:26:39 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 14:26:39 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 14:26:39 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 14:26:39 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 14:26:39 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:26:39 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:26:39 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 14:26:39 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 14:26:39 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 14:26:39 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 14:26:39 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:26:39 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:26:39 stateServiceImpl.go 84 Building caches
+INFO 2022/07/17 14:26:39 stateServiceImpl.go 86 State cache created
+INFO 2022/07/17 14:26:39 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/17 14:26:39 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/17 14:26:39 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/17 14:26:39 init.go 51 Successfully initialized state service
+INFO 2022/07/17 14:26:39 init.go 61 Successfully initialized county service
+INFO 2022/07/17 14:26:39 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 14:26:46 controller.go 272 Get federal tax info called
+INFO 2022/07/17 14:26:46 controller.go 279 Getting federal tax info
+INFO 2022/07/17 14:26:46 writers.go 66 Returned 200 response in 101.9µs
+INFO 2022/07/17 14:26:51 controller.go 272 Get federal tax info called
+INFO 2022/07/17 14:26:51 controller.go 279 Getting federal tax info
+INFO 2022/07/17 14:26:51 writers.go 66 Returned 200 response in 59.695µs
+INFO 2022/07/17 14:28:20 main.go 11 App started
+INFO 2022/07/17 14:28:20 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 14:28:20 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 14:28:20 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 14:28:20 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 14:28:20 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 14:28:20 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 14:28:20 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 14:28:20 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 14:28:20 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:28:20 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:28:20 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 14:28:20 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 14:28:20 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 14:28:20 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 14:28:20 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 14:28:20 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 14:28:20 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 14:28:20 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:28:20 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:28:20 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 14:28:20 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 14:28:20 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 14:28:20 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 14:28:20 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:28:20 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:28:20 stateServiceImpl.go 84 Building caches
+INFO 2022/07/17 14:28:20 stateServiceImpl.go 86 State cache created
+INFO 2022/07/17 14:28:20 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/17 14:28:20 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/17 14:28:20 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/17 14:28:20 init.go 51 Successfully initialized state service
+INFO 2022/07/17 14:28:20 init.go 61 Successfully initialized county service
+INFO 2022/07/17 14:28:20 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 14:30:45 main.go 11 App started
+INFO 2022/07/17 14:30:45 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 14:30:45 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 14:30:45 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 14:30:45 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 14:30:45 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 14:30:45 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 14:30:45 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 14:30:45 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 14:30:45 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:30:46 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:30:46 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 14:30:46 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 14:30:46 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 14:30:46 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 14:30:46 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 14:30:46 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 14:30:46 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 14:30:46 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:30:46 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:30:46 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 14:30:46 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 14:30:46 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 14:30:46 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 14:30:46 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:30:46 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:30:47 stateServiceImpl.go 84 Building caches
+INFO 2022/07/17 14:30:47 stateServiceImpl.go 86 State cache created
+INFO 2022/07/17 14:30:47 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/17 14:30:47 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/17 14:30:47 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/17 14:30:47 init.go 51 Successfully initialized state service
+INFO 2022/07/17 14:30:47 init.go 61 Successfully initialized county service
+INFO 2022/07/17 14:30:47 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 14:31:25 main.go 11 App started
+INFO 2022/07/17 14:31:25 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 14:31:25 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 14:31:25 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 14:31:25 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 14:31:25 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 14:31:25 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 14:31:25 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 14:31:25 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 14:31:25 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:31:25 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:31:25 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 14:31:25 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 14:31:25 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 14:31:25 init.go 61 Successfully initialized county service
+INFO 2022/07/17 14:31:25 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 14:35:52 main.go 11 App started
+INFO 2022/07/17 14:35:52 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 14:35:52 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 14:35:52 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 14:35:52 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 14:35:52 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 14:35:52 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 14:35:52 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 14:35:52 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 14:35:52 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:35:52 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:35:52 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 14:36:26 main.go 11 App started
+INFO 2022/07/17 14:36:26 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 14:36:26 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 14:36:26 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 14:36:26 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 14:36:26 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 14:36:26 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 14:36:26 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 14:36:26 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 14:36:26 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:36:26 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:36:26 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 14:36:56 main.go 11 App started
+INFO 2022/07/17 14:36:56 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 14:36:56 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 14:36:56 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 14:36:56 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 14:36:56 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 14:36:56 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 14:36:56 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 14:36:56 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 14:36:56 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:36:56 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:36:56 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 14:37:18 main.go 11 App started
+INFO 2022/07/17 14:37:18 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 14:37:18 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 14:37:18 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 14:37:18 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 14:37:18 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/17 14:37:18 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 14:37:18 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 14:37:18 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 14:37:18 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:37:18 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:37:18 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/17 14:37:18 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/17 14:37:18 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 14:37:18 init.go 61 Successfully initialized county service
+INFO 2022/07/17 14:37:18 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 14:37:31 controller.go 272 Get federal tax info called
+INFO 2022/07/17 14:37:31 controller.go 279 Getting federal tax info
+INFO 2022/07/17 14:37:31 writers.go 66 Returned 200 response in 128.765µs
+INFO 2022/07/17 14:38:32 main.go 11 App started
+INFO 2022/07/17 14:38:32 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 14:38:32 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 14:38:32 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 14:38:32 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 14:38:32 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/17 14:38:32 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 14:38:32 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 14:38:32 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 14:38:32 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:38:32 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:38:32 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/17 14:38:32 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/17 14:38:32 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 14:38:32 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 14:38:32 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 14:38:32 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 14:38:32 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 14:38:32 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:38:32 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:38:32 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 14:38:32 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 14:38:32 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 14:38:32 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 14:38:32 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:38:32 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:38:32 stateServiceImpl.go 84 Building caches
+INFO 2022/07/17 14:38:32 stateServiceImpl.go 86 State cache created
+INFO 2022/07/17 14:38:32 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/17 14:38:32 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/17 14:38:32 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/17 14:38:32 init.go 51 Successfully initialized state service
+INFO 2022/07/17 14:38:32 init.go 61 Successfully initialized county service
+INFO 2022/07/17 14:38:32 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 14:56:43 main.go 11 App started
+INFO 2022/07/17 14:56:43 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 14:56:43 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 14:56:43 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 14:56:43 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 14:56:43 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/17 14:56:43 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 14:56:43 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 14:56:43 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 14:56:43 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:56:43 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:56:43 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/17 14:56:43 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/17 14:56:43 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 14:56:43 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 14:56:43 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 14:56:43 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 14:56:43 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 14:56:43 daoPostrges.go 205 Executing the query with no params
+ERROR 2022/07/17 14:56:43 init.go 47 Could not initialize state service
+ERROR 2022/07/17 14:56:43 bootstrap.go 21 Unable to intiialize core services%!(EXTRA string=Unable to retrieve state census data from DB: Could not run query due to error:pq: permission denied for view state_metrics:pq: permission denied for view state_metrics)
+INFO 2022/07/17 14:57:00 main.go 11 App started
+INFO 2022/07/17 14:57:00 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 14:57:00 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 14:57:00 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 14:57:00 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 14:57:00 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/17 14:57:00 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 14:57:00 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 14:57:00 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 14:57:00 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:57:00 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:57:00 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/17 14:57:00 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/17 14:57:00 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 14:57:00 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 14:57:00 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 14:57:00 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 14:57:00 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 14:57:00 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:57:00 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:57:00 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 14:57:00 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 14:57:00 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 14:57:00 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 14:57:00 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 14:57:00 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 14:57:00 stateServiceImpl.go 84 Building caches
+INFO 2022/07/17 14:57:00 stateServiceImpl.go 86 State cache created
+INFO 2022/07/17 14:57:00 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/17 14:57:00 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/17 14:57:00 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/17 14:57:00 init.go 51 Successfully initialized state service
+INFO 2022/07/17 14:57:00 init.go 61 Successfully initialized county service
+INFO 2022/07/17 14:57:00 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 14:57:06 controller.go 272 Get federal tax info called
+INFO 2022/07/17 14:57:06 controller.go 279 Getting federal tax info
+INFO 2022/07/17 14:57:06 writers.go 67 Returned 200 response in 148.425µs
+INFO 2022/07/17 14:59:24 controller.go 272 Get federal tax info called
+INFO 2022/07/17 14:59:24 controller.go 279 Getting federal tax info
+INFO 2022/07/17 14:59:24 writers.go 67 Returned 200 response in 48.094µs
+INFO 2022/07/17 15:01:30 controller.go 272 Get federal tax info called
+INFO 2022/07/17 15:01:30 controller.go 279 Getting federal tax info
+INFO 2022/07/17 15:01:30 writers.go 67 Returned 200 response in 78.717µs
+INFO 2022/07/17 15:14:03 main.go 11 App started
+INFO 2022/07/17 15:14:03 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 15:14:03 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 15:14:03 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 15:14:03 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 15:14:03 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/17 15:14:03 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 15:14:03 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 15:14:03 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 15:14:03 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:14:03 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:14:03 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/17 15:14:03 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/17 15:14:03 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 15:14:03 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 15:14:03 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 15:14:03 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 15:14:03 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 15:14:03 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:14:03 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:14:03 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 15:14:03 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 15:14:03 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 15:14:03 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 15:14:03 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:14:03 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:14:03 stateServiceImpl.go 84 Building caches
+INFO 2022/07/17 15:14:03 stateServiceImpl.go 86 State cache created
+INFO 2022/07/17 15:14:03 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/17 15:14:03 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/17 15:14:03 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/17 15:14:03 init.go 51 Successfully initialized state service
+INFO 2022/07/17 15:14:03 init.go 61 Successfully initialized county service
+INFO 2022/07/17 15:14:03 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 15:33:09 main.go 11 App started
+INFO 2022/07/17 15:33:09 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 15:33:09 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 15:33:09 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 15:33:09 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 15:33:09 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/17 15:33:09 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 15:33:09 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 15:33:09 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 15:33:09 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:33:09 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:33:09 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/17 15:33:09 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/17 15:33:09 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 15:33:09 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 15:33:09 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 15:33:09 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 15:33:09 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 15:33:09 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:33:09 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:33:09 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 15:33:09 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 15:33:09 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 15:33:09 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 15:33:09 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:33:09 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:33:09 stateServiceImpl.go 84 Building caches
+INFO 2022/07/17 15:33:09 stateServiceImpl.go 86 State cache created
+INFO 2022/07/17 15:33:09 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/17 15:33:09 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/17 15:33:09 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/17 15:33:09 init.go 51 Successfully initialized state service
+INFO 2022/07/17 15:33:09 init.go 61 Successfully initialized county service
+INFO 2022/07/17 15:33:09 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 15:34:22 main.go 11 App started
+INFO 2022/07/17 15:34:22 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 15:34:22 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 15:34:22 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 15:34:22 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 15:34:22 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/17 15:34:22 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 15:34:22 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 15:34:22 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 15:34:22 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:34:22 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:34:22 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/17 15:34:22 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/17 15:34:22 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 15:34:22 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 15:34:22 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 15:34:22 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 15:34:22 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 15:34:22 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:34:22 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:34:22 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 15:34:22 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 15:34:22 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 15:34:22 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 15:34:22 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:34:22 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:34:22 stateServiceImpl.go 84 Building caches
+INFO 2022/07/17 15:34:22 stateServiceImpl.go 86 State cache created
+INFO 2022/07/17 15:34:22 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/17 15:34:22 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/17 15:34:22 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/17 15:34:22 init.go 51 Successfully initialized state service
+INFO 2022/07/17 15:34:22 init.go 61 Successfully initialized county service
+INFO 2022/07/17 15:34:22 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 15:35:14 main.go 11 App started
+INFO 2022/07/17 15:35:14 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 15:35:14 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 15:35:14 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 15:35:14 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 15:35:14 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/17 15:35:14 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 15:35:14 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 15:35:14 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 15:35:14 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:35:14 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:35:14 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/17 15:35:14 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/17 15:35:14 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 15:35:14 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 15:35:14 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 15:35:14 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 15:35:14 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 15:35:14 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:35:14 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:35:14 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 15:35:14 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 15:35:14 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 15:35:14 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 15:35:14 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:35:14 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:35:14 stateServiceImpl.go 84 Building caches
+INFO 2022/07/17 15:35:14 stateServiceImpl.go 86 State cache created
+INFO 2022/07/17 15:35:14 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/17 15:35:14 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/17 15:35:14 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/17 15:35:14 init.go 51 Successfully initialized state service
+INFO 2022/07/17 15:35:14 init.go 61 Successfully initialized county service
+INFO 2022/07/17 15:35:14 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 15:37:51 controller.go 272 Get federal tax info called
+INFO 2022/07/17 15:37:51 controller.go 279 Getting federal tax info
+INFO 2022/07/17 15:37:51 writers.go 69 Returned 200 response in 158.19µs
+INFO 2022/07/17 15:40:04 controller.go 229 Get state tax info called
+INFO 2022/07/17 15:40:04 controller.go 229 Get state tax info called
+INFO 2022/07/17 15:41:22 main.go 11 App started
+INFO 2022/07/17 15:41:22 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 15:41:22 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 15:41:22 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 15:41:22 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 15:41:22 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/17 15:41:22 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 15:41:22 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 15:41:22 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 15:41:22 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:41:22 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:41:22 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/17 15:41:22 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/17 15:41:22 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 15:41:22 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 15:41:22 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 15:41:22 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 15:41:22 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 15:41:22 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:41:22 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:41:22 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 15:41:22 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 15:41:22 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 15:41:22 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 15:41:22 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:41:22 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:41:22 stateServiceImpl.go 84 Building caches
+INFO 2022/07/17 15:41:22 stateServiceImpl.go 86 State cache created
+INFO 2022/07/17 15:41:22 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/17 15:41:22 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/17 15:41:22 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/17 15:41:22 init.go 51 Successfully initialized state service
+INFO 2022/07/17 15:41:22 init.go 61 Successfully initialized county service
+INFO 2022/07/17 15:41:22 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 15:41:25 controller.go 229 Get state tax info called
+INFO 2022/07/17 15:44:05 main.go 11 App started
+INFO 2022/07/17 15:44:05 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 15:44:05 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 15:44:05 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 15:44:05 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 15:44:05 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/17 15:44:05 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 15:44:05 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 15:44:05 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 15:44:05 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:44:05 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:44:05 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/17 15:44:05 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/17 15:44:05 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 15:44:05 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/17 15:44:05 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 15:44:05 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 15:44:05 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 15:44:05 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:44:05 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:44:05 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/17 15:44:05 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 15:44:05 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 15:44:05 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 15:44:05 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:44:05 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:44:05 stateServiceImpl.go 84 Building caches
+INFO 2022/07/17 15:44:05 stateServiceImpl.go 86 State cache created
+INFO 2022/07/17 15:44:05 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/17 15:44:05 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/17 15:44:05 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/17 15:44:05 init.go 51 Successfully initialized state service
+INFO 2022/07/17 15:44:05 init.go 61 Successfully initialized county service
+INFO 2022/07/17 15:44:05 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 15:44:08 controller.go 229 Get state tax info called
+INFO 2022/07/17 15:44:57 main.go 11 App started
+INFO 2022/07/17 15:44:57 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 15:44:57 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 15:44:57 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 15:44:57 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 15:44:57 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/17 15:44:57 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 15:44:57 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 15:44:57 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 15:44:57 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:44:57 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:44:57 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/17 15:44:57 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/17 15:44:57 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 15:44:57 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/17 15:44:57 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 15:44:57 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 15:44:57 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 15:44:57 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:44:57 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:44:57 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/17 15:44:57 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 15:44:57 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 15:44:57 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 15:44:57 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:44:57 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:44:57 stateServiceImpl.go 86 Building caches
+INFO 2022/07/17 15:44:57 stateServiceImpl.go 88 State cache created
+INFO 2022/07/17 15:44:57 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/17 15:44:57 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/17 15:44:57 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/17 15:44:57 init.go 51 Successfully initialized state service
+INFO 2022/07/17 15:44:57 init.go 61 Successfully initialized county service
+INFO 2022/07/17 15:44:57 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 15:45:00 controller.go 229 Get state tax info called
+INFO 2022/07/17 15:47:21 controller.go 229 Get state tax info called
+INFO 2022/07/17 15:47:21 controller.go 252 Getting tax information for state Ohio
+INFO 2022/07/17 15:47:21 writers.go 67 Returned 200 response in 305.614µs
+INFO 2022/07/17 15:49:15 main.go 11 App started
+INFO 2022/07/17 15:49:15 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/17 15:49:15 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/17 15:49:15 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/17 15:49:15 init.go 31 Successfully initialized dao service
+INFO 2022/07/17 15:49:15 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/17 15:49:15 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/17 15:49:15 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/17 15:49:15 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/17 15:49:15 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:49:15 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:49:15 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/17 15:49:15 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/17 15:49:15 init.go 41 Successfully initialized federal service
+INFO 2022/07/17 15:49:15 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/17 15:49:15 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/17 15:49:15 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/17 15:49:15 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/17 15:49:15 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:49:15 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:49:15 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/17 15:49:15 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/17 15:49:15 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/17 15:49:15 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/17 15:49:15 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/17 15:49:15 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/17 15:49:15 stateServiceImpl.go 86 Building caches
+INFO 2022/07/17 15:49:15 stateServiceImpl.go 88 State cache created
+INFO 2022/07/17 15:49:15 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/17 15:49:15 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/17 15:49:15 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/17 15:49:15 init.go 51 Successfully initialized state service
+INFO 2022/07/17 15:49:15 init.go 61 Successfully initialized county service
+INFO 2022/07/17 15:49:15 bootstrap.go 43 Listening at :8080
+INFO 2022/07/17 15:49:20 controller.go 229 Get state tax info called
+INFO 2022/07/17 15:49:20 controller.go 252 Getting tax information for state Ohio
+INFO 2022/07/17 15:49:20 writers.go 67 Returned 200 response in 249.842µs
+INFO 2022/07/17 15:49:24 controller.go 229 Get state tax info called
+WARN 2022/07/17 15:49:24 writers.go 47 Bad params recieved, writing bad request response: A state id or name must be provided to retrieve tax information.
+INFO 2022/07/17 15:49:24 controller.go 229 Get state tax info called
+WARN 2022/07/17 15:49:24 writers.go 47 Bad params recieved, writing bad request response: A state id or name must be provided to retrieve tax information.

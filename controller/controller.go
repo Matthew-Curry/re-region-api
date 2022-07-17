@@ -3,27 +3,26 @@ package controller
 /* Holds functions to handle API requests */
 
 import (
+	"fmt"
 	"net/http"
 	"strconv"
 	"time"
-	"fmt"
 
-	"github.com/Matthew-Curry/re-region-api/model"
 	"github.com/Matthew-Curry/re-region-api/apperrors"
+	"github.com/Matthew-Curry/re-region-api/model"
 )
 
 // helper method which returns whether an HTTP request method is GET or HEAD (supported methods)
 func isGet(r *http.Request) (bool, string) {
-	if r.Method == http.MethodGet{
+	if r.Method == http.MethodGet {
 		return true, ""
 	} else if r.Method == http.MethodHead {
 		return false, ""
-	} 
+	}
 
 	// invalid method
 	return false, fmt.Sprintf("The provided HTTP method %s is unsupported", r.Method)
 }
-
 
 // handler for requests for county resource
 func CountyHandler(w http.ResponseWriter, r *http.Request) {
@@ -209,7 +208,6 @@ func CountyTaxesHandler(w http.ResponseWriter, r *http.Request) {
 		countyTaxList, err = countyService.GetCountyTaxListByName(name)
 	}
 
-
 	if err.IsKind(apperrors.DataNotFound) {
 		writeNoEntityAvailable(w, isGet, "county", nameOrId(name, id))
 	} else if err.IsKind(apperrors.InternalError) || err != nil {
@@ -235,34 +233,39 @@ func StateTaxesHandler(w http.ResponseWriter, r *http.Request) {
 	isGet, errStr := isGet(r)
 	if errStr != "" {
 		writeGotBadParams(w, errStr)
-	}
-
-	var stateTaxInfo *model.StateTaxInfo
-	var err *apperrors.AppError
-	var id int
-	if idStr != "" {
-		id, convErr := strconv.Atoi(idStr)
-		if convErr == nil {
-			logger.Info("Getting tax information for state %s", id)
-			stateTaxInfo, err = stateService.GetStateTaxInfoById(id)
-		} else {
-			writeNoEntityAvailable(w, isGet, "state", fmt.Sprint(id))
-		}
-	} else if name != "" {
-		logger.Info("Getting tax information for state %s", name)
-		stateTaxInfo, err = stateService.GetStateTaxInfoByName(name)
-	}
-
-	if err.IsKind(apperrors.DataNotFound) {
-		writeNoEntityAvailable(w, isGet, "state", nameOrId(name, id))
-	} else if err.IsKind(apperrors.InternalError) || err != nil {
-		writeUnableToGetEntity(w, err, isGet, "state", nameOrId(name, id))
+	} else if idStr == "" && name == "" {
+		writeGotBadParams(w, "A state id or name must be provided to retrieve tax information.")
 	} else {
-		b, err := stateTaxInfo.MarshallStateTaxInfo()
+		var stateTaxInfo *model.StateTaxInfo
+		var err *apperrors.AppError
+		var id int
+		if idStr != "" {
+			id, convErr := strconv.Atoi(idStr)
+			if convErr == nil {
+				logger.Info("Getting tax information for state %s", id)
+				stateTaxInfo, err = stateService.GetStateTaxInfoById(id)
+			} else {
+				writeNoEntityAvailable(w, isGet, "state", fmt.Sprint(id))
+			}
+		} else if name != "" {
+			logger.Info("Getting tax information for state %s", name)
+			stateTaxInfo, err = stateService.GetStateTaxInfoByName(name)
+		}
+		
 		if err != nil {
-			writeGotMarshallError(w, err, isGet, "state", nameOrId(name, id))
+			if err.IsKind(apperrors.DataNotFound) {
+				writeNoEntityAvailable(w, isGet, "state", nameOrId(name, id))
+			} else if err.IsKind(apperrors.InternalError) || err != nil {
+				writeUnableToGetEntity(w, err, isGet, "state", nameOrId(name, id))
+			}
 		} else {
-			write200Response(w, isGet, start, b)
+			fmt.Println(stateTaxInfo)
+			b, err := stateTaxInfo.MarshallStateTaxInfo()
+			if err != nil {
+				writeGotMarshallError(w, err, isGet, "state", nameOrId(name, id))
+			} else {
+				write200Response(w, isGet, start, b)
+			}
 		}
 	}
 }
@@ -278,16 +281,17 @@ func FederalTaxesHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	logger.Info("Getting federal tax info")
 	federlTaxInfo, rErr := federalService.GetFederalTaxInfo()
-	if rErr.IsKind(apperrors.InternalError) || rErr != nil {
-		writeResponse(w, isGet, http.StatusInternalServerError, []byte("Unable to retrieve federal tax information due to an internal error."))
-	}
-
-	b, err := federlTaxInfo.MarshallFederalTaxInfo()
-		if err != nil {
+	if rErr != nil {
+		if rErr.IsKind(apperrors.InternalError) || rErr != nil {
 			writeResponse(w, isGet, http.StatusInternalServerError, []byte("Unable to retrieve federal tax information due to an internal error."))
-		} else {
-			write200Response(w, isGet, start, b)
 		}
+	}
+	b, err := federlTaxInfo.MarshallFederalTaxInfo()
+	if err != nil {
+		writeResponse(w, isGet, http.StatusInternalServerError, []byte("Unable to retrieve federal tax information due to an internal error."))
+	} else {
+		write200Response(w, isGet, start, b)
+	}
 }
 
 // health endpoint of the app

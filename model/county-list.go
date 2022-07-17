@@ -1,8 +1,10 @@
 package model
 
 import (
-	"sort"
 	"encoding/json"
+	"sort"
+
+	"github.com/Matthew-Curry/re-region-api/apperrors"
 )
 
 type CountyList struct {
@@ -41,12 +43,18 @@ func (c *CountyList) AppendToRankedList(metricPair CountyMetricPair) {
 }
 
 // getter method for the controller to be able to marhsall private fields
-func (c *CountyList) MarshallCountyList() ([]byte, error) {
-	return json.Marshal(struct{
+func (c *CountyList) MarshallCountyList() ([]byte, *apperrors.AppError) {
+	r, err := json.Marshal(struct{
         Metric_name string
 		Ranked_list []CountyMetricPair
     }{
         Metric_name: c.Metric_name,
 		Ranked_list :c.ranked_list,
     })
+
+	if err != nil {
+		return nil, apperrors.UnableToMarshall(err)
+	}
+
+	return r, nil
 }

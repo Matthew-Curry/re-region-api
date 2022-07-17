@@ -3,6 +3,8 @@ package model
 import (
     "sort"
 	"encoding/json"
+
+    "github.com/Matthew-Curry/re-region-api/apperrors"
 )
 
 type StateTaxInfo struct {
@@ -69,8 +71,8 @@ func (s *StateTaxInfo) AppendToOrderedList(bracket StateBracket) {
 }
 
 // marshaller for the controller to be able to marhsall private fields
-func (s *StateTaxInfo) MarshallStateTaxInfo() ([]byte, error) {
-	return json.Marshal(struct{
+func (s *StateTaxInfo) MarshallStateTaxInfo() ([]byte, *apperrors.AppError) {
+	r, err := json.Marshal(struct{
         State_id int
         State_name string
         Single_deduction int
@@ -89,4 +91,10 @@ func (s *StateTaxInfo) MarshallStateTaxInfo() ([]byte, error) {
         Dependent_exemption: s.Dependent_exemption,
         Bracket_list: s.bracket_list,
     })
+
+    if err != nil {
+		return nil, apperrors.UnableToMarshall(err)
+	}
+
+	return r, nil
 }

@@ -1,1 +1,1 @@
-SELECT * FROM state_metrics
+SELECT * FROM state_metrics;

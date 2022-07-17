@@ -43,23 +43,25 @@ func GetFederalServiceImpl(daoImpl dao.DaoInterface) (FederalServiceInterface, *
 // public method to get overall federal tax information
 func buildCachedResponse(federalTaxList [][]interface{}) *model.FederalTaxInfo {
 	// get constant attributes from first record
-	sd := federalTaxList[0][FEDERAL_STANDARD_DEDUCTION]
-	md := federalTaxList[0][FEDERAL_MARRIED_DEDUCTION]
-	hd := federalTaxList[0][FEDERAL_HEAD_DEDUCTION]
+	sd := readAsInt(federalTaxList[0][FEDERAL_STANDARD_DEDUCTION])
+	md := readAsInt(federalTaxList[0][FEDERAL_MARRIED_DEDUCTION])
+	hd := readAsInt(federalTaxList[0][FEDERAL_HEAD_DEDUCTION])
 
 	// pass over brackets to form the bracket list
 	bracketList := []model.FederalBracket{}
 	for _, row := range federalTaxList {
-		r := row[FEDERAL_RATE]
-		sb := row[FEDERAL_SINGLE_BRACKET]
-		mb := row[FEDERAL_MARRIED_BRACKET]
-		hb := row[FEDERAL_HEAD_BRACKET]
-		b := model.FederalBracket{Rate: r.(float64), Single_bracket: sb.(int), Married_bracket: mb.(int), Head_bracket: hb.(int)}
+		// convert rate to float
+		r := readAsFloat(row[FEDERAL_RATE])
+		// other fields
+		sb := readAsInt(row[FEDERAL_SINGLE_BRACKET])
+		mb := readAsInt(row[FEDERAL_MARRIED_BRACKET])
+		hb := readAsInt(row[FEDERAL_HEAD_BRACKET])
+		b := model.FederalBracket{Rate: r, Single_bracket: sb, Married_bracket: mb, Head_bracket: hb}
 		bracketList = append(bracketList, b)
 	}
 
 	// form complete response
-	return model.GetFederalTaxInfo(sd.(int), md.(int), hd.(int))
+	return model.GetFederalTaxInfo(sd, md, hd, bracketList)
 }
 
 // public method to return the federal tax information

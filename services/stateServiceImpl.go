@@ -6,6 +6,8 @@ import (
 	"github.com/Matthew-Curry/re-region-api/apperrors"
 	"github.com/Matthew-Curry/re-region-api/dao"
 	"github.com/Matthew-Curry/re-region-api/model"
+
+	"fmt"
 )
 
 const (
@@ -110,8 +112,8 @@ func buildStateCaches(stateCensusData [][]interface{}) (map[int][]interface{}, m
 		si := []interface{}{state[CENSUS_STATE_NAME]}
 		sn := []interface{}{state[CENSUS_STATE_ID]}
 		// use variadic append to adaptively append metrics
-		idMp[state[CENSUS_STATE_ID].(int)] = append(si, []interface{}{state[2:]}...)
-		nameMp[state[CENSUS_STATE_NAME].(string)] = append(sn, []interface{}{state[2:]}...)
+		idMp[readAsInt(state[CENSUS_STATE_ID])] = append(si, []interface{}{state[2:]}...)
+		nameMp[readAsString(state[CENSUS_STATE_NAME])] = append(sn, []interface{}{state[2:]}...)
 	}
 
 	return idMp, nameMp
@@ -129,7 +131,9 @@ func buildStateListCaches(stateCensusData [][]interface{}) map[string]*model.Sta
 	for m, i := range metrics {
 		for _, state := range stateCensusData {
 			// initialize the metric pair for this row
-			metricPair := model.StateMetricPair{State_id: state[CENSUS_STATE_ID].(int), State_name: state[CENSUS_STATE_NAME].(string), Metric_value: state[i].(int)}
+			metricPair := model.StateMetricPair{State_id: readAsInt(state[CENSUS_STATE_ID]), 
+												State_name: readAsString(state[CENSUS_STATE_NAME]), 
+												Metric_value: readAsInt(state[i])}
 			// insert the metric pair into the appropriate slice in order
 			mp[m].AppendToRankedList(metricPair)
 		}
@@ -145,11 +149,11 @@ func buildStateTaxCaches(stateTaxData [][]interface{}) (map[int]*model.StateTaxI
 	nameMp := make(map[string]*model.StateTaxInfo)
 	for _, state := range stateTaxData {
 		// if state tax info is not in id map, create for both maps
-		si := state[TAX_STATE_ID].(int)
-		sn := state[TAX_STATE_NAME].(string)
+		si := readAsInt(state[TAX_STATE_ID])
+		sn := readAsString(state[TAX_STATE_NAME])
 		if _, ok := idMp[si]; !ok {
-			stateTaxInfo := model.GetStateTaxInfo(state[TAX_STATE_ID].(int), state[TAX_STATE_NAME].(string), state[SINGLE_DEDUCTION].(int), state[MARRIED_DEDUCTION].(int),
-				state[SINGLE_EXEMPTION].(int), state[MARRIED_EXEMPTION].(int), state[DEPENDENT_EXEMPTION].(int))
+			stateTaxInfo := model.GetStateTaxInfo(si, sn, readAsInt(state[SINGLE_DEDUCTION]), readAsInt(state[MARRIED_DEDUCTION]),
+			readAsInt(state[SINGLE_EXEMPTION]), readAsInt(state[MARRIED_EXEMPTION]), readAsInt(state[DEPENDENT_EXEMPTION]))
 
 			idMp[si] = stateTaxInfo
 			nameMp[sn] = stateTaxInfo
@@ -157,10 +161,10 @@ func buildStateTaxCaches(stateTaxData [][]interface{}) (map[int]*model.StateTaxI
 		}
 		// append bracket information to the tax info at this id and name position in the respective maps
 		sb := model.StateBracket{
-			Single_rate:     state[SINGLE_RATE].(float64),
-			Single_bracket:  state[SINGLE_BRACKET].(int),
-			Married_rate:    state[MARRIED_RATE].(float64),
-			Married_bracket: state[MARRIED_BRACKET].(int),
+			Single_rate:     readAsFloat(state[SINGLE_RATE]),
+			Single_bracket:  readAsInt(state[SINGLE_BRACKET]),
+			Married_rate:    readAsFloat(state[MARRIED_RATE]),
+			Married_bracket: readAsInt(state[MARRIED_BRACKET]),
 		}
 		// add bracket to list in order of the single rate so they ascend properly
 		idMp[si].AppendToOrderedList(sb)
@@ -189,15 +193,15 @@ func (s *StateServiceImpl) GetStateById(id int, fs model.FilingStatus, dependent
 // helper method to construct state for given args
 func (s *StateServiceImpl) buildState(sc []interface{}, t, st, ft int) *model.State {
 	return &model.State{
-		State_id:   sc[CENSUS_STATE_ID].(int),
-		State_name: sc[CENSUS_STATE_NAME].(string),
+		State_id:   readAsInt(sc[CENSUS_STATE_ID]),
+		State_name: readAsString(sc[CENSUS_STATE_NAME]),
 		// state level census metrics
-		Pop:           sc[STATE_POP].(int),
-		Male_pop:      sc[STATE_MALE_POP].(int),
-		Female_pop:    sc[STATE_FEMALE_POP].(int),
-		Median_income: sc[STATE_MEDIAN_INCOME].(int),
-		Average_rent:  sc[STATE_AVERAGE_RENT].(int),
-		Commute:       sc[STATE_COMMUTE].(int),
+		Pop:           readAsInt(sc[STATE_POP]),
+		Male_pop:      readAsInt(sc[STATE_MALE_POP]),
+		Female_pop:    readAsInt(sc[STATE_FEMALE_POP]),
+		Median_income: readAsInt(sc[STATE_MEDIAN_INCOME]),
+		Average_rent:  readAsInt(sc[STATE_AVERAGE_RENT]),
+		Commute:       readAsInt(sc[STATE_COMMUTE]),
 		// the tax metrics
 		Total_tax:   t,
 		State_tax:   st,
@@ -282,7 +286,8 @@ func (s *StateServiceImpl) GetStateTaxInfoByName(name string) (*model.StateTaxIn
 		logger.Warn("State %s not found in the state tax cache", name)
 		return nil, apperrors.StateNameNotInTaxCache(name)
 	}
-
+	fmt.Println("THIS IS THE RESPONSE")
+	fmt.Println(res)
 	return res, nil
 
 }

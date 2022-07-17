@@ -11,6 +11,8 @@ import (
 	"strconv"
 	"database/sql"
 
+	"github.com/lib/pq"
+
 	"github.com/Matthew-Curry/re-region-api/apperrors"
 	"github.com/Matthew-Curry/re-region-api/logging"
 )
@@ -52,7 +54,7 @@ type DaoImpl struct {
 }
 
 // public constructor to return the postgres impl of the dao
-func GetPostgresDao() (DaoInterface, error) {
+func GetPostgresDao() (DaoInterface, *apperrors.AppError) {
 	// map of identifiers to sql files
 	sqlMap := map[string]string{
 		"COUNTY_DATA_BY_ID":   COUNTY_DATA_BY_ID_QUERY,
@@ -88,7 +90,7 @@ func (d *DaoImpl) GetStateCensusData() ([][]interface{}, *apperrors.AppError) {
 		return nil, err
 	}
 	logger.Info("Executing State Census query")
-	res, err := d.getRowsFromQuery(query, "")
+	res, err := d.getRowsFromQuery(query)
 	if err != nil {
 		return nil, apperrors.StateCensusNotFound(err)
 	}
@@ -117,8 +119,8 @@ func (d *DaoImpl) GetStateTax() ([][]interface{}, *apperrors.AppError) {
 	if err != nil {
 		return nil, err
 	}
-	logger.Info("Executing State tax query query")
-	res, err := d.getRowsFromQuery(query, "")
+	logger.Info("Executing State tax query")
+	res, err := d.getRowsFromQuery(query)
 	if err != nil {
 		return nil, apperrors.StateTaxNotFound(err)
 	}
@@ -164,7 +166,7 @@ func (d *DaoImpl) GetFederalTaxData() ([][]interface{}, *apperrors.AppError) {
 		return nil, err
 	}
 	logger.Info("Executing Federal tax query")
-	res, err := d.getRowsFromQuery(query, "")
+	res, err := d.getRowsFromQuery(query)
 	if err != nil {
 		return nil, apperrors.FederalTaxNotFound(err)
 	}
@@ -199,11 +201,12 @@ func (d *DaoImpl) readSQLFileAsString(queryId string) (string, *apperrors.AppErr
 func (d *DaoImpl) getRowsFromQuery(query string, filterValue ...string) ([][]interface{}, *apperrors.AppError) {
 	var rows *sql.Rows
 	var err error
-	logger.Info("Executing the query")
 	if len(filterValue) == 0 {
+		logger.Info("Executing the query with no params")
 		rows, err = d.con.Query(query)
 	} else {
-		rows, err = d.con.Query(query, filterValue)
+		logger.Info("Executing the query with params")
+		rows, err = d.con.Query(query, pq.Array(filterValue))
 	}
 
 	if err != nil {
@@ -231,8 +234,12 @@ func (d *DaoImpl) getRowsFromQuery(query string, filterValue ...string) ([][]int
 		if areRows == false {
 			areRows = true
 		}
+
 		rows.Scan(pointers...)
-		result = append(result, container)
+
+		scannedRow := make([]interface{}, len(cols))
+		copy(scannedRow, container)
+		result = append(result, scannedRow)
 
 	}
 

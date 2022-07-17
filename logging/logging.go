@@ -7,6 +7,9 @@ import (
 	"os"
 	"errors"
 	"io"
+	"runtime"
+	"fmt"
+	"strings"
 )
 
 type Logger struct {
@@ -17,19 +20,30 @@ type Logger struct {
 }
 
 func (l *Logger) Info(s string, a ...interface{}) {
+	s = l.addCaller(s)
 	l.infoLogger.Printf(s, a...)
 }
 
 func (l *Logger) Warn(s string, a ...interface{}) {
+	s = l.addCaller(s)
 	l.warnLogger.Printf(s, a...)
 }
 
 func (l *Logger) Error(s string, a ...interface{}) {
+	s = l.addCaller(s)
 	l.errorLogger.Printf(s, a...)
 }
 
 func (l *Logger) Fatal(s string, a ...interface{}) {
+	s = l.addCaller(s)
 	l.errorLogger.Panicf(s, a...)
+}
+
+func (l *Logger) addCaller(s string) string{
+	_, file, line, _ := runtime.Caller(2)
+	fileParts := strings.Split(file, "/")
+	source := fileParts[len(fileParts)-1]
+	return source + " " + fmt.Sprint(line) + " " + s
 }
 
 // Public method to instantiate base loggers, return aggregated logger object
@@ -42,7 +56,8 @@ func GetLogger(logPath string) (Logger, *os.File) {
 	}
 	mw := io.MultiWriter(os.Stdout, file) 
 	// common logging flags
-	flags := log.LstdFlags | log.Lshortfile
+	//flags := log.LstdFlags | log.Lshortfile
+	flags := log.LstdFlags
 	infoLogger := log.New(mw, "INFO ", flags)
 	warnLogger := log.New(mw, "WARN ", flags)
 	errorLogger := log.New(mw, "ERROR ", flags)

@@ -113,10 +113,10 @@ func (c *CountyServiceImpl) GetCountyById(id int, fs model.FilingStatus, residen
 // helper method with core logic to update caches and return responses
 func (c *CountyServiceImpl) placeCountyDataInMaps(countyData [][]interface{}, fs model.FilingStatus, resident bool, dependents int, income int) (*model.County, *model.CountyTaxList, *apperrors.AppError) {
 	// county name and id
-	countyName := countyData[0][COUNTY_NAME].(string)
-	countyId := countyData[0][COUNTY_ID].(int)
+	countyName := readAsString(countyData[0][COUNTY_NAME])
+	countyId := readAsInt(countyData[0][COUNTY_ID])
 
-	stateId := countyData[0][COUNTY_STATE_ID].(int)
+	stateId := readAsInt(countyData[0][COUNTY_STATE_ID])
 	stateName, err := c.stateService.getStateNameById(stateId)
 	if err != nil {
 		return nil, nil, err
@@ -127,20 +127,20 @@ func (c *CountyServiceImpl) placeCountyDataInMaps(countyData [][]interface{}, fs
 	var taxLocales []model.TaxLocale
 	for _, row := range countyData {
 		// attributes of the locality read in from the row
-		tli := row[COUNTY_TAX_JURISDICTION_ID].(int)
-		tln := row[COUNTY_TAX_JURISDICTION_NAME].(string)
-		resDesc := row[COUNTY_RESIDENT_DESC].(string)
-		resRate := row[COUNTY_RESIDENT_RATE].(float64)
-		resMonthFee := row[COUNTY_RESIDENT_MONTH_FEE].(float64)
-		resYearFee := row[COUNTY_RESIDENT_YEAR_FEE].(float64)
-		resPayPeriod := row[COUNTY_RESIDENT_PAY_PERIOD_FEE].(float64)
-		resStateRate := row[COUNTY_RESIDENT_STATE_RATE].(float64)
-		nonResDesc := row[COUNTY_NONRESIDENT_DESC].(string)
-		nonResRate := row[COUNTY_NONRESIDENT_RATE].(float64)
-		nonResMonthFee := row[COUNTY_NONRESIDENT_MONTH_FEE].(float64)
-		nonResYearFee := row[COUNTY_NONRESIDENT_YEAR_FEE].(float64)
-		nonResPayPeriod := row[COUNTY_NONRESIDENT_PAY_PERIOD_FEE].(float64)
-		nonResStateRate := row[COUNTY_NONRESIDENT_STATE_RATE].(float64)
+		tli := readAsInt(row[COUNTY_TAX_JURISDICTION_ID])
+		tln := readAsString(row[COUNTY_TAX_JURISDICTION_NAME])
+		resDesc := readAsString(row[COUNTY_RESIDENT_DESC])
+		resRate := readAsFloat(row[COUNTY_RESIDENT_RATE])
+		resMonthFee := readAsFloat(row[COUNTY_RESIDENT_MONTH_FEE])
+		resYearFee := readAsFloat(row[COUNTY_RESIDENT_YEAR_FEE])
+		resPayPeriod := readAsFloat(row[COUNTY_RESIDENT_PAY_PERIOD_FEE])
+		resStateRate := readAsFloat(row[COUNTY_RESIDENT_STATE_RATE])
+		nonResDesc := readAsString(row[COUNTY_NONRESIDENT_DESC])
+		nonResRate := readAsFloat(row[COUNTY_NONRESIDENT_RATE])
+		nonResMonthFee := readAsFloat(row[COUNTY_NONRESIDENT_MONTH_FEE])
+		nonResYearFee := readAsFloat(row[COUNTY_NONRESIDENT_YEAR_FEE])
+		nonResPayPeriod := readAsFloat(row[COUNTY_NONRESIDENT_PAY_PERIOD_FEE])
+		nonResStateRate := readAsFloat(row[COUNTY_NONRESIDENT_STATE_RATE])
 
 		// the different levels of tax liability to populate
 		var tl, fl, sl, ll int
@@ -222,12 +222,12 @@ func (c *CountyServiceImpl) buildCounty(countyId int, countyName string, stateId
 		County_name:   countyName,
 		State_id:      stateId,
 		State_name:    stateName,
-		Pop:           countyDataRow[COUNTY_STATE_ID].(int),
-		Male_pop:      countyDataRow[COUNTY_MALE_POP].(int),
-		Female_pop:    countyDataRow[COUNTY_FEMALE_POP].(int),
-		Median_income: countyDataRow[COUNTY_MEDIAN_INCOME].(int),
-		Average_rent:  countyDataRow[COUNTY_AVERAGE_RENT].(int),
-		Commute:       countyDataRow[COUNTY_COMMUTE].(int),
+		Pop:           readAsInt(countyDataRow[COUNTY_STATE_ID]),
+		Male_pop:      readAsInt(countyDataRow[COUNTY_MALE_POP]),
+		Female_pop:    readAsInt(countyDataRow[COUNTY_FEMALE_POP]),
+		Median_income: readAsInt(countyDataRow[COUNTY_MEDIAN_INCOME]),
+		Average_rent:  readAsInt(countyDataRow[COUNTY_AVERAGE_RENT]),
+		Commute:       readAsInt(countyDataRow[COUNTY_COMMUTE]),
 		Tax_locale:    taxLocales,
 	}
 }
@@ -285,15 +285,15 @@ func (c *CountyServiceImpl) GetCountyList(metricName string, n int) (*model.Coun
 	logger.Info("Processing the response")
 	countyList := model.GetMetricCountyList(metricName)
 	for _, countyData := range countyListData {
-		stateId := countyData[COUNTY_LIST_STATE_ID].(int)
+		stateId := readAsInt(countyData[COUNTY_LIST_STATE_ID])
 		stateName, err := c.stateService.getStateNameById(stateId)
 		if err != nil {
 			return nil, err
 		}
 		metricValue := c.metricIndexMap[metricName]
 		cmp := model.CountyMetricPair{
-			County_id : countyData[COUNTY_LIST_ID].(int), 
-			County_name : countyData[COUNTY_LIST_NAME].(string),
+			County_id : readAsInt(countyData[COUNTY_LIST_ID]), 
+			County_name : readAsString(countyData[COUNTY_LIST_NAME]),
 			State_id : stateId,
 			State_name : stateName,
 			Metric_value : metricValue,

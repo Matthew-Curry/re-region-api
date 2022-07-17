@@ -2,6 +2,8 @@ package model
 
 import (
 	"encoding/json"
+
+    "github.com/Matthew-Curry/re-region-api/apperrors"
 )
 
 type State struct {
@@ -21,6 +23,12 @@ type State struct {
 }
 
 // marshaller for controller
-func (s *State) MarshallState() ([]byte, error) {
-	return json.Marshal(s)
+func (s *State) MarshallState() ([]byte, *apperrors.AppError) {
+	r, err := json.Marshal(s)
+
+    if err != nil {
+		return nil, apperrors.UnableToMarshall(err)
+	}
+
+	return r, nil
 }

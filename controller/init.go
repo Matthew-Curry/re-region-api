@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"github.com/Matthew-Curry/re-region-api/apperrors"
 	"github.com/Matthew-Curry/re-region-api/dao"
 	"github.com/Matthew-Curry/re-region-api/logging"
 	"github.com/Matthew-Curry/re-region-api/services"
@@ -19,7 +20,7 @@ var countyService services.CountyServiceInterface = nil
 // public method called to initialize services if they have not been initilized
 func InitServices() error {
 	// initialize any nil services in order of dependency
-	var err error = nil
+	var err *apperrors.AppError = nil
 	if daoImpl == nil {
 		daoImpl, err = dao.GetPostgresDao()
 		if err != nil {
@@ -39,7 +40,7 @@ func InitServices() error {
 
 		logger.Info("Successfully initialized federal service")
 	}
-
+	
 	if stateService == nil {
 		stateService, err = services.GetStateServiceImpl(daoImpl, federalService)
 		if err != nil {
@@ -49,7 +50,7 @@ func InitServices() error {
 
 		logger.Info("Successfully initialized state service")
 	}
-
+	
 	if countyService == nil {
 		countyService, err = services.GetCountyServiceImpl(daoImpl, stateService)
 		if err != nil {

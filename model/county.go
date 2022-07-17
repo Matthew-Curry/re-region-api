@@ -2,6 +2,8 @@ package model
 
 import (
 	"encoding/json"
+
+	"github.com/Matthew-Curry/re-region-api/apperrors"
 )
 
 type County struct {
@@ -31,6 +33,12 @@ type TaxLocale struct {
 
 
 // marshaller for controller
-func (c *County) MarshallCounty() ([]byte, error) {
-	return json.Marshal(c)
+func (c *County) MarshallCounty() ([]byte, *apperrors.AppError) {
+	r, err := json.Marshal(c)
+
+	if err != nil {
+		return nil, apperrors.UnableToMarshall(err)
+	}
+
+	return r, nil
 }

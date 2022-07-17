@@ -11,6 +11,7 @@ import (
 // helper method to write the response
 func writeResponse(w http.ResponseWriter, isGet bool, statusCode int, b []byte) {
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.WriteHeader(statusCode)
 	// only write the response for get requests
 	if isGet {

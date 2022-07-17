@@ -63,7 +63,8 @@ func CountyNameNotFound(county string, source error) *AppError {
 func CountyIDNotFound(county int, source error) *AppError {
 	message := fmt.Sprintf("Unable to retrieve data for county id %v: %s", county, source.Error())
 	kind := InternalError
-	return &AppError{message: message, kind: kind, source: nil}
+	a := AppError{message: message, kind: kind, source: nil}
+	return &a
 }
 
 func FederalTaxNotFound(source error) *AppError{
@@ -104,4 +105,10 @@ func StateIDNotInTaxCache(state_id int) *AppError{
 	message := fmt.Sprintf("State ID not in state tax cache %v", state_id)
 	kind := InternalError
 	return &AppError{message: message, kind: kind, source: nil}
+}
+
+func UnableToMarshall(source error) *AppError{
+	message := fmt.Sprintf("Unable to marshall response object: %s", source.Error())
+	kind := InternalError
+	return &AppError{message: message, kind: kind, source: source}
 }
