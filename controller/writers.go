@@ -12,6 +12,8 @@ import (
 func writeResponse(w http.ResponseWriter, isGet bool, statusCode int, b []byte) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "*")
+	w.Header().Set("Access-Control-Allow-Methods", "*")
 	w.WriteHeader(statusCode)
 	// only write the response for get requests
 	if isGet {
@@ -26,6 +28,11 @@ func nameOrId(name string, id int) string {
 	}
 
 	return fmt.Sprint(id)
+}
+
+// write the response to the preflight options request
+func writePreFlightRequest(w http.ResponseWriter) {
+	writeResponse(w, false, http.StatusOK, []byte{})
 }
 
 // log and response message for no entity available

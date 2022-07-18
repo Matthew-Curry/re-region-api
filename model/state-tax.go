@@ -60,6 +60,7 @@ func (s *StateTaxInfo) AppendToOrderedList(bracket StateBracket) {
 	// if i is the next index, can just append
 	if i == len(s.bracket_list) {
 		s.bracket_list = append(s.bracket_list, bracket)
+        return
 	}
 
 	// else shift elements in slice at the insertion index. Using append will not allocate extra memory

@@ -30,6 +30,7 @@ func (s *StateList) AppendToRankedList(metricPair StateMetricPair) {
 	// if i is the next index, can just append
 	if i == len(s.ranked_list) {
 		s.ranked_list = append(s.ranked_list, metricPair)
+		return
 	}
 
 	// else shift elements in slice at the insertion index. Using append will not allocate extra memory

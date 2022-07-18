@@ -13,15 +13,17 @@ import (
 )
 
 // helper method which returns whether an HTTP request method is GET or HEAD (supported methods)
-func isGet(r *http.Request) (bool, string) {
+func getHTTPMethod(r *http.Request) (bool, bool, string) {
 	if r.Method == http.MethodGet {
-		return true, ""
+		return true, false, ""
+	} else if r.Method == http.MethodOptions {
+		return false, true, ""
 	} else if r.Method == http.MethodHead {
-		return false, ""
+		return false, false, ""
 	}
 
 	// invalid method
-	return false, fmt.Sprintf("The provided HTTP method %s is unsupported", r.Method)
+	return false, false, fmt.Sprintf("The provided HTTP method %s is unsupported", r.Method)
 }
 
 // handler for requests for county resource
@@ -33,10 +35,15 @@ func CountyHandler(w http.ResponseWriter, r *http.Request) {
 	if errStr != "" {
 		writeGotBadParams(w, errStr)
 	}
-	// is the request GET or HEAD?
-	isGet, errStr := isGet(r)
+	// http method validation
+	isGet, isOption, errStr := getHTTPMethod(r)
+	if isOption {
+		writePreFlightRequest(w)
+		return
+	}
 	if errStr != "" {
 		writeStatusNotImpl(w, errStr)
+		return
 	}
 
 	// call the appropriate service method based on the provided params
@@ -75,10 +82,15 @@ func StateHandler(w http.ResponseWriter, r *http.Request) {
 	if errStr != "" {
 		writeGotBadParams(w, errStr)
 	}
-	// is the request GET or HEAD?
-	isGet, errStr := isGet(r)
+	// http method validation
+	isGet, isOption, errStr := getHTTPMethod(r)
+	if isOption {
+		writePreFlightRequest(w)
+		return
+	}
 	if errStr != "" {
 		writeStatusNotImpl(w, errStr)
+		return
 	}
 
 	// call the appropriate service method
@@ -93,10 +105,12 @@ func StateHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// check errors, write the response based on state value
-	if err.IsKind(apperrors.DataNotFound) {
-		writeNoEntityAvailable(w, isGet, "state", nameOrId(name, id))
-	} else if err.IsKind(apperrors.InternalError) || err != nil {
-		writeUnableToGetEntity(w, err, isGet, "state", nameOrId(name, id))
+	if err != nil {
+		if err.IsKind(apperrors.DataNotFound) {
+			writeNoEntityAvailable(w, isGet, "state", nameOrId(name, id))
+		} else if err.IsKind(apperrors.InternalError) || err != nil {
+			writeUnableToGetEntity(w, err, isGet, "state", nameOrId(name, id))
+		}
 	} else {
 		b, err := state.MarshallState()
 		if err != nil {
@@ -117,10 +131,15 @@ func CountyListHandler(w http.ResponseWriter, r *http.Request) {
 	if errStr != "" {
 		writeGotBadParams(w, errStr)
 	}
-	// is the request GET or HEAD?
-	isGet, errStr := isGet(r)
+	// http method validation
+	isGet, isOption, errStr := getHTTPMethod(r)
+	if isOption {
+		writePreFlightRequest(w)
+		return
+	}
 	if errStr != "" {
 		writeStatusNotImpl(w, errStr)
+		return
 	}
 
 	// get the county list
@@ -152,22 +171,30 @@ func StateListHandler(w http.ResponseWriter, r *http.Request) {
 	metricName, size, errStr := getListParams(r)
 	if errStr != "" {
 		writeGotBadParams(w, errStr)
+		return
 	}
-	// is the request GET or HEAD?
-	isGet, errStr := isGet(r)
+	// http method validation
+	isGet, isOption, errStr := getHTTPMethod(r)
+	if isOption {
+		writePreFlightRequest(w)
+		return
+	}
 	if errStr != "" {
 		writeStatusNotImpl(w, errStr)
+		return
 	}
 
-	// if there is an error, return bad response, else call the appropriate service method
+	// retrieve the state list
 	logger.Info("Getting state list for metric %s", metricName)
 	stateList, err := stateService.GetStateList(metricName, size)
 
-	// write the response based on county value
-	if err.IsKind(apperrors.DataNotFound) {
-		writeNoEntityAvailable(w, isGet, "metric", metricName)
-	} else if err.IsKind(apperrors.InternalError) || err != nil {
-		writeUnableToGetEntity(w, err, isGet, "metric", metricName)
+	// write the response based on state value
+	if err != nil {
+		if err.IsKind(apperrors.DataNotFound) {
+			writeNoEntityAvailable(w, isGet, "metric", metricName)
+		} else if err.IsKind(apperrors.InternalError) || err != nil {
+			writeUnableToGetEntity(w, err, isGet, "metric", metricName)
+		}
 	} else {
 		b, err := stateList.MarshallStateList()
 		if err != nil {
@@ -186,10 +213,15 @@ func CountyTaxesHandler(w http.ResponseWriter, r *http.Request) {
 	// params
 	idStr := r.URL.Query().Get("id")
 	name := r.URL.Query().Get("name")
-	// is the request GET or HEAD?
-	isGet, errStr := isGet(r)
+	// http method validation
+	isGet, isOption, errStr := getHTTPMethod(r)
+	if isOption {
+		writePreFlightRequest(w)
+		return
+	}
 	if errStr != "" {
 		writeGotBadParams(w, errStr)
+		return
 	}
 
 	var countyTaxList *model.CountyTaxList
@@ -229,43 +261,48 @@ func StateTaxesHandler(w http.ResponseWriter, r *http.Request) {
 	// params
 	idStr := r.URL.Query().Get("id")
 	name := r.URL.Query().Get("name")
-	// is the request GET or HEAD?
-	isGet, errStr := isGet(r)
-	if errStr != "" {
+	// http method validation
+	isGet, isOption, errStr := getHTTPMethod(r)
+	if isOption {
+		writePreFlightRequest(w)
+		return
+	} else if errStr != "" {
 		writeGotBadParams(w, errStr)
+		return
 	} else if idStr == "" && name == "" {
 		writeGotBadParams(w, "A state id or name must be provided to retrieve tax information.")
-	} else {
-		var stateTaxInfo *model.StateTaxInfo
-		var err *apperrors.AppError
-		var id int
-		if idStr != "" {
-			id, convErr := strconv.Atoi(idStr)
-			if convErr == nil {
-				logger.Info("Getting tax information for state %s", id)
-				stateTaxInfo, err = stateService.GetStateTaxInfoById(id)
-			} else {
-				writeNoEntityAvailable(w, isGet, "state", fmt.Sprint(id))
-			}
-		} else if name != "" {
-			logger.Info("Getting tax information for state %s", name)
-			stateTaxInfo, err = stateService.GetStateTaxInfoByName(name)
-		}
-		
-		if err != nil {
-			if err.IsKind(apperrors.DataNotFound) {
-				writeNoEntityAvailable(w, isGet, "state", nameOrId(name, id))
-			} else if err.IsKind(apperrors.InternalError) || err != nil {
-				writeUnableToGetEntity(w, err, isGet, "state", nameOrId(name, id))
-			}
+		return
+	}
+
+	var stateTaxInfo *model.StateTaxInfo
+	var err *apperrors.AppError
+	var id int
+	if idStr != "" {
+		id, convErr := strconv.Atoi(idStr)
+		if convErr == nil {
+			logger.Info("Getting tax information for state %s", id)
+			stateTaxInfo, err = stateService.GetStateTaxInfoById(id)
 		} else {
-			fmt.Println(stateTaxInfo)
-			b, err := stateTaxInfo.MarshallStateTaxInfo()
-			if err != nil {
-				writeGotMarshallError(w, err, isGet, "state", nameOrId(name, id))
-			} else {
-				write200Response(w, isGet, start, b)
-			}
+			writeNoEntityAvailable(w, isGet, "state", fmt.Sprint(id))
+			return
+		}
+	} else if name != "" {
+		logger.Info("Getting tax information for state %s", name)
+		stateTaxInfo, err = stateService.GetStateTaxInfoByName(name)
+	}
+
+	if err != nil {
+		if err.IsKind(apperrors.DataNotFound) {
+			writeNoEntityAvailable(w, isGet, "state", nameOrId(name, id))
+		} else if err.IsKind(apperrors.InternalError) || err != nil {
+			writeUnableToGetEntity(w, err, isGet, "state", nameOrId(name, id))
+		}
+	} else {
+		b, err := stateTaxInfo.MarshallStateTaxInfo()
+		if err != nil {
+			writeGotMarshallError(w, err, isGet, "state", nameOrId(name, id))
+		} else {
+			write200Response(w, isGet, start, b)
 		}
 	}
 }
@@ -274,15 +311,21 @@ func StateTaxesHandler(w http.ResponseWriter, r *http.Request) {
 func FederalTaxesHandler(w http.ResponseWriter, r *http.Request) {
 	logger.Info("Get federal tax info called")
 	start := time.Now()
-	// is the request GET or HEAD?
-	isGet, errStr := isGet(r)
+	// http method validation
+	isGet, isOption, errStr := getHTTPMethod(r)
+	if isOption {
+		writePreFlightRequest(w)
+		return
+	}
 	if errStr != "" {
 		writeGotBadParams(w, errStr)
+		return
 	}
+
 	logger.Info("Getting federal tax info")
-	federlTaxInfo, rErr := federalService.GetFederalTaxInfo()
-	if rErr != nil {
-		if rErr.IsKind(apperrors.InternalError) || rErr != nil {
+	federlTaxInfo, err := federalService.GetFederalTaxInfo()
+	if err != nil {
+		if err.IsKind(apperrors.InternalError) || err != nil {
 			writeResponse(w, isGet, http.StatusInternalServerError, []byte("Unable to retrieve federal tax information due to an internal error."))
 		}
 	}
@@ -292,6 +335,7 @@ func FederalTaxesHandler(w http.ResponseWriter, r *http.Request) {
 	} else {
 		write200Response(w, isGet, start, b)
 	}
+
 }
 
 // health endpoint of the app

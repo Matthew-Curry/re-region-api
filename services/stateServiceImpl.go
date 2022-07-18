@@ -6,8 +6,6 @@ import (
 	"github.com/Matthew-Curry/re-region-api/apperrors"
 	"github.com/Matthew-Curry/re-region-api/dao"
 	"github.com/Matthew-Curry/re-region-api/model"
-
-	"fmt"
 )
 
 const (
@@ -147,13 +145,13 @@ func buildStateListCaches(stateCensusData [][]interface{}) map[string]*model.Sta
 func buildStateTaxCaches(stateTaxData [][]interface{}) (map[int]*model.StateTaxInfo, map[string]*model.StateTaxInfo) {
 	idMp := make(map[int]*model.StateTaxInfo)
 	nameMp := make(map[string]*model.StateTaxInfo)
-	for _, state := range stateTaxData {
+	for _, row := range stateTaxData {
 		// if state tax info is not in id map, create for both maps
-		si := readAsInt(state[TAX_STATE_ID])
-		sn := readAsString(state[TAX_STATE_NAME])
+		si := readAsInt(row[TAX_STATE_ID])
+		sn := readAsString(row[TAX_STATE_NAME])
 		if _, ok := idMp[si]; !ok {
-			stateTaxInfo := model.GetStateTaxInfo(si, sn, readAsInt(state[SINGLE_DEDUCTION]), readAsInt(state[MARRIED_DEDUCTION]),
-			readAsInt(state[SINGLE_EXEMPTION]), readAsInt(state[MARRIED_EXEMPTION]), readAsInt(state[DEPENDENT_EXEMPTION]))
+			stateTaxInfo := model.GetStateTaxInfo(si, sn, readAsInt(row[SINGLE_DEDUCTION]), readAsInt(row[MARRIED_DEDUCTION]),
+			readAsInt(row[SINGLE_EXEMPTION]), readAsInt(row[MARRIED_EXEMPTION]), readAsInt(row[DEPENDENT_EXEMPTION]))
 
 			idMp[si] = stateTaxInfo
 			nameMp[sn] = stateTaxInfo
@@ -161,14 +159,14 @@ func buildStateTaxCaches(stateTaxData [][]interface{}) (map[int]*model.StateTaxI
 		}
 		// append bracket information to the tax info at this id and name position in the respective maps
 		sb := model.StateBracket{
-			Single_rate:     readAsFloat(state[SINGLE_RATE]),
-			Single_bracket:  readAsInt(state[SINGLE_BRACKET]),
-			Married_rate:    readAsFloat(state[MARRIED_RATE]),
-			Married_bracket: readAsInt(state[MARRIED_BRACKET]),
+			Single_rate:     readAsFloat(row[SINGLE_RATE]),
+			Single_bracket:  readAsInt(row[SINGLE_BRACKET]),
+			Married_rate:    readAsFloat(row[MARRIED_RATE]),
+			Married_bracket: readAsInt(row[MARRIED_BRACKET]),
 		}
-		// add bracket to list in order of the single rate so they ascend properly
+		// add bracket to list in order of the single rate so they ascend properly. Call for just one map 
+		// because they each point to the same tax info
 		idMp[si].AppendToOrderedList(sb)
-		nameMp[sn].AppendToOrderedList(sb)
 
 	}
 
@@ -286,8 +284,7 @@ func (s *StateServiceImpl) GetStateTaxInfoByName(name string) (*model.StateTaxIn
 		logger.Warn("State %s not found in the state tax cache", name)
 		return nil, apperrors.StateNameNotInTaxCache(name)
 	}
-	fmt.Println("THIS IS THE RESPONSE")
-	fmt.Println(res)
+
 	return res, nil
 
 }
