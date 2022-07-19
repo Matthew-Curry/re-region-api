@@ -2814,3 +2814,1665 @@ INFO 2022/07/18 19:57:38 bootstrap.go 43 Listening at :8080
 INFO 2022/07/18 19:57:45 controller.go 259 Get state tax info called
 INFO 2022/07/18 19:57:45 controller.go 283 Getting tax information for state %!s(int=50)
 INFO 2022/07/18 19:57:45 writers.go 74 Returned 200 response in 97.883µs
+INFO 2022/07/19 08:28:49 main.go 11 App started
+INFO 2022/07/19 08:28:49 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 08:28:49 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 08:28:49 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 08:28:49 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 08:28:49 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 08:28:49 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 08:28:49 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 08:28:49 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 08:28:49 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:28:49 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:28:49 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 08:28:49 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 08:28:49 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 08:28:49 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/19 08:28:49 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 08:28:49 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 08:28:49 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 08:28:49 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:28:49 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:28:49 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/19 08:28:49 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 08:28:49 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 08:28:49 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 08:28:49 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:28:49 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:28:49 stateServiceImpl.go 84 Building caches
+INFO 2022/07/19 08:28:49 stateServiceImpl.go 86 State cache created
+INFO 2022/07/19 08:28:49 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/19 08:28:49 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/19 08:28:49 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/19 08:28:49 init.go 51 Successfully initialized state service
+INFO 2022/07/19 08:28:49 init.go 61 Successfully initialized county service
+INFO 2022/07/19 08:28:49 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 08:31:22 controller.go 78 Get state called
+WARN 2022/07/19 08:31:22 writers.go 54 Bad params recieved, writing bad request response: 
+The provided filing status must indicate 'S', 'H', or 'M'.
+INFO 2022/07/19 08:31:22 controller.go 103 Getting state%!(EXTRA int=50)
+INFO 2022/07/19 08:31:22 stateServiceImpl.go 185 Processing the tax liability for %!s(int=50)
+INFO 2022/07/19 08:31:22 stateServiceImpl.go 225 Processing state liability
+INFO 2022/07/19 08:31:22 stateServiceImpl.go 236 Processing federal liability
+INFO 2022/07/19 08:33:26 controller.go 78 Get state called
+WARN 2022/07/19 08:33:26 writers.go 54 Bad params recieved, writing bad request response: 
+The provided filing status must indicate 'S', 'H', or 'M'.
+INFO 2022/07/19 08:33:26 controller.go 103 Getting state%!(EXTRA int=50)
+INFO 2022/07/19 08:33:26 stateServiceImpl.go 185 Processing the tax liability for %!s(int=50)
+INFO 2022/07/19 08:33:26 stateServiceImpl.go 225 Processing state liability
+INFO 2022/07/19 08:33:26 stateServiceImpl.go 236 Processing federal liability
+INFO 2022/07/19 08:33:33 main.go 11 App started
+INFO 2022/07/19 08:33:33 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 08:33:33 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 08:33:33 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 08:33:33 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 08:33:33 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 08:33:33 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 08:33:33 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 08:33:33 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 08:33:33 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:33:33 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:33:33 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 08:33:33 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 08:33:33 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 08:33:33 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/19 08:33:33 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 08:33:33 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 08:33:33 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 08:33:33 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:33:33 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:33:33 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/19 08:33:33 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 08:33:33 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 08:33:33 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 08:33:33 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:33:33 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:33:33 stateServiceImpl.go 84 Building caches
+INFO 2022/07/19 08:33:33 stateServiceImpl.go 86 State cache created
+INFO 2022/07/19 08:33:33 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/19 08:33:33 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/19 08:33:33 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/19 08:33:33 init.go 51 Successfully initialized state service
+INFO 2022/07/19 08:33:33 init.go 61 Successfully initialized county service
+INFO 2022/07/19 08:33:33 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 08:33:36 controller.go 78 Get state called
+INFO 2022/07/19 08:33:36 controller.go 103 Getting state%!(EXTRA int=50)
+INFO 2022/07/19 08:33:36 stateServiceImpl.go 185 Processing the tax liability for %!s(int=50)
+INFO 2022/07/19 08:33:36 stateServiceImpl.go 225 Processing state liability
+INFO 2022/07/19 08:33:36 stateServiceImpl.go 236 Processing federal liability
+INFO 2022/07/19 08:35:33 main.go 11 App started
+INFO 2022/07/19 08:35:33 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 08:35:33 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 08:35:33 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 08:35:33 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 08:35:33 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 08:35:33 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 08:35:33 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 08:35:33 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 08:35:33 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:35:33 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:35:33 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 08:35:33 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 08:35:33 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 08:35:33 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/19 08:35:33 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 08:35:33 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 08:35:33 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 08:35:33 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:35:33 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:35:33 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/19 08:35:33 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 08:35:33 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 08:35:33 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 08:35:33 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:35:33 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:35:33 stateServiceImpl.go 86 Building caches
+INFO 2022/07/19 08:35:33 stateServiceImpl.go 88 State cache created
+INFO 2022/07/19 08:35:33 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/19 08:35:33 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/19 08:35:33 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/19 08:35:33 init.go 51 Successfully initialized state service
+INFO 2022/07/19 08:35:33 init.go 61 Successfully initialized county service
+INFO 2022/07/19 08:35:33 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 08:35:38 controller.go 78 Get state called
+INFO 2022/07/19 08:35:38 controller.go 103 Getting state%!(EXTRA int=50)
+INFO 2022/07/19 08:35:38 stateServiceImpl.go 187 Processing the tax liability for %!s(int=50)
+INFO 2022/07/19 08:35:38 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/19 08:35:38 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/19 08:38:18 main.go 11 App started
+INFO 2022/07/19 08:38:18 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 08:38:18 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 08:38:18 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 08:38:18 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 08:38:18 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 08:38:18 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 08:38:18 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 08:38:18 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 08:38:18 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:38:18 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:38:18 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 08:38:18 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 08:38:18 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 08:38:18 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/19 08:38:18 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 08:38:18 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 08:38:18 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 08:38:18 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:38:18 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:38:18 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/19 08:38:18 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 08:38:18 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 08:38:18 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 08:38:18 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:38:18 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:38:18 stateServiceImpl.go 86 Building caches
+INFO 2022/07/19 08:38:18 stateServiceImpl.go 88 State cache created
+INFO 2022/07/19 08:38:18 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/19 08:38:18 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/19 08:38:18 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/19 08:38:18 init.go 51 Successfully initialized state service
+INFO 2022/07/19 08:38:18 init.go 61 Successfully initialized county service
+INFO 2022/07/19 08:38:18 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 08:38:21 controller.go 78 Get state called
+INFO 2022/07/19 08:38:21 controller.go 103 Getting state%!(EXTRA int=50)
+INFO 2022/07/19 08:38:21 stateServiceImpl.go 187 Processing the tax liability for %!s(int=50)
+INFO 2022/07/19 08:38:21 stateServiceImpl.go 238 Processing state liability
+INFO 2022/07/19 08:38:21 stateServiceImpl.go 249 Processing federal liability
+INFO 2022/07/19 08:45:44 main.go 11 App started
+INFO 2022/07/19 08:45:44 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 08:45:44 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 08:45:44 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 08:45:44 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 08:45:44 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 08:45:44 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 08:45:44 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 08:45:44 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 08:45:44 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:45:44 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:45:44 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 08:45:44 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 08:45:44 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 08:45:44 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/19 08:45:44 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 08:45:44 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 08:45:44 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 08:45:44 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:45:44 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:45:44 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/19 08:45:44 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 08:45:44 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 08:45:44 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 08:45:44 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:45:44 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:45:44 stateServiceImpl.go 86 Building caches
+INFO 2022/07/19 08:45:44 stateServiceImpl.go 88 State cache created
+INFO 2022/07/19 08:45:44 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/19 08:45:44 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/19 08:45:44 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/19 08:45:44 init.go 51 Successfully initialized state service
+INFO 2022/07/19 08:45:44 init.go 61 Successfully initialized county service
+INFO 2022/07/19 08:45:44 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 08:45:48 controller.go 78 Get state called
+INFO 2022/07/19 08:45:48 controller.go 103 Getting state%!(EXTRA int=50)
+INFO 2022/07/19 08:45:48 stateServiceImpl.go 189 Processing the tax liability for %!s(int=50)
+INFO 2022/07/19 08:45:48 stateServiceImpl.go 240 Processing state liability
+INFO 2022/07/19 08:45:48 stateServiceImpl.go 251 Processing federal liability
+INFO 2022/07/19 08:45:48 writers.go 74 Returned 200 response in 117.851µs
+INFO 2022/07/19 08:46:25 main.go 11 App started
+INFO 2022/07/19 08:46:25 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 08:46:25 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 08:46:25 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 08:46:25 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 08:46:25 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 08:46:25 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 08:46:25 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 08:46:25 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 08:46:25 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:46:25 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:46:25 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 08:46:25 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 08:46:25 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 08:46:25 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/19 08:46:25 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 08:46:25 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 08:46:25 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 08:46:25 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:46:25 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:46:25 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/19 08:46:25 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 08:46:25 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 08:46:25 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 08:46:25 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:46:25 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:46:25 stateServiceImpl.go 86 Building caches
+INFO 2022/07/19 08:46:25 stateServiceImpl.go 88 State cache created
+INFO 2022/07/19 08:46:25 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/19 08:46:25 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/19 08:46:25 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/19 08:46:25 init.go 51 Successfully initialized state service
+INFO 2022/07/19 08:46:25 init.go 61 Successfully initialized county service
+INFO 2022/07/19 08:46:25 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 08:46:30 controller.go 78 Get state called
+INFO 2022/07/19 08:46:30 controller.go 103 Getting state%!(EXTRA int=50)
+INFO 2022/07/19 08:46:30 stateServiceImpl.go 183 Processing the tax liability for %!s(int=50)
+INFO 2022/07/19 08:46:30 stateServiceImpl.go 234 Processing state liability
+INFO 2022/07/19 08:46:30 stateServiceImpl.go 245 Processing federal liability
+INFO 2022/07/19 08:46:30 writers.go 74 Returned 200 response in 140.441µs
+INFO 2022/07/19 08:47:26 controller.go 78 Get state called
+INFO 2022/07/19 08:47:26 controller.go 103 Getting state%!(EXTRA int=1)
+INFO 2022/07/19 08:47:26 stateServiceImpl.go 183 Processing the tax liability for %!s(int=1)
+INFO 2022/07/19 08:47:26 stateServiceImpl.go 234 Processing state liability
+INFO 2022/07/19 08:47:26 controller.go 78 Get state called
+INFO 2022/07/19 08:47:26 controller.go 103 Getting state%!(EXTRA int=1)
+INFO 2022/07/19 08:47:26 stateServiceImpl.go 183 Processing the tax liability for %!s(int=1)
+INFO 2022/07/19 08:47:26 stateServiceImpl.go 234 Processing state liability
+INFO 2022/07/19 08:47:47 controller.go 78 Get state called
+INFO 2022/07/19 08:47:47 controller.go 103 Getting state%!(EXTRA int=10)
+INFO 2022/07/19 08:47:47 stateServiceImpl.go 183 Processing the tax liability for %!s(int=10)
+INFO 2022/07/19 08:47:47 stateServiceImpl.go 234 Processing state liability
+INFO 2022/07/19 08:47:54 controller.go 78 Get state called
+INFO 2022/07/19 08:47:54 controller.go 103 Getting state%!(EXTRA int=15)
+INFO 2022/07/19 08:47:54 stateServiceImpl.go 183 Processing the tax liability for %!s(int=15)
+INFO 2022/07/19 08:47:54 stateServiceImpl.go 234 Processing state liability
+INFO 2022/07/19 08:47:54 stateServiceImpl.go 245 Processing federal liability
+INFO 2022/07/19 08:47:54 writers.go 74 Returned 200 response in 136.661µs
+INFO 2022/07/19 08:48:03 main.go 11 App started
+INFO 2022/07/19 08:48:03 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 08:48:03 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 08:48:03 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 08:48:03 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 08:48:03 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 08:48:03 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 08:48:03 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 08:48:03 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 08:48:03 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:48:03 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:48:03 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 08:48:03 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 08:48:03 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 08:48:03 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/19 08:48:03 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 08:48:03 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 08:48:03 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 08:48:03 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:48:03 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:48:03 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/19 08:48:03 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 08:48:03 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 08:48:03 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 08:48:03 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 08:48:03 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 08:48:03 stateServiceImpl.go 84 Building caches
+INFO 2022/07/19 08:48:03 stateServiceImpl.go 86 State cache created
+INFO 2022/07/19 08:48:03 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/19 08:48:03 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/19 08:48:03 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/19 08:48:03 init.go 51 Successfully initialized state service
+INFO 2022/07/19 08:48:03 init.go 61 Successfully initialized county service
+INFO 2022/07/19 08:48:03 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 08:48:07 controller.go 78 Get state called
+INFO 2022/07/19 08:48:07 controller.go 103 Getting state%!(EXTRA int=15)
+INFO 2022/07/19 08:48:07 stateServiceImpl.go 181 Processing the tax liability for %!s(int=15)
+INFO 2022/07/19 08:48:07 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 08:48:07 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 08:48:07 writers.go 74 Returned 200 response in 118.199µs
+INFO 2022/07/19 08:48:17 controller.go 78 Get state called
+INFO 2022/07/19 08:48:17 controller.go 103 Getting state%!(EXTRA int=24)
+INFO 2022/07/19 08:48:17 stateServiceImpl.go 181 Processing the tax liability for %!s(int=24)
+INFO 2022/07/19 08:48:17 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 08:48:17 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 08:48:17 writers.go 74 Returned 200 response in 148.048µs
+INFO 2022/07/19 08:49:04 controller.go 78 Get state called
+INFO 2022/07/19 08:49:04 controller.go 103 Getting state%!(EXTRA int=1)
+INFO 2022/07/19 08:49:04 stateServiceImpl.go 181 Processing the tax liability for %!s(int=1)
+INFO 2022/07/19 08:49:04 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 08:49:04 controller.go 78 Get state called
+INFO 2022/07/19 08:49:04 controller.go 103 Getting state%!(EXTRA int=1)
+INFO 2022/07/19 08:49:04 stateServiceImpl.go 181 Processing the tax liability for %!s(int=1)
+INFO 2022/07/19 08:49:04 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 08:49:08 controller.go 78 Get state called
+INFO 2022/07/19 08:49:08 controller.go 103 Getting state%!(EXTRA int=5)
+INFO 2022/07/19 08:49:08 stateServiceImpl.go 181 Processing the tax liability for %!s(int=5)
+INFO 2022/07/19 08:49:08 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 08:49:11 controller.go 78 Get state called
+INFO 2022/07/19 08:49:11 controller.go 103 Getting state%!(EXTRA int=10)
+INFO 2022/07/19 08:49:11 stateServiceImpl.go 181 Processing the tax liability for %!s(int=10)
+INFO 2022/07/19 08:49:11 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 08:49:15 controller.go 78 Get state called
+INFO 2022/07/19 08:49:15 controller.go 103 Getting state%!(EXTRA int=15)
+INFO 2022/07/19 08:49:15 stateServiceImpl.go 181 Processing the tax liability for %!s(int=15)
+INFO 2022/07/19 08:49:15 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 08:49:15 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 08:49:15 writers.go 74 Returned 200 response in 140.159µs
+INFO 2022/07/19 08:49:19 controller.go 78 Get state called
+INFO 2022/07/19 08:49:19 controller.go 103 Getting state%!(EXTRA int=14)
+WARN 2022/07/19 08:49:19 stateServiceImpl.go 177 State id %!s(int=14) not in the cache
+ERROR 2022/07/19 08:49:19 writers.go 48 Unable to retrieve state 14%!(EXTRA string=State ID not in state cache 14)
+INFO 2022/07/19 09:00:52 main.go 11 App started
+INFO 2022/07/19 09:00:52 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 09:00:52 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 09:00:52 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 09:00:52 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 09:00:52 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 09:00:52 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 09:00:52 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 09:00:52 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 09:00:52 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:00:52 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:00:52 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 09:00:52 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 09:00:52 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 09:00:52 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/19 09:00:52 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 09:00:52 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 09:00:52 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 09:00:52 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:00:52 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:00:52 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/19 09:00:52 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 09:00:52 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 09:00:52 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 09:00:52 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:00:52 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:00:52 stateServiceImpl.go 84 Building caches
+INFO 2022/07/19 09:00:52 stateServiceImpl.go 86 State cache created
+INFO 2022/07/19 09:00:52 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/19 09:00:52 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/19 09:00:52 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/19 09:00:52 init.go 51 Successfully initialized state service
+INFO 2022/07/19 09:00:52 init.go 61 Successfully initialized county service
+INFO 2022/07/19 09:00:52 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 09:00:55 controller.go 78 Get state called
+INFO 2022/07/19 09:00:55 controller.go 103 Getting state%!(EXTRA int=14)
+WARN 2022/07/19 09:00:55 stateServiceImpl.go 177 State id %!s(int=14) not in the cache
+ERROR 2022/07/19 09:00:55 writers.go 48 Unable to retrieve state 14%!(EXTRA string=State ID not in state cache 14)
+INFO 2022/07/19 09:01:03 controller.go 78 Get state called
+INFO 2022/07/19 09:01:03 controller.go 103 Getting state%!(EXTRA int=1)
+INFO 2022/07/19 09:01:03 stateServiceImpl.go 181 Processing the tax liability for %!s(int=1)
+INFO 2022/07/19 09:01:03 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:01:03 controller.go 78 Get state called
+INFO 2022/07/19 09:01:03 controller.go 103 Getting state%!(EXTRA int=1)
+INFO 2022/07/19 09:01:03 stateServiceImpl.go 181 Processing the tax liability for %!s(int=1)
+INFO 2022/07/19 09:01:03 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:01:43 controller.go 78 Get state called
+INFO 2022/07/19 09:01:43 controller.go 103 Getting state%!(EXTRA int=50)
+INFO 2022/07/19 09:01:43 stateServiceImpl.go 181 Processing the tax liability for %!s(int=50)
+INFO 2022/07/19 09:01:43 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:01:43 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:01:43 writers.go 74 Returned 200 response in 130.021µs
+INFO 2022/07/19 09:03:02 controller.go 259 Get state tax info called
+INFO 2022/07/19 09:03:02 controller.go 283 Getting tax information for state %!s(int=1)
+INFO 2022/07/19 09:03:02 writers.go 74 Returned 200 response in 195.018µs
+INFO 2022/07/19 09:03:39 controller.go 78 Get state called
+INFO 2022/07/19 09:03:39 controller.go 103 Getting state%!(EXTRA int=1)
+INFO 2022/07/19 09:03:39 stateServiceImpl.go 181 Processing the tax liability for %!s(int=1)
+INFO 2022/07/19 09:03:39 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:03:39 controller.go 78 Get state called
+INFO 2022/07/19 09:03:39 controller.go 103 Getting state%!(EXTRA int=1)
+INFO 2022/07/19 09:03:39 stateServiceImpl.go 181 Processing the tax liability for %!s(int=1)
+INFO 2022/07/19 09:03:39 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:05:22 main.go 11 App started
+INFO 2022/07/19 09:05:22 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 09:05:22 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 09:05:22 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 09:05:22 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 09:05:22 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 09:05:22 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 09:05:22 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 09:05:22 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 09:05:22 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:05:22 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:05:22 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 09:05:22 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 09:05:22 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 09:05:22 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/19 09:05:22 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 09:05:22 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 09:05:22 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 09:05:22 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:05:22 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:05:22 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/19 09:05:22 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 09:05:22 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 09:05:22 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 09:05:22 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:05:22 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:05:22 stateServiceImpl.go 84 Building caches
+INFO 2022/07/19 09:05:22 stateServiceImpl.go 86 State cache created
+INFO 2022/07/19 09:05:22 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/19 09:05:22 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/19 09:05:22 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/19 09:05:22 init.go 51 Successfully initialized state service
+INFO 2022/07/19 09:05:22 init.go 61 Successfully initialized county service
+INFO 2022/07/19 09:05:22 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 09:05:27 controller.go 78 Get state called
+INFO 2022/07/19 09:05:27 controller.go 103 Getting state%!(EXTRA int=1)
+INFO 2022/07/19 09:05:27 stateServiceImpl.go 181 Processing the tax liability for %!s(int=1)
+INFO 2022/07/19 09:05:27 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:05:27 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:05:27 writers.go 74 Returned 200 response in 147.628µs
+INFO 2022/07/19 09:07:10 main.go 11 App started
+INFO 2022/07/19 09:07:10 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 09:07:10 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 09:07:10 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 09:07:10 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 09:07:10 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 09:07:10 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 09:07:10 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 09:07:10 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 09:07:10 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:07:10 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:07:10 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 09:07:10 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 09:07:10 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 09:07:10 stateServiceImpl.go 69 Getting state census data from the data access layer
+INFO 2022/07/19 09:07:10 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 09:07:10 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 09:07:10 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 09:07:10 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:07:10 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:07:10 stateServiceImpl.go 76 Getting state tax data from the data access layer
+INFO 2022/07/19 09:07:10 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 09:07:10 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 09:07:10 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 09:07:10 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:07:10 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:07:10 stateServiceImpl.go 84 Building caches
+INFO 2022/07/19 09:07:10 stateServiceImpl.go 86 State cache created
+INFO 2022/07/19 09:07:10 stateServiceImpl.go 89 State list cache created
+INFO 2022/07/19 09:07:10 stateServiceImpl.go 92 State tax cache created
+INFO 2022/07/19 09:07:10 stateServiceImpl.go 93 All state caches are now created
+INFO 2022/07/19 09:07:10 init.go 51 Successfully initialized state service
+INFO 2022/07/19 09:07:10 init.go 61 Successfully initialized county service
+INFO 2022/07/19 09:07:10 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 09:07:22 controller.go 78 Get state called
+INFO 2022/07/19 09:07:22 controller.go 103 Getting state%!(EXTRA int=1)
+INFO 2022/07/19 09:07:22 stateServiceImpl.go 181 Processing the tax liability for %!s(int=1)
+INFO 2022/07/19 09:07:22 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:07:22 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:07:22 writers.go 74 Returned 200 response in 168.497µs
+INFO 2022/07/19 09:07:25 controller.go 78 Get state called
+INFO 2022/07/19 09:07:25 controller.go 103 Getting state%!(EXTRA int=2)
+INFO 2022/07/19 09:07:25 stateServiceImpl.go 181 Processing the tax liability for %!s(int=2)
+INFO 2022/07/19 09:07:25 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:07:25 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:07:25 writers.go 74 Returned 200 response in 70.398µs
+INFO 2022/07/19 09:07:29 controller.go 78 Get state called
+INFO 2022/07/19 09:07:29 controller.go 103 Getting state%!(EXTRA int=3)
+WARN 2022/07/19 09:07:29 stateServiceImpl.go 177 State id %!s(int=3) not in the cache
+ERROR 2022/07/19 09:07:29 writers.go 48 Unable to retrieve state 3%!(EXTRA string=State ID not in state cache 3)
+INFO 2022/07/19 09:09:14 controller.go 78 Get state called
+INFO 2022/07/19 09:09:14 controller.go 103 Getting state%!(EXTRA int=4)
+INFO 2022/07/19 09:09:14 stateServiceImpl.go 181 Processing the tax liability for %!s(int=4)
+INFO 2022/07/19 09:09:14 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:09:14 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:09:14 writers.go 74 Returned 200 response in 86.421µs
+INFO 2022/07/19 09:09:20 controller.go 78 Get state called
+INFO 2022/07/19 09:09:20 controller.go 103 Getting state%!(EXTRA int=5)
+INFO 2022/07/19 09:09:20 stateServiceImpl.go 181 Processing the tax liability for %!s(int=5)
+INFO 2022/07/19 09:09:20 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:09:20 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:09:20 writers.go 74 Returned 200 response in 91.757µs
+INFO 2022/07/19 09:09:24 controller.go 78 Get state called
+INFO 2022/07/19 09:09:24 controller.go 103 Getting state%!(EXTRA int=6)
+INFO 2022/07/19 09:09:24 stateServiceImpl.go 181 Processing the tax liability for %!s(int=6)
+INFO 2022/07/19 09:09:24 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:09:24 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:09:24 writers.go 74 Returned 200 response in 69.223µs
+INFO 2022/07/19 09:09:30 controller.go 78 Get state called
+INFO 2022/07/19 09:09:30 controller.go 103 Getting state%!(EXTRA int=8)
+INFO 2022/07/19 09:09:30 stateServiceImpl.go 181 Processing the tax liability for %!s(int=8)
+INFO 2022/07/19 09:09:30 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:09:30 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:09:30 writers.go 74 Returned 200 response in 176.049µs
+INFO 2022/07/19 09:09:39 controller.go 78 Get state called
+INFO 2022/07/19 09:09:39 controller.go 103 Getting state%!(EXTRA int=9)
+INFO 2022/07/19 09:09:39 stateServiceImpl.go 181 Processing the tax liability for %!s(int=9)
+INFO 2022/07/19 09:09:39 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:09:39 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:09:39 writers.go 74 Returned 200 response in 74.427µs
+INFO 2022/07/19 09:09:43 controller.go 78 Get state called
+INFO 2022/07/19 09:09:43 controller.go 103 Getting state%!(EXTRA int=10)
+INFO 2022/07/19 09:09:43 stateServiceImpl.go 181 Processing the tax liability for %!s(int=10)
+INFO 2022/07/19 09:09:43 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:09:43 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:09:43 writers.go 74 Returned 200 response in 53.719µs
+INFO 2022/07/19 09:09:48 controller.go 78 Get state called
+INFO 2022/07/19 09:09:48 controller.go 103 Getting state%!(EXTRA int=12)
+INFO 2022/07/19 09:09:48 stateServiceImpl.go 181 Processing the tax liability for %!s(int=12)
+INFO 2022/07/19 09:09:48 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:09:48 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:09:48 writers.go 74 Returned 200 response in 89.396µs
+INFO 2022/07/19 09:09:52 controller.go 78 Get state called
+INFO 2022/07/19 09:09:52 controller.go 103 Getting state%!(EXTRA int=13)
+INFO 2022/07/19 09:09:52 stateServiceImpl.go 181 Processing the tax liability for %!s(int=13)
+INFO 2022/07/19 09:09:52 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:09:52 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:09:52 writers.go 74 Returned 200 response in 61.645µs
+INFO 2022/07/19 09:09:56 controller.go 78 Get state called
+INFO 2022/07/19 09:09:56 controller.go 103 Getting state%!(EXTRA int=15)
+INFO 2022/07/19 09:09:56 stateServiceImpl.go 181 Processing the tax liability for %!s(int=15)
+INFO 2022/07/19 09:09:56 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:09:56 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:09:56 writers.go 74 Returned 200 response in 75.894µs
+INFO 2022/07/19 09:10:00 controller.go 78 Get state called
+INFO 2022/07/19 09:10:00 controller.go 103 Getting state%!(EXTRA int=16)
+INFO 2022/07/19 09:10:00 stateServiceImpl.go 181 Processing the tax liability for %!s(int=16)
+INFO 2022/07/19 09:10:00 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:10:00 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:10:00 writers.go 74 Returned 200 response in 91.637µs
+INFO 2022/07/19 09:10:04 controller.go 78 Get state called
+INFO 2022/07/19 09:10:04 controller.go 103 Getting state%!(EXTRA int=17)
+INFO 2022/07/19 09:10:04 stateServiceImpl.go 181 Processing the tax liability for %!s(int=17)
+INFO 2022/07/19 09:10:04 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:10:04 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:10:04 writers.go 74 Returned 200 response in 117.408µs
+INFO 2022/07/19 09:10:07 controller.go 78 Get state called
+INFO 2022/07/19 09:10:07 controller.go 103 Getting state%!(EXTRA int=18)
+INFO 2022/07/19 09:10:07 stateServiceImpl.go 181 Processing the tax liability for %!s(int=18)
+INFO 2022/07/19 09:10:07 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:10:07 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:10:07 writers.go 74 Returned 200 response in 117.288µs
+INFO 2022/07/19 09:10:10 controller.go 78 Get state called
+INFO 2022/07/19 09:10:10 controller.go 103 Getting state%!(EXTRA int=19)
+INFO 2022/07/19 09:10:10 stateServiceImpl.go 181 Processing the tax liability for %!s(int=19)
+INFO 2022/07/19 09:10:10 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:10:10 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:10:10 writers.go 74 Returned 200 response in 81.89µs
+INFO 2022/07/19 09:10:13 controller.go 78 Get state called
+INFO 2022/07/19 09:10:13 controller.go 103 Getting state%!(EXTRA int=20)
+INFO 2022/07/19 09:10:13 stateServiceImpl.go 181 Processing the tax liability for %!s(int=20)
+INFO 2022/07/19 09:10:13 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:10:13 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:10:13 writers.go 74 Returned 200 response in 60.773µs
+INFO 2022/07/19 09:10:17 controller.go 78 Get state called
+INFO 2022/07/19 09:10:17 controller.go 103 Getting state%!(EXTRA int=21)
+INFO 2022/07/19 09:10:17 stateServiceImpl.go 181 Processing the tax liability for %!s(int=21)
+INFO 2022/07/19 09:10:17 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:10:17 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:10:17 writers.go 74 Returned 200 response in 1.588288ms
+INFO 2022/07/19 09:10:19 controller.go 78 Get state called
+INFO 2022/07/19 09:10:19 controller.go 103 Getting state%!(EXTRA int=22)
+INFO 2022/07/19 09:10:19 stateServiceImpl.go 181 Processing the tax liability for %!s(int=22)
+INFO 2022/07/19 09:10:19 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:10:19 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:10:19 writers.go 74 Returned 200 response in 88.841µs
+INFO 2022/07/19 09:10:24 controller.go 78 Get state called
+INFO 2022/07/19 09:10:24 controller.go 103 Getting state%!(EXTRA int=23)
+INFO 2022/07/19 09:10:24 stateServiceImpl.go 181 Processing the tax liability for %!s(int=23)
+INFO 2022/07/19 09:10:24 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:10:24 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:10:24 writers.go 74 Returned 200 response in 134.994µs
+INFO 2022/07/19 09:10:26 controller.go 78 Get state called
+INFO 2022/07/19 09:10:26 controller.go 103 Getting state%!(EXTRA int=24)
+INFO 2022/07/19 09:10:26 stateServiceImpl.go 181 Processing the tax liability for %!s(int=24)
+INFO 2022/07/19 09:10:26 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:10:26 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:10:26 writers.go 74 Returned 200 response in 112.182µs
+INFO 2022/07/19 09:10:29 controller.go 78 Get state called
+INFO 2022/07/19 09:10:29 controller.go 103 Getting state%!(EXTRA int=25)
+INFO 2022/07/19 09:10:29 stateServiceImpl.go 181 Processing the tax liability for %!s(int=25)
+INFO 2022/07/19 09:10:29 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:10:29 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:10:29 writers.go 74 Returned 200 response in 92.391µs
+INFO 2022/07/19 09:10:32 controller.go 78 Get state called
+INFO 2022/07/19 09:10:32 controller.go 103 Getting state%!(EXTRA int=26)
+INFO 2022/07/19 09:10:32 stateServiceImpl.go 181 Processing the tax liability for %!s(int=26)
+INFO 2022/07/19 09:10:32 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:10:32 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:10:32 writers.go 74 Returned 200 response in 143.65µs
+INFO 2022/07/19 09:10:35 controller.go 78 Get state called
+INFO 2022/07/19 09:10:35 controller.go 103 Getting state%!(EXTRA int=27)
+INFO 2022/07/19 09:10:35 stateServiceImpl.go 181 Processing the tax liability for %!s(int=27)
+INFO 2022/07/19 09:10:35 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:10:35 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:10:35 writers.go 74 Returned 200 response in 86.572µs
+INFO 2022/07/19 09:10:38 controller.go 78 Get state called
+INFO 2022/07/19 09:10:38 controller.go 103 Getting state%!(EXTRA int=28)
+INFO 2022/07/19 09:10:38 stateServiceImpl.go 181 Processing the tax liability for %!s(int=28)
+INFO 2022/07/19 09:10:38 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:10:38 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:10:38 writers.go 74 Returned 200 response in 145.858µs
+INFO 2022/07/19 09:10:41 controller.go 78 Get state called
+INFO 2022/07/19 09:10:41 controller.go 103 Getting state%!(EXTRA int=29)
+INFO 2022/07/19 09:10:41 stateServiceImpl.go 181 Processing the tax liability for %!s(int=29)
+INFO 2022/07/19 09:10:41 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:10:41 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:10:41 writers.go 74 Returned 200 response in 104.59µs
+INFO 2022/07/19 09:10:44 controller.go 78 Get state called
+INFO 2022/07/19 09:10:44 controller.go 103 Getting state%!(EXTRA int=30)
+INFO 2022/07/19 09:10:44 stateServiceImpl.go 181 Processing the tax liability for %!s(int=30)
+INFO 2022/07/19 09:10:44 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:10:44 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:10:44 writers.go 74 Returned 200 response in 65.874µs
+INFO 2022/07/19 09:10:48 controller.go 78 Get state called
+INFO 2022/07/19 09:10:48 controller.go 103 Getting state%!(EXTRA int=31)
+INFO 2022/07/19 09:10:48 stateServiceImpl.go 181 Processing the tax liability for %!s(int=31)
+INFO 2022/07/19 09:10:48 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:10:48 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:10:48 writers.go 74 Returned 200 response in 64.434µs
+INFO 2022/07/19 09:10:51 controller.go 78 Get state called
+INFO 2022/07/19 09:10:51 controller.go 103 Getting state%!(EXTRA int=32)
+INFO 2022/07/19 09:10:51 stateServiceImpl.go 181 Processing the tax liability for %!s(int=32)
+INFO 2022/07/19 09:10:51 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:10:51 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:10:51 writers.go 74 Returned 200 response in 120.76µs
+INFO 2022/07/19 09:10:54 controller.go 78 Get state called
+INFO 2022/07/19 09:10:54 controller.go 103 Getting state%!(EXTRA int=33)
+INFO 2022/07/19 09:10:54 stateServiceImpl.go 181 Processing the tax liability for %!s(int=33)
+INFO 2022/07/19 09:10:54 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:10:54 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:10:54 writers.go 74 Returned 200 response in 83.826µs
+INFO 2022/07/19 09:10:57 controller.go 78 Get state called
+INFO 2022/07/19 09:10:57 controller.go 103 Getting state%!(EXTRA int=34)
+INFO 2022/07/19 09:10:57 stateServiceImpl.go 181 Processing the tax liability for %!s(int=34)
+INFO 2022/07/19 09:10:57 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:10:57 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:10:57 writers.go 74 Returned 200 response in 112.275µs
+INFO 2022/07/19 09:11:00 controller.go 78 Get state called
+INFO 2022/07/19 09:11:00 controller.go 103 Getting state%!(EXTRA int=35)
+INFO 2022/07/19 09:11:00 stateServiceImpl.go 181 Processing the tax liability for %!s(int=35)
+INFO 2022/07/19 09:11:00 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:11:00 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:11:00 writers.go 74 Returned 200 response in 75.176µs
+INFO 2022/07/19 09:11:03 controller.go 78 Get state called
+INFO 2022/07/19 09:11:03 controller.go 103 Getting state%!(EXTRA int=36)
+INFO 2022/07/19 09:11:03 stateServiceImpl.go 181 Processing the tax liability for %!s(int=36)
+INFO 2022/07/19 09:11:03 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:11:03 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:11:03 writers.go 74 Returned 200 response in 99.497µs
+INFO 2022/07/19 09:11:05 controller.go 78 Get state called
+INFO 2022/07/19 09:11:05 controller.go 103 Getting state%!(EXTRA int=37)
+INFO 2022/07/19 09:11:05 stateServiceImpl.go 181 Processing the tax liability for %!s(int=37)
+INFO 2022/07/19 09:11:05 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:11:05 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:11:05 writers.go 74 Returned 200 response in 107.693µs
+INFO 2022/07/19 09:11:08 controller.go 78 Get state called
+INFO 2022/07/19 09:11:08 controller.go 103 Getting state%!(EXTRA int=38)
+INFO 2022/07/19 09:11:08 stateServiceImpl.go 181 Processing the tax liability for %!s(int=38)
+INFO 2022/07/19 09:11:08 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:11:08 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:11:08 writers.go 74 Returned 200 response in 115.698µs
+INFO 2022/07/19 09:11:11 controller.go 78 Get state called
+INFO 2022/07/19 09:11:11 controller.go 103 Getting state%!(EXTRA int=39)
+INFO 2022/07/19 09:11:11 stateServiceImpl.go 181 Processing the tax liability for %!s(int=39)
+INFO 2022/07/19 09:11:11 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:11:11 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:11:11 writers.go 74 Returned 200 response in 138.403µs
+INFO 2022/07/19 09:11:14 controller.go 78 Get state called
+INFO 2022/07/19 09:11:14 controller.go 103 Getting state%!(EXTRA int=40)
+INFO 2022/07/19 09:11:14 stateServiceImpl.go 181 Processing the tax liability for %!s(int=40)
+INFO 2022/07/19 09:11:14 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:11:14 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:11:14 writers.go 74 Returned 200 response in 119.6µs
+INFO 2022/07/19 09:11:18 controller.go 78 Get state called
+INFO 2022/07/19 09:11:18 controller.go 103 Getting state%!(EXTRA int=41)
+INFO 2022/07/19 09:11:18 stateServiceImpl.go 181 Processing the tax liability for %!s(int=41)
+INFO 2022/07/19 09:11:18 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:11:18 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:11:18 writers.go 74 Returned 200 response in 75.783µs
+INFO 2022/07/19 09:11:21 controller.go 78 Get state called
+INFO 2022/07/19 09:11:21 controller.go 103 Getting state%!(EXTRA int=42)
+INFO 2022/07/19 09:11:21 stateServiceImpl.go 181 Processing the tax liability for %!s(int=42)
+INFO 2022/07/19 09:11:21 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:11:21 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:11:21 writers.go 74 Returned 200 response in 122.528µs
+INFO 2022/07/19 09:11:24 controller.go 78 Get state called
+INFO 2022/07/19 09:11:24 controller.go 103 Getting state%!(EXTRA int=43)
+WARN 2022/07/19 09:11:24 stateServiceImpl.go 177 State id %!s(int=43) not in the cache
+ERROR 2022/07/19 09:11:24 writers.go 48 Unable to retrieve state 43%!(EXTRA string=State ID not in state cache 43)
+INFO 2022/07/19 09:11:30 controller.go 78 Get state called
+INFO 2022/07/19 09:11:30 controller.go 103 Getting state%!(EXTRA int=44)
+INFO 2022/07/19 09:11:30 stateServiceImpl.go 181 Processing the tax liability for %!s(int=44)
+INFO 2022/07/19 09:11:30 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:11:30 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:11:30 writers.go 74 Returned 200 response in 99.127µs
+INFO 2022/07/19 09:11:34 controller.go 78 Get state called
+INFO 2022/07/19 09:11:34 controller.go 103 Getting state%!(EXTRA int=45)
+INFO 2022/07/19 09:11:34 stateServiceImpl.go 181 Processing the tax liability for %!s(int=45)
+INFO 2022/07/19 09:11:34 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:11:34 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:11:34 writers.go 74 Returned 200 response in 130.583µs
+INFO 2022/07/19 09:11:37 controller.go 78 Get state called
+INFO 2022/07/19 09:11:37 controller.go 103 Getting state%!(EXTRA int=46)
+INFO 2022/07/19 09:11:37 stateServiceImpl.go 181 Processing the tax liability for %!s(int=46)
+INFO 2022/07/19 09:11:37 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:11:37 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:11:37 writers.go 74 Returned 200 response in 76.509µs
+INFO 2022/07/19 09:11:40 controller.go 78 Get state called
+INFO 2022/07/19 09:11:40 controller.go 103 Getting state%!(EXTRA int=47)
+INFO 2022/07/19 09:11:40 stateServiceImpl.go 181 Processing the tax liability for %!s(int=47)
+INFO 2022/07/19 09:11:40 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:11:40 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:11:40 writers.go 74 Returned 200 response in 100.552µs
+INFO 2022/07/19 09:11:42 controller.go 78 Get state called
+INFO 2022/07/19 09:11:42 controller.go 103 Getting state%!(EXTRA int=48)
+INFO 2022/07/19 09:11:42 stateServiceImpl.go 181 Processing the tax liability for %!s(int=48)
+INFO 2022/07/19 09:11:42 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:11:42 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:11:42 writers.go 74 Returned 200 response in 118.224µs
+INFO 2022/07/19 09:11:45 controller.go 78 Get state called
+INFO 2022/07/19 09:11:45 controller.go 103 Getting state%!(EXTRA int=49)
+INFO 2022/07/19 09:11:45 stateServiceImpl.go 181 Processing the tax liability for %!s(int=49)
+INFO 2022/07/19 09:11:45 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:11:45 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:11:45 writers.go 74 Returned 200 response in 90.605µs
+INFO 2022/07/19 09:11:48 controller.go 78 Get state called
+INFO 2022/07/19 09:11:48 controller.go 103 Getting state%!(EXTRA int=50)
+INFO 2022/07/19 09:11:48 stateServiceImpl.go 181 Processing the tax liability for %!s(int=50)
+INFO 2022/07/19 09:11:48 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:11:48 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:11:48 writers.go 74 Returned 200 response in 67.201µs
+INFO 2022/07/19 09:11:51 controller.go 78 Get state called
+INFO 2022/07/19 09:11:51 controller.go 103 Getting state%!(EXTRA int=51)
+INFO 2022/07/19 09:11:51 stateServiceImpl.go 181 Processing the tax liability for %!s(int=51)
+INFO 2022/07/19 09:11:51 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:11:51 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:11:51 writers.go 74 Returned 200 response in 110.024µs
+INFO 2022/07/19 09:11:55 controller.go 78 Get state called
+INFO 2022/07/19 09:11:55 controller.go 103 Getting state%!(EXTRA int=52)
+WARN 2022/07/19 09:11:55 stateServiceImpl.go 177 State id %!s(int=52) not in the cache
+ERROR 2022/07/19 09:11:55 writers.go 48 Unable to retrieve state 52%!(EXTRA string=State ID not in state cache 52)
+INFO 2022/07/19 09:11:59 controller.go 78 Get state called
+INFO 2022/07/19 09:11:59 controller.go 103 Getting state%!(EXTRA int=53)
+INFO 2022/07/19 09:11:59 stateServiceImpl.go 181 Processing the tax liability for %!s(int=53)
+INFO 2022/07/19 09:11:59 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:11:59 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:11:59 writers.go 74 Returned 200 response in 109.595µs
+INFO 2022/07/19 09:12:30 controller.go 78 Get state called
+INFO 2022/07/19 09:12:30 controller.go 103 Getting state%!(EXTRA int=54)
+INFO 2022/07/19 09:12:30 stateServiceImpl.go 181 Processing the tax liability for %!s(int=54)
+INFO 2022/07/19 09:12:30 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:12:30 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:12:30 writers.go 74 Returned 200 response in 108.824µs
+INFO 2022/07/19 09:12:35 controller.go 78 Get state called
+INFO 2022/07/19 09:12:35 controller.go 103 Getting state%!(EXTRA int=55)
+INFO 2022/07/19 09:12:35 stateServiceImpl.go 181 Processing the tax liability for %!s(int=55)
+INFO 2022/07/19 09:12:35 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:12:35 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:12:35 writers.go 74 Returned 200 response in 83.483µs
+INFO 2022/07/19 09:12:38 controller.go 78 Get state called
+INFO 2022/07/19 09:12:38 controller.go 103 Getting state%!(EXTRA int=56)
+INFO 2022/07/19 09:12:38 stateServiceImpl.go 181 Processing the tax liability for %!s(int=56)
+INFO 2022/07/19 09:12:38 stateServiceImpl.go 221 Processing state liability
+INFO 2022/07/19 09:12:38 stateServiceImpl.go 232 Processing federal liability
+INFO 2022/07/19 09:12:38 writers.go 74 Returned 200 response in 117.371µs
+INFO 2022/07/19 09:18:16 main.go 11 App started
+INFO 2022/07/19 09:18:16 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 09:18:16 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 09:18:16 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 09:18:16 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 09:18:16 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 09:18:16 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 09:18:16 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 09:18:16 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 09:18:16 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:18:16 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:18:16 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 09:18:16 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 09:18:16 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 09:18:16 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/19 09:18:16 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 09:18:16 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 09:18:16 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 09:18:16 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:18:16 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:18:16 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/19 09:18:16 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 09:18:16 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 09:18:16 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 09:18:16 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:18:16 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:18:16 stateServiceImpl.go 86 Building caches
+INFO 2022/07/19 09:18:16 stateServiceImpl.go 88 State cache created
+INFO 2022/07/19 09:18:16 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/19 09:18:16 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/19 09:18:16 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/19 09:18:16 init.go 51 Successfully initialized state service
+INFO 2022/07/19 09:18:16 init.go 61 Successfully initialized county service
+INFO 2022/07/19 09:18:16 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 09:19:25 controller.go 78 Get state called
+INFO 2022/07/19 09:19:25 controller.go 100 Getting state%!(EXTRA string=Alabama)
+INFO 2022/07/19 09:19:25 stateServiceImpl.go 252 Processing the tax liability for alabama
+INFO 2022/07/19 09:19:25 stateServiceImpl.go 225 Processing state liability
+INFO 2022/07/19 09:22:13 main.go 11 App started
+INFO 2022/07/19 09:22:13 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 09:22:13 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 09:22:13 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 09:22:13 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 09:22:13 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 09:22:13 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 09:22:13 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 09:22:13 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 09:22:13 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:22:13 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:22:13 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 09:22:13 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 09:22:13 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 09:22:13 stateServiceImpl.go 73 Getting state census data from the data access layer
+INFO 2022/07/19 09:22:13 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 09:22:13 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 09:22:13 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 09:22:13 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:22:13 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:22:13 stateServiceImpl.go 80 Getting state tax data from the data access layer
+INFO 2022/07/19 09:22:13 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 09:22:13 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 09:22:13 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 09:22:13 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:22:13 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:22:13 stateServiceImpl.go 88 Building caches
+INFO 2022/07/19 09:22:13 stateServiceImpl.go 90 State cache created
+INFO 2022/07/19 09:22:13 stateServiceImpl.go 93 State list cache created
+INFO 2022/07/19 09:22:13 stateServiceImpl.go 96 State tax cache created
+INFO 2022/07/19 09:22:13 stateServiceImpl.go 97 All state caches are now created
+INFO 2022/07/19 09:22:13 init.go 51 Successfully initialized state service
+INFO 2022/07/19 09:22:13 init.go 61 Successfully initialized county service
+INFO 2022/07/19 09:22:13 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 09:22:16 controller.go 78 Get state called
+INFO 2022/07/19 09:22:16 controller.go 100 Getting state%!(EXTRA string=Alabama)
+INFO 2022/07/19 09:22:16 stateServiceImpl.go 255 Processing the tax liability for alabama
+INFO 2022/07/19 09:22:16 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:24:34 main.go 11 App started
+INFO 2022/07/19 09:24:34 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 09:24:34 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 09:24:34 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 09:24:34 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 09:24:34 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 09:24:34 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 09:24:34 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 09:24:34 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 09:24:34 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:24:34 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:24:34 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 09:24:34 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 09:24:34 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 09:24:34 stateServiceImpl.go 73 Getting state census data from the data access layer
+INFO 2022/07/19 09:24:34 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 09:24:34 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 09:24:34 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 09:24:34 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:24:34 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:24:34 stateServiceImpl.go 80 Getting state tax data from the data access layer
+INFO 2022/07/19 09:24:34 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 09:24:34 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 09:24:34 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 09:24:34 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:24:34 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:24:34 stateServiceImpl.go 88 Building caches
+INFO 2022/07/19 09:24:34 stateServiceImpl.go 90 State cache created
+INFO 2022/07/19 09:24:34 stateServiceImpl.go 93 State list cache created
+INFO 2022/07/19 09:24:34 stateServiceImpl.go 96 State tax cache created
+INFO 2022/07/19 09:24:34 stateServiceImpl.go 97 All state caches are now created
+INFO 2022/07/19 09:24:34 init.go 51 Successfully initialized state service
+INFO 2022/07/19 09:24:34 init.go 61 Successfully initialized county service
+INFO 2022/07/19 09:24:34 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 09:24:37 controller.go 78 Get state called
+INFO 2022/07/19 09:24:37 controller.go 100 Getting state%!(EXTRA string=Alabama)
+INFO 2022/07/19 09:24:37 stateServiceImpl.go 256 Processing the tax liability for alabama
+INFO 2022/07/19 09:24:37 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:28:20 main.go 11 App started
+INFO 2022/07/19 09:28:20 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 09:28:20 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 09:28:20 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 09:28:20 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 09:28:20 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 09:28:20 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 09:28:20 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 09:28:20 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 09:28:20 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:28:20 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:28:20 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 09:28:20 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 09:28:20 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 09:28:20 stateServiceImpl.go 73 Getting state census data from the data access layer
+INFO 2022/07/19 09:28:20 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 09:28:20 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 09:28:20 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 09:28:20 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:28:20 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:28:20 stateServiceImpl.go 80 Getting state tax data from the data access layer
+INFO 2022/07/19 09:28:20 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 09:28:20 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 09:28:20 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 09:28:20 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:28:20 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:28:20 stateServiceImpl.go 88 Building caches
+INFO 2022/07/19 09:28:20 stateServiceImpl.go 90 State cache created
+INFO 2022/07/19 09:28:20 stateServiceImpl.go 93 State list cache created
+INFO 2022/07/19 09:28:20 stateServiceImpl.go 96 State tax cache created
+INFO 2022/07/19 09:28:20 stateServiceImpl.go 97 All state caches are now created
+INFO 2022/07/19 09:28:20 init.go 51 Successfully initialized state service
+INFO 2022/07/19 09:28:20 init.go 61 Successfully initialized county service
+INFO 2022/07/19 09:28:20 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 09:28:23 controller.go 78 Get state called
+INFO 2022/07/19 09:28:23 controller.go 100 Getting state%!(EXTRA string=Alabama)
+INFO 2022/07/19 09:28:23 stateServiceImpl.go 258 Processing the tax liability for alabama
+INFO 2022/07/19 09:28:23 stateServiceImpl.go 229 Processing state liability
+INFO 2022/07/19 09:28:23 stateServiceImpl.go 240 Processing federal liability
+INFO 2022/07/19 09:28:23 writers.go 74 Returned 200 response in 134.505µs
+INFO 2022/07/19 09:28:49 main.go 11 App started
+INFO 2022/07/19 09:28:49 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 09:28:49 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 09:28:49 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 09:28:49 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 09:28:49 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 09:28:49 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 09:28:49 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 09:28:49 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 09:28:49 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:28:49 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:28:49 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 09:28:49 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 09:28:49 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 09:28:49 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/19 09:28:49 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 09:28:49 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 09:28:49 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 09:28:49 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:28:49 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:28:49 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/19 09:28:49 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 09:28:49 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 09:28:49 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 09:28:49 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 09:28:49 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 09:28:49 stateServiceImpl.go 86 Building caches
+INFO 2022/07/19 09:28:49 stateServiceImpl.go 88 State cache created
+INFO 2022/07/19 09:28:49 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/19 09:28:49 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/19 09:28:49 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/19 09:28:49 init.go 51 Successfully initialized state service
+INFO 2022/07/19 09:28:49 init.go 61 Successfully initialized county service
+INFO 2022/07/19 09:28:49 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 09:28:55 controller.go 78 Get state called
+INFO 2022/07/19 09:28:55 controller.go 100 Getting state%!(EXTRA string=Alabama)
+INFO 2022/07/19 09:28:55 stateServiceImpl.go 255 Processing the tax liability for alabama
+INFO 2022/07/19 09:28:55 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:28:55 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:28:55 writers.go 74 Returned 200 response in 98.476µs
+INFO 2022/07/19 09:29:02 controller.go 78 Get state called
+INFO 2022/07/19 09:29:02 controller.go 100 Getting state%!(EXTRA string=Alaska)
+INFO 2022/07/19 09:29:02 stateServiceImpl.go 255 Processing the tax liability for alaska
+INFO 2022/07/19 09:29:02 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:29:02 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:29:02 writers.go 74 Returned 200 response in 101.012µs
+INFO 2022/07/19 09:29:07 controller.go 78 Get state called
+INFO 2022/07/19 09:29:07 controller.go 100 Getting state%!(EXTRA string=Arizona)
+INFO 2022/07/19 09:29:07 stateServiceImpl.go 255 Processing the tax liability for arizona
+INFO 2022/07/19 09:29:07 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:29:07 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:29:07 writers.go 74 Returned 200 response in 94.626µs
+INFO 2022/07/19 09:29:13 controller.go 78 Get state called
+INFO 2022/07/19 09:29:13 controller.go 100 Getting state%!(EXTRA string=Arkansas)
+INFO 2022/07/19 09:29:13 stateServiceImpl.go 255 Processing the tax liability for arkansas
+INFO 2022/07/19 09:29:13 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:29:13 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:29:13 writers.go 74 Returned 200 response in 106.124µs
+INFO 2022/07/19 09:29:18 controller.go 78 Get state called
+INFO 2022/07/19 09:29:18 controller.go 100 Getting state%!(EXTRA string=California)
+INFO 2022/07/19 09:29:18 stateServiceImpl.go 255 Processing the tax liability for california
+INFO 2022/07/19 09:29:18 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:29:18 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:29:18 writers.go 74 Returned 200 response in 128.258µs
+INFO 2022/07/19 09:29:26 controller.go 78 Get state called
+INFO 2022/07/19 09:29:26 controller.go 100 Getting state%!(EXTRA string=Colorado)
+INFO 2022/07/19 09:29:26 stateServiceImpl.go 255 Processing the tax liability for colorado
+INFO 2022/07/19 09:29:26 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:29:26 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:29:26 writers.go 74 Returned 200 response in 106.656µs
+INFO 2022/07/19 09:29:31 controller.go 78 Get state called
+INFO 2022/07/19 09:29:31 controller.go 100 Getting state%!(EXTRA string=Connecticut)
+INFO 2022/07/19 09:29:31 stateServiceImpl.go 255 Processing the tax liability for connecticut
+INFO 2022/07/19 09:29:31 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:29:31 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:29:31 writers.go 74 Returned 200 response in 96.147µs
+INFO 2022/07/19 09:29:36 controller.go 78 Get state called
+INFO 2022/07/19 09:29:36 controller.go 100 Getting state%!(EXTRA string=Delaware)
+INFO 2022/07/19 09:29:36 stateServiceImpl.go 255 Processing the tax liability for delaware
+INFO 2022/07/19 09:29:36 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:29:36 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:29:36 writers.go 74 Returned 200 response in 114.031µs
+INFO 2022/07/19 09:29:41 controller.go 78 Get state called
+INFO 2022/07/19 09:29:41 controller.go 100 Getting state%!(EXTRA string=Florida)
+INFO 2022/07/19 09:29:41 stateServiceImpl.go 255 Processing the tax liability for florida
+INFO 2022/07/19 09:29:41 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:29:41 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:29:41 writers.go 74 Returned 200 response in 81.374µs
+INFO 2022/07/19 09:29:46 controller.go 78 Get state called
+INFO 2022/07/19 09:29:46 controller.go 100 Getting state%!(EXTRA string=Georgia)
+INFO 2022/07/19 09:29:46 stateServiceImpl.go 255 Processing the tax liability for georgia
+INFO 2022/07/19 09:29:46 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:29:46 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:29:46 writers.go 74 Returned 200 response in 96.116µs
+INFO 2022/07/19 09:29:51 controller.go 78 Get state called
+INFO 2022/07/19 09:29:51 controller.go 100 Getting state%!(EXTRA string=Hawaii)
+INFO 2022/07/19 09:29:51 stateServiceImpl.go 255 Processing the tax liability for hawaii
+INFO 2022/07/19 09:29:51 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:29:51 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:29:51 writers.go 74 Returned 200 response in 65.178µs
+INFO 2022/07/19 09:29:55 controller.go 78 Get state called
+INFO 2022/07/19 09:29:55 controller.go 100 Getting state%!(EXTRA string=Idaho)
+INFO 2022/07/19 09:29:55 stateServiceImpl.go 255 Processing the tax liability for idaho
+INFO 2022/07/19 09:29:55 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:29:55 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:29:55 writers.go 74 Returned 200 response in 58.585µs
+INFO 2022/07/19 09:30:02 controller.go 78 Get state called
+INFO 2022/07/19 09:30:02 controller.go 100 Getting state%!(EXTRA string=Illinois)
+INFO 2022/07/19 09:30:02 stateServiceImpl.go 255 Processing the tax liability for illinois
+INFO 2022/07/19 09:30:02 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:30:02 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:30:02 writers.go 74 Returned 200 response in 70.118µs
+INFO 2022/07/19 09:30:07 controller.go 78 Get state called
+INFO 2022/07/19 09:30:07 controller.go 100 Getting state%!(EXTRA string=Indiana)
+INFO 2022/07/19 09:30:07 stateServiceImpl.go 255 Processing the tax liability for indiana
+INFO 2022/07/19 09:30:07 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:30:07 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:30:07 writers.go 74 Returned 200 response in 91.955µs
+INFO 2022/07/19 09:37:21 controller.go 78 Get state called
+INFO 2022/07/19 09:37:21 controller.go 100 Getting state%!(EXTRA string=Iowa)
+INFO 2022/07/19 09:37:21 stateServiceImpl.go 255 Processing the tax liability for iowa
+INFO 2022/07/19 09:37:21 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:37:21 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:37:21 writers.go 74 Returned 200 response in 56.313µs
+INFO 2022/07/19 09:37:29 controller.go 78 Get state called
+INFO 2022/07/19 09:37:29 controller.go 100 Getting state%!(EXTRA string=Kansas)
+INFO 2022/07/19 09:37:29 stateServiceImpl.go 255 Processing the tax liability for kansas
+INFO 2022/07/19 09:37:29 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:37:29 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:37:29 writers.go 74 Returned 200 response in 86.473µs
+INFO 2022/07/19 09:37:39 controller.go 78 Get state called
+INFO 2022/07/19 09:37:39 controller.go 100 Getting state%!(EXTRA string=Kentucky)
+INFO 2022/07/19 09:37:39 stateServiceImpl.go 255 Processing the tax liability for kentucky
+INFO 2022/07/19 09:37:39 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:37:39 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:37:39 writers.go 74 Returned 200 response in 78.059µs
+INFO 2022/07/19 09:37:47 controller.go 78 Get state called
+INFO 2022/07/19 09:37:47 controller.go 100 Getting state%!(EXTRA string=Louisiana)
+INFO 2022/07/19 09:37:47 stateServiceImpl.go 255 Processing the tax liability for louisiana
+INFO 2022/07/19 09:37:47 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:37:47 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:37:47 writers.go 74 Returned 200 response in 77.321µs
+INFO 2022/07/19 09:37:52 controller.go 78 Get state called
+INFO 2022/07/19 09:37:52 controller.go 100 Getting state%!(EXTRA string=Maine)
+INFO 2022/07/19 09:37:52 stateServiceImpl.go 255 Processing the tax liability for maine
+INFO 2022/07/19 09:37:52 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:37:52 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:37:52 writers.go 74 Returned 200 response in 79.151µs
+INFO 2022/07/19 09:38:07 controller.go 78 Get state called
+INFO 2022/07/19 09:38:07 controller.go 100 Getting state%!(EXTRA string=Maryland)
+INFO 2022/07/19 09:38:07 stateServiceImpl.go 255 Processing the tax liability for maryland
+INFO 2022/07/19 09:38:07 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:38:07 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:38:07 writers.go 74 Returned 200 response in 113.162µs
+INFO 2022/07/19 09:38:15 controller.go 78 Get state called
+INFO 2022/07/19 09:38:15 controller.go 100 Getting state%!(EXTRA string=Massachusetts)
+INFO 2022/07/19 09:38:15 stateServiceImpl.go 255 Processing the tax liability for massachusetts
+INFO 2022/07/19 09:38:15 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:38:15 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:38:15 writers.go 74 Returned 200 response in 87.449µs
+INFO 2022/07/19 09:38:20 controller.go 78 Get state called
+INFO 2022/07/19 09:38:20 controller.go 100 Getting state%!(EXTRA string=Michigan)
+INFO 2022/07/19 09:38:20 stateServiceImpl.go 255 Processing the tax liability for michigan
+INFO 2022/07/19 09:38:20 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:38:20 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:38:20 writers.go 74 Returned 200 response in 91.233µs
+INFO 2022/07/19 09:38:25 controller.go 78 Get state called
+INFO 2022/07/19 09:38:25 controller.go 100 Getting state%!(EXTRA string=Minnesota)
+INFO 2022/07/19 09:38:25 stateServiceImpl.go 255 Processing the tax liability for minnesota
+INFO 2022/07/19 09:38:25 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:38:25 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:38:25 writers.go 74 Returned 200 response in 113.706µs
+INFO 2022/07/19 09:38:30 controller.go 78 Get state called
+INFO 2022/07/19 09:38:30 controller.go 100 Getting state%!(EXTRA string=Mississippi)
+INFO 2022/07/19 09:38:30 stateServiceImpl.go 255 Processing the tax liability for mississippi
+INFO 2022/07/19 09:38:30 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:38:30 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:38:30 writers.go 74 Returned 200 response in 95.725µs
+INFO 2022/07/19 09:38:35 controller.go 78 Get state called
+INFO 2022/07/19 09:38:35 controller.go 100 Getting state%!(EXTRA string=Missouri)
+INFO 2022/07/19 09:38:35 stateServiceImpl.go 255 Processing the tax liability for missouri
+INFO 2022/07/19 09:38:35 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:38:35 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:38:35 writers.go 74 Returned 200 response in 88.29µs
+INFO 2022/07/19 09:38:39 controller.go 78 Get state called
+INFO 2022/07/19 09:38:39 controller.go 100 Getting state%!(EXTRA string=Montana)
+INFO 2022/07/19 09:38:39 stateServiceImpl.go 255 Processing the tax liability for montana
+INFO 2022/07/19 09:38:39 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:38:39 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:38:39 writers.go 74 Returned 200 response in 92.875µs
+INFO 2022/07/19 09:38:44 controller.go 78 Get state called
+INFO 2022/07/19 09:38:44 controller.go 100 Getting state%!(EXTRA string=Nebraska)
+INFO 2022/07/19 09:38:44 stateServiceImpl.go 255 Processing the tax liability for nebraska
+INFO 2022/07/19 09:38:44 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:38:44 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:38:44 writers.go 74 Returned 200 response in 103.808µs
+INFO 2022/07/19 09:38:50 controller.go 78 Get state called
+INFO 2022/07/19 09:38:50 controller.go 100 Getting state%!(EXTRA string=Nevada)
+INFO 2022/07/19 09:38:50 stateServiceImpl.go 255 Processing the tax liability for nevada
+INFO 2022/07/19 09:38:50 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:38:50 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:38:50 writers.go 74 Returned 200 response in 86.239µs
+INFO 2022/07/19 09:39:05 controller.go 78 Get state called
+INFO 2022/07/19 09:39:05 controller.go 100 Getting state%!(EXTRA string=New Hampshire)
+INFO 2022/07/19 09:39:05 stateServiceImpl.go 255 Processing the tax liability for new hampshire
+INFO 2022/07/19 09:39:05 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:39:05 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:39:05 writers.go 74 Returned 200 response in 91.57µs
+INFO 2022/07/19 09:39:11 controller.go 78 Get state called
+INFO 2022/07/19 09:39:11 controller.go 100 Getting state%!(EXTRA string=New Jersey)
+INFO 2022/07/19 09:39:11 stateServiceImpl.go 255 Processing the tax liability for new jersey
+INFO 2022/07/19 09:39:11 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:39:11 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:39:11 writers.go 74 Returned 200 response in 85.489µs
+INFO 2022/07/19 09:39:18 controller.go 78 Get state called
+INFO 2022/07/19 09:39:18 controller.go 100 Getting state%!(EXTRA string=New Mexico)
+INFO 2022/07/19 09:39:18 stateServiceImpl.go 255 Processing the tax liability for new mexico
+INFO 2022/07/19 09:39:18 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:39:18 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:39:18 writers.go 74 Returned 200 response in 111.791µs
+INFO 2022/07/19 09:39:21 controller.go 78 Get state called
+INFO 2022/07/19 09:39:21 controller.go 100 Getting state%!(EXTRA string=New Mexico)
+INFO 2022/07/19 09:39:21 stateServiceImpl.go 255 Processing the tax liability for new mexico
+INFO 2022/07/19 09:39:21 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:39:21 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:39:21 writers.go 74 Returned 200 response in 85.491µs
+INFO 2022/07/19 09:39:27 controller.go 78 Get state called
+INFO 2022/07/19 09:39:27 controller.go 100 Getting state%!(EXTRA string=New York)
+INFO 2022/07/19 09:39:27 stateServiceImpl.go 255 Processing the tax liability for new york
+INFO 2022/07/19 09:39:27 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:39:27 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:39:27 writers.go 74 Returned 200 response in 111.869µs
+INFO 2022/07/19 09:39:34 controller.go 78 Get state called
+INFO 2022/07/19 09:39:34 controller.go 100 Getting state%!(EXTRA string=North Carolina)
+INFO 2022/07/19 09:39:34 stateServiceImpl.go 255 Processing the tax liability for north carolina
+INFO 2022/07/19 09:39:34 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:39:34 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:39:34 writers.go 74 Returned 200 response in 86.469µs
+INFO 2022/07/19 09:39:41 controller.go 78 Get state called
+INFO 2022/07/19 09:39:41 controller.go 100 Getting state%!(EXTRA string=North Dakota)
+INFO 2022/07/19 09:39:41 stateServiceImpl.go 255 Processing the tax liability for north dakota
+INFO 2022/07/19 09:39:41 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:39:41 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:39:41 writers.go 74 Returned 200 response in 93.217µs
+INFO 2022/07/19 09:39:49 controller.go 78 Get state called
+INFO 2022/07/19 09:39:49 controller.go 100 Getting state%!(EXTRA string=Ohio)
+INFO 2022/07/19 09:39:49 stateServiceImpl.go 255 Processing the tax liability for ohio
+INFO 2022/07/19 09:39:49 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:39:49 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:39:49 writers.go 74 Returned 200 response in 117.583µs
+INFO 2022/07/19 09:39:56 controller.go 78 Get state called
+INFO 2022/07/19 09:39:56 controller.go 100 Getting state%!(EXTRA string=Oklahoma)
+INFO 2022/07/19 09:39:56 stateServiceImpl.go 255 Processing the tax liability for oklahoma
+INFO 2022/07/19 09:39:56 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:39:56 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:39:56 writers.go 74 Returned 200 response in 84.703µs
+INFO 2022/07/19 09:40:01 controller.go 78 Get state called
+INFO 2022/07/19 09:40:01 controller.go 100 Getting state%!(EXTRA string=Oregon)
+INFO 2022/07/19 09:40:01 stateServiceImpl.go 255 Processing the tax liability for oregon
+INFO 2022/07/19 09:40:01 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:40:01 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:40:01 writers.go 74 Returned 200 response in 67.498µs
+INFO 2022/07/19 09:40:06 controller.go 78 Get state called
+INFO 2022/07/19 09:40:06 controller.go 100 Getting state%!(EXTRA string=Pennsylvania)
+INFO 2022/07/19 09:40:06 stateServiceImpl.go 255 Processing the tax liability for pennsylvania
+INFO 2022/07/19 09:40:06 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:40:06 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:40:06 writers.go 74 Returned 200 response in 67.778µs
+INFO 2022/07/19 09:40:15 controller.go 78 Get state called
+INFO 2022/07/19 09:40:15 controller.go 100 Getting state%!(EXTRA string=Rhode Island)
+INFO 2022/07/19 09:40:15 stateServiceImpl.go 255 Processing the tax liability for rhode island
+INFO 2022/07/19 09:40:15 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:40:15 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:40:15 writers.go 74 Returned 200 response in 73.325µs
+INFO 2022/07/19 09:40:23 controller.go 78 Get state called
+INFO 2022/07/19 09:40:23 controller.go 100 Getting state%!(EXTRA string=South Carolina)
+INFO 2022/07/19 09:40:23 stateServiceImpl.go 255 Processing the tax liability for south carolina
+INFO 2022/07/19 09:40:23 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:40:23 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:40:23 writers.go 74 Returned 200 response in 86.628µs
+INFO 2022/07/19 09:40:30 controller.go 78 Get state called
+INFO 2022/07/19 09:40:30 controller.go 100 Getting state%!(EXTRA string=South Dakota)
+INFO 2022/07/19 09:40:30 stateServiceImpl.go 255 Processing the tax liability for south dakota
+INFO 2022/07/19 09:40:30 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:40:30 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:40:30 writers.go 74 Returned 200 response in 66.324µs
+INFO 2022/07/19 09:40:36 controller.go 78 Get state called
+INFO 2022/07/19 09:40:36 controller.go 100 Getting state%!(EXTRA string=Tennessee)
+INFO 2022/07/19 09:40:36 stateServiceImpl.go 255 Processing the tax liability for tennessee
+INFO 2022/07/19 09:40:36 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:40:36 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:40:36 writers.go 74 Returned 200 response in 145.069µs
+INFO 2022/07/19 09:40:41 controller.go 78 Get state called
+INFO 2022/07/19 09:40:41 controller.go 100 Getting state%!(EXTRA string=Texas)
+INFO 2022/07/19 09:40:41 stateServiceImpl.go 255 Processing the tax liability for texas
+INFO 2022/07/19 09:40:41 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:40:41 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:40:41 writers.go 74 Returned 200 response in 53.998µs
+INFO 2022/07/19 09:40:45 controller.go 78 Get state called
+INFO 2022/07/19 09:40:45 controller.go 100 Getting state%!(EXTRA string=Utah)
+INFO 2022/07/19 09:40:45 stateServiceImpl.go 255 Processing the tax liability for utah
+INFO 2022/07/19 09:40:45 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:40:45 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:40:45 writers.go 74 Returned 200 response in 83.088µs
+INFO 2022/07/19 09:40:49 controller.go 78 Get state called
+INFO 2022/07/19 09:40:49 controller.go 100 Getting state%!(EXTRA string=Vermont)
+INFO 2022/07/19 09:40:49 stateServiceImpl.go 255 Processing the tax liability for vermont
+INFO 2022/07/19 09:40:49 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:40:49 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:40:49 writers.go 74 Returned 200 response in 86.544µs
+INFO 2022/07/19 09:40:53 controller.go 78 Get state called
+INFO 2022/07/19 09:40:53 controller.go 100 Getting state%!(EXTRA string=Virginia)
+INFO 2022/07/19 09:40:53 stateServiceImpl.go 255 Processing the tax liability for virginia
+INFO 2022/07/19 09:40:53 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:40:53 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:40:53 writers.go 74 Returned 200 response in 70.717µs
+INFO 2022/07/19 09:40:58 controller.go 78 Get state called
+INFO 2022/07/19 09:40:58 controller.go 100 Getting state%!(EXTRA string=Washington)
+INFO 2022/07/19 09:40:58 stateServiceImpl.go 255 Processing the tax liability for washington
+INFO 2022/07/19 09:40:58 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:40:58 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:40:58 writers.go 74 Returned 200 response in 69.845µs
+INFO 2022/07/19 09:41:04 controller.go 78 Get state called
+INFO 2022/07/19 09:41:04 controller.go 100 Getting state%!(EXTRA string=West Virginia)
+INFO 2022/07/19 09:41:04 stateServiceImpl.go 255 Processing the tax liability for west virginia
+INFO 2022/07/19 09:41:04 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:41:04 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:41:04 writers.go 74 Returned 200 response in 70.465µs
+INFO 2022/07/19 09:41:10 controller.go 78 Get state called
+INFO 2022/07/19 09:41:10 controller.go 100 Getting state%!(EXTRA string=Wisconsin)
+INFO 2022/07/19 09:41:10 stateServiceImpl.go 255 Processing the tax liability for wisconsin
+INFO 2022/07/19 09:41:10 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:41:10 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:41:10 writers.go 74 Returned 200 response in 97.007µs
+INFO 2022/07/19 09:41:15 controller.go 78 Get state called
+INFO 2022/07/19 09:41:15 controller.go 100 Getting state%!(EXTRA string=Wyoming)
+INFO 2022/07/19 09:41:15 stateServiceImpl.go 255 Processing the tax liability for wyoming
+INFO 2022/07/19 09:41:15 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:41:15 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:41:15 writers.go 74 Returned 200 response in 69.693µs
+INFO 2022/07/19 09:41:57 controller.go 78 Get state called
+INFO 2022/07/19 09:41:57 controller.go 100 Getting state%!(EXTRA string=Washington)
+INFO 2022/07/19 09:41:57 stateServiceImpl.go 255 Processing the tax liability for washington
+INFO 2022/07/19 09:41:57 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 09:41:57 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 09:41:57 writers.go 74 Returned 200 response in 83.857µs
+INFO 2022/07/19 10:56:23 main.go 11 App started
+INFO 2022/07/19 10:56:23 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 10:56:23 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 10:56:23 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 10:56:23 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 10:56:23 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 10:56:23 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 10:56:23 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 10:56:23 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 10:56:23 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 10:56:23 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 10:56:23 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 10:56:23 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 10:56:23 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 10:56:23 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/19 10:56:23 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 10:56:23 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 10:56:23 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 10:56:23 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 10:56:23 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 10:56:23 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/19 10:56:23 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 10:56:23 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 10:56:23 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 10:56:23 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 10:56:23 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 10:56:23 stateServiceImpl.go 86 Building caches
+INFO 2022/07/19 10:56:23 stateServiceImpl.go 88 State cache created
+INFO 2022/07/19 10:56:23 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/19 10:56:23 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/19 10:56:23 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/19 10:56:23 init.go 51 Successfully initialized state service
+INFO 2022/07/19 10:56:23 init.go 61 Successfully initialized county service
+INFO 2022/07/19 10:56:23 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 10:56:26 controller.go 78 Get state called
+INFO 2022/07/19 10:56:26 controller.go 100 Getting state%!(EXTRA string=Washington)
+INFO 2022/07/19 10:56:26 stateServiceImpl.go 255 Processing the tax liability for washington
+INFO 2022/07/19 10:56:26 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 10:56:26 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 10:56:26 writers.go 74 Returned 200 response in 139.363µs
+INFO 2022/07/19 10:58:44 main.go 11 App started
+INFO 2022/07/19 10:58:44 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 10:58:44 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 10:58:44 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 10:58:44 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 10:58:44 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 10:58:44 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 10:58:44 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 10:58:44 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 10:58:44 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 10:58:44 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 10:58:44 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 10:58:44 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 10:58:44 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 10:58:44 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/19 10:58:44 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 10:58:44 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 10:58:44 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 10:58:44 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 10:58:44 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 10:58:44 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/19 10:58:44 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 10:58:44 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 10:58:44 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 10:58:44 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 10:58:44 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 10:58:44 stateServiceImpl.go 86 Building caches
+INFO 2022/07/19 10:58:44 stateServiceImpl.go 88 State cache created
+INFO 2022/07/19 10:58:44 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/19 10:58:44 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/19 10:58:44 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/19 10:58:44 init.go 51 Successfully initialized state service
+INFO 2022/07/19 10:58:44 init.go 61 Successfully initialized county service
+INFO 2022/07/19 10:58:44 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 10:58:46 controller.go 78 Get state called
+INFO 2022/07/19 10:58:46 controller.go 100 Getting state%!(EXTRA string=Washington)
+INFO 2022/07/19 10:58:46 stateServiceImpl.go 255 Processing the tax liability for washington
+INFO 2022/07/19 10:58:46 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 10:58:46 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 10:58:46 writers.go 74 Returned 200 response in 194.045µs
+INFO 2022/07/19 10:59:56 main.go 11 App started
+INFO 2022/07/19 10:59:56 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 10:59:56 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 10:59:56 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 10:59:56 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 10:59:56 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 10:59:56 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 10:59:56 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 10:59:56 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 10:59:56 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 10:59:56 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 10:59:56 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 10:59:56 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 10:59:56 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 10:59:56 stateServiceImpl.go 73 Getting state census data from the data access layer
+INFO 2022/07/19 10:59:56 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 10:59:56 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 10:59:56 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 10:59:56 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 10:59:56 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 10:59:56 stateServiceImpl.go 80 Getting state tax data from the data access layer
+INFO 2022/07/19 10:59:56 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 10:59:56 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 10:59:56 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 10:59:56 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 10:59:56 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 10:59:56 stateServiceImpl.go 88 Building caches
+INFO 2022/07/19 10:59:56 stateServiceImpl.go 90 State cache created
+INFO 2022/07/19 10:59:56 stateServiceImpl.go 93 State list cache created
+INFO 2022/07/19 10:59:56 stateServiceImpl.go 96 State tax cache created
+INFO 2022/07/19 10:59:56 stateServiceImpl.go 97 All state caches are now created
+INFO 2022/07/19 10:59:56 init.go 51 Successfully initialized state service
+INFO 2022/07/19 10:59:56 init.go 61 Successfully initialized county service
+INFO 2022/07/19 10:59:56 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 10:59:57 controller.go 78 Get state called
+INFO 2022/07/19 10:59:57 controller.go 100 Getting state%!(EXTRA string=Washington)
+INFO 2022/07/19 10:59:57 stateServiceImpl.go 259 Processing the tax liability for washington
+INFO 2022/07/19 10:59:57 stateServiceImpl.go 229 Processing state liability
+INFO 2022/07/19 10:59:57 stateServiceImpl.go 242 Processing federal liability
+INFO 2022/07/19 10:59:57 writers.go 74 Returned 200 response in 152.27µs
+INFO 2022/07/19 11:08:06 main.go 11 App started
+INFO 2022/07/19 11:08:06 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 11:08:06 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 11:08:06 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 11:08:06 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 11:08:06 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 11:08:06 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 11:08:06 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 11:08:06 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 11:08:06 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 11:08:06 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 11:08:06 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 11:08:06 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 11:08:06 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 11:08:06 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/19 11:08:06 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 11:08:06 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 11:08:06 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 11:08:06 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 11:08:06 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 11:08:06 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/19 11:08:06 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 11:08:06 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 11:08:06 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 11:08:06 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 11:08:06 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 11:08:06 stateServiceImpl.go 86 Building caches
+INFO 2022/07/19 11:08:06 stateServiceImpl.go 88 State cache created
+INFO 2022/07/19 11:08:06 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/19 11:08:06 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/19 11:08:06 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/19 11:08:06 init.go 51 Successfully initialized state service
+INFO 2022/07/19 11:08:06 init.go 61 Successfully initialized county service
+INFO 2022/07/19 11:08:06 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 11:08:12 controller.go 78 Get state called
+INFO 2022/07/19 11:08:12 controller.go 100 Getting state%!(EXTRA string=Washington)
+INFO 2022/07/19 11:08:12 stateServiceImpl.go 255 Processing the tax liability for washington
+INFO 2022/07/19 11:08:12 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 11:08:12 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 11:08:12 writers.go 74 Returned 200 response in 100.752µs
+INFO 2022/07/19 11:09:56 main.go 11 App started
+INFO 2022/07/19 11:09:56 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 11:09:56 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 11:09:56 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 11:09:56 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 11:09:56 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/19 11:09:56 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 11:09:56 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 11:09:56 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 11:09:56 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 11:09:56 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 11:09:56 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/19 11:09:56 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/19 11:09:56 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 11:09:56 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/19 11:09:56 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 11:09:56 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 11:09:56 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 11:09:56 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 11:09:56 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 11:09:56 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/19 11:09:56 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 11:09:56 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 11:09:56 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 11:09:56 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 11:09:56 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 11:09:56 stateServiceImpl.go 86 Building caches
+INFO 2022/07/19 11:09:56 stateServiceImpl.go 88 State cache created
+INFO 2022/07/19 11:09:56 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/19 11:09:56 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/19 11:09:56 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/19 11:09:56 init.go 51 Successfully initialized state service
+INFO 2022/07/19 11:09:56 init.go 61 Successfully initialized county service
+INFO 2022/07/19 11:09:56 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 11:09:58 controller.go 78 Get state called
+INFO 2022/07/19 11:09:58 controller.go 100 Getting state%!(EXTRA string=Washington)
+INFO 2022/07/19 11:09:58 stateServiceImpl.go 255 Processing the tax liability for washington
+INFO 2022/07/19 11:09:58 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 11:09:58 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 11:09:58 writers.go 74 Returned 200 response in 128.941µs
+INFO 2022/07/19 11:11:08 main.go 11 App started
+INFO 2022/07/19 11:11:08 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 11:11:08 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 11:11:08 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 11:11:08 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 11:11:08 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/19 11:11:08 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 11:11:08 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 11:11:08 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 11:11:08 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 11:11:08 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 11:11:08 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/19 11:11:08 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/19 11:11:08 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 11:11:08 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/19 11:11:08 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 11:11:08 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 11:11:08 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 11:11:08 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 11:11:08 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 11:11:08 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/19 11:11:08 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 11:11:08 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 11:11:08 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 11:11:08 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 11:11:08 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 11:11:08 stateServiceImpl.go 86 Building caches
+INFO 2022/07/19 11:11:08 stateServiceImpl.go 88 State cache created
+INFO 2022/07/19 11:11:08 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/19 11:11:08 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/19 11:11:08 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/19 11:11:08 init.go 51 Successfully initialized state service
+INFO 2022/07/19 11:11:08 init.go 61 Successfully initialized county service
+INFO 2022/07/19 11:11:08 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 11:11:10 controller.go 78 Get state called
+INFO 2022/07/19 11:11:10 controller.go 100 Getting state%!(EXTRA string=Washington)
+INFO 2022/07/19 11:11:10 stateServiceImpl.go 255 Processing the tax liability for washington
+INFO 2022/07/19 11:11:10 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 11:11:10 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 11:11:10 writers.go 74 Returned 200 response in 128.624µs
+INFO 2022/07/19 11:12:03 main.go 11 App started
+INFO 2022/07/19 11:12:03 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 11:12:03 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 11:12:03 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 11:12:03 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 11:12:03 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/19 11:12:03 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 11:12:03 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 11:12:03 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 11:12:03 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 11:12:03 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 11:12:03 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/19 11:12:03 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/19 11:12:03 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 11:12:03 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/19 11:12:03 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 11:12:03 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 11:12:03 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 11:12:03 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 11:12:03 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 11:12:03 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/19 11:12:03 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 11:12:03 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 11:12:03 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 11:12:03 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 11:12:03 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 11:12:03 stateServiceImpl.go 86 Building caches
+INFO 2022/07/19 11:12:03 stateServiceImpl.go 88 State cache created
+INFO 2022/07/19 11:12:03 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/19 11:12:03 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/19 11:12:03 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/19 11:12:03 init.go 51 Successfully initialized state service
+INFO 2022/07/19 11:12:03 init.go 61 Successfully initialized county service
+INFO 2022/07/19 11:12:03 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 11:12:05 controller.go 78 Get state called
+INFO 2022/07/19 11:12:05 controller.go 100 Getting state%!(EXTRA string=Washington)
+INFO 2022/07/19 11:12:05 stateServiceImpl.go 255 Processing the tax liability for washington
+INFO 2022/07/19 11:12:05 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 11:12:05 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 11:12:05 writers.go 74 Returned 200 response in 164.467µs
+INFO 2022/07/19 11:13:14 main.go 11 App started
+INFO 2022/07/19 11:13:14 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 11:13:14 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 11:13:14 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 11:13:14 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 11:13:14 federalServiceImpl.go 31 Getting federal tax data from data access layer
+INFO 2022/07/19 11:13:14 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 11:13:14 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 11:13:14 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 11:13:14 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 11:13:14 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 11:13:14 federalServiceImpl.go 37 Caching the response
+INFO 2022/07/19 11:13:14 federalServiceImpl.go 39 Federal tax cache created
+INFO 2022/07/19 11:13:14 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 11:13:14 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/19 11:13:14 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 11:13:14 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 11:13:14 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 11:13:14 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 11:13:14 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 11:13:14 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/19 11:13:14 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 11:13:14 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 11:13:14 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 11:13:14 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 11:13:14 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 11:13:14 stateServiceImpl.go 86 Building caches
+INFO 2022/07/19 11:13:14 stateServiceImpl.go 88 State cache created
+INFO 2022/07/19 11:13:14 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/19 11:13:14 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/19 11:13:14 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/19 11:13:14 init.go 51 Successfully initialized state service
+INFO 2022/07/19 11:13:14 init.go 61 Successfully initialized county service
+INFO 2022/07/19 11:13:14 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 11:13:16 controller.go 78 Get state called
+INFO 2022/07/19 11:13:16 controller.go 100 Getting state%!(EXTRA string=Washington)
+INFO 2022/07/19 11:13:16 stateServiceImpl.go 255 Processing the tax liability for washington
+INFO 2022/07/19 11:13:16 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 11:13:16 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 11:13:16 writers.go 74 Returned 200 response in 130.933µs
+INFO 2022/07/19 11:13:44 controller.go 78 Get state called
+INFO 2022/07/19 11:13:44 controller.go 103 Getting state%!(EXTRA int=39)
+INFO 2022/07/19 11:13:44 stateServiceImpl.go 187 Processing the tax liability for %!s(int=39)
+INFO 2022/07/19 11:13:44 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 11:13:44 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 11:13:44 writers.go 74 Returned 200 response in 132.086µs
+INFO 2022/07/19 11:14:36 main.go 11 App started
+INFO 2022/07/19 11:14:36 daoPostrges.go 68 Reading in environment variables
+INFO 2022/07/19 11:14:36 daoPostrges.go 76 Opening connection to postgres DB
+INFO 2022/07/19 11:14:36 daoPostrges.go 81 Successfully instantiated DB connection
+INFO 2022/07/19 11:14:36 init.go 31 Successfully initialized dao service
+INFO 2022/07/19 11:14:36 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/19 11:14:36 daoPostrges.go 179 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/19 11:14:36 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/19 11:14:36 daoPostrges.go 168 Executing Federal tax query
+INFO 2022/07/19 11:14:36 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 11:14:36 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 11:14:36 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/19 11:14:36 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/19 11:14:36 init.go 41 Successfully initialized federal service
+INFO 2022/07/19 11:14:36 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/19 11:14:36 daoPostrges.go 179 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/19 11:14:36 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/19 11:14:36 daoPostrges.go 92 Executing State Census query
+INFO 2022/07/19 11:14:36 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 11:14:36 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 11:14:36 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/19 11:14:36 daoPostrges.go 179 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/19 11:14:36 daoPostrges.go 189 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/19 11:14:36 daoPostrges.go 122 Executing State tax query
+INFO 2022/07/19 11:14:36 daoPostrges.go 205 Executing the query with no params
+INFO 2022/07/19 11:14:36 daoPostrges.go 232 Scanning the rows
+INFO 2022/07/19 11:14:36 stateServiceImpl.go 86 Building caches
+INFO 2022/07/19 11:14:36 stateServiceImpl.go 88 State cache created
+INFO 2022/07/19 11:14:36 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/19 11:14:36 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/19 11:14:36 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/19 11:14:36 init.go 51 Successfully initialized state service
+INFO 2022/07/19 11:14:36 init.go 61 Successfully initialized county service
+INFO 2022/07/19 11:14:36 bootstrap.go 43 Listening at :8080
+INFO 2022/07/19 11:14:38 controller.go 78 Get state called
+INFO 2022/07/19 11:14:38 controller.go 103 Getting state%!(EXTRA int=39)
+INFO 2022/07/19 11:14:38 stateServiceImpl.go 187 Processing the tax liability for %!s(int=39)
+INFO 2022/07/19 11:14:38 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 11:14:38 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 11:14:38 writers.go 74 Returned 200 response in 124.125µs
+INFO 2022/07/19 11:14:39 controller.go 78 Get state called
+INFO 2022/07/19 11:14:39 controller.go 103 Getting state%!(EXTRA int=39)
+INFO 2022/07/19 11:14:39 stateServiceImpl.go 187 Processing the tax liability for %!s(int=39)
+INFO 2022/07/19 11:14:39 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 11:14:39 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 11:14:39 writers.go 74 Returned 200 response in 166.677µs
+INFO 2022/07/19 11:14:43 controller.go 78 Get state called
+INFO 2022/07/19 11:14:43 controller.go 103 Getting state%!(EXTRA int=53)
+INFO 2022/07/19 11:14:43 stateServiceImpl.go 187 Processing the tax liability for %!s(int=53)
+INFO 2022/07/19 11:14:43 stateServiceImpl.go 227 Processing state liability
+INFO 2022/07/19 11:14:43 stateServiceImpl.go 238 Processing federal liability
+INFO 2022/07/19 11:14:43 writers.go 74 Returned 200 response in 106.845µs

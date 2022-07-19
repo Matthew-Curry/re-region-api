@@ -42,13 +42,22 @@ func GetStateTaxInfo(si int, sn string, sd, md, se, me, de int) *StateTaxInfo {
 // public method to use private bracket list to get the single state tax liability
 func (s *StateTaxInfo) GetSingleTaxLiability(income int) int {
     i := sort.Search(len(s.bracket_list), func(i int) bool { return s.bracket_list[i].Single_bracket >= income })
+    // subtract one if in highest bracket
+    if i == len(s.bracket_list) {
+        i = i -1
+    }
 	r := s.bracket_list[i].Single_rate
+
     return int(float64(income) * r)
 }
 
 // public method to use private bracket list to get the state tax liability
 func (s *StateTaxInfo) GetMarriedTaxLiability(income int) int {
     i := sort.Search(len(s.bracket_list), func(i int) bool { return s.bracket_list[i].Married_bracket >= income })
+    // subtract one if in highest bracket
+    if i == len(s.bracket_list) {
+        i = i -1
+    }
 	r := s.bracket_list[i].Married_rate
     return int(float64(income) * r)
 }

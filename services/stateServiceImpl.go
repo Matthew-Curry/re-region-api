@@ -3,6 +3,8 @@ package services
 /* Implementation of the Re-Region API state service */
 
 import (
+	"strings"
+
 	"github.com/Matthew-Curry/re-region-api/apperrors"
 	"github.com/Matthew-Curry/re-region-api/dao"
 	"github.com/Matthew-Curry/re-region-api/model"
@@ -106,12 +108,10 @@ func buildStateCaches(stateCensusData [][]interface{}) (map[int][]interface{}, m
 	idMp := make(map[int][]interface{})
 	nameMp := make(map[string][]interface{})
 	for _, state := range stateCensusData {
-		// initialize for each map with opposing identifier so variadic append can be used for remaining metrics
-		si := []interface{}{state[CENSUS_STATE_NAME]}
-		sn := []interface{}{state[CENSUS_STATE_ID]}
-		// use variadic append to adaptively append metrics
-		idMp[readAsInt(state[CENSUS_STATE_ID])] = append(si, []interface{}{state[2:]}...)
-		nameMp[readAsString(state[CENSUS_STATE_NAME])] = append(sn, []interface{}{state[2:]}...)
+		idMp[readAsInt(state[CENSUS_STATE_ID])] = state
+		// map lowercase name. Access methods will lowercase the name and trim spaces.
+		sn := strings.ToLower(readAsString(state[CENSUS_STATE_NAME]))
+		nameMp[sn] = state
 	}
 
 	return idMp, nameMp
@@ -149,6 +149,8 @@ func buildStateTaxCaches(stateTaxData [][]interface{}) (map[int]*model.StateTaxI
 		// if state tax info is not in id map, create for both maps
 		si := readAsInt(row[TAX_STATE_ID])
 		sn := readAsString(row[TAX_STATE_NAME])
+		// lowercase the name to provide a standard naming API
+		sn = strings.ToLower(sn)
 		if _, ok := idMp[si]; !ok {
 			stateTaxInfo := model.GetStateTaxInfo(si, sn, readAsInt(row[SINGLE_DEDUCTION]), readAsInt(row[MARRIED_DEDUCTION]),
 			readAsInt(row[SINGLE_EXEMPTION]), readAsInt(row[MARRIED_EXEMPTION]), readAsInt(row[DEPENDENT_EXEMPTION]))
@@ -226,11 +228,11 @@ func (s *StateServiceImpl) processTaxLiability(fs model.FilingStatus, dependents
 	stateTax := 0
 	switch fs {
 	case model.Head, model.Single:
-		income = income - ti.Single_deduction - dependents*ti.Single_exemption
-		stateTax = ti.GetSingleTaxLiability(income)
+		stateIncome := getTaxableIncome(income, ti.Single_deduction, ti.Single_exemption, dependents)
+		stateTax = ti.GetSingleTaxLiability(stateIncome)
 	case model.Married:
-		income = income - ti.Married_deduction - dependents*ti.Married_exemption
-		stateTax = ti.GetMarriedTaxLiability(income)
+		stateIncome := getTaxableIncome(income, ti.Married_deduction, ti.Married_exemption, dependents)
+		stateTax = ti.GetMarriedTaxLiability(stateIncome)
 	}
 	// apply the rate to the income for the state tax amount
 	logger.Info("Processing federal liability")
@@ -241,12 +243,14 @@ func (s *StateServiceImpl) processTaxLiability(fs model.FilingStatus, dependents
 
 // get census and tax information by name
 func (s *StateServiceImpl) GetStateByName(name string, fs model.FilingStatus, dependents int, income int) (*model.State, *apperrors.AppError) {
-	// retrieve state census information using the given name
+	// retrieve state census information using the given name. Lowercase name first to match map.
+	name = strings.ToLower(name)
 	sc, ok := s.stateNameMp[name]
 	if !ok {
 		logger.Warn("State %s not in the cache", name)
 		return nil, apperrors.StateNameNotFound(name)
 	}
+
 	// process the yearly tax estimate given this income
 	logger.Info("Processing the tax liability for %s", name)
 	t, st, ft := s.processTaxLiabilityByName(name, fs, dependents, income)
@@ -278,7 +282,7 @@ func (s *StateServiceImpl) GetStateTaxInfoById(id int) (*model.StateTaxInfo, *ap
 
 // get state tax info by name
 func (s *StateServiceImpl) GetStateTaxInfoByName(name string) (*model.StateTaxInfo, *apperrors.AppError) {
-
+	name = strings.ToLower(name)
 	res, ok := s.stateTaxNameMp[name]
 	if !ok {
 		logger.Warn("State %s not found in the state tax cache", name)

@@ -1,6 +1,7 @@
 package model
 
 import (
+	"strings"
 	"errors"
 	"fmt"
 )
@@ -15,6 +16,7 @@ const (
 )
 
 func ToFilingStatus(s string) (FilingStatus, error){
+	s = strings.ToLower(s)
 	if s != "h" && s != "s" && s != "m" {
 		return FilingStatus("s"), errors.New(fmt.Sprintf("%s is not a valid filing status.", s))
 	} 

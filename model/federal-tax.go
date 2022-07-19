@@ -35,6 +35,10 @@ func GetFederalTaxInfo(sd, md, hd int, bracketList []FederalBracket) *FederalTax
 // public method to use private bracket list to get the single state tax liability
 func (f *FederalTaxInfo) GetSingleTaxLiability(income int) int {
     i := sort.Search(len(f.bracket_list), func(i int) bool { return f.bracket_list[i].Single_bracket >= income })
+	// subtract one if in highest bracket
+    if i == len(f.bracket_list) {
+        i = i -1
+    }
 	r := f.bracket_list[i].Rate
 	return int(float64(income) * r)
 }
@@ -42,6 +46,10 @@ func (f *FederalTaxInfo) GetSingleTaxLiability(income int) int {
 // public method to use private bracket list to get the state tax liability
 func (f *FederalTaxInfo) GetMarriedTaxLiability(income int) int {
     i := sort.Search(len(f.bracket_list), func(i int) bool { return f.bracket_list[i].Married_bracket >= income })
+	// subtract one if in highest bracket
+    if i == len(f.bracket_list) {
+        i = i -1
+    }
 	r := f.bracket_list[i].Rate
 	return int(float64(income) * r)
 }
@@ -49,6 +57,10 @@ func (f *FederalTaxInfo) GetMarriedTaxLiability(income int) int {
 // public method to use private bracket list to get the head tax liability
 func (f *FederalTaxInfo) GetHeadTaxLiability(income int) int {
     i := sort.Search(len(f.bracket_list), func(i int) bool { return f.bracket_list[i].Head_bracket >= income })
+	// subtract one if in highest bracket
+    if i == len(f.bracket_list) {
+        i = i -1
+    }
 	r := f.bracket_list[i].Rate
 	return int(float64(income) * r)
 }

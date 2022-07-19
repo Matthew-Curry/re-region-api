@@ -77,13 +77,13 @@ func (f *FederalServiceImpl) GetFederalLiability(filingStatus model.FilingStatus
 	// use filing status to determine state deduction and exemption
 	switch filingStatus {
 	case model.Head:
-		income = income - f.federalTaxInfo.Single_deduction
+		income = getTaxableIncome(income, f.federalTaxInfo.Single_deduction, 0, 0)
 		return f.federalTaxInfo.GetHeadTaxLiability(income)
 	case model.Single:
-		income = income - f.federalTaxInfo.Head_deduction
+		income = getTaxableIncome(income, f.federalTaxInfo.Head_deduction, 0, 0)
 		return f.federalTaxInfo.GetSingleTaxLiability(income)
 	case model.Married:
-		income = income - f.federalTaxInfo.Married_deduction
+		income = getTaxableIncome(income, f.federalTaxInfo.Married_deduction, 0, 0)
 		return f.federalTaxInfo.GetMarriedTaxLiability(income)
 	}
 
