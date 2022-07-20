@@ -53,7 +53,7 @@ func CountyHandler(w http.ResponseWriter, r *http.Request) {
 		logger.Info("Getting county", name)
 		county, err = countyService.GetCountyByName(name, fs, res, dep, income)
 	} else {
-		logger.Info("Getting county", id)
+		logger.Info("Getting county %v", id)
 		county, err = countyService.GetCountyById(id, fs, res, dep, income)
 	}
 
@@ -100,7 +100,7 @@ func StateHandler(w http.ResponseWriter, r *http.Request) {
 		logger.Info("Getting state", name)
 		state, err = stateService.GetStateByName(name, fs, dep, income)
 	} else {
-		logger.Info("Getting state", id)
+		logger.Info("Getting state %v", id)
 		state, err = stateService.GetStateById(id, fs, dep, income)
 	}
 
@@ -222,6 +222,9 @@ func CountyTaxesHandler(w http.ResponseWriter, r *http.Request) {
 	if errStr != "" {
 		writeGotBadParams(w, errStr)
 		return
+	} else if idStr == "" && name == "" {
+		writeGotBadParams(w, "A county id or name must be provided to retrieve tax information.")
+		return
 	}
 
 	var countyTaxList *model.CountyTaxList
@@ -230,7 +233,7 @@ func CountyTaxesHandler(w http.ResponseWriter, r *http.Request) {
 	if idStr != "" {
 		id, convErr := strconv.Atoi(idStr)
 		if convErr == nil {
-			logger.Info("Getting tax information for county %s", id)
+			logger.Info("Getting tax information for county %v", id)
 			countyTaxList, err = countyService.GetCountyTaxListById(id)
 		} else {
 			writeNoEntityAvailable(w, isGet, "county", fmt.Sprint(id))
@@ -240,10 +243,13 @@ func CountyTaxesHandler(w http.ResponseWriter, r *http.Request) {
 		countyTaxList, err = countyService.GetCountyTaxListByName(name)
 	}
 
-	if err.IsKind(apperrors.DataNotFound) {
-		writeNoEntityAvailable(w, isGet, "county", nameOrId(name, id))
-	} else if err.IsKind(apperrors.InternalError) || err != nil {
-		writeUnableToGetEntity(w, err, isGet, "county", nameOrId(name, id))
+	// handle response based on response from county service
+	if err != nil {
+		if err.IsKind(apperrors.DataNotFound) {
+			writeNoEntityAvailable(w, isGet, "county", nameOrId(name, id))
+		} else if err.IsKind(apperrors.InternalError) || err != nil {
+			writeUnableToGetEntity(w, err, isGet, "county", nameOrId(name, id))
+		}
 	} else {
 		b, err := countyTaxList.MarshallCountyTaxList()
 		if err != nil {
@@ -280,7 +286,7 @@ func StateTaxesHandler(w http.ResponseWriter, r *http.Request) {
 	if idStr != "" {
 		id, convErr := strconv.Atoi(idStr)
 		if convErr == nil {
-			logger.Info("Getting tax information for state %s", id)
+			logger.Info("Getting tax information for state %v", id)
 			stateTaxInfo, err = stateService.GetStateTaxInfoById(id)
 		} else {
 			writeNoEntityAvailable(w, isGet, "state", fmt.Sprint(id))

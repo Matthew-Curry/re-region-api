@@ -4,6 +4,8 @@ import (
 	"github.com/Matthew-Curry/re-region-api/dao"
 	"github.com/Matthew-Curry/re-region-api/model"
 	"github.com/Matthew-Curry/re-region-api/apperrors"
+
+	"strings"
 )
 
 // for core county response
@@ -92,12 +94,12 @@ func (c *CountyServiceImpl) GetCountyById(id int, fs model.FilingStatus, residen
 	county, ok := c.countyIdMp[id]
 	if ok {
 		// populate the tax information
-		logger.Info("County %s found in cache", id)
+		logger.Info("County %v found in cache", id)
 		countyTaxInfo := c.countyTaxIdMp[id]
 
 		return c.appendLocalTaxToCounty(county, countyTaxInfo, fs, resident, dependents, income), nil
 	}
-	logger.Info("County %s not found in cache, querying data access layer", id)
+	logger.Info("County %v not found in cache, querying data access layer", id)
 	countyData, err := c.daoImpl.GetCountyDataById(id)
 	if err != nil {
 		return nil, err
@@ -191,15 +193,18 @@ func (c *CountyServiceImpl) placeCountyDataInMaps(countyData [][]interface{}, fs
 		Tax_locales: taxLocaleInfos,
 	}
 
+	// lowercase and trim the county name for the maps
+	lowerCountyName := strings.TrimSpace(strings.ToLower(countyName))
+
 	c.countyTaxIdMp[countyId] = taxList
-	c.countyTaxNameMp[countyName] = taxList
+	c.countyTaxNameMp[lowerCountyName] = taxList
 
 	respCounty := c.buildCounty(countyId, countyName, stateId, stateName, countyData[0], taxLocales)
 	// cache the county information with an empty tax local, will use tax info + request info to calculate tax attributes when request arrives
 	cacheCounty := c.buildCounty(countyId, countyName, stateId, stateName, countyData[0], []model.TaxLocale{})
 
 	c.countyIdMp[countyId] = cacheCounty
-	c.countyNameMp[countyName] = cacheCounty
+	c.countyNameMp[lowerCountyName] = cacheCounty
 
 	return respCounty, taxList, nil
 
@@ -251,7 +256,8 @@ func (c *CountyServiceImpl) appendLocalTaxToCounty(county *model.County, countyT
 }
 
 func (c *CountyServiceImpl) GetCountyByName(name string, fs model.FilingStatus, resident bool, dependents int, income int) (*model.County, *apperrors.AppError) {
-	// check if id in map, if not get from db
+	// check if name in map, if not get from db
+	name = formatCountyInput(name)
 	county, ok := c.countyNameMp[name]
 	if ok {
 		// populate the tax information
@@ -307,20 +313,20 @@ func (c *CountyServiceImpl) GetCountyList(metricName string, n int) (*model.Coun
 }
 
 func (c *CountyServiceImpl) GetCountyTaxListById(id int) (*model.CountyTaxList, *apperrors.AppError) {
-	// check if name in map, if not get from db
+	// check if id in map, if not get from db
 	countyTax, ok := c.countyTaxIdMp[id]
 	if ok {
-		logger.Info("Found county %s in the tax cache", id)
+		logger.Info("Found county %v in the tax cache", id)
 		return countyTax, nil
 	}
-	logger.Info("Did not find county %s in the tax cache. Querying data access layer", id)
+	logger.Info("Did not find county %v in the tax cache. Querying data access layer", id)
 	countyData, err := c.daoImpl.GetCountyDataById(id)
 	if err != nil {
 		return nil, err
 	}
 
 	// place the data in the maps and return the tax information list
-	logger.Info("Placing county %s data in the correct maps", id)
+	logger.Info("Placing county %v data in the correct maps", id)
 	_, countyTax, _ = c.placeCountyDataInMaps(countyData, "H", false, 0, 0)
 
 	return countyTax, nil
@@ -328,6 +334,7 @@ func (c *CountyServiceImpl) GetCountyTaxListById(id int) (*model.CountyTaxList, 
 
 func (c *CountyServiceImpl) GetCountyTaxListByName(name string) (*model.CountyTaxList, *apperrors.AppError) {
 	// check if name in map, if not get from db
+	name = formatCountyInput(name)
 	countyTax, ok := c.countyTaxNameMp[name]
 	if ok {
 		logger.Info("Found county %s in the tax cache", name)
@@ -344,5 +351,18 @@ func (c *CountyServiceImpl) GetCountyTaxListByName(name string) (*model.CountyTa
 	_, countyTax, _ = c.placeCountyDataInMaps(countyData, "H", false, 0, 0)
 
 	return countyTax, nil
+
+}
+
+// Helper method with logic to format a county name input to the public methods.
+// Input should be trimmed and lowercased, and if there is no " county" in the name, 
+// apended at the end
+func formatCountyInput(county string) string {
+	county = strings.TrimSpace(strings.ToLower(county))
+	if !strings.Contains(county, " county") {
+		county = county + " county"
+	}
+
+	return county
 
 }

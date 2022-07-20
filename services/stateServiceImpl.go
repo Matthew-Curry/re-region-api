@@ -110,7 +110,7 @@ func buildStateCaches(stateCensusData [][]interface{}) (map[int][]interface{}, m
 	for _, state := range stateCensusData {
 		idMp[readAsInt(state[CENSUS_STATE_ID])] = state
 		// map lowercase name. Access methods will lowercase the name and trim spaces.
-		sn := strings.ToLower(readAsString(state[CENSUS_STATE_NAME]))
+		sn := strings.TrimSpace(strings.ToLower(readAsString(state[CENSUS_STATE_NAME])))
 		nameMp[sn] = state
 	}
 
@@ -149,11 +149,12 @@ func buildStateTaxCaches(stateTaxData [][]interface{}) (map[int]*model.StateTaxI
 		// if state tax info is not in id map, create for both maps
 		si := readAsInt(row[TAX_STATE_ID])
 		sn := readAsString(row[TAX_STATE_NAME])
-		// lowercase the name to provide a standard naming API
-		sn = strings.ToLower(sn)
 		if _, ok := idMp[si]; !ok {
 			stateTaxInfo := model.GetStateTaxInfo(si, sn, readAsInt(row[SINGLE_DEDUCTION]), readAsInt(row[MARRIED_DEDUCTION]),
 			readAsInt(row[SINGLE_EXEMPTION]), readAsInt(row[MARRIED_EXEMPTION]), readAsInt(row[DEPENDENT_EXEMPTION]))
+
+			// lowercase the name + trim space to provide a standard naming API
+			sn = strings.TrimSpace(strings.ToLower(sn))
 
 			idMp[si] = stateTaxInfo
 			nameMp[sn] = stateTaxInfo
@@ -180,11 +181,11 @@ func (s *StateServiceImpl) GetStateById(id int, fs model.FilingStatus, dependent
 	// retrieve state census information using the given id
 	sc, ok := s.stateIdMp[id]
 	if !ok {
-		logger.Warn("State id %s not in the cache", id)
+		logger.Warn("State id %v not in the cache", id)
 		return nil, apperrors.StateIDNotFound(id)
 	}
 	// process the yearly tax estimate given this income
-	logger.Info("Processing the tax liability for %s", id)
+	logger.Info("Processing the tax liability for %v", id)
 	t, st, ft := s.processTaxLiabilityById(id, fs, dependents, income)
 
 	return s.buildState(sc, t, st, ft), nil
@@ -244,7 +245,7 @@ func (s *StateServiceImpl) processTaxLiability(fs model.FilingStatus, dependents
 // get census and tax information by name
 func (s *StateServiceImpl) GetStateByName(name string, fs model.FilingStatus, dependents int, income int) (*model.State, *apperrors.AppError) {
 	// retrieve state census information using the given name. Lowercase name first to match map.
-	name = strings.ToLower(name)
+	name = strings.TrimSpace(strings.ToLower(name))
 	sc, ok := s.stateNameMp[name]
 	if !ok {
 		logger.Warn("State %s not in the cache", name)
@@ -274,7 +275,7 @@ func (s *StateServiceImpl) GetStateList(metricName string, n int) (*model.StateL
 func (s *StateServiceImpl) GetStateTaxInfoById(id int) (*model.StateTaxInfo, *apperrors.AppError) {
 	res, ok := s.stateTaxIdMp[id]
 	if !ok {
-		logger.Warn("State %s not found in the state tax cache", id)
+		logger.Warn("State %v not found in the state tax cache", id)
 		return nil, apperrors.StateIDNotInTaxCache(id)
 	}
 	return res, nil
@@ -282,7 +283,7 @@ func (s *StateServiceImpl) GetStateTaxInfoById(id int) (*model.StateTaxInfo, *ap
 
 // get state tax info by name
 func (s *StateServiceImpl) GetStateTaxInfoByName(name string) (*model.StateTaxInfo, *apperrors.AppError) {
-	name = strings.ToLower(name)
+	name = strings.TrimSpace(strings.ToLower(name))
 	res, ok := s.stateTaxNameMp[name]
 	if !ok {
 		logger.Warn("State %s not found in the state tax cache", name)
@@ -298,7 +299,7 @@ func (s *StateServiceImpl) getStateNameById(id int) (string, *apperrors.AppError
 
 	res, ok := s.stateTaxIdMp[id]
 	if !ok {
-		logger.Warn("State %s not found in the state tax cache", id)
+		logger.Warn("State %v not found in the state tax cache", id)
 		return "", apperrors.StateIDNotFound(id)
 	}
 

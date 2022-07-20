@@ -20,23 +20,40 @@ type Logger struct {
 }
 
 func (l *Logger) Info(s string, a ...interface{}) {
+	//s, a = l.messageSetup(s, a)
 	s = l.addCaller(s)
 	l.infoLogger.Printf(s, a...)
 }
 
 func (l *Logger) Warn(s string, a ...interface{}) {
+	//s, a = l.messageSetup(s, a)
 	s = l.addCaller(s)
 	l.warnLogger.Printf(s, a...)
 }
 
 func (l *Logger) Error(s string, a ...interface{}) {
+	//s, a = l.messageSetup(s, a)
 	s = l.addCaller(s)
 	l.errorLogger.Printf(s, a...)
 }
 
 func (l *Logger) Fatal(s string, a ...interface{}) {
+	//s, a = l.messageSetup(s, a)
 	s = l.addCaller(s)
 	l.errorLogger.Panicf(s, a...)
+}
+
+func (l *Logger) messageSetup(s string, a []interface{}) (string, []interface{}) {
+	return l.addCaller(s), l.inputAsString(a)
+}
+
+func (l *Logger) inputAsString(a ...interface{}) []interface{} {
+	n := make([]interface{}, len(a))
+	for _, i := range a {
+		n = append(n, i.(string))
+	}
+
+	return n
 }
 
 func (l *Logger) addCaller(s string) string{

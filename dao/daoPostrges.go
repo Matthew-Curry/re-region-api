@@ -3,15 +3,16 @@ package dao
 /* Postgres implementation of a DaoInterface */
 
 import (
+	"database/sql"
 	"fmt"
 	"io/ioutil"
 	"os"
 	"path"
 	"runtime"
 	"strconv"
-	"database/sql"
+	"strings"
 
-	"github.com/lib/pq"
+	_"github.com/lib/pq"
 
 	"github.com/Matthew-Curry/re-region-api/apperrors"
 	"github.com/Matthew-Curry/re-region-api/logging"
@@ -105,7 +106,7 @@ func (d *DaoImpl) GetCountyList(metric string, n int) ([][]interface{}, *apperro
 		return nil, err
 	}
 	logger.Info("Executing County list query")
-	res, err := d.getRowsFromQuery(query, metric, metric, strconv.Itoa(n))
+	res, err := d.getRowsFromQuery(query, metric, metric, n)
 	if err != nil {
 		return nil, apperrors.CountyListNotFound(err)
 	}
@@ -134,6 +135,10 @@ func (d *DaoImpl) GetCountyDataByName(county_name string) ([][]interface{}, *app
 	if err != nil {
 		return nil, err
 	}
+
+	// ensure name is trimmed and lowercased
+	county_name = strings.TrimSpace(strings.ToLower(county_name))
+
 	logger.Info("Executing County by name query")
 	res, err := d.getRowsFromQuery(query, county_name)
 	if err != nil {
@@ -151,7 +156,8 @@ func (d *DaoImpl) GetCountyDataById(county_id int) ([][]interface{}, *apperrors.
 		return nil, err
 	}
 	logger.Info("Executing County by id query")
-	res, err := d.getRowsFromQuery(query, strconv.Itoa(county_id))
+
+	res, err := d.getRowsFromQuery(query, county_id)
 	if err != nil {
 		return nil, apperrors.CountyIDNotFound(county_id, err)
 	}
@@ -165,6 +171,7 @@ func (d *DaoImpl) GetFederalTaxData() ([][]interface{}, *apperrors.AppError) {
 	if err != nil {
 		return nil, err
 	}
+
 	logger.Info("Executing Federal tax query")
 	res, err := d.getRowsFromQuery(query)
 	if err != nil {
@@ -198,7 +205,7 @@ func (d *DaoImpl) readSQLFileAsString(queryId string) (string, *apperrors.AppErr
 
 // helper method to get rows from a query result. Optionally pass filter values to apply,
 // else an empty string
-func (d *DaoImpl) getRowsFromQuery(query string, filterValue ...string) ([][]interface{}, *apperrors.AppError) {
+	func (d *DaoImpl) getRowsFromQuery(query string, filterValue ...any) ([][]interface{}, *apperrors.AppError) {
 	var rows *sql.Rows
 	var err error
 	if len(filterValue) == 0 {
@@ -206,7 +213,13 @@ func (d *DaoImpl) getRowsFromQuery(query string, filterValue ...string) ([][]int
 		rows, err = d.con.Query(query)
 	} else {
 		logger.Info("Executing the query with params")
-		rows, err = d.con.Query(query, pq.Array(filterValue))
+		// ? -> $n for postgres
+		paramCount := strings.Count(query, "?")
+		for n := 1; n <= paramCount; n++ {
+			query = strings.Replace(query, "?", "$"+strconv.Itoa(n), 1)
+		}
+
+		rows, err = d.con.Query(query, filterValue...)
 	}
 
 	if err != nil {
