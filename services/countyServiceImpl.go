@@ -40,21 +40,8 @@ const (
 	COUNTY_LIST_ID = iota
 	COUNTY_LIST_NAME
     COUNTY_LIST_STATE_ID
-    COUNTY_LIST_POP
-    COUNTY_LIST_MALE_POP
-    COUNTY_LIST_FEMALE_POP
-    COUNTY_LIST_MEDIAN_INCOME
-    COUNTY_LIST_AVERAGE_RENT
-    COUNTY_LIST_COMMUTE
+    COUNTY_LIST_METRIC_VALUE
 )
-
-// mapping of metric name inputs to indexes in the metric list response
-var metricIndexMap = map[string]int{"pop": COUNTY_LIST_POP,
-									"male_pop": COUNTY_LIST_MALE_POP,
-									"female_pop": COUNTY_LIST_FEMALE_POP,
-									"median_income": COUNTY_MEDIAN_INCOME,
-									"average_rent": COUNTY_LIST_AVERAGE_RENT,
-									"commute": COUNTY_LIST_COMMUTE}
 
 /* Implementation of the Re-Region API county service */
 
@@ -67,9 +54,6 @@ type CountyServiceImpl struct {
 	// maps for tax info endpoint. Populated when requests for counties are made to the database
 	countyTaxNameMp map[string]*model.CountyTaxList
 	countyTaxIdMp   map[int]*model.CountyTaxList
-
-	// map of metric names to the indexes in the county list response
-	metricIndexMap map[string]int
 
 	// use provided impl of state service to access state + federal tax information
 	stateService StateServiceInterface
@@ -84,7 +68,6 @@ func GetCountyServiceImpl(daoImpl dao.DaoInterface, stateService StateServiceInt
 		countyNameMp:    map[string]*model.County{},
 		countyTaxNameMp: map[string]*model.CountyTaxList{},
 		countyTaxIdMp:   map[int]*model.CountyTaxList{},
-		metricIndexMap:  metricIndexMap,
 		stateService:    stateService,
 		daoImpl:         daoImpl}, nil
 }
@@ -279,10 +262,10 @@ func (c *CountyServiceImpl) GetCountyByName(name string, fs model.FilingStatus, 
 	return county, nil
 }
 
-func (c *CountyServiceImpl) GetCountyList(metricName string, n int) (*model.CountyList, *apperrors.AppError) {
+func (c *CountyServiceImpl) GetCountyList(metricName string, n int, desc bool) (*model.CountyList, *apperrors.AppError) {
 	// request list from dao
 	logger.Info("Querying data access layer for list of counties ranked by metric %s", metricName)
-	countyListData, err := c.daoImpl.GetCountyList(metricName, n)
+	countyListData, err := c.daoImpl.GetCountyList(metricName, n, desc)
 	if err != nil {
 		return nil, err
 	}
@@ -296,17 +279,17 @@ func (c *CountyServiceImpl) GetCountyList(metricName string, n int) (*model.Coun
 		if err != nil {
 			return nil, err
 		}
-		metricValue := c.metricIndexMap[metricName]
+		
 		cmp := model.CountyMetricPair{
 			County_id : readAsInt(countyData[COUNTY_LIST_ID]), 
 			County_name : readAsString(countyData[COUNTY_LIST_NAME]),
 			State_id : stateId,
 			State_name : stateName,
-			Metric_value : metricValue,
+			Metric_value : readAsInt(countyData[COUNTY_LIST_METRIC_VALUE]),
 		}
 
-		// append pair in order
-		countyList.AppendToRankedList(cmp)
+		// append to list, order is enforced by query
+		countyList.Ranked_list = append(countyList.Ranked_list, cmp)
 	}
 
 	return countyList, nil

@@ -23,4 +23,4 @@ SELECT
     tax_locale.nonresident_pay_period_fee,
     tax_locale.nonresident_state_rate
 FROM county INNER JOIN tax_locale ON county.county_id = tax_locale.county_id
-WHERE county.county_id = ?;
+WHERE county.county_id = ? AND county.county_id != 32767;

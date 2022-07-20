@@ -127,7 +127,7 @@ func CountyListHandler(w http.ResponseWriter, r *http.Request) {
 	logger.Info("Get county list called")
 	start := time.Now()
 	// params
-	metricName, size, errStr := getListParams(r)
+	metricName, size, desc, errStr := getListParams(r)
 	if errStr != "" {
 		writeGotBadParams(w, errStr)
 	}
@@ -144,13 +144,15 @@ func CountyListHandler(w http.ResponseWriter, r *http.Request) {
 
 	// get the county list
 	logger.Info("Getting county list for metric %s", metricName)
-	countyList, err := countyService.GetCountyList(metricName, size)
+	countyList, err := countyService.GetCountyList(metricName, size, desc)
 
 	// write the response based on county value
-	if err.IsKind(apperrors.DataNotFound) {
-		writeNoEntityAvailable(w, isGet, "metric", metricName)
-	} else if err.IsKind(apperrors.InternalError) || err != nil {
-		writeUnableToGetEntity(w, err, isGet, "metric", metricName)
+	if err != nil {
+		if err.IsKind(apperrors.DataNotFound) {
+			writeNoEntityAvailable(w, isGet, "metric", metricName)
+		} else if err.IsKind(apperrors.InternalError) || err != nil {
+			writeUnableToGetEntity(w, err, isGet, "metric", metricName)
+		}
 	} else {
 		b, err := countyList.MarshallCountyList()
 		if err != nil {
@@ -168,7 +170,7 @@ func StateListHandler(w http.ResponseWriter, r *http.Request) {
 	logger.Info("Get state list called")
 	start := time.Now()
 	// params
-	metricName, size, errStr := getListParams(r)
+	metricName, size, desc, errStr := getListParams(r)
 	if errStr != "" {
 		writeGotBadParams(w, errStr)
 		return
@@ -186,7 +188,7 @@ func StateListHandler(w http.ResponseWriter, r *http.Request) {
 
 	// retrieve the state list
 	logger.Info("Getting state list for metric %s", metricName)
-	stateList, err := stateService.GetStateList(metricName, size)
+	stateList, err := stateService.GetStateList(metricName, size, desc)
 
 	// write the response based on state value
 	if err != nil {

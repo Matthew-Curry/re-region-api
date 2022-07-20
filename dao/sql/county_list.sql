@@ -1,4 +1,5 @@
-SELECT county_name, ?
+SELECT county_id, county_name, state_id, %s
 FROM county
-ORDER BY ? DESC 
-LIMIT ?
+WHERE county_name != '32767'
+ORDER BY %s %s 
+LIMIT ?;

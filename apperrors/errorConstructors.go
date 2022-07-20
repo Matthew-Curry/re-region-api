@@ -36,6 +36,12 @@ func NoRows() *AppError{
 	return &AppError{message: message, kind: kind, source: nil}
 }
 
+func CannotGetMetrics(source error) *AppError {
+	message := fmt.Sprintf("Unable to retrieve list of metrics from the database: %s", source.Error())
+	kind := InternalError
+	return &AppError{message: message, kind: kind, source: nil}
+}
+
 func StateCensusNotFound(source error) *AppError{
 	message := fmt.Sprintf("Unable to retrieve state census data from DB: %s", source.Error())
 	kind := InternalError
@@ -51,6 +57,12 @@ func StateTaxNotFound(source error) *AppError{
 func CountyListNotFound(source error) *AppError {
 	message := fmt.Sprintf("Unable to retrieve county list from DB: %s", source.Error())
 	kind := InternalError
+	return &AppError{message: message, kind: kind, source: nil}
+}
+
+func InvalidCountyMetric() *AppError {
+	message := fmt.Sprintf("The provided metric is not in the valid set")
+	kind := DataNotFound
 	return &AppError{message: message, kind: kind, source: nil}
 }
 

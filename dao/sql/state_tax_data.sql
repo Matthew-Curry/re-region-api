@@ -10,4 +10,5 @@ SELECT
     state_brackets.single_bracket,
     state_brackets.married_rate,
     state_brackets.married_bracket
-FROM states INNER JOIN state_brackets ON states.state_id = state_brackets.state_id;
+FROM states INNER JOIN state_brackets ON states.state_id = state_brackets.state_id
+WHERE states.state_id != 32767;

@@ -14,7 +14,7 @@ type DaoInterface interface {
 	GetCountyDataById(county_id int) ([][]interface{}, *apperrors.AppError)
 	GetCountyDataByName(county_name string) ([][]interface{}, *apperrors.AppError)
 	// to pull top listing for a metric for counties
-	GetCountyList(metric string, n int) ([][]interface{}, *apperrors.AppError)
+	GetCountyList(metric string, n int, desc bool) ([][]interface{}, *apperrors.AppError)
 	// federal tax data access
 	GetFederalTaxData() ([][]interface{}, *apperrors.AppError)
 }

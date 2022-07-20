@@ -133,7 +133,7 @@ func buildStateListCaches(stateCensusData [][]interface{}) map[string]*model.Sta
 												State_name: readAsString(state[CENSUS_STATE_NAME]), 
 												Metric_value: readAsInt(state[i])}
 			// insert the metric pair into the appropriate slice in order
-			mp[m].AppendToRankedList(metricPair)
+			mp[m].AppendToRankedLists(metricPair)
 		}
 	}
 
@@ -260,12 +260,15 @@ func (s *StateServiceImpl) GetStateByName(name string, fs model.FilingStatus, de
 }
 
 // get state for given metric and size
-func (s *StateServiceImpl) GetStateList(metricName string, n int) (*model.StateList, *apperrors.AppError) {
+func (s *StateServiceImpl) GetStateList(metricName string, n int, desc bool) (*model.StateList, *apperrors.AppError) {
 	res, ok := s.metricListMp[metricName]
 	if !ok {
 		logger.Warn("Metric %s not found in the state list cache", metricName)
 		return nil, apperrors.StateListNotFound(metricName)
 	}
+
+	// set the ranked list based on length, whether it is ascending or desc
+	res.SetRankedList(n, desc)
 
 	return res, nil
 

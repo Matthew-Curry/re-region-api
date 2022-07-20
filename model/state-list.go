@@ -9,6 +9,10 @@ import (
 
 type StateList struct {
 	Metric_name string
+	// store an ascending and descending list to be prepared for either request
+	asc_list []StateMetricPair
+	desc_list []StateMetricPair
+	// the ranked list returned
 	ranked_list []StateMetricPair
 }
 
@@ -23,22 +27,42 @@ func GetMetricStateList(metric string) *StateList {
 	return &StateList {Metric_name: metric, ranked_list: []StateMetricPair{}}
 }
 
+// method called to set the ranked list and its length
+func (s *StateList) SetRankedList(n int, desc bool) {
+	if desc {
+		s.ranked_list = s.desc_list[:n]
+	} else {
+		s.ranked_list = s.asc_list[:n]
+	}
+}
+
 // add pairs to the ranked list in order
-func (s *StateList) AppendToRankedList(metricPair StateMetricPair) {
-	// determine index to insert to
-	i := sort.Search(len(s.ranked_list), func(i int) bool { return s.ranked_list[i].Metric_value >= metricPair.Metric_value })
-	// if i is the next index, can just append
-	if i == len(s.ranked_list) {
-		s.ranked_list = append(s.ranked_list, metricPair)
-		return
+func (s *StateList) AppendToRankedLists(metricPair StateMetricPair) {
+	// determine indexes to insert to
+	ia := sort.Search(len(s.asc_list), func(i int) bool { return s.asc_list[i].Metric_value >= metricPair.Metric_value })
+	id := sort.Search(len(s.desc_list), func(i int) bool { return s.desc_list[i].Metric_value <= metricPair.Metric_value })
+
+	s.asc_list = s.insertAtIndex(ia, metricPair, s.asc_list)
+	s.desc_list = s.insertAtIndex(id, metricPair, s.desc_list)
+
 	}
 
+// insert at both ascending and descending lists
+func (s *StateList) insertAtIndex(i int, metricPair StateMetricPair, list []StateMetricPair) []StateMetricPair {
+	// if i is the next index, can just append
+	if i == len(list) {
+		list = append(list, metricPair)
+		return list
+	}
+	
 	// else shift elements in slice at the insertion index. Using append will not allocate extra memory
 	// when cap(s.ranked_list) > len(s.ranked_list)
-	s.ranked_list = append(s.ranked_list[:i+1], s.ranked_list[i:]...)
+	list = append(list[:i+1], list[i:]...)
 
 	// overwrite the duplicates value for the insert and return the result
-	s.ranked_list[i] = metricPair
+	list[i] = metricPair
+
+	return list
 }
 
 // getter method for the controller to be able to marhsall private fields

@@ -20,16 +20,26 @@ func getStateParams(r *http.Request) (int, string, model.FilingStatus, bool, int
 	return getGeoParams("state", r)
 }
 
-func getListParams(r *http.Request) (string, int, string) {
+func getListParams(r *http.Request) (string, int, bool, string) {
 	metric := r.URL.Query().Get("metric_name")
 	sizeStr := r.URL.Query().Get("size")
+	descStr := r.URL.Query().Get("desc")
+
+	if metric == "" {
+		return "", 0, false, "A metric must be provided to generate the list."
+	}
+
+	desc, err := strconv.ParseBool(descStr)
+	if err != nil {
+		return "", 0, false, "A boolean like value must be given for whether to make the list descending."
+	}
 
 	size, err := strconv.Atoi(sizeStr) 
 	if err != nil {
-		return "", 0, "The size of the list must be an integer."
+		return "", 0, false, "The size of the list must be an integer."
 	}
 
-	return metric, size, ""
+	return metric, size, desc, ""
 
 }
 

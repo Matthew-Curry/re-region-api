@@ -12,7 +12,7 @@ import (
 	"strconv"
 	"strings"
 
-	_"github.com/lib/pq"
+	_ "github.com/lib/pq"
 
 	"github.com/Matthew-Curry/re-region-api/apperrors"
 	"github.com/Matthew-Curry/re-region-api/logging"
@@ -29,6 +29,7 @@ const (
 	port int    = 5432
 
 	// identifiers to sql query files
+	GET_METRIC_SET      string = "GET_METRIC_SET"
 	COUNTY_DATA_BY_ID   string = "COUNTY_DATA_BY_ID"
 	COUNTY_DATA_BY_NAME string = "COUNTY_DATA_BY_NAME"
 	FEDERAL_TAX_DATA    string = "FEDERAL_TAX_DATA"
@@ -37,17 +38,20 @@ const (
 	COUNTY_LIST_DATA    string = "COUNTY_LIST_DATA"
 
 	// sql queries
+	GET_METRIC_SET_QUERY      string = "metric_set.sql"
 	COUNTY_DATA_BY_ID_QUERY   string = "county_data_by_id.sql"
 	COUNTY_DATA_BY_NAME_QUERY string = "county_data_by_name.sql"
 	FEDERAL_TAX_DATA_QUERY    string = "federal_tax_data.sql"
 	STATE_CENSUS_DATA_QUERY   string = "state_census_data.sql"
 	STATE_TAX_DATA_QUERY      string = "state_tax_data.sql"
-	COUNTY_LIST_DATA_QUERY    string = "county_list_data.sql"
+	COUNTY_LIST_DATA_QUERY    string = "county_list.sql"
 )
 
 var logger, _ = logging.GetLogger("file.log")
 
 type DaoImpl struct {
+	// holds map of valid metrics to request, populated on startup to valid requested metrics
+	metricSet map[string]int
 	// the database connection
 	con *sql.DB
 	// map of identifiers to SQL queries to load in to pull data
@@ -58,6 +62,7 @@ type DaoImpl struct {
 func GetPostgresDao() (DaoInterface, *apperrors.AppError) {
 	// map of identifiers to sql files
 	sqlMap := map[string]string{
+		"GET_METRIC_SET": GET_METRIC_SET_QUERY,
 		"COUNTY_DATA_BY_ID":   COUNTY_DATA_BY_ID_QUERY,
 		"COUNTY_DATA_BY_NAME": COUNTY_DATA_BY_NAME_QUERY,
 		"FEDERAL_TAX_DATA":    FEDERAL_TAX_DATA_QUERY,
@@ -75,12 +80,47 @@ func GetPostgresDao() (DaoInterface, *apperrors.AppError) {
 		"password=%s dbname=%s sslmode=disable",
 		host, port, user, password, dbname)
 	logger.Info("Opening connection to postgres DB")
-	d, err := sql.Open("postgres", psqlInfo)
+	c, err := sql.Open("postgres", psqlInfo)
 	if err != nil {
 		return nil, apperrors.DBConnectionError(err)
 	}
 	logger.Info("Successfully instantiated DB connection")
-	return &DaoImpl{con: d, sqlMap: sqlMap}, nil
+
+	d := &DaoImpl{con: c, sqlMap: sqlMap, metricSet: map[string]int{}}
+	logger.Info("Instantiated DAO")
+
+	logger.Info("Reading in the valid metrics")
+	ae := d.loadMetricSet()
+
+	if err != nil {
+		return nil, ae
+	}
+
+	return d, nil
+
+}
+
+// method called by constructor to load in valid list of metrics
+// on the instantiation of the dao
+func (d *DaoImpl) loadMetricSet() *apperrors.AppError {
+	query, err := d.readSQLFileAsString(GET_METRIC_SET)
+
+	if err != nil {
+		return err
+	}
+
+	logger.Info("Getting valid metrics from database")
+	res, err := d.getRowsFromQuery(query)
+	if err != nil {
+		return apperrors.CannotGetMetrics(err)
+	}
+
+	logger.Info("Loading the response into the metric set")
+	for _, row := range res {
+		d.metricSet[string(row[0].([]uint8))] = 0
+	}
+
+	return nil
 
 }
 
@@ -99,14 +139,30 @@ func (d *DaoImpl) GetStateCensusData() ([][]interface{}, *apperrors.AppError) {
 	return res, nil
 }
 
-func (d *DaoImpl) GetCountyList(metric string, n int) ([][]interface{}, *apperrors.AppError) {
+func (d *DaoImpl) GetCountyList(metric string, n int, desc bool) ([][]interface{}, *apperrors.AppError) {
+	// verify the metric is valid
+	_, ok := d.metricSet[metric]
+	if !ok {
+		return nil, apperrors.InvalidCountyMetric()
+	}
+
 	query, err := d.readSQLFileAsString(COUNTY_LIST_DATA)
+
+	var order string
+	if desc {
+		order = "DESC"
+	} else {
+		order = ""
+	}
+
+	// substitute the metric into the query to be selected before passing to DB.
+	query = fmt.Sprintf(query, metric, metric, order)
 
 	if err != nil {
 		return nil, err
 	}
 	logger.Info("Executing County list query")
-	res, err := d.getRowsFromQuery(query, metric, metric, n)
+	res, err := d.getRowsFromQuery(query, n)
 	if err != nil {
 		return nil, apperrors.CountyListNotFound(err)
 	}
@@ -205,7 +261,7 @@ func (d *DaoImpl) readSQLFileAsString(queryId string) (string, *apperrors.AppErr
 
 // helper method to get rows from a query result. Optionally pass filter values to apply,
 // else an empty string
-	func (d *DaoImpl) getRowsFromQuery(query string, filterValue ...any) ([][]interface{}, *apperrors.AppError) {
+func (d *DaoImpl) getRowsFromQuery(query string, filterValue ...any) ([][]interface{}, *apperrors.AppError) {
 	var rows *sql.Rows
 	var err error
 	if len(filterValue) == 0 {
