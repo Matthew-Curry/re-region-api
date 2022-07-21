@@ -1,16 +1,6 @@
-//  Comapany Api:
-//   version: 0.0.1
-//   title: Comapany Api
-//  Schemes: http, https
-//  Host: localhost:5000
-//  BasePath: /
-//  Produces:
-//    - application/json
-//
-// securityDefinitions:
-//  apiKey:
-//    type: apiKey
-//    in: header
-//    name: authorization
-// swagger:meta
-package controllers
+openapi: 3.0.3
+info:
+  title: Re-Region
+  description: |
+    API to request info about regions.
+  version: 0.0.3

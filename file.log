@@ -12174,3 +12174,1033 @@ INFO 2022/07/21 13:40:13 stateServiceImpl.go 95 All state caches are now created
 INFO 2022/07/21 13:40:13 init.go 51 Successfully initialized state service
 INFO 2022/07/21 13:40:13 init.go 61 Successfully initialized county service
 INFO 2022/07/21 13:40:13 bootstrap.go 64 Listening at :8080
+INFO 2022/07/21 13:42:45 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/21 13:42:45 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/21 13:42:45 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/21 13:42:45 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/21 13:42:45 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/21 13:42:45 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/21 13:42:45 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/21 13:42:45 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/21 13:42:45 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:42:45 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:42:45 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/21 13:42:45 init.go 31 Successfully initialized dao service
+INFO 2022/07/21 13:42:45 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/21 13:42:45 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/21 13:42:45 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/21 13:42:45 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/21 13:42:45 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:42:45 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:42:45 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/21 13:42:45 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/21 13:42:45 init.go 41 Successfully initialized federal service
+INFO 2022/07/21 13:42:45 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/21 13:42:45 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/21 13:42:45 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/21 13:42:45 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/21 13:42:45 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:42:45 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:42:45 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/21 13:42:45 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/21 13:42:45 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/21 13:42:45 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/21 13:42:45 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:42:45 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:42:45 stateServiceImpl.go 86 Building caches
+INFO 2022/07/21 13:42:45 stateServiceImpl.go 88 State cache created
+INFO 2022/07/21 13:42:45 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/21 13:42:45 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/21 13:42:45 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/21 13:42:45 init.go 51 Successfully initialized state service
+INFO 2022/07/21 13:42:45 init.go 61 Successfully initialized county service
+INFO 2022/07/21 13:42:45 main.go 63 Listening at :8080
+INFO 2022/07/21 13:45:48 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/21 13:45:48 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/21 13:45:48 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/21 13:45:48 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/21 13:45:48 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/21 13:45:48 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/21 13:45:48 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/21 13:45:48 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/21 13:45:48 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:45:48 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:45:48 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/21 13:45:48 init.go 31 Successfully initialized dao service
+INFO 2022/07/21 13:45:48 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/21 13:45:48 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/21 13:45:48 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/21 13:45:48 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/21 13:45:48 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:45:48 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:45:48 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/21 13:45:48 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/21 13:45:48 init.go 41 Successfully initialized federal service
+INFO 2022/07/21 13:45:48 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/21 13:45:48 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/21 13:45:48 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/21 13:45:48 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/21 13:45:48 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:45:48 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:45:48 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/21 13:45:48 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/21 13:45:48 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/21 13:45:48 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/21 13:45:48 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:45:48 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:45:48 stateServiceImpl.go 86 Building caches
+INFO 2022/07/21 13:45:48 stateServiceImpl.go 88 State cache created
+INFO 2022/07/21 13:45:48 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/21 13:45:48 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/21 13:45:48 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/21 13:45:48 init.go 51 Successfully initialized state service
+INFO 2022/07/21 13:45:48 init.go 61 Successfully initialized county service
+INFO 2022/07/21 13:45:48 main.go 63 Listening at :8080
+INFO 2022/07/21 13:46:51 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/21 13:46:51 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/21 13:46:51 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/21 13:46:51 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/21 13:46:51 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/21 13:46:51 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/21 13:46:51 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/21 13:46:51 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/21 13:46:51 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:46:51 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:46:51 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/21 13:46:51 init.go 31 Successfully initialized dao service
+INFO 2022/07/21 13:46:51 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/21 13:46:51 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/21 13:46:51 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/21 13:46:51 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/21 13:46:51 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:46:51 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:46:51 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/21 13:46:51 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/21 13:46:51 init.go 41 Successfully initialized federal service
+INFO 2022/07/21 13:46:51 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/21 13:46:51 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/21 13:46:51 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/21 13:46:51 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/21 13:46:51 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:46:51 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:46:51 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/21 13:46:51 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/21 13:46:51 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/21 13:46:51 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/21 13:46:51 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:46:51 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:46:51 stateServiceImpl.go 86 Building caches
+INFO 2022/07/21 13:46:51 stateServiceImpl.go 88 State cache created
+INFO 2022/07/21 13:46:51 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/21 13:46:51 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/21 13:46:51 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/21 13:46:51 init.go 51 Successfully initialized state service
+INFO 2022/07/21 13:46:51 init.go 61 Successfully initialized county service
+INFO 2022/07/21 13:46:51 main.go 63 Listening at :8080
+INFO 2022/07/21 13:48:10 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/21 13:48:10 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/21 13:48:10 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/21 13:48:10 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/21 13:48:10 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/21 13:48:10 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/21 13:48:10 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/21 13:48:10 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/21 13:48:10 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:48:11 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:48:11 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/21 13:48:11 init.go 31 Successfully initialized dao service
+INFO 2022/07/21 13:48:11 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/21 13:48:11 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/21 13:48:11 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/21 13:48:11 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/21 13:48:11 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:48:11 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:48:11 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/21 13:48:11 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/21 13:48:11 init.go 41 Successfully initialized federal service
+INFO 2022/07/21 13:48:11 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/21 13:48:11 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/21 13:48:11 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/21 13:48:11 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/21 13:48:11 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:48:11 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:48:11 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/21 13:48:11 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/21 13:48:11 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/21 13:48:11 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/21 13:48:11 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:48:11 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:48:11 stateServiceImpl.go 86 Building caches
+INFO 2022/07/21 13:48:11 stateServiceImpl.go 88 State cache created
+INFO 2022/07/21 13:48:11 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/21 13:48:11 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/21 13:48:11 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/21 13:48:11 init.go 51 Successfully initialized state service
+INFO 2022/07/21 13:48:11 init.go 61 Successfully initialized county service
+INFO 2022/07/21 13:48:11 main.go 63 Listening at :8080
+INFO 2022/07/21 13:57:57 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/21 13:57:57 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/21 13:57:57 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/21 13:57:57 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/21 13:57:57 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/21 13:57:57 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/21 13:57:57 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/21 13:57:57 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/21 13:57:57 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:57:57 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:57:57 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/21 13:57:57 init.go 31 Successfully initialized dao service
+INFO 2022/07/21 13:57:57 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/21 13:57:57 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/21 13:57:57 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/21 13:57:57 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/21 13:57:57 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:57:57 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:57:57 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/21 13:57:57 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/21 13:57:57 init.go 41 Successfully initialized federal service
+INFO 2022/07/21 13:57:57 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/21 13:57:57 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/21 13:57:57 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/21 13:57:57 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/21 13:57:57 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:57:57 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:57:57 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/21 13:57:57 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/21 13:57:57 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/21 13:57:57 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/21 13:57:57 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:57:57 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:57:57 stateServiceImpl.go 86 Building caches
+INFO 2022/07/21 13:57:57 stateServiceImpl.go 88 State cache created
+INFO 2022/07/21 13:57:57 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/21 13:57:57 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/21 13:57:57 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/21 13:57:57 init.go 51 Successfully initialized state service
+INFO 2022/07/21 13:57:57 init.go 61 Successfully initialized county service
+INFO 2022/07/21 13:57:57 main.go 63 Listening at :8080
+INFO 2022/07/21 13:58:50 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/21 13:58:50 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/21 13:58:50 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/21 13:58:50 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/21 13:58:50 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/21 13:58:50 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/21 13:58:50 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/21 13:58:50 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/21 13:58:50 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:58:50 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:58:50 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/21 13:58:50 init.go 31 Successfully initialized dao service
+INFO 2022/07/21 13:58:50 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/21 13:58:50 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/21 13:58:50 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/21 13:58:50 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/21 13:58:50 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:58:50 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:58:50 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/21 13:58:50 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/21 13:58:50 init.go 41 Successfully initialized federal service
+INFO 2022/07/21 13:58:50 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/21 13:58:50 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/21 13:58:50 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/21 13:58:50 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/21 13:58:50 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:58:50 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:58:50 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/21 13:58:50 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/21 13:58:50 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/21 13:58:50 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/21 13:58:50 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:58:50 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:58:50 stateServiceImpl.go 86 Building caches
+INFO 2022/07/21 13:58:50 stateServiceImpl.go 88 State cache created
+INFO 2022/07/21 13:58:50 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/21 13:58:50 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/21 13:58:50 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/21 13:58:50 init.go 51 Successfully initialized state service
+INFO 2022/07/21 13:58:50 init.go 61 Successfully initialized county service
+INFO 2022/07/21 13:58:50 main.go 63 Listening at :8080
+INFO 2022/07/21 13:59:28 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/21 13:59:28 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/21 13:59:28 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/21 13:59:28 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/21 13:59:28 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/21 13:59:28 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/21 13:59:28 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/21 13:59:28 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/21 13:59:28 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:59:28 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:59:28 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/21 13:59:28 init.go 31 Successfully initialized dao service
+INFO 2022/07/21 13:59:28 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/21 13:59:28 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/21 13:59:28 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/21 13:59:28 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/21 13:59:28 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:59:28 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:59:28 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/21 13:59:28 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/21 13:59:28 init.go 41 Successfully initialized federal service
+INFO 2022/07/21 13:59:28 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/21 13:59:28 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/21 13:59:28 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/21 13:59:28 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/21 13:59:28 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:59:28 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:59:28 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/21 13:59:28 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/21 13:59:28 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/21 13:59:28 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/21 13:59:28 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:59:28 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:59:28 stateServiceImpl.go 86 Building caches
+INFO 2022/07/21 13:59:28 stateServiceImpl.go 88 State cache created
+INFO 2022/07/21 13:59:28 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/21 13:59:28 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/21 13:59:28 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/21 13:59:28 init.go 51 Successfully initialized state service
+INFO 2022/07/21 13:59:28 init.go 61 Successfully initialized county service
+INFO 2022/07/21 13:59:28 main.go 64 Listening at :8080
+INFO 2022/07/21 13:59:57 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/21 13:59:57 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/21 13:59:57 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/21 13:59:57 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/21 13:59:57 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/21 13:59:57 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/21 13:59:57 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/21 13:59:57 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/21 13:59:57 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:59:57 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:59:57 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/21 13:59:57 init.go 31 Successfully initialized dao service
+INFO 2022/07/21 13:59:57 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/21 13:59:57 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/21 13:59:57 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/21 13:59:57 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/21 13:59:57 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:59:57 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:59:57 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/21 13:59:57 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/21 13:59:57 init.go 41 Successfully initialized federal service
+INFO 2022/07/21 13:59:57 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/21 13:59:57 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/21 13:59:57 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/21 13:59:57 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/21 13:59:57 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:59:57 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:59:57 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/21 13:59:57 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/21 13:59:57 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/21 13:59:57 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/21 13:59:57 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 13:59:57 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 13:59:57 stateServiceImpl.go 86 Building caches
+INFO 2022/07/21 13:59:57 stateServiceImpl.go 88 State cache created
+INFO 2022/07/21 13:59:57 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/21 13:59:57 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/21 13:59:57 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/21 13:59:57 init.go 51 Successfully initialized state service
+INFO 2022/07/21 13:59:57 init.go 61 Successfully initialized county service
+INFO 2022/07/21 13:59:57 main.go 65 Listening at :8080
+INFO 2022/07/21 14:00:27 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/21 14:00:27 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/21 14:00:27 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/21 14:00:27 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/21 14:00:27 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/21 14:00:27 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/21 14:00:27 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/21 14:00:27 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/21 14:00:27 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:00:27 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:00:27 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/21 14:00:27 init.go 31 Successfully initialized dao service
+INFO 2022/07/21 14:00:27 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/21 14:00:27 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/21 14:00:27 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/21 14:00:27 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/21 14:00:27 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:00:27 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:00:27 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/21 14:00:27 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/21 14:00:27 init.go 41 Successfully initialized federal service
+INFO 2022/07/21 14:00:27 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/21 14:00:27 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/21 14:00:27 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/21 14:00:27 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/21 14:00:27 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:00:27 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:00:27 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/21 14:00:27 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/21 14:00:27 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/21 14:00:27 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/21 14:00:27 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:00:27 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:00:27 stateServiceImpl.go 86 Building caches
+INFO 2022/07/21 14:00:27 stateServiceImpl.go 88 State cache created
+INFO 2022/07/21 14:00:27 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/21 14:00:27 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/21 14:00:27 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/21 14:00:27 init.go 51 Successfully initialized state service
+INFO 2022/07/21 14:00:27 init.go 61 Successfully initialized county service
+INFO 2022/07/21 14:00:27 main.go 66 Listening at :8080
+INFO 2022/07/21 14:02:13 controller.go 31 Get county called
+INFO 2022/07/21 14:02:13 controller.go 54 Getting county%!(EXTRA string=adams)
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 252 County adams county not found in cache, querying data access layer
+INFO 2022/07/21 14:02:13 daoPostrges.go 242 Reading in SQL for COUNTY_DATA_BY_NAME
+INFO 2022/07/21 14:02:13 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/county_data_by_name.sql
+INFO 2022/07/21 14:02:13 daoPostrges.go 198 Executing County by name query
+INFO 2022/07/21 14:02:13 daoPostrges.go 271 Executing the query with params
+INFO 2022/07/21 14:02:13 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 259 Recieved response, placing data into the appropriate caches
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:02:13 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:02:13 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:02:13 writers.go 74 Returned 200 response in 4.28558ms
+INFO 2022/07/21 14:08:49 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/21 14:08:49 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/21 14:08:49 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/21 14:08:49 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/21 14:08:49 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/21 14:08:49 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/21 14:08:49 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/21 14:08:49 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/21 14:08:49 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:08:49 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:08:49 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/21 14:08:49 init.go 31 Successfully initialized dao service
+INFO 2022/07/21 14:08:49 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/21 14:08:49 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/21 14:08:49 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/21 14:08:49 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/21 14:08:49 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:08:49 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:08:49 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/21 14:08:49 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/21 14:08:49 init.go 41 Successfully initialized federal service
+INFO 2022/07/21 14:08:49 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/21 14:08:49 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/21 14:08:49 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/21 14:08:49 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/21 14:08:49 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:08:49 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:08:49 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/21 14:08:49 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/21 14:08:49 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/21 14:08:49 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/21 14:08:49 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:08:49 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:08:49 stateServiceImpl.go 86 Building caches
+INFO 2022/07/21 14:08:49 stateServiceImpl.go 88 State cache created
+INFO 2022/07/21 14:08:49 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/21 14:08:49 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/21 14:08:49 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/21 14:08:49 init.go 51 Successfully initialized state service
+INFO 2022/07/21 14:08:49 init.go 61 Successfully initialized county service
+INFO 2022/07/21 14:08:49 main.go 66 Listening at :8080
+INFO 2022/07/21 14:15:42 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/21 14:15:42 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/21 14:15:42 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/21 14:15:42 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/21 14:15:42 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/21 14:15:42 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/21 14:15:42 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/21 14:15:42 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/21 14:15:42 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:15:42 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:15:42 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/21 14:15:42 init.go 31 Successfully initialized dao service
+INFO 2022/07/21 14:15:42 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/21 14:15:42 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/21 14:15:42 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/21 14:15:42 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/21 14:15:42 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:15:42 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:15:42 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/21 14:15:42 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/21 14:15:42 init.go 41 Successfully initialized federal service
+INFO 2022/07/21 14:15:42 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/21 14:15:42 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/21 14:15:42 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/21 14:15:42 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/21 14:15:42 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:15:42 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:15:42 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/21 14:15:42 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/21 14:15:42 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/21 14:15:42 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/21 14:15:42 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:15:42 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:15:42 stateServiceImpl.go 86 Building caches
+INFO 2022/07/21 14:15:42 stateServiceImpl.go 88 State cache created
+INFO 2022/07/21 14:15:42 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/21 14:15:42 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/21 14:15:42 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/21 14:15:42 init.go 51 Successfully initialized state service
+INFO 2022/07/21 14:15:42 init.go 61 Successfully initialized county service
+INFO 2022/07/21 14:15:42 main.go 66 Listening at :8080
+INFO 2022/07/21 14:16:04 controller.go 31 Get county called
+INFO 2022/07/21 14:16:04 controller.go 54 Getting county%!(EXTRA string=adams)
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 252 County adams county not found in cache, querying data access layer
+INFO 2022/07/21 14:16:04 daoPostrges.go 242 Reading in SQL for COUNTY_DATA_BY_NAME
+INFO 2022/07/21 14:16:04 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/county_data_by_name.sql
+INFO 2022/07/21 14:16:04 daoPostrges.go 198 Executing County by name query
+INFO 2022/07/21 14:16:04 daoPostrges.go 271 Executing the query with params
+INFO 2022/07/21 14:16:04 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 259 Recieved response, placing data into the appropriate caches
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/21 14:16:04 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/21 14:16:04 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/21 14:16:04 writers.go 74 Returned 200 response in 4.562692ms
+INFO 2022/07/21 14:19:03 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/21 14:19:03 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/21 14:19:03 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/21 14:19:03 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/21 14:19:03 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/21 14:19:03 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/21 14:19:03 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/21 14:19:03 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/21 14:19:03 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:19:03 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:19:03 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/21 14:19:03 init.go 31 Successfully initialized dao service
+INFO 2022/07/21 14:19:03 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/21 14:19:03 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/21 14:19:03 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/21 14:19:03 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/21 14:19:03 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:19:03 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:19:03 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/21 14:19:03 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/21 14:19:03 init.go 41 Successfully initialized federal service
+INFO 2022/07/21 14:19:03 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/21 14:19:03 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/21 14:19:03 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/21 14:19:03 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/21 14:19:03 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:19:03 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:19:03 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/21 14:19:03 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/21 14:19:03 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/21 14:19:03 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/21 14:19:03 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:19:03 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:19:03 stateServiceImpl.go 86 Building caches
+INFO 2022/07/21 14:19:03 stateServiceImpl.go 88 State cache created
+INFO 2022/07/21 14:19:03 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/21 14:19:03 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/21 14:19:03 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/21 14:19:03 init.go 51 Successfully initialized state service
+INFO 2022/07/21 14:19:03 init.go 61 Successfully initialized county service
+INFO 2022/07/21 14:19:03 main.go 67 Listening at :8080
+INFO 2022/07/21 14:23:18 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/21 14:23:18 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/21 14:23:18 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/21 14:23:18 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/21 14:23:18 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/21 14:23:18 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/21 14:23:18 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/21 14:23:18 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/21 14:23:18 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:23:18 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:23:18 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/21 14:23:18 init.go 31 Successfully initialized dao service
+INFO 2022/07/21 14:23:18 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/21 14:23:18 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/21 14:23:18 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/21 14:23:18 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/21 14:23:18 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:23:18 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:23:18 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/21 14:23:18 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/21 14:23:18 init.go 41 Successfully initialized federal service
+INFO 2022/07/21 14:23:18 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/21 14:23:18 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/21 14:23:18 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/21 14:23:18 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/21 14:23:18 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:23:18 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:23:18 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/21 14:23:18 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/21 14:23:18 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/21 14:23:18 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/21 14:23:18 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:23:18 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:23:18 stateServiceImpl.go 86 Building caches
+INFO 2022/07/21 14:23:18 stateServiceImpl.go 88 State cache created
+INFO 2022/07/21 14:23:18 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/21 14:23:18 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/21 14:23:18 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/21 14:23:18 init.go 51 Successfully initialized state service
+INFO 2022/07/21 14:23:18 init.go 61 Successfully initialized county service
+INFO 2022/07/21 14:23:18 main.go 67 Listening at :8080
+INFO 2022/07/21 14:23:45 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/21 14:23:45 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/21 14:23:45 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/21 14:23:45 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/21 14:23:45 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/21 14:23:45 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/21 14:23:45 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/21 14:23:45 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/21 14:23:45 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:23:45 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:23:45 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/21 14:23:45 init.go 31 Successfully initialized dao service
+INFO 2022/07/21 14:23:45 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/21 14:23:45 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/21 14:23:45 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/21 14:23:45 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/21 14:23:45 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:23:45 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:23:45 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/21 14:23:45 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/21 14:23:45 init.go 41 Successfully initialized federal service
+INFO 2022/07/21 14:23:45 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/21 14:23:45 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/21 14:23:45 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/21 14:23:45 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/21 14:23:45 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:23:45 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:23:45 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/21 14:23:45 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/21 14:23:45 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/21 14:23:45 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/21 14:23:45 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:23:45 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:23:45 stateServiceImpl.go 86 Building caches
+INFO 2022/07/21 14:23:45 stateServiceImpl.go 88 State cache created
+INFO 2022/07/21 14:23:45 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/21 14:23:45 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/21 14:23:45 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/21 14:23:45 init.go 51 Successfully initialized state service
+INFO 2022/07/21 14:23:45 init.go 61 Successfully initialized county service
+INFO 2022/07/21 14:23:45 main.go 67 Listening at :8080
+INFO 2022/07/21 14:24:29 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/21 14:24:29 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/21 14:24:29 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/21 14:24:29 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/21 14:24:29 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/21 14:24:29 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/21 14:24:29 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/21 14:24:29 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/21 14:24:29 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:24:29 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:24:29 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/21 14:24:29 init.go 31 Successfully initialized dao service
+INFO 2022/07/21 14:24:29 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/21 14:24:29 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/21 14:24:29 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/21 14:24:29 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/21 14:24:29 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:24:29 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:24:29 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/21 14:24:29 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/21 14:24:29 init.go 41 Successfully initialized federal service
+INFO 2022/07/21 14:24:29 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/21 14:24:29 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/21 14:24:29 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/21 14:24:29 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/21 14:24:29 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:24:29 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:24:29 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/21 14:24:29 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/21 14:24:29 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/21 14:24:29 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/21 14:24:29 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:24:29 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:24:29 stateServiceImpl.go 86 Building caches
+INFO 2022/07/21 14:24:29 stateServiceImpl.go 88 State cache created
+INFO 2022/07/21 14:24:29 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/21 14:24:29 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/21 14:24:29 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/21 14:24:29 init.go 51 Successfully initialized state service
+INFO 2022/07/21 14:24:29 init.go 61 Successfully initialized county service
+INFO 2022/07/21 14:24:29 main.go 63 Listening at :8080
+INFO 2022/07/21 14:30:09 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/21 14:30:09 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/21 14:30:09 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/21 14:30:09 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/21 14:30:09 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/21 14:30:09 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/21 14:30:09 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/21 14:30:09 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/21 14:30:09 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:30:09 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:30:09 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/21 14:30:09 init.go 31 Successfully initialized dao service
+INFO 2022/07/21 14:30:09 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/21 14:30:09 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/21 14:30:09 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/21 14:30:09 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/21 14:30:09 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:30:09 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:30:09 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/21 14:30:09 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/21 14:30:09 init.go 41 Successfully initialized federal service
+INFO 2022/07/21 14:30:09 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/21 14:30:09 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/21 14:30:09 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/21 14:30:09 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/21 14:30:09 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:30:09 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:30:09 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/21 14:30:09 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/21 14:30:09 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/21 14:30:09 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/21 14:30:09 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:30:09 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:30:09 stateServiceImpl.go 86 Building caches
+INFO 2022/07/21 14:30:09 stateServiceImpl.go 88 State cache created
+INFO 2022/07/21 14:30:09 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/21 14:30:09 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/21 14:30:09 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/21 14:30:09 init.go 51 Successfully initialized state service
+INFO 2022/07/21 14:30:09 init.go 61 Successfully initialized county service
+INFO 2022/07/21 14:30:09 main.go 63 Listening at :8080
+INFO 2022/07/21 14:30:48 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/21 14:30:48 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/21 14:30:48 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/21 14:30:48 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/21 14:30:48 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/21 14:30:48 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/21 14:30:48 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/21 14:30:48 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/21 14:30:48 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:30:48 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:30:48 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/21 14:30:48 init.go 31 Successfully initialized dao service
+INFO 2022/07/21 14:30:48 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/21 14:30:48 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/21 14:30:48 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/21 14:30:48 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/21 14:30:48 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:30:48 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:30:48 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/21 14:30:48 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/21 14:30:48 init.go 41 Successfully initialized federal service
+INFO 2022/07/21 14:30:48 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/21 14:30:48 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/21 14:30:48 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/21 14:30:48 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/21 14:30:48 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:30:48 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:30:48 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/21 14:30:48 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/21 14:30:48 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/21 14:30:48 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/21 14:30:48 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:30:48 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:30:48 stateServiceImpl.go 86 Building caches
+INFO 2022/07/21 14:30:48 stateServiceImpl.go 88 State cache created
+INFO 2022/07/21 14:30:48 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/21 14:30:48 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/21 14:30:48 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/21 14:30:48 init.go 51 Successfully initialized state service
+INFO 2022/07/21 14:30:48 init.go 61 Successfully initialized county service
+INFO 2022/07/21 14:30:48 main.go 63 Listening at :8080
+INFO 2022/07/21 14:31:02 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/21 14:31:02 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/21 14:31:02 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/21 14:31:02 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/21 14:31:02 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/21 14:31:02 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/21 14:31:02 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/21 14:31:02 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/21 14:31:02 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:31:02 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:31:02 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/21 14:31:02 init.go 31 Successfully initialized dao service
+INFO 2022/07/21 14:31:02 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/21 14:31:02 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/21 14:31:02 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/21 14:31:02 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/21 14:31:02 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:31:02 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:31:02 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/21 14:31:02 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/21 14:31:02 init.go 41 Successfully initialized federal service
+INFO 2022/07/21 14:31:02 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/21 14:31:02 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/21 14:31:02 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/21 14:31:02 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/21 14:31:02 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:31:02 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:31:02 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/21 14:31:02 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/21 14:31:02 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/21 14:31:02 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/21 14:31:02 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/21 14:31:02 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/21 14:31:02 stateServiceImpl.go 86 Building caches
+INFO 2022/07/21 14:31:02 stateServiceImpl.go 88 State cache created
+INFO 2022/07/21 14:31:02 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/21 14:31:02 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/21 14:31:02 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/21 14:31:02 init.go 51 Successfully initialized state service
+INFO 2022/07/21 14:31:02 init.go 61 Successfully initialized county service
+INFO 2022/07/21 14:31:02 main.go 63 Listening at :8080
