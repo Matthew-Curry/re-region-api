@@ -7743,3 +7743,1746 @@ INFO 2022/07/20 19:23:14 writers.go 74 Returned 200 response in 122.368µs
 INFO 2022/07/20 19:23:30 controller.go 170 Get state list called
 INFO 2022/07/20 19:23:30 controller.go 190 Getting state list for metric commute
 INFO 2022/07/20 19:23:30 writers.go 74 Returned 200 response in 103.232µs
+INFO 2022/07/20 19:25:25 main.go 11 App started
+INFO 2022/07/20 19:25:25 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/20 19:25:25 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/20 19:25:25 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/20 19:25:25 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/20 19:25:25 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/20 19:25:25 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/20 19:25:25 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/20 19:25:25 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/20 19:25:25 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/20 19:25:25 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/20 19:25:25 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/20 19:25:25 init.go 31 Successfully initialized dao service
+INFO 2022/07/20 19:25:25 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/20 19:25:25 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/20 19:25:25 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/20 19:25:25 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/20 19:25:25 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/20 19:25:25 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/20 19:25:25 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/20 19:25:25 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/20 19:25:25 init.go 41 Successfully initialized federal service
+INFO 2022/07/20 19:25:25 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/20 19:25:25 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/20 19:25:25 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/20 19:25:25 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/20 19:25:25 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/20 19:25:25 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/20 19:25:25 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/20 19:25:25 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/20 19:25:25 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/20 19:25:25 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/20 19:25:25 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/20 19:25:25 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/20 19:25:25 stateServiceImpl.go 86 Building caches
+INFO 2022/07/20 19:25:25 stateServiceImpl.go 88 State cache created
+INFO 2022/07/20 19:25:25 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/20 19:25:25 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/20 19:25:25 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/20 19:25:25 init.go 51 Successfully initialized state service
+INFO 2022/07/20 19:25:25 init.go 61 Successfully initialized county service
+INFO 2022/07/20 19:25:25 bootstrap.go 43 Listening at :8080
+INFO 2022/07/20 19:25:58 controller.go 31 Get county called
+WARN 2022/07/20 19:25:58 writers.go 54 Bad params recieved, writing bad request response: A county name or id must be provided.
+The provided filing status must indicate 'S', 'H', or 'M'.
+The provided resident flag must be interpretable as a boolean
+The provided number of dependents must be an integer.
+The provided income must be an integer.
+INFO 2022/07/20 19:25:58 controller.go 56 Getting county 0
+INFO 2022/07/20 19:25:58 countyServiceImpl.go 85 County 0 not found in cache, querying data access layer
+INFO 2022/07/20 19:25:58 daoPostrges.go 242 Reading in SQL for COUNTY_DATA_BY_ID
+INFO 2022/07/20 19:25:58 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/county_data_by_id.sql
+INFO 2022/07/20 19:25:58 daoPostrges.go 214 Executing County by id query
+INFO 2022/07/20 19:25:58 daoPostrges.go 271 Executing the query with params
+INFO 2022/07/20 19:25:58 daoPostrges.go 301 Scanning the rows
+ERROR 2022/07/20 19:25:58 writers.go 48 Unable to retrieve county 0%!(EXTRA string=Unable to retrieve data for county id 0: No rows returns by query.)
+INFO 2022/07/20 19:28:07 controller.go 31 Get county called
+WARN 2022/07/20 19:28:07 writers.go 54 Bad params recieved, writing bad request response: 
+The provided filing status must indicate 'S', 'H', or 'M'.
+INFO 2022/07/20 19:28:07 controller.go 53 Getting county%!(EXTRA string=york)
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 252 County york county not found in cache, querying data access layer
+INFO 2022/07/20 19:28:07 daoPostrges.go 242 Reading in SQL for COUNTY_DATA_BY_NAME
+INFO 2022/07/20 19:28:07 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/county_data_by_name.sql
+INFO 2022/07/20 19:28:07 daoPostrges.go 198 Executing County by name query
+INFO 2022/07/20 19:28:07 daoPostrges.go 271 Executing the query with params
+INFO 2022/07/20 19:28:07 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 259 Recieved response, placing data into the appropriate caches
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:28:07 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:28:07 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:28:07 writers.go 74 Returned 200 response in 6.220534ms
+INFO 2022/07/20 19:57:20 main.go 11 App started
+INFO 2022/07/20 19:57:20 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/20 19:57:20 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/20 19:57:20 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/20 19:57:20 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/20 19:57:20 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/20 19:57:20 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/20 19:57:20 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/20 19:57:20 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/20 19:57:20 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/20 19:57:20 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/20 19:57:20 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/20 19:57:20 init.go 31 Successfully initialized dao service
+INFO 2022/07/20 19:57:20 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/20 19:57:20 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/20 19:57:20 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/20 19:57:20 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/20 19:57:20 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/20 19:57:20 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/20 19:57:20 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/20 19:57:20 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/20 19:57:20 init.go 41 Successfully initialized federal service
+INFO 2022/07/20 19:57:20 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/20 19:57:20 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/20 19:57:20 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/20 19:57:20 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/20 19:57:20 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/20 19:57:20 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/20 19:57:20 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/20 19:57:20 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/20 19:57:20 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/20 19:57:20 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/20 19:57:20 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/20 19:57:20 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/20 19:57:20 stateServiceImpl.go 86 Building caches
+INFO 2022/07/20 19:57:20 stateServiceImpl.go 88 State cache created
+INFO 2022/07/20 19:57:20 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/20 19:57:20 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/20 19:57:20 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/20 19:57:20 init.go 51 Successfully initialized state service
+INFO 2022/07/20 19:57:20 init.go 61 Successfully initialized county service
+INFO 2022/07/20 19:57:20 bootstrap.go 43 Listening at :8080
+INFO 2022/07/20 19:57:25 controller.go 31 Get county called
+WARN 2022/07/20 19:57:25 writers.go 54 Bad params recieved, writing bad request response: 
+The provided filing status must indicate 'S', 'H', or 'M'.
+INFO 2022/07/20 19:57:30 controller.go 31 Get county called
+INFO 2022/07/20 19:57:30 controller.go 54 Getting county%!(EXTRA string=york)
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 252 County york county not found in cache, querying data access layer
+INFO 2022/07/20 19:57:30 daoPostrges.go 242 Reading in SQL for COUNTY_DATA_BY_NAME
+INFO 2022/07/20 19:57:30 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/county_data_by_name.sql
+INFO 2022/07/20 19:57:30 daoPostrges.go 198 Executing County by name query
+INFO 2022/07/20 19:57:30 daoPostrges.go 271 Executing the query with params
+INFO 2022/07/20 19:57:30 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 259 Recieved response, placing data into the appropriate caches
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:57:30 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:57:30 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:57:30 writers.go 74 Returned 200 response in 6.627075ms
+INFO 2022/07/20 19:58:54 main.go 11 App started
+INFO 2022/07/20 19:58:54 daoPostrges.go 74 Reading in environment variables
+INFO 2022/07/20 19:58:54 daoPostrges.go 82 Opening connection to postgres DB
+INFO 2022/07/20 19:58:54 daoPostrges.go 87 Successfully instantiated DB connection
+INFO 2022/07/20 19:58:54 daoPostrges.go 90 Instantiated DAO
+INFO 2022/07/20 19:58:54 daoPostrges.go 92 Reading in the valid metrics
+INFO 2022/07/20 19:58:54 daoPostrges.go 242 Reading in SQL for GET_METRIC_SET
+INFO 2022/07/20 19:58:54 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/metric_set.sql
+INFO 2022/07/20 19:58:54 daoPostrges.go 112 Getting valid metrics from database
+INFO 2022/07/20 19:58:54 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/20 19:58:54 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/20 19:58:54 daoPostrges.go 118 Loading the response into the metric set
+INFO 2022/07/20 19:58:54 init.go 31 Successfully initialized dao service
+INFO 2022/07/20 19:58:54 federalServiceImpl.go 29 Getting federal tax data from data access layer
+INFO 2022/07/20 19:58:54 daoPostrges.go 242 Reading in SQL for FEDERAL_TAX_DATA
+INFO 2022/07/20 19:58:54 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/federal_tax_data.sql
+INFO 2022/07/20 19:58:54 daoPostrges.go 231 Executing Federal tax query
+INFO 2022/07/20 19:58:54 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/20 19:58:54 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/20 19:58:54 federalServiceImpl.go 35 Caching the response
+INFO 2022/07/20 19:58:54 federalServiceImpl.go 37 Federal tax cache created
+INFO 2022/07/20 19:58:54 init.go 41 Successfully initialized federal service
+INFO 2022/07/20 19:58:54 stateServiceImpl.go 71 Getting state census data from the data access layer
+INFO 2022/07/20 19:58:54 daoPostrges.go 242 Reading in SQL for STATE_CENSUS_DATA
+INFO 2022/07/20 19:58:54 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_census_data.sql
+INFO 2022/07/20 19:58:54 daoPostrges.go 133 Executing State Census query
+INFO 2022/07/20 19:58:54 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/20 19:58:54 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/20 19:58:54 stateServiceImpl.go 78 Getting state tax data from the data access layer
+INFO 2022/07/20 19:58:54 daoPostrges.go 242 Reading in SQL for STATE_TAX_DATA
+INFO 2022/07/20 19:58:54 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/state_tax_data.sql
+INFO 2022/07/20 19:58:54 daoPostrges.go 179 Executing State tax query
+INFO 2022/07/20 19:58:54 daoPostrges.go 268 Executing the query with no params
+INFO 2022/07/20 19:58:54 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/20 19:58:54 stateServiceImpl.go 86 Building caches
+INFO 2022/07/20 19:58:54 stateServiceImpl.go 88 State cache created
+INFO 2022/07/20 19:58:54 stateServiceImpl.go 91 State list cache created
+INFO 2022/07/20 19:58:54 stateServiceImpl.go 94 State tax cache created
+INFO 2022/07/20 19:58:54 stateServiceImpl.go 95 All state caches are now created
+INFO 2022/07/20 19:58:54 init.go 51 Successfully initialized state service
+INFO 2022/07/20 19:58:54 init.go 61 Successfully initialized county service
+INFO 2022/07/20 19:58:54 bootstrap.go 43 Listening at :8080
+INFO 2022/07/20 19:58:58 controller.go 31 Get county called
+INFO 2022/07/20 19:58:58 controller.go 54 Getting county%!(EXTRA string=york)
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 252 County york county not found in cache, querying data access layer
+INFO 2022/07/20 19:58:58 daoPostrges.go 242 Reading in SQL for COUNTY_DATA_BY_NAME
+INFO 2022/07/20 19:58:58 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/county_data_by_name.sql
+INFO 2022/07/20 19:58:58 daoPostrges.go 198 Executing County by name query
+INFO 2022/07/20 19:58:58 daoPostrges.go 271 Executing the query with params
+INFO 2022/07/20 19:58:58 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 259 Recieved response, placing data into the appropriate caches
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:58:58 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:58:58 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:58:58 writers.go 74 Returned 200 response in 8.307489ms
+INFO 2022/07/20 19:59:06 controller.go 31 Get county called
+INFO 2022/07/20 19:59:06 controller.go 57 Getting county 42133
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 80 County 42133 found in cache
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:06 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:06 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:06 writers.go 74 Returned 200 response in 2.733121ms
+INFO 2022/07/20 19:59:08 controller.go 31 Get county called
+INFO 2022/07/20 19:59:08 controller.go 57 Getting county 42133
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 80 County 42133 found in cache
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:08 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:08 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:08 writers.go 74 Returned 200 response in 4.399697ms
+INFO 2022/07/20 19:59:40 controller.go 31 Get county called
+INFO 2022/07/20 19:59:40 controller.go 54 Getting county%!(EXTRA string=new york)
+INFO 2022/07/20 19:59:40 countyServiceImpl.go 252 County new york county not found in cache, querying data access layer
+INFO 2022/07/20 19:59:40 daoPostrges.go 242 Reading in SQL for COUNTY_DATA_BY_NAME
+INFO 2022/07/20 19:59:40 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/county_data_by_name.sql
+INFO 2022/07/20 19:59:40 daoPostrges.go 198 Executing County by name query
+INFO 2022/07/20 19:59:40 daoPostrges.go 271 Executing the query with params
+INFO 2022/07/20 19:59:40 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/20 19:59:40 countyServiceImpl.go 259 Recieved response, placing data into the appropriate caches
+INFO 2022/07/20 19:59:40 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:59:40 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:40 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:40 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:40 writers.go 74 Returned 200 response in 2.550208ms
+INFO 2022/07/20 19:59:56 controller.go 31 Get county called
+INFO 2022/07/20 19:59:56 controller.go 54 Getting county%!(EXTRA string=baltimore)
+INFO 2022/07/20 19:59:56 countyServiceImpl.go 252 County baltimore county not found in cache, querying data access layer
+INFO 2022/07/20 19:59:56 daoPostrges.go 242 Reading in SQL for COUNTY_DATA_BY_NAME
+INFO 2022/07/20 19:59:56 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/county_data_by_name.sql
+INFO 2022/07/20 19:59:56 daoPostrges.go 198 Executing County by name query
+INFO 2022/07/20 19:59:56 daoPostrges.go 271 Executing the query with params
+INFO 2022/07/20 19:59:56 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/20 19:59:56 countyServiceImpl.go 259 Recieved response, placing data into the appropriate caches
+INFO 2022/07/20 19:59:56 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 19:59:56 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 19:59:56 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 19:59:56 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 19:59:56 writers.go 74 Returned 200 response in 2.786191ms
+INFO 2022/07/20 20:00:01 controller.go 31 Get county called
+INFO 2022/07/20 20:00:02 controller.go 54 Getting county%!(EXTRA string=adams)
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 252 County adams county not found in cache, querying data access layer
+INFO 2022/07/20 20:00:02 daoPostrges.go 242 Reading in SQL for COUNTY_DATA_BY_NAME
+INFO 2022/07/20 20:00:02 daoPostrges.go 252 Reading in file /home/matthew/Documents/Projects/re-region/re-region-api/dao/sql/county_data_by_name.sql
+INFO 2022/07/20 20:00:02 daoPostrges.go 198 Executing County by name query
+INFO 2022/07/20 20:00:02 daoPostrges.go 271 Executing the query with params
+INFO 2022/07/20 20:00:02 daoPostrges.go 301 Scanning the rows
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 259 Recieved response, placing data into the appropriate caches
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 152 Getting resident tax liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 228 Processing state liability
+INFO 2022/07/20 20:00:02 stateServiceImpl.go 239 Processing federal liability
+INFO 2022/07/20 20:00:02 countyServiceImpl.go 199 Getting county liability
+INFO 2022/07/20 20:00:02 writers.go 74 Returned 200 response in 4.137911ms

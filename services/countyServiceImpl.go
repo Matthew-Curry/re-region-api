@@ -210,7 +210,7 @@ func (c *CountyServiceImpl) buildCounty(countyId int, countyName string, stateId
 		County_name:   countyName,
 		State_id:      stateId,
 		State_name:    stateName,
-		Pop:           readAsInt(countyDataRow[COUNTY_STATE_ID]),
+		Pop:           readAsInt(countyDataRow[COUNTY_POP]),
 		Male_pop:      readAsInt(countyDataRow[COUNTY_MALE_POP]),
 		Female_pop:    readAsInt(countyDataRow[COUNTY_FEMALE_POP]),
 		Median_income: readAsInt(countyDataRow[COUNTY_MEDIAN_INCOME]),

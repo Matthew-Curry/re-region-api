@@ -34,6 +34,7 @@ func CountyHandler(w http.ResponseWriter, r *http.Request) {
 	id, name, fs, res, dep, income, errStr := getCountyParams(r)
 	if errStr != "" {
 		writeGotBadParams(w, errStr)
+		return
 	}
 	// http method validation
 	isGet, isOption, errStr := getHTTPMethod(r)
@@ -58,10 +59,12 @@ func CountyHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// check errors, write the response based on county value
-	if err.IsKind(apperrors.DataNotFound) {
-		writeNoEntityAvailable(w, isGet, "county", nameOrId(name, id))
-	} else if err.IsKind(apperrors.InternalError) || err != nil {
-		writeUnableToGetEntity(w, err, isGet, "county", nameOrId(name, id))
+	if err != nil {
+		if err.IsKind(apperrors.DataNotFound) {
+			writeNoEntityAvailable(w, isGet, "county", nameOrId(name, id))
+		} else if err.IsKind(apperrors.InternalError) || err != nil {
+			writeUnableToGetEntity(w, err, isGet, "county", nameOrId(name, id))
+		}
 	} else {
 		b, err := county.MarshallCounty()
 		if err != nil {
@@ -81,6 +84,7 @@ func StateHandler(w http.ResponseWriter, r *http.Request) {
 	id, name, fs, _, dep, income, errStr := getStateParams(r)
 	if errStr != "" {
 		writeGotBadParams(w, errStr)
+		return
 	}
 	// http method validation
 	isGet, isOption, errStr := getHTTPMethod(r)
@@ -130,6 +134,7 @@ func CountyListHandler(w http.ResponseWriter, r *http.Request) {
 	metricName, size, desc, errStr := getListParams(r)
 	if errStr != "" {
 		writeGotBadParams(w, errStr)
+		return 
 	}
 	// http method validation
 	isGet, isOption, errStr := getHTTPMethod(r)
