@@ -1,6 +1,184 @@
 openapi: 3.0.3
 info:
-  title: Re-Region
+  title: Re-Region API
   description: |
-    API to request info about regions.
+    API to request information about regions in the United States. Its goal is to provide access to well structured information that can
+    be used by individuals and applications to help people research new areas to live in and explore. 
+    It has information on demographic and lifestyle stats along with taxation estimates for counties and states.
   version: 0.0.3
+
+servers:
+  - url: http://127.0.0.1:8080/
+    description: Local server
+
+paths:
+  /counties:
+    get:
+      tags:
+        - County
+      summary: Get survey statistics and taxation estimates for a given county and tax filing input variables.
+      consumes: 
+        - application/json
+      produces: 
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          schema: 
+            type: integer
+            minimum: 1
+            maximum: 1
+          required: false
+          description: |
+              Numeric id tied to the county in the system. Can be used to identify a county in the request. Either the id
+              or the name must be specified 
+        - in: path
+          name: name
+          schema: 
+            type: string
+            minimum: 1
+            maximum: 1
+          required: false
+          description: |
+              Name of the county. Can be either lower or upper case, and also can optionally specify "county" after the base name.
+              Can be used to identify a county in the request. Either the id or the name must be specified 
+        - in: path
+          name: fs
+          schema: 
+            type: string
+            minimum: 1
+            maximum: 1
+          required: true
+          description: |
+              The filing status of the tax payer. Used for calculating taxes tied with living in the requested county. Must specify 'S', 'M', or 'H' for
+              single, married, and head filing status respectively.
+        - in: path
+          name: res
+          schema: 
+            type: boolean
+            minimum: 1
+            maximum: 1
+          required: true
+          description: |
+              The residency status of the tax payer. Used for calculating taxes tied with living in the requested county.
+        - in: path
+          name: dep
+          schema: 
+            type: integer
+            minimum: 1
+            maximum: 1
+          required: true
+          description: |
+              The number of dependents of the tax payer. Used for calculating taxes tied with living in the requested county.
+        - in: path
+          name: income
+          schema: 
+            type: integer
+            minimum: 1
+            maximum: 1
+          required: true
+          description: |
+              The income of the tax payer. Used for calculating taxes tied with living in the requested county.
+
+  /states:
+    get:
+      tags:
+        - State
+      summary: Get survey statistics and taxation estimates for a given state and tax filing input variables.
+      consumes: 
+        - application/json
+      produces: 
+        - application/json
+      parameters:
+        - in: path
+          name: id
+        - in: path
+          name: name
+        - in: path
+          name: fs
+        - in: path
+          name: res
+        - in: path
+          name: dep
+        - in: path
+          name: income
+
+  /county-list:
+    get:
+      tags:
+        - County
+      summary: Return list of counties ranked by a given metric and ranking criteria.
+      consumes: 
+        - application/json
+      produces: 
+        - application/json
+      parameters:
+        - in: path
+          name: metric_name
+        - in: path
+          name: size
+        - in: path
+          name: desc
+
+  /state-list:
+    get:
+      tags:
+        - State
+      summary: Return list of states ranked by a given metric and ranking criteria.
+      consumes: 
+        - application/json
+      produces: 
+        - application/json
+      parameters:
+        - in: path
+          name: metric_name
+        - in: path
+          name: size
+        - in: path
+          name: desc
+
+  /county-taxes:
+    get:
+      tags:
+        - County
+      summary: Return static taxation information for a given county.
+      consumes: 
+        - application/json
+      produces: 
+        - application/json
+      parameters:
+        - in: path
+          name: id
+        - in: path
+          name: name
+
+  /state-taxes:
+    get:
+      tags:
+        - State
+      summary: Return static taxation information for a given state.
+      consumes: 
+        - application/json
+      produces: 
+        - application/json
+      parameters:
+        - in: path
+          name: id
+        - in: path
+          name: name
+
+  /federal-taxes:
+    get:
+      tags:
+        - Federal
+      summary: Return static taxation information for federal level taxes.
+      consumes: 
+        - application/json
+      produces: 
+        - application/json
+
+  /health:
+    get:
+      tags:
+        - Health
+      summary: Health endpoints, returns 200 response response if API is healthy.
