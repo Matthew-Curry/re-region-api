@@ -79,6 +79,33 @@ paths:
           required: true
           description: |
               The income of the tax payer. Used for calculating taxes tied with living in the requested county.
+      responses:
+        '200':
+          description: This is an example county response. This response is the result of requesting for New York county 
+                        for a single resident filer with no dependents and an income of $80,000
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  County_id: 36061,
+                  County_name: "New York County"
+                  State_id: 36,
+                  State_name: "New York"
+                  Pop: 1628706
+                  Male_pop: 771278
+                  Female_pop: 857428
+                  Median_income: 93651
+                  Average_rent: 1753
+                  Commute: 81
+                  Tax_locale:
+                      Locale_id: 3376
+                      Locale_name: "New York City"
+                      Total_tax: 19044
+                      Federal_tax: 14544
+                      State_tax: 4500
+                      Locale_tax: 0
+
 
   /states:
     get:
@@ -146,6 +173,27 @@ paths:
           required: true
           description: |
               The income of the tax payer. Used for calculating taxes tied with living in the requested state.
+      responses:
+        '200':
+          description: This is an example county response. This response is the result of requesting for New York state 
+                        for a single resident filer with no dependents and an income of $80,000
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  State_id: 36
+                  State_name: "New York"
+                  Pop: 18466230
+                  Male_pop: 8953064
+                  Female_pop: 9513166
+                  Median_income: 77578
+                  Average_rent: 1381
+                  Commute: 17
+                  Total_tax: 19044
+                  State_tax: 4500
+                  Federal_tax: 14544
+
 
   /county-list:
     get:
@@ -177,6 +225,54 @@ paths:
             type: boolean
             required: true
           description: Boolean defining whether the list should be in descending order.
+    responses:
+      '200':
+        description: This example response is in response to a request for the top 5 counties ordered by commute length descending.
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                Metric_name: commute,
+                Ranked_list: 
+                  - 
+                  {
+                    "County_id": 36061,
+                    "County_name": "New York County",
+                    "State_id": 36,
+                    "State_name": "New York",
+                    "Metric_value": 81
+                  },
+                  {
+                    "County_id": 25025,
+                    "County_name": "Suffolk County",
+                    "State_id": 25,
+                    "State_name": "Massachusetts",
+                    "Metric_value": 39
+                  },
+                  {
+                    "County_id": 6075,
+                    "County_name": "San Francisco County",
+                    "State_id": 6,
+                    "State_name": "California",
+                    "Metric_value": 36
+                  },
+                  {
+                    "County_id": 51013,
+                    "County_name": "Arlington County",
+                    "State_id": 51,
+                    "State_name": "Virginia",
+                    "Metric_value": 33
+                  },
+                  {
+                    "County_id": 13121,
+                    "County_name": "Fulton County",
+                    "State_id": 13,
+                    "State_name": "Georgia",
+                    "Metric_value": 31
+                  }
+                ]
+              }
 
   /state-list:
     get:
