@@ -5,6 +5,9 @@ info:
     API to request information about regions in the United States. The system's goal is to provide access to well structured information that can
     be used to help people research new areas to live in and explore. It has information on demographic and lifestyle stats along with taxation estimates 
     for counties and states.
+  contact:
+    name: Matthew Curry
+    email: matt.curry56@gmail.com
   version: 0.0.3
 
 servers:
@@ -225,54 +228,14 @@ paths:
             type: boolean
             required: true
           description: Boolean defining whether the list should be in descending order.
-    responses:
-      '200':
-        description: This example response is in response to a request for the top 5 counties ordered by commute length descending.
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                Metric_name: commute,
-                Ranked_list: 
-                  - 
-                  {
-                    "County_id": 36061,
-                    "County_name": "New York County",
-                    "State_id": 36,
-                    "State_name": "New York",
-                    "Metric_value": 81
-                  },
-                  {
-                    "County_id": 25025,
-                    "County_name": "Suffolk County",
-                    "State_id": 25,
-                    "State_name": "Massachusetts",
-                    "Metric_value": 39
-                  },
-                  {
-                    "County_id": 6075,
-                    "County_name": "San Francisco County",
-                    "State_id": 6,
-                    "State_name": "California",
-                    "Metric_value": 36
-                  },
-                  {
-                    "County_id": 51013,
-                    "County_name": "Arlington County",
-                    "State_id": 51,
-                    "State_name": "Virginia",
-                    "Metric_value": 33
-                  },
-                  {
-                    "County_id": 13121,
-                    "County_name": "Fulton County",
-                    "State_id": 13,
-                    "State_name": "Georgia",
-                    "Metric_value": 31
-                  }
-                ]
-              }
+      responses:
+        '200':
+          description: This example response is in response to a request for the top 5 counties ordered by commute length descending.
+          content:
+            application/json:
+              schema: 
+                $ref: '#components/schemas/countyList'
+
 
   /state-list:
     get:
@@ -381,3 +344,29 @@ paths:
       tags:
         - Health
       summary: Health endpoints, returns 200 response response if API is healthy.
+
+# components used in specification
+components:
+  schemas:
+    countyList:
+      type: object
+      properties:
+        Metric_name: 
+          type: string
+        Ranked_list:
+          type: array
+          items:
+            type: string
+            $ref: '#components/schemas/countyMetricPair'
+
+    countyMetricPair:
+      type: object
+      properties:
+        County_id:
+          type: integer
+        County_name:
+          type: string
+        State_id:
+          type: integer
+
+
