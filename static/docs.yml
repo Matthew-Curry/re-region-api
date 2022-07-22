@@ -2,9 +2,9 @@ openapi: 3.0.3
 info:
   title: Re-Region API
   description: |
-    API to request information about regions in the United States. Its goal is to provide access to well structured information that can
-    be used by individuals and applications to help people research new areas to live in and explore. 
-    It has information on demographic and lifestyle stats along with taxation estimates for counties and states.
+    API to request information about regions in the United States. The system's goal is to provide access to well structured information that can
+    be used to help people research new areas to live in and explore. It has information on demographic and lifestyle stats along with taxation estimates 
+    for counties and states.
   version: 0.0.3
 
 servers:
@@ -26,8 +26,8 @@ paths:
           name: id
           schema: 
             type: integer
-            minimum: 1
-            maximum: 1
+            #minimum: 1
+            #maximum: 1
           required: false
           description: |
               Numeric id tied to the county in the system. Can be used to identify a county in the request. Either the id
@@ -36,18 +36,18 @@ paths:
           name: name
           schema: 
             type: string
-            minimum: 1
-            maximum: 1
+            #minimum: 1
+            #maximum: 1
           required: false
           description: |
               Name of the county. Can be either lower or upper case, and also can optionally specify "county" after the base name.
-              Can be used to identify a county in the request. Either the id or the name must be specified 
+              Can be used to identify a county in the request. Either the id or the name must be specified.
         - in: path
           name: fs
           schema: 
             type: string
-            minimum: 1
-            maximum: 1
+            #minimum: 1
+            #maximum: 1
           required: true
           description: |
               The filing status of the tax payer. Used for calculating taxes tied with living in the requested county. Must specify 'S', 'M', or 'H' for
@@ -56,8 +56,8 @@ paths:
           name: res
           schema: 
             type: boolean
-            minimum: 1
-            maximum: 1
+            #minimum: 1
+            #maximum: 1
           required: true
           description: |
               The residency status of the tax payer. Used for calculating taxes tied with living in the requested county.
@@ -65,8 +65,8 @@ paths:
           name: dep
           schema: 
             type: integer
-            minimum: 1
-            maximum: 1
+            #minimum: 1
+            #maximum: 1
           required: true
           description: |
               The number of dependents of the tax payer. Used for calculating taxes tied with living in the requested county.
@@ -74,8 +74,8 @@ paths:
           name: income
           schema: 
             type: integer
-            minimum: 1
-            maximum: 1
+            #minimum: 1
+            #maximum: 1
           required: true
           description: |
               The income of the tax payer. Used for calculating taxes tied with living in the requested county.
@@ -92,16 +92,60 @@ paths:
       parameters:
         - in: path
           name: id
+          schema: 
+            type: integer
+            #minimum: 1
+            #maximum: 1
+          required: false
+          description: |
+              Numeric id tied to the state in the system. Can be used to identify a state in the request. Either the id
+              or the name must be specified 
         - in: path
           name: name
+          schema: 
+            type: string
+            #minimum: 1
+            #maximum: 1
+          required: false
+          description: |
+              Name of the state. Can be either lower or upper case. Can be used to identify a state in the request. Either the id or the name must be specified.
         - in: path
           name: fs
+          schema: 
+            type: string
+            #minimum: 1
+            #maximum: 1
+          required: true
+          description: |
+              The filing status of the tax payer. Used for calculating taxes tied with living in the requested state. Must specify 'S', 'M', or 'H' for
+              single, married, and head filing status respectively.
         - in: path
           name: res
+          schema: 
+            type: boolean
+            #minimum: 1
+            #maximum: 1
+          required: true
+          description: |
+              The residency status of the tax payer. Used for calculating taxes tied with living in the requested state.
         - in: path
           name: dep
+          schema: 
+            type: integer
+            #minimum: 1
+            #maximum: 1
+          required: true
+          description: |
+              The number of dependents of the tax payer. Used for calculating taxes tied with living in the requested state.
         - in: path
           name: income
+          schema: 
+            type: integer
+            #minimum: 1
+            #maximum: 1
+          required: true
+          description: |
+              The income of the tax payer. Used for calculating taxes tied with living in the requested state.
 
   /county-list:
     get:
@@ -115,10 +159,24 @@ paths:
       parameters:
         - in: path
           name: metric_name
+          schema:
+            type: string
+            #minimum: 1
+            #maximum: 1
+          required: true
+          description: The name of the metric to rank the counties by. 
         - in: path
           name: size
+          schema:
+            type: integer
+            required: true
+          description: The length of the list of the generated response.
         - in: path
           name: desc
+          schema:
+            type: boolean
+            required: true
+          description: Boolean defining whether the list should be in descending order.
 
   /state-list:
     get:
@@ -132,10 +190,24 @@ paths:
       parameters:
         - in: path
           name: metric_name
+          schema:
+            type: string
+            #minimum: 1
+            #maximum: 1
+          required: true
+          description: The name of the metric to rank the states by. 
         - in: path
           name: size
+          schema:
+            type: integer
+            required: true
+          description: The length of the list of the generated response.
         - in: path
           name: desc
+          schema:
+            type: boolean
+            required: true
+          description: Boolean defining whether the list should be in descending order.
 
   /county-taxes:
     get:
@@ -149,8 +221,24 @@ paths:
       parameters:
         - in: path
           name: id
+          schema: 
+            type: integer
+            #minimum: 1
+            #maximum: 1
+          required: false
+          description: |
+              Numeric id tied to the county in the system. Can be used to identify a county in the request. Either the id
+              or the name must be specified 
         - in: path
           name: name
+          schema: 
+            type: string
+            #minimum: 1
+            #maximum: 1
+          required: false
+          description: |
+              Name of the county. Can be either lower or upper case, and also can optionally specify "county" after the base name.
+              Can be used to identify a county in the request. Either the id or the name must be specified. 
 
   /state-taxes:
     get:
@@ -164,8 +252,23 @@ paths:
       parameters:
         - in: path
           name: id
+          schema: 
+            type: integer
+            #minimum: 1
+            #maximum: 1
+          required: false
+          description: |
+              Numeric id tied to the state in the system. Can be used to identify a state in the request. Either the id
+              or the name must be specified 
         - in: path
           name: name
+          schema: 
+            type: string
+            #minimum: 1
+            #maximum: 1
+          required: false
+          description: |
+              Name of the state. Can be either lower or upper case. Can be used to identify a state in the request. Either the id or the name must be specified.
 
   /federal-taxes:
     get:
