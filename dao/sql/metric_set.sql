@@ -2,4 +2,4 @@
 SELECT column_name
 FROM information_schema.columns
 WHERE table_name = 'county'
-    AND column_name NOT IN ('county_id', 'county_name');
+    AND column_name NOT IN ('county_id', 'county_name', 'state_id');

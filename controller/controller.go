@@ -355,5 +355,3 @@ func FederalTaxesHandler(w http.ResponseWriter, r *http.Request) {
 func HealthHandler(w http.ResponseWriter, r *http.Request) {
 	writeResponse(w, true, http.StatusOK, []byte("API is healthy"))
 }
-
-// 

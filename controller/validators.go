@@ -1,9 +1,9 @@
 package controller
 
 import (
+	"fmt"
 	"net/http"
 	"strconv"
-	"fmt"
 
 	"github.com/Matthew-Curry/re-region-api/model"
 )
@@ -11,7 +11,7 @@ import (
 /* Holds validator functions used by the controllers */
 
 func getCountyParams(r *http.Request) (int, string, model.FilingStatus, bool, int, int, string) {
-	
+
 	return getGeoParams("county", r)
 }
 
@@ -34,7 +34,7 @@ func getListParams(r *http.Request) (string, int, bool, string) {
 		return "", 0, false, "A boolean like value must be given for whether to make the list descending."
 	}
 
-	size, err := strconv.Atoi(sizeStr) 
+	size, err := strconv.Atoi(sizeStr)
 	if err != nil {
 		return "", 0, false, "The size of the list must be an integer."
 	}
@@ -50,9 +50,9 @@ func getGeoParams(geo string, r *http.Request) (int, string, model.FilingStatus,
 	// read in the expected parameters as strings
 	idStr := r.URL.Query().Get("id")
 	name := r.URL.Query().Get("name")
-	fsStr := r.URL.Query().Get("fs")
-	resStr := r.URL.Query().Get("res")
-	depStr := r.URL.Query().Get("dep")
+	fsStr := r.URL.Query().Get("filingStatus")
+	resStr := r.URL.Query().Get("residencyStatus")
+	depStr := r.URL.Query().Get("dependents")
 	incomeStr := r.URL.Query().Get("income")
 
 	// non string vars

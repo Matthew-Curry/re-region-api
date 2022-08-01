@@ -1,9 +1,9 @@
 package services
 
 import (
+	"github.com/Matthew-Curry/re-region-api/apperrors"
 	"github.com/Matthew-Curry/re-region-api/dao"
 	"github.com/Matthew-Curry/re-region-api/model"
-	"github.com/Matthew-Curry/re-region-api/apperrors"
 
 	"strings"
 )
@@ -39,8 +39,8 @@ const (
 const (
 	COUNTY_LIST_ID = iota
 	COUNTY_LIST_NAME
-    COUNTY_LIST_STATE_ID
-    COUNTY_LIST_METRIC_VALUE
+	COUNTY_LIST_STATE_ID
+	COUNTY_LIST_METRIC_VALUE
 )
 
 /* Implementation of the Re-Region API county service */
@@ -58,7 +58,7 @@ type CountyServiceImpl struct {
 	// use provided impl of state service to access state + federal tax information
 	stateService StateServiceInterface
 	// use provided implementation of dao service to make requests to the database
-	daoImpl      dao.DaoInterface
+	daoImpl dao.DaoInterface
 }
 
 // constructor to return this implementation of the county service
@@ -131,8 +131,8 @@ func (c *CountyServiceImpl) placeCountyDataInMaps(countyData [][]interface{}, fs
 		var tl, fl, sl, ll int
 		// append static info for a locality
 		taxLocaleInfos = append(taxLocaleInfos, model.TaxLocaleInfo{
-			Locale_id:              tli,
-			Local_name:             tln,
+			Locale_id:                  tli,
+			Local_name:                 tln,
 			Resident_desc:              resDesc,
 			Resident_rate:              resRate,
 			Resident_month_fee:         resMonthFee,
@@ -173,6 +173,8 @@ func (c *CountyServiceImpl) placeCountyDataInMaps(countyData [][]interface{}, fs
 	taxList := &model.CountyTaxList{
 		County_name: countyName,
 		County_id:   countyId,
+		State_name:  stateName,
+		State_id:    stateId,
 		Tax_locales: taxLocaleInfos,
 	}
 
@@ -265,6 +267,9 @@ func (c *CountyServiceImpl) GetCountyByName(name string, fs model.FilingStatus, 
 func (c *CountyServiceImpl) GetCountyList(metricName string, n int, desc bool) (*model.CountyList, *apperrors.AppError) {
 	// request list from dao
 	logger.Info("Querying data access layer for list of counties ranked by metric %s", metricName)
+	// lowercase and trim the metric name
+	metricName = strings.TrimSpace(strings.ToLower(metricName))
+	
 	countyListData, err := c.daoImpl.GetCountyList(metricName, n, desc)
 	if err != nil {
 		return nil, err
@@ -279,13 +284,13 @@ func (c *CountyServiceImpl) GetCountyList(metricName string, n int, desc bool) (
 		if err != nil {
 			return nil, err
 		}
-		
+
 		cmp := model.CountyMetricPair{
-			County_id : readAsInt(countyData[COUNTY_LIST_ID]), 
-			County_name : readAsString(countyData[COUNTY_LIST_NAME]),
-			State_id : stateId,
-			State_name : stateName,
-			Metric_value : readAsInt(countyData[COUNTY_LIST_METRIC_VALUE]),
+			County_id:    readAsInt(countyData[COUNTY_LIST_ID]),
+			County_name:  readAsString(countyData[COUNTY_LIST_NAME]),
+			State_id:     stateId,
+			State_name:   stateName,
+			Metric_value: readAsInt(countyData[COUNTY_LIST_METRIC_VALUE]),
 		}
 
 		// append to list, order is enforced by query
@@ -338,7 +343,7 @@ func (c *CountyServiceImpl) GetCountyTaxListByName(name string) (*model.CountyTa
 }
 
 // Helper method with logic to format a county name input to the public methods.
-// Input should be trimmed and lowercased, and if there is no " county" in the name, 
+// Input should be trimmed and lowercased, and if there is no " county" in the name,
 // apended at the end
 func formatCountyInput(county string) string {
 	county = strings.TrimSpace(strings.ToLower(county))

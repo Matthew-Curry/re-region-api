@@ -3,8 +3,8 @@ info:
   title: Re-Region API
   description: |
     API to request information about regions in the United States. The system's goal is to provide access to well structured information that can
-    be used to help people research new areas to live in and explore. It has information on demographic and lifestyle stats along with taxation estimates 
-    for counties and states.
+    be used to help people research new areas to live in and explore. It has information on demographic, lifestyle, and cost of living statistics along with 
+    taxation estimates based on individual filer status for counties and states.
   contact:
     name: Matthew Curry
     email: matt.curry56@gmail.com
@@ -14,359 +14,889 @@ servers:
   - url: http://127.0.0.1:8080/
     description: Local server
 
+tags: 
+  - name: Request Demographic and Tax Info for a Region
+    description: Get demographic, lifestyle, and cost of living information for regions in the United States.
+  - name: Rank Regions by Metric
+    description: Rank regions in the United States by a given metric.
+  - name: Regional Tax Rules
+    description: Get taxation laws for different granularities of regions in the United States.
+
 paths:
   /counties:
     get:
       tags:
-        - County
+        - Request Demographic and Tax Info for a Region
       summary: Get survey statistics and taxation estimates for a given county and tax filing input variables.
       consumes: 
         - application/json
       produces: 
         - application/json
       parameters:
-        - in: path
+        - in: query
           name: id
           schema: 
             type: integer
-            #minimum: 1
-            #maximum: 1
           required: false
           description: |
               Numeric id tied to the county in the system. Can be used to identify a county in the request. Either the id
               or the name must be specified 
-        - in: path
+        - in: query
           name: name
           schema: 
             type: string
-            #minimum: 1
-            #maximum: 1
           required: false
           description: |
               Name of the county. Can be either lower or upper case, and also can optionally specify "county" after the base name.
               Can be used to identify a county in the request. Either the id or the name must be specified.
-        - in: path
-          name: fs
+        - in: query
+          name: filingStatus
           schema: 
             type: string
-            #minimum: 1
-            #maximum: 1
+            enum: [S, M, H]
           required: true
           description: |
               The filing status of the tax payer. Used for calculating taxes tied with living in the requested county. Must specify 'S', 'M', or 'H' for
-              single, married, and head filing status respectively.
-        - in: path
-          name: res
+              single, married, and head filing status respectively. The specification is case insensitive.
+        - in: query
+          name: residencyStatus
           schema: 
             type: boolean
-            #minimum: 1
-            #maximum: 1
           required: true
           description: |
               The residency status of the tax payer. Used for calculating taxes tied with living in the requested county.
-        - in: path
-          name: dep
+        - in: query
+          name: dependents
           schema: 
             type: integer
-            #minimum: 1
-            #maximum: 1
           required: true
           description: |
               The number of dependents of the tax payer. Used for calculating taxes tied with living in the requested county.
-        - in: path
+        - in: query
           name: income
           schema: 
             type: integer
-            #minimum: 1
-            #maximum: 1
           required: true
           description: |
               The income of the tax payer. Used for calculating taxes tied with living in the requested county.
       responses:
         '200':
           description: This is an example county response. This response is the result of requesting for New York county 
-                        for a single resident filer with no dependents and an income of $80,000
+                        for a single resident filer with no dependents and an income of $80,000.
           content:
             application/json:
               schema:
                 type: object
-                example:
-                  County_id: 36061,
-                  County_name: "New York County"
-                  State_id: 36,
-                  State_name: "New York"
-                  Pop: 1628706
-                  Male_pop: 771278
-                  Female_pop: 857428
-                  Median_income: 93651
-                  Average_rent: 1753
-                  Commute: 81
+                properties:
+                  County_id:
+                    type: integer
+                    example: 36061
+                  County_name:
+                    type: string
+                    example: "New York County"
+                  State_id:
+                    type: integer
+                    example: 36
+                  State_name:
+                    type: string
+                    example: "New York"
+                  Pop:
+                    type: integer
+                    example: 1628706
+                  Male_pop: 
+                    type: integer
+                    example: 771278
+                  Female_pop: 
+                    type: integer
+                    example: 857428
+                  Median_income: 
+                    type: integer
+                    example: 93651
+                  Average_rent: 
+                    type: integer
+                    example: 1753
+                  Commute:
+                    type: integer
+                    example: 81
                   Tax_locale:
-                      Locale_id: 3376
-                      Locale_name: "New York City"
-                      Total_tax: 19044
-                      Federal_tax: 14544
-                      State_tax: 4500
-                      Locale_tax: 0
+                    type: object
+                    properties:
+                      Locale_id:
+                        type: integer
+                        example: 3376
+                      Locale_name:
+                        type: string
+                        example: "New York City"
+                      Total_tax:
+                        type: integer
+                        example: 19044
+                      Federal_tax: 
+                        type: integer
+                        example: 14544
+                      State_tax: 
+                        type: integer
+                        example: 4500
+                      Locale_tax: 
+                        type: integer
+                        example: 0
+        '400':
+          # description is the same for state
+          description: &counties_bad_params_desc | 
+            Returned when the query parameters do not fit the requirements. The examples drop down shows the possible strings that may be returned in the raw response.
+            There may be multiple rows if there are multiple errors.
+          content:  
+            application/json:
+              examples:
+                NoNameOrId:
+                  $ref: '#components/examples/NoCountyNameOrId'
+                InvalidId: 
+                  $ref: '#components/examples/InvalidCountyId'
+                InvalidTaxFilerParams:
+                  $ref: '#components/examples/InvalidTaxFilerParams'
+                InvalidResidentFlag: 
+                  $ref: '#components/examples/InvalidResidentFlag'
+                InvalidDependentsFlag: 
+                  $ref: '#components/examples/InvalidDependentsFlag'
+                InvalidIncomeFlag:
+                  $ref: '#components/examples/InvalidIncomeFlag'
 
+        '404':
+          description: Returned when the requested county does not exist in the system.
+          content:  
+            application/json:
+              examples:
+                CountyNotFound:
+                  $ref: '#components/examples/CountyNotFound'
+        '500':
+          # description is the same for other 500 errors
+          description: &county_internal_error Returned for a server side error
+          content:  
+            application/json:
+              examples:
+                UnableToGetCounty:
+                  $ref: '#components/examples/UnableToGetCounty'
 
   /states:
     get:
       tags:
-        - State
+        - Request Demographic and Tax Info for a Region
       summary: Get survey statistics and taxation estimates for a given state and tax filing input variables.
       consumes: 
         - application/json
       produces: 
         - application/json
       parameters:
-        - in: path
+        - in: query
           name: id
           schema: 
             type: integer
-            #minimum: 1
-            #maximum: 1
           required: false
           description: |
               Numeric id tied to the state in the system. Can be used to identify a state in the request. Either the id
               or the name must be specified 
-        - in: path
+        - in: query
           name: name
           schema: 
             type: string
-            #minimum: 1
-            #maximum: 1
           required: false
           description: |
               Name of the state. Can be either lower or upper case. Can be used to identify a state in the request. Either the id or the name must be specified.
-        - in: path
-          name: fs
+        - in: query
+          name: filingStatus
           schema: 
             type: string
-            #minimum: 1
-            #maximum: 1
+            enum: [S, M, H]
           required: true
           description: |
               The filing status of the tax payer. Used for calculating taxes tied with living in the requested state. Must specify 'S', 'M', or 'H' for
-              single, married, and head filing status respectively.
-        - in: path
-          name: res
+              single, married, and head filing status respectively. The specification is case insensitive.
+        - in: query
+          name: residencyStatus
           schema: 
             type: boolean
-            #minimum: 1
-            #maximum: 1
           required: true
           description: |
               The residency status of the tax payer. Used for calculating taxes tied with living in the requested state.
-        - in: path
-          name: dep
+        - in: query
+          name: dependents
           schema: 
             type: integer
-            #minimum: 1
-            #maximum: 1
           required: true
           description: |
               The number of dependents of the tax payer. Used for calculating taxes tied with living in the requested state.
-        - in: path
+        - in: query
           name: income
           schema: 
             type: integer
-            #minimum: 1
-            #maximum: 1
           required: true
           description: |
               The income of the tax payer. Used for calculating taxes tied with living in the requested state.
       responses:
         '200':
-          description: This is an example county response. This response is the result of requesting for New York state 
+          description: This is an example state response. This response is the result of requesting for New York state 
                         for a single resident filer with no dependents and an income of $80,000
           content:
             application/json:
               schema:
                 type: object
-                example:
-                  State_id: 36
-                  State_name: "New York"
-                  Pop: 18466230
-                  Male_pop: 8953064
-                  Female_pop: 9513166
-                  Median_income: 77578
-                  Average_rent: 1381
-                  Commute: 17
-                  Total_tax: 19044
-                  State_tax: 4500
-                  Federal_tax: 14544
-
+                properties:
+                  State_id:
+                    type: integer
+                    example: 36
+                  State_name:
+                    type: string
+                    example: "New York"
+                  Pop: 
+                    type: integer
+                    example: 18466230
+                  Male_pop: 
+                    type: integer
+                    example: 8953064
+                  Female_pop: 
+                    type: integer
+                    example: 9513166
+                  Median_income: 
+                    type: integer
+                    example: 77578
+                  Average_rent: 
+                    type: integer
+                    example: 1381
+                  Commute:
+                    type: integer
+                    example: 17
+                  Total_tax: 
+                    type: integer
+                    example: 19044
+                  State_tax: 
+                    type: integer
+                    example: 4500
+                  Federal_tax: 
+                    type: integer
+                    example: 14544
+        '400':
+          # description is the same as county
+          description: *counties_bad_params_desc 
+          content:  
+            application/json:
+              examples:  
+                NoNameOrId:
+                  $ref: '#components/examples/NoStateNameOrId'
+                InvalidId: 
+                  $ref: '#components/examples/InvalidStateId'
+                InvalidTaxFilerParams:
+                  $ref: '#components/examples/InvalidTaxFilerParams'
+                InvalidResidentFlag: 
+                  $ref: '#components/examples/InvalidResidentFlag'
+                InvalidDependentsFlag: 
+                  $ref: '#components/examples/InvalidDependentsFlag'
+                InvalidIncomeFlag:
+                  $ref: '#components/examples/InvalidIncomeFlag'
+        '404':
+          description: Returned when the requested state does not exist in the system.
+          content:  
+            application/json:
+              examples:
+                StateNotFound:
+                  $ref: '#components/examples/StateNotFound'
+        '500':
+          description: *county_internal_error 
+          content:  
+            application/json:
+              examples:
+                UnableToGetState:
+                  $ref: '#components/examples/UnableToGetState'
 
   /county-list:
     get:
       tags:
-        - County
+        - Rank Regions by Metric
       summary: Return list of counties ranked by a given metric and ranking criteria.
       consumes: 
         - application/json
       produces: 
         - application/json
       parameters:
-        - in: path
+        - in: query
           name: metric_name
           schema:
             type: string
-            #minimum: 1
-            #maximum: 1
+            enum: [pop, male_pop, female_pop, median_income, average_rent, commute]
           required: true
-          description: The name of the metric to rank the counties by. 
-        - in: path
-          name: size
-          schema:
-            type: integer
-            required: true
-          description: The length of the list of the generated response.
-        - in: path
-          name: desc
-          schema:
-            type: boolean
-            required: true
-          description: Boolean defining whether the list should be in descending order.
+          description: | 
+            The name of the metric to rank the counties by. Metric names are case insensitive. Available metric include: 
+
+              **pop:** Total population 
+
+              **male_pop:** Total male populaion 
+
+              **female_pop:** Total female population 
+
+              **median income:** Median income of county. 
+
+              **average_rent:** The average rent of the region. 
+
+              **commute:** The average commute of the region.
+        - $ref: '#/components/parameters/sizeParam'
+        - $ref: '#/components/parameters/descParam'
       responses:
         '200':
           description: This example response is in response to a request for the top 5 counties ordered by commute length descending.
           content:
             application/json:
               schema: 
-                $ref: '#components/schemas/countyList'
-
+                type: object
+                properties:
+                  Metric_name:
+                    type: string
+                    example: commute
+                  Ranked_list:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        County_id:
+                          type: integer
+                        County_name:
+                          type: string
+                        State_id:
+                          type: integer
+                        State_name:
+                          type: string
+                        Metric_value:
+                          type: integer
+                    example:
+                    - County_id: 36061
+                      County_name: New York County
+                      State_id: 36
+                      State_name: New York
+                      Metric_value: 81
+                    - County_id: 25025
+                      County_name: Suffolk County
+                      State_id: 25
+                      State_name: Massachusetts 
+                      Metric_value: 39
+                    - County_id: 6075
+                      County_name: San Francisco County
+                      State_id: 6
+                      State_name: California
+                      Metric_value: 36
+                    - County_id: 51013
+                      County_name: Arlington County
+                      State_id: 51
+                      State_name: Virginia
+                      Metric_value: 33
+                    - County_id: 13121
+                      County_name: Fulton County
+                      State_id: 13
+                      State_name: Georgia
+                      Metric_value: 31
+        '400':
+          # description is the same for state
+          description: &county_list_bad_params_desc | 
+            Returned when the query parameters do not fit the requirements. The examples drop down shows the possible strings that may be returned in the raw response.
+            There may be multiple rows if there are multiple errors.
+          content:  
+            application/json:
+              examples:  
+                NoMetricGiven:
+                  $ref: '#components/examples/NoMetricGiven'
+                InvalidDescFlag: 
+                  $ref: '#components/examples/InvalidDescFlag'
+                InvalidListSize:
+                  $ref: '#components/examples/InvalidListSize'
+        '404':
+          description: Returned when the requested metric does not exist in the system.
+          content:  
+            application/json:
+              examples:
+                MetricNotFound:
+                  $ref: '#components/examples/MetricNotFound'
+        '500':
+          description: *county_internal_error 
+          content:  
+            application/json:
+              examples:
+                UnableToGetMetric:
+                  $ref: '#components/examples/UnableToGetMetric'
 
   /state-list:
     get:
       tags:
-        - State
+        - Rank Regions by Metric
       summary: Return list of states ranked by a given metric and ranking criteria.
       consumes: 
         - application/json
       produces: 
         - application/json
       parameters:
-        - in: path
+        - in: query
           name: metric_name
           schema:
             type: string
-            #minimum: 1
-            #maximum: 1
+            enum: [pop, male_pop, female_pop, median_income, average_rent, commute]
+            description: | 
+              The name of the metric to rank the counties by. Metric names are case insensitive. Available metric include: 
+              
+                **pop:** Total population 
+
+                **male_pop:** Total male populaion 
+
+                **female_pop:** Total female population 
+
+                **median income:** Average median income of counties within the state.
+
+                **average_rent:** The average rent of the region. 
+
+                **commute:** The average commute of the region.
           required: true
           description: The name of the metric to rank the states by. 
-        - in: path
-          name: size
-          schema:
-            type: integer
-            required: true
-          description: The length of the list of the generated response.
-        - in: path
-          name: desc
-          schema:
-            type: boolean
-            required: true
-          description: Boolean defining whether the list should be in descending order.
+        - $ref: '#/components/parameters/sizeParam'
+        - $ref: '#/components/parameters/descParam'
+      responses:
+        '200':
+          description: This example response is in response to a request for the top 5 states ordered by commute length descending.
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  Metric_name:
+                    type: string
+                    example: commute
+                  Ranked_list:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        State_id:
+                          type: integer
+                        State_name:
+                          type: string
+                        Metric_value:
+                          type: integer
+                    example:
+                    - State_id: 36
+                      State_name: New York
+                      Metric_value: 17
+                    - State_id: 50
+                      State_name: Vermont
+                      Metric_value: 15
+                    - State_id: 25
+                      State_name: Massachusetts
+                      Metric_value: 15
+                    - State_id: 17
+                      State_name: Illinois
+                      Metric_value: 14
+                    - State_id: 24
+                      State_name: Maryland
+                      Metric_value: 13
+        '400':
+          # description is the same for state
+          description: *county_list_bad_params_desc
+          content:  
+            application/json:
+              examples:  
+                NoMetricGiven:
+                  $ref: '#components/examples/NoMetricGiven'
+                InvalidDescFlag: 
+                  $ref: '#components/examples/InvalidDescFlag'
+                InvalidListSize:
+                  $ref: '#components/examples/InvalidListSize'
+        '404':
+          description: Returned when the requested metric does not exist in the system.
+          content:  
+            application/json:
+              examples:
+                MetricNotFound:
+                  $ref: '#components/examples/MetricNotFound'
+        '500':
+          description: *county_internal_error 
+          content:  
+            application/json:
+              examples:
+                UnableToGetMetric:
+                  $ref: '#components/examples/UnableToGetMetric'
 
   /county-taxes:
     get:
       tags:
-        - County
+        - Regional Tax Rules
       summary: Return static taxation information for a given county.
       consumes: 
         - application/json
       produces: 
         - application/json
       parameters:
-        - in: path
+        - in: query
           name: id
           schema: 
             type: integer
-            #minimum: 1
-            #maximum: 1
           required: false
           description: |
               Numeric id tied to the county in the system. Can be used to identify a county in the request. Either the id
               or the name must be specified 
-        - in: path
+        - in: query
           name: name
           schema: 
             type: string
-            #minimum: 1
-            #maximum: 1
           required: false
           description: |
               Name of the county. Can be either lower or upper case, and also can optionally specify "county" after the base name.
               Can be used to identify a county in the request. Either the id or the name must be specified. 
+      responses:
+        '200':
+          description: This example response is for the taxation information of New York County.
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  County_name: 
+                    type: string
+                    example: New York County
+                  County_id: 
+                    type: integer
+                    example: 36061
+                  State_name: 
+                    type: string
+                    example: New York
+                  State_id: 
+                    type: integer
+                    example: 36
+                  Tax_locales: 
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Locale_id: 
+                          type: integer
+                          example: 3376
+                        Local_name: 
+                          type: string
+                          example: New York City
+                        Resident_desc: 
+                          type: string
+                          example: 3.078% - 3.876%
+                        Resident_rate: 
+                          type: float
+                          example: 0
+                        Resident_month_fee: 
+                          type: float
+                          example: 0
+                        Resident_year_fee: 
+                          type: float
+                          example: 0
+                        Resident_pay_period_fee: 
+                          type: float
+                          example: 0
+                        Resident_state_rate: 
+                          type: float
+                          example: 0
+                        Nonresident_desc: 
+                          type: string
+                          example: 0.00%
+                        Nonresident_rate: 
+                          type: float
+                          example: 0
+                        Nonresident_month_fee: 
+                          type: float
+                          example: 0
+                        Nonresident_year_fee: 
+                          type: float
+                          example: 0
+                        Nonresident_pay_period_fee: 
+                          type: float
+                          example: 0
+                        Nonresident_state_rate: 
+                          type: float
+                          example: 0
+                  
+        '400':
+          description: Returned when the query parameters do not fit the requirements.
+        '404':
+          description: Returned when the requested county does not exist in the system.
+          content:  
+            application/json:
+              examples:
+                CountyNotFound:
+                  $ref: '#components/examples/CountyNotFound'
+        '500':
+          description: *county_internal_error 
+          content:  
+            application/json:
+              examples:
+                UnableToGetCounty:
+                  $ref: '#components/examples/UnableToGetCounty'
 
   /state-taxes:
     get:
       tags:
-        - State
+        - Regional Tax Rules
       summary: Return static taxation information for a given state.
       consumes: 
         - application/json
       produces: 
         - application/json
       parameters:
-        - in: path
+        - in: query
           name: id
           schema: 
             type: integer
-            #minimum: 1
-            #maximum: 1
           required: false
           description: |
               Numeric id tied to the state in the system. Can be used to identify a state in the request. Either the id
               or the name must be specified 
-        - in: path
+        - in: query
           name: name
           schema: 
             type: string
-            #minimum: 1
-            #maximum: 1
           required: false
           description: |
               Name of the state. Can be either lower or upper case. Can be used to identify a state in the request. Either the id or the name must be specified.
+      responses:
+        '200':
+          description: This example response is for the taxation information of New York State.
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                    State_id: 
+                      example: 36
+                    State_name: 
+                      example: New York
+                    Single_deduction: 
+                      example: 8000
+                    Married_deduction: 
+                      example: 16050
+                    Single_exemption: 
+                      example: 0
+                    Married_exemption: 
+                      example: 0
+                    Dependent_exemption: 
+                      example: 1000
+                    Bracket_list: 
+                      type: array
+                      items:
+                        type: object
+                        properites:
+                          Single_rate: 
+                            type: float
+                          Single_bracket: 
+                            type: integer
+                          Married_rate:
+                            type: float
+                          Married_bracket: 
+                            type: integer
+                        example:
+                          - Single_rate: 0.04
+                            Single_bracket: 0
+                            Married_rate: 0.04
+                            Married_bracket: 0
+                          - Single_rate: 0.045
+                            Single_bracket: 8500
+                            Married_rate: 0.045
+                            Married_bracket: 17150
+                          - Single_rate: 0.0525
+                            Single_bracket: 11700
+                            Married_rate: 0.0525
+                            Married_bracket: 23600
+                          - Single_rate: 0.0585
+                            Single_bracket: 13900
+                            Married_rate: 0.0585
+                            Married_bracket: 27900
+                          - Single_rate: 0.0625
+                            Single_bracket: 80650
+                            Married_rate: 0.0625
+                            Married_bracket: 161550
+                          - Single_rate: 0.0685
+                            Single_bracket: 215400
+                            Married_rate: 0.0685
+                            Married_bracket: 323200
+                          - Single_rate: 0.0965
+                            Single_bracket: 1077550
+                            Married_rate: 0.0965
+                            Married_bracket: 2155350
+                          - Single_rate: 0.103
+                            Single_bracket: 5000000
+                            Married_rate: 0.103
+                            Married_bracket: 5000000
+                          - Single_rate: 0.109
+                            Single_bracket: 25000000
+                            Married_rate: 0.109
+                            Married_bracket: 25000000
+
+        '400':
+          description: Returned when the query parameters do not fit the requirements.
+        '404':
+          description: Returned when the requested state does not exist in the system.
+          content:  
+            application/json:
+              examples:
+                StateNotFound:
+                  $ref: '#components/examples/StateNotFound'
+        '500':
+          description: *county_internal_error 
+          content:  
+            application/json:
+              examples:
+                UnableToGetState:
+                  $ref: '#components/examples/UnableToGetState'
 
   /federal-taxes:
     get:
       tags:
-        - Federal
+        - Regional Tax Rules
       summary: Return static taxation information for federal level taxes.
       consumes: 
         - application/json
       produces: 
         - application/json
+      responses:
+        '200':
+          description: This is the current response for the taxation information of the United States Federal government.
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                    Single_deduction: 
+                      example: 12950
+                    Married_deduction: 
+                      example: 25900
+                    Head_deduction: 
+                      example: 19400
+                    Bracket_list:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          Rate: 
+                            type: float
+                          Single_bracket:
+                            type: integer
+                          Married_bracket:
+                            type: integer
+                          Head_bracket:
+                            type: integer
+                        example:
+                          - Rate: 0.1
+                            Single_bracket: 0
+                            Married_bracket: 0
+                            Head_bracket: 0
+                          - Rate: 0.12
+                            Single_bracket: 10275
+                            Married_bracket: 20550
+                            Head_bracket: 14650
+                          - Rate: 0.22
+                            Single_bracket: 41775
+                            Married_bracket: 83550
+                            Head_bracket: 55900
+                          - Rate: 0.24
+                            Single_bracket: 89075
+                            Married_bracket: 178150
+                            Head_bracket: 89050
+                          - Rate: 0.32
+                            Single_bracket: 170050
+                            Married_bracket: 340100
+                            Head_bracket: 170050
+                          - Rate: 0.35
+                            Single_bracket: 215950
+                            Married_bracket: 431900
+                            Head_bracket: 215950
+                          - Rate: 0.37
+                            Single_bracket: 539900
+                            Married_bracket: 647850
+                            Head_bracket: 539900
+
+        '500':
+          description: *county_internal_error 
+          content:  
+            application/json:
+              examples:
+                UnableToGetFederal:
+                  $ref: '#components/examples/UnableToGetFederal'
 
   /health:
     get:
       tags:
         - Health
       summary: Health endpoints, returns 200 response response if API is healthy.
+      responses:  
+        '200':
+          description: This is the current response for a healthy API.
+          content:
+            application/json:
+              schema: 
+                type: object
+                example: API is healthy
 
 # components used in specification
 components:
-  schemas:
-    countyList:
-      type: object
-      properties:
-        Metric_name: 
-          type: string
-        Ranked_list:
-          type: array
-          items:
-            type: string
-            $ref: '#components/schemas/countyMetricPair'
 
-    countyMetricPair:
-      type: object
-      properties:
-        County_id:
-          type: integer
-        County_name:
-          type: string
-        State_id:
-          type: integer
+  # parameters defines common params
+  parameters: 
+    sizeParam:
+      in: query
+      name: size
+      schema:
+        type: integer
+        required: true
+      description: The length of the list of the generated response. 
+    descParam:
+      in: query
+      name: desc
+      schema:
+        type: boolean
+        required: true
+      description: Boolean defining whether the list should be in descending order.
 
 
+  # examples define messages returned for bad responeses
+  examples:
+    # 500 RESPONSE EXAMPLES (includes component error strings of 500 responses):
+    UnableToGetCounty:
+      value: Unable to retrieve county {identifier}
+    UnableToGetState:
+      value: Unable to retrieve state {identifier}
+    UnableToGetMetric:
+      value: Unable to retrieve metric {identifier}
+    UnableToGetFederal:
+      value: Unable to retrieve federal tax information due to an internal error
+
+    # '404' RESPONSE EXAMPLES (includes component error strings of 404 responses):
+    CountyNotFound:
+      value: There is no county {identifier} available
+    StateNotFound:
+      value: There is no state {identifier} available
+    MetricNotFound:
+      value: There is no metric {identifier} available
+
+    # 400 RESPONSE EXAMPLES (includes component error strings of 400 responses):
+    # Regional errors:
+    NoStateNameOrId:
+      value: A state name or id must be provided.
+    NoCountyNameOrId:
+      value: A county name or id must be provided.
+    InvalidStateId:
+      value: The provided state id must be an integer.
+    InvalidCountyId:
+      value: The provided county id must be an integer.
+
+    # Tax filer param errors
+    InvalidTaxFilerParams:
+      value: The provided filing status must indicate 'S', 'H', or 'M'.
+    InvalidResidentFlag:
+      value: The provided resident flag must be interpretable as a boolean
+    InvalidDependentsFlag:
+      value: The provided number of dependents must be an integer.
+    InvalidIncomeFlag:
+      value: The provided income must be an integer.
+    
+    # Metric list param errors
+    NoMetricGiven:
+      value: A metric must be provided to generate the list.
+    InvalidDescFlag:
+      value: A boolean like value must be given for whether to make the list descending.
+    InvalidListSize:
+      value: The size of the list must be an integer.
