@@ -12,14 +12,17 @@ import (
 	"github.com/Matthew-Curry/re-region-api/src/logging"
 )
 
-const openApiYml = "/home/matthew/Documents/Projects/re-region/re-region-api/static/docs.yml"
-
-var logger, _ = logging.GetLogger("file.log")
+const openApiYml = "/home/matthew/Documents/Projects/re-region/re-region-api/src/static/docs.yml"
+var logger logging.Logger
+var logFile *os.File
 
 //go:embed static
 var content embed.FS
 
 func main() {
+	// the logger and file to close
+	var logger, logfile = logging.GetLogger("file.log")
+	defer logfile.Close()
 	// read in env vars
 	port := ":" + os.Getenv("PORT")
 	dbUser := os.Getenv("RE_REGION_API_USER")

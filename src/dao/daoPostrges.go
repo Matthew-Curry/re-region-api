@@ -151,8 +151,6 @@ func (d *DaoImpl) GetCountyList(metric string, n int, desc bool) ([][]interface{
 	if err != nil {
 		return nil, apperrors.UnableToGetCountyList(err)
 	}
-	fmt.Println("EREGERTHRTHRTHTRHRT")
-	fmt.Println(res)
 
 	return res, nil
 }
@@ -165,8 +163,6 @@ func (d *DaoImpl) GetStateTax() ([][]interface{}, *apperrors.AppError) {
 	}
 	logger.Info("Executing State tax query")
 	res, err := d.getRowsFromQuery(query)
-	fmt.Println("STATE CENSUS DATA")
-	fmt.Println(res)
 	if err != nil {
 		return nil, apperrors.UnableToGetStateTax(err)
 	}
@@ -207,7 +203,6 @@ func (d *DaoImpl) GetCountyDataById(county_id int) ([][]interface{}, *apperrors.
 	logger.Info("Executing County by id query")
 
 	res, err := d.getRowsFromQuery(query, county_id)
-	fmt.Println(res)
 	if err != nil {
 		if err.IsKind(apperrors.DataNotFound) {
 			return nil, apperrors.CountyIDNotFound(county_id)
