@@ -56,7 +56,6 @@ func (s *StateList) insertAtIndex(i int, metricPair StateMetricPair, list []Stat
 	}
 	
 	// else shift elements in slice at the insertion index. Using append will not allocate extra memory
-	// when cap(s.ranked_list) > len(s.ranked_list)
 	list = append(list[:i+1], list[i:]...)
 
 	// overwrite the duplicates value for the insert and return the result

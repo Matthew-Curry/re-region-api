@@ -134,7 +134,7 @@ func CountyListHandler(w http.ResponseWriter, r *http.Request) {
 	metricName, size, desc, errStr := getListParams(r)
 	if errStr != "" {
 		writeGotBadParams(w, errStr)
-		return 
+		return
 	}
 	// http method validation
 	isGet, isOption, errStr := getHTTPMethod(r)
@@ -237,7 +237,10 @@ func CountyTaxesHandler(w http.ResponseWriter, r *http.Request) {
 	var countyTaxList *model.CountyTaxList
 	var err *apperrors.AppError
 	var id int
-	if idStr != "" {
+	if name != "" {
+		logger.Info("Getting tax information for county %s", name)
+		countyTaxList, err = countyService.GetCountyTaxListByName(name)
+	} else if idStr != "" {
 		id, convErr := strconv.Atoi(idStr)
 		if convErr == nil {
 			logger.Info("Getting tax information for county %v", id)
@@ -245,10 +248,7 @@ func CountyTaxesHandler(w http.ResponseWriter, r *http.Request) {
 		} else {
 			writeNoEntityAvailable(w, isGet, "county", fmt.Sprint(id))
 		}
-	} else if name != "" {
-		logger.Info("Getting tax information for county %s", name)
-		countyTaxList, err = countyService.GetCountyTaxListByName(name)
-	}
+	} 
 
 	// handle response based on response from county service
 	if err != nil {
@@ -290,7 +290,10 @@ func StateTaxesHandler(w http.ResponseWriter, r *http.Request) {
 	var stateTaxInfo *model.StateTaxInfo
 	var err *apperrors.AppError
 	var id int
-	if idStr != "" {
+	if name != "" {
+		logger.Info("Getting tax information for state %s", name)
+		stateTaxInfo, err = stateService.GetStateTaxInfoByName(name)
+	} else if idStr != "" {
 		id, convErr := strconv.Atoi(idStr)
 		if convErr == nil {
 			logger.Info("Getting tax information for state %v", id)
@@ -299,9 +302,6 @@ func StateTaxesHandler(w http.ResponseWriter, r *http.Request) {
 			writeNoEntityAvailable(w, isGet, "state", fmt.Sprint(id))
 			return
 		}
-	} else if name != "" {
-		logger.Info("Getting tax information for state %s", name)
-		stateTaxInfo, err = stateService.GetStateTaxInfoByName(name)
 	}
 
 	if err != nil {

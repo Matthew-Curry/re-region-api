@@ -20,25 +20,21 @@ type Logger struct {
 }
 
 func (l *Logger) Info(s string, a ...interface{}) {
-	//s, a = l.messageSetup(s, a)
 	s = l.addCaller(s)
 	l.infoLogger.Printf(s, a...)
 }
 
 func (l *Logger) Warn(s string, a ...interface{}) {
-	//s, a = l.messageSetup(s, a)
 	s = l.addCaller(s)
 	l.warnLogger.Printf(s, a...)
 }
 
 func (l *Logger) Error(s string, a ...interface{}) {
-	//s, a = l.messageSetup(s, a)
 	s = l.addCaller(s)
 	l.errorLogger.Printf(s, a...)
 }
 
 func (l *Logger) Fatal(s string, a ...interface{}) {
-	//s, a = l.messageSetup(s, a)
 	s = l.addCaller(s)
 	l.errorLogger.Panicf(s, a...)
 }
@@ -73,7 +69,6 @@ func GetLogger(logPath string) (Logger, *os.File) {
 	}
 	mw := io.MultiWriter(os.Stdout, file) 
 	// common logging flags
-	//flags := log.LstdFlags | log.Lshortfile
 	flags := log.LstdFlags
 	infoLogger := log.New(mw, "INFO ", flags)
 	warnLogger := log.New(mw, "WARN ", flags)

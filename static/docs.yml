@@ -28,6 +28,7 @@ paths:
       tags:
         - Request Demographic and Tax Info for a Region
       summary: Get survey statistics and taxation estimates for a given county and tax filing input variables.
+
       consumes: 
         - application/json
       produces: 
@@ -40,7 +41,7 @@ paths:
           required: false
           description: |
               Numeric id tied to the county in the system. Can be used to identify a county in the request. Either the id
-              or the name must be specified 
+              or the name must be specified. If both are specified, the name is used. 
         - in: query
           name: name
           schema: 
@@ -48,7 +49,7 @@ paths:
           required: false
           description: |
               Name of the county. Can be either lower or upper case, and also can optionally specify "county" after the base name.
-              Can be used to identify a county in the request. Either the id or the name must be specified.
+              Can be used to identify a county in the request. Either the id or the name must be specified. If both are specified, the name is used. 
         - in: query
           name: filingStatus
           schema: 
@@ -82,7 +83,10 @@ paths:
       responses:
         '200':
           description: This is an example county response. This response is the result of requesting for New York county 
-                        for a single resident filer with no dependents and an income of $80,000.
+                        for a single resident filer with no dependents and an income of $80,000. 
+                        
+                        Some counties may not have tax localities linked to them in the database. In this case, a locale with 
+                        an id of 0 with no locale tax will be returned.
           content:
             application/json:
               schema:
@@ -201,6 +205,7 @@ paths:
           required: false
           description: |
               Name of the state. Can be either lower or upper case. Can be used to identify a state in the request. Either the id or the name must be specified.
+              If both are specified, the name is used.
         - in: query
           name: filingStatus
           schema: 
@@ -542,10 +547,13 @@ paths:
           required: false
           description: |
               Name of the county. Can be either lower or upper case, and also can optionally specify "county" after the base name.
-              Can be used to identify a county in the request. Either the id or the name must be specified. 
+              Can be used to identify a county in the request. Either the id or the name must be specified. If both are specified, the name is used.
       responses:
         '200':
-          description: This example response is for the taxation information of New York County.
+          description: |
+            This example response is for the taxation information of New York County. Some counties may not have tax localities
+            linked to them in the database. In this case, the list of tax locales will include a single locale with an 
+            id of 0, empty strings for all string attributes, and 0 values for all numeric attributes.
           content:
             application/json:
               schema: 
@@ -653,6 +661,7 @@ paths:
           required: false
           description: |
               Name of the state. Can be either lower or upper case. Can be used to identify a state in the request. Either the id or the name must be specified.
+              If both are specified, the name is used.
       responses:
         '200':
           description: This example response is for the taxation information of New York State.

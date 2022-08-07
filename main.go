@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"io/fs"
 	"strings"
+	"os"
 	"embed"
 
 	"github.com/Matthew-Curry/re-region-api/controller"
@@ -15,14 +16,22 @@ import (
 const openApiYml = "/home/matthew/Documents/Projects/re-region/re-region-api/static/docs.yml"
 
 var logger, _ = logging.GetLogger("file.log")
-var port string = ":8080"
+var port string = ":" + os.Getenv("PORT")
 
 //go:embed static
 var content embed.FS
 
 func main() {
+	// read in env vars
+	port := ":" + os.Getenv("PORT")
+	dbUser := os.Getenv("RE_REGION_API_USER")
+	dbPassword := os.Getenv("RE_REGION_API_PASSWORD")
+	dbName := os.Getenv("RE_REGION_DB")
+	dbHost := os.Getenv("DB_HOST") 
+	dbPort := os.Getenv("DB_PORT")
+
 	// initialize services in the controller package
-	err := controller.InitServices()
+	err := controller.InitServices(dbUser, dbPassword, dbName, dbHost, dbPort)
 	if err != nil {
 		logger.Fatal("Unable to intiialize core services", err.Error())
 	}

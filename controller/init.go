@@ -18,11 +18,11 @@ var stateService services.StateServiceInterface = nil
 var countyService services.CountyServiceInterface = nil
 
 // public method called to initialize services if they have not been initilized
-func InitServices() error {
+func InitServices(user, password, dbName, dbHost, dbPort string) error {
 	// initialize any nil services in order of dependency
 	var err *apperrors.AppError = nil
 	if daoImpl == nil {
-		daoImpl, err = dao.GetPostgresDao()
+		daoImpl, err = dao.GetPostgresDao(user, password, dbName, dbHost, dbPort)
 		if err != nil {
 			logger.Error("Could not initialize dao service")
 			return err

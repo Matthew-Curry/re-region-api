@@ -75,7 +75,6 @@ func (f *FederalTaxInfo) AppendToOrderedList(bracket FederalBracket) {
 	}
 
 	// else shift elements in slice at the insertion index. Using append will not allocate extra memory
-	// when cap(mpSlice) > len(mpSlice)
 	f.bracket_list = append(f.bracket_list[:i+1], f.bracket_list[i:]...)
 
 	// overwrite the duplicates value for the insert and return the result

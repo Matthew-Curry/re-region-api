@@ -1,5 +1,7 @@
 package services
 
+/* Implementation of the Re-Region API county service */
+
 import (
 	"github.com/Matthew-Curry/re-region-api/apperrors"
 	"github.com/Matthew-Curry/re-region-api/dao"
@@ -42,8 +44,6 @@ const (
 	COUNTY_LIST_STATE_ID
 	COUNTY_LIST_METRIC_VALUE
 )
-
-/* Implementation of the Re-Region API county service */
 
 type CountyServiceImpl struct {
 	// maps for the get county endpoint. Map identifiers to base state attributes and
@@ -349,6 +349,7 @@ func formatCountyInput(county string) string {
 	county = strings.TrimSpace(strings.ToLower(county))
 	if !strings.Contains(county, " county") {
 		county = county + " county"
+		print(county)
 	}
 
 	return county

@@ -5,7 +5,7 @@ import (
 )
 
 /* Implements a custom error struct with public constructors for all app errors. Errors are categorized
-into "ErrorKinds" that the controller uses to determine how to handle the error. */
+into "ErrorKinds" that callers at higher layers use to determine how to handle the error. */
 
 type ErrorKind int
 
@@ -13,10 +13,6 @@ type AppError struct {
 	message string
 	kind ErrorKind
 	source error
-}
-
-func (e *AppError) NewAppError(message string, kind ErrorKind, source error) AppError{
-	return AppError{message: message, kind: kind, source: source}
 }
 
 func (e *AppError) Error() string {

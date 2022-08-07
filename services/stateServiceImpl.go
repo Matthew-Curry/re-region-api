@@ -264,7 +264,7 @@ func (s *StateServiceImpl) GetStateList(metricName string, n int, desc bool) (*m
 	res, ok := s.metricListMp[metricName]
 	if !ok {
 		logger.Warn("Metric %s not found in the state list cache", metricName)
-		return nil, apperrors.StateListNotFound(metricName)
+		return nil, apperrors.InvalidStateMetric(metricName)
 	}
 
 	// set the ranked list based on length, whether it is ascending or desc

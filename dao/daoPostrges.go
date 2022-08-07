@@ -6,7 +6,6 @@ import (
 	"database/sql"
 	"fmt"
 	"io/ioutil"
-	"os"
 	"path"
 	"runtime"
 	"strconv"
@@ -19,15 +18,6 @@ import (
 )
 
 const (
-	// constants defining name of environment vars storing DB info
-	RE_REGION_API_USER     string = "RE_REGION_API_USER"
-	RE_REGION_API_PASSWORD string = "RE_REGION_API_PASSWORD"
-	RE_REGION_DB           string = "RE_REGION_DB"
-
-	// DB connection string constants
-	host string = "localhost"
-	port int    = 5432
-
 	// identifiers to sql query files
 	GET_METRIC_SET      string = "GET_METRIC_SET"
 	COUNTY_DATA_BY_ID   string = "COUNTY_DATA_BY_ID"
@@ -59,7 +49,7 @@ type DaoImpl struct {
 }
 
 // public constructor to return the postgres impl of the dao
-func GetPostgresDao() (DaoInterface, *apperrors.AppError) {
+func GetPostgresDao(user, password, dbname, host, port string) (DaoInterface, *apperrors.AppError) {
 	// map of identifiers to sql files
 	sqlMap := map[string]string{
 		"GET_METRIC_SET": GET_METRIC_SET_QUERY,
@@ -70,13 +60,8 @@ func GetPostgresDao() (DaoInterface, *apperrors.AppError) {
 		"STATE_TAX_DATA":      STATE_TAX_DATA_QUERY,
 		"COUNTY_LIST_DATA":    COUNTY_LIST_DATA_QUERY,
 	}
-	// read in creds + database from environment
-	logger.Info("Reading in environment variables")
-	user := os.Getenv(RE_REGION_API_USER)
-	password := os.Getenv(RE_REGION_API_PASSWORD)
-	dbname := os.Getenv(RE_REGION_DB)
-	// use these and constants for the connection string
-	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
+	
+	psqlInfo := fmt.Sprintf("host=%s port=%s user=%s "+
 		"password=%s dbname=%s sslmode=disable",
 		host, port, user, password, dbname)
 	logger.Info("Opening connection to postgres DB")
@@ -133,7 +118,7 @@ func (d *DaoImpl) GetStateCensusData() ([][]interface{}, *apperrors.AppError) {
 	logger.Info("Executing State Census query")
 	res, err := d.getRowsFromQuery(query)
 	if err != nil {
-		return nil, apperrors.StateCensusNotFound(err)
+		return nil, apperrors.UnableToGetStateCensus(err)
 	}
 
 	return res, nil
@@ -164,7 +149,7 @@ func (d *DaoImpl) GetCountyList(metric string, n int, desc bool) ([][]interface{
 	logger.Info("Executing County list query")
 	res, err := d.getRowsFromQuery(query, n)
 	if err != nil {
-		return nil, apperrors.CountyListNotFound(err)
+		return nil, apperrors.UnableToGetCountyList(err)
 	}
 
 	return res, nil
@@ -179,7 +164,7 @@ func (d *DaoImpl) GetStateTax() ([][]interface{}, *apperrors.AppError) {
 	logger.Info("Executing State tax query")
 	res, err := d.getRowsFromQuery(query)
 	if err != nil {
-		return nil, apperrors.StateTaxNotFound(err)
+		return nil, apperrors.UnableToGetStateTax(err)
 	}
 
 	return res, nil
@@ -198,7 +183,11 @@ func (d *DaoImpl) GetCountyDataByName(county_name string) ([][]interface{}, *app
 	logger.Info("Executing County by name query")
 	res, err := d.getRowsFromQuery(query, county_name)
 	if err != nil {
-		return nil, apperrors.CountyNameNotFound(county_name, err)
+		if err.IsKind(apperrors.DataNotFound){
+			return nil, apperrors.CountyNameNotFound(county_name)
+		} else if err.IsKind(apperrors.InternalError) || err != nil {
+			return nil, apperrors.UnableToGetCountyName(county_name, err)
+		}
 	}
 
 	return res, nil
@@ -214,8 +203,13 @@ func (d *DaoImpl) GetCountyDataById(county_id int) ([][]interface{}, *apperrors.
 	logger.Info("Executing County by id query")
 
 	res, err := d.getRowsFromQuery(query, county_id)
+	fmt.Println(res)
 	if err != nil {
-		return nil, apperrors.CountyIDNotFound(county_id, err)
+		if err.IsKind(apperrors.DataNotFound){
+			return nil, apperrors.CountyIDNotFound(county_id)
+		} else if err.IsKind(apperrors.InternalError) || err != nil {
+			return nil, apperrors.UnableToGetCountyID(county_id, err)
+		}
 	}
 
 	return res, nil
@@ -231,7 +225,7 @@ func (d *DaoImpl) GetFederalTaxData() ([][]interface{}, *apperrors.AppError) {
 	logger.Info("Executing Federal tax query")
 	res, err := d.getRowsFromQuery(query)
 	if err != nil {
-		return nil, apperrors.FederalTaxNotFound(err)
+		return nil, apperrors.UnableToGetFederalTax(err)
 	}
 
 	return res, nil
