@@ -1,0 +1,4 @@
+# to run the container locally with the DB installed outside the container
+docker run --net="host" re-region:latest
+# to build passing in all args
+docker build --build-arg RE_REGION_API_USER='re_region_api' --build-arg RE_REGION_API_PASSWORD='password' --build-arg RE_REGION_DB='re_region' --build-arg DB_PORT='5432' --build-arg DB_HOST='localhost' .
