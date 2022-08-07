@@ -5,7 +5,7 @@ Taxation information is sourced to the app's database from datasets published by
 
 Tax foundation works are licensed under a Creative Commons Attribution NonCommercial 4.0 International License.
 
-[https://taxfoundation.org/copyright-notice/](https://taxfoundation.org/copyright-notice/)
+https://taxfoundation.org/copyright-notice/
 
 Links to the original source data sets:
 
