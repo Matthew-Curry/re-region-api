@@ -1,17 +1,18 @@
-package test 
+package test
 
 /* Testing suite for Re-Region services */
 
 import (
+	"github.com/Matthew-Curry/re-region-api/src/apperrors"
 	"github.com/Matthew-Curry/re-region-api/src/dao"
 	"github.com/Matthew-Curry/re-region-api/src/services"
-	"github.com/Matthew-Curry/re-region-api/src/apperrors"
-	
+
 	"log"
 	"reflect"
 
-	_"github.com/Matthew-Curry/re-region-api/src/model"
 	"testing"
+
+	_ "github.com/Matthew-Curry/re-region-api/src/model"
 )
 
 var daoMock dao.DaoInterface
@@ -45,6 +46,12 @@ func setup() {
 	}
 }
 
+func assertEqual(t *testing.T, method string, a, b any) {
+	if !reflect.DeepEqual(a, b) {
+		t.Errorf("The %s response does not match the expectation.", method)
+	}
+}
+
 func TestGetCountyById(t *testing.T) {
 
 	res, err := countyService.GetCountyById(5, "S", true, 4, 45000)
@@ -52,9 +59,7 @@ func TestGetCountyById(t *testing.T) {
 		t.Error("Error recieved from the county service.", err)
 	}
 	
-	if !reflect.DeepEqual(exCounty, res) {
-		t.Error("The GetCountyId response does not match the expectation.")
-	}
+	assertEqual(t, "GetCountyId", res, exCounty)
 }
 
 
@@ -64,9 +69,7 @@ func TestGetCountyByName(t *testing.T) {
 		t.Error("Error recieved from the county service.", err)
 	}
 	
-	if !reflect.DeepEqual(exCounty, res) {
-		t.Error("The GetCountyName response does not match the expectation.")
-	}
+	assertEqual(t, "GetCountyName", res, exCounty)
 }
 
 
@@ -77,9 +80,7 @@ func TestGetCountyList(t *testing.T){
 		t.Error("Error recieved from the county service.", err)
 	}
 
-	if !reflect.DeepEqual(exCountyList, res) {
-		t.Error("The GetCountyList response does not match the expectation.")
-	}
+	assertEqual(t, "GetCountyList", res, exCountyList)
 }
 
 func TestGetCountyTaxListById(t *testing.T){
@@ -88,9 +89,7 @@ func TestGetCountyTaxListById(t *testing.T){
 		t.Error("Error recieved from the county service.", err)
 	}
 
-	if !reflect.DeepEqual(exCountyTaxList, res) {
-		t.Error("The GetCountyTaxListById response does not match the expectation.")
-	}
+	assertEqual(t, "GetCountyTaxListById", res, exCountyTaxList)
 }
 
 func TestGetCountyTaxListByName(t *testing.T) {
@@ -99,9 +98,7 @@ func TestGetCountyTaxListByName(t *testing.T) {
 		t.Error("Error recieved from the county service.", err)
 	}
 
-	if !reflect.DeepEqual(exCountyTaxList, res) {
-		t.Error("The GetCountyTaxListById response does not match the expectation.")
-	}
+	assertEqual(t, "GetCountyTaxListByName", res, exCountyTaxList)
 }
 
 
@@ -111,9 +108,7 @@ func TestGetStateById(t *testing.T){
 		t.Error("Error recieved from the state service.", err)
 	}
 
-	if !reflect.DeepEqual(exState, res) {
-		t.Error("The GetStateById response does not match the expectation.")
-	}
+	assertEqual(t, "GetStateById", res, exState)
 }
 
 
@@ -123,9 +118,7 @@ func TestGetStateByName(t *testing.T) {
 		t.Error("Error recieved from the state service.", err)
 	}
 
-	if !reflect.DeepEqual(exState, res) {
-		t.Error("The GetStateById response does not match the expectation.")
-	}
+	assertEqual(t, "GetStateByName", res, exState)
 }
 
 
@@ -138,9 +131,7 @@ func TestGetStateList(t *testing.T){
 	exStateList.AppendToRankedLists(mpList)
 	exStateList.SetRankedList(1, true)
 
-	if !reflect.DeepEqual(exStateList, res) {
-		t.Error("The GetStateList response does not match the expectation.")
-	}
+	assertEqual(t, "GetStateList", res, exStateList)
 }
 
 
@@ -153,9 +144,7 @@ func TestGetStateTaxInfoById(t *testing.T){
 	exStateTaxInfoId.AppendToOrderedList(bracket1)
 	exStateTaxInfoId.AppendToOrderedList(bracket2)
 
-	if !reflect.DeepEqual(exStateTaxInfoId, res) {
-		t.Error("The StateTaxInfoById response does not match the expectation.")
-	}
+	assertEqual(t, "GetStateTaxInfoById", res, exStateTaxInfoId)
 }
 
 
@@ -169,9 +158,7 @@ func TestGetStateTaxInfoByName(t *testing.T){
 	exStateTaxInfoName.AppendToOrderedList(bracket1)
 	exStateTaxInfoName.AppendToOrderedList(bracket2)
 
-	if !reflect.DeepEqual(exStateTaxInfoName, res) {
-		t.Error("The StateTaxInfoByName response does not match the expectation.")
-	}
+	assertEqual(t, "GetStateTaxInfoByName", res, exStateTaxInfoName)
 }
 
 
@@ -185,7 +172,5 @@ func TestGetFederalTaxInfo(t *testing.T) {
 	federalTaxInfo.AppendToOrderedList(fb2)
 	federalTaxInfo.AppendToOrderedList(fb3)
 
-	if !reflect.DeepEqual(federalTaxInfo, res) {
-		t.Error("The GetFederalTaxInfo response does not match the expectation.")
-	}
+	assertEqual(t, "GetFederalTaxInfo", res, federalTaxInfo)
 }

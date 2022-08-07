@@ -1,5 +1,7 @@
 package test
 
+/* Expected responses from re-region services test cases */
+
 import  (
 	"github.com/Matthew-Curry/re-region-api/src/model"
 )
@@ -84,7 +86,6 @@ var mpList = model.StateMetricPair{
 	State_id: 36,
 	State_name: "New York",
 	Metric_value: 17,
-
 }
 
 var exStateList = model.GetMetricStateList("commute")

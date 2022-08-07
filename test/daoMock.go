@@ -19,15 +19,6 @@ func (d *DaoMock) GetStateCensusData() ([][]interface{}, *apperrors.AppError) {
 	ny := append(make([]interface{}, 0), 36, "New York", 18466230, 8953064, 9513166, 77578, 1381, 17)
 	res = append(res, ny)
 
-	//pa := append(make([]interface{}, 0), 42, "Pennsylvania", 11847115, 5789105, 6058010, 66408, 993, 11)
-	//res = append(res, pa)
-
-	//wv := append(make([]interface{}, 0), 54, "West Virginia", 718987, 353641, 365346, 51001, 773, 9)
-	//res = append(res, wv)
-
-	//mo := append(make([]interface{}, 0), 29, "Missouri", 4182675, 2033524, 2149151, 63688, 915, 10)
-	//res = append(res, mo)
-
 	return res, nil
 }
 
@@ -36,15 +27,6 @@ func (d *DaoMock) GetCountyList(metric string, n int, desc bool) ([][]interface{
 
 	ny := append(make([]interface{}, 0), 36061, "New York County", 36, 81)
 	res = append(res, ny)
-
-	//la := append(make([]interface{}, 0), 6037, "Los Angeles County", 6, 10039107)
-	//res = append(res, la)
-
-	//co := append(make([]interface{}, 0), 17031, "Cook County", 17, 5150233)
-	//res = append(res, co)
-
-	//ha := append(make([]interface{}, 0), 48201, "Harris County", 48, 4713325)
-	//res = append(res, ha)
 
 	return res, nil
 }
