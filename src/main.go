@@ -15,7 +15,6 @@ import (
 const openApiYml = "/home/matthew/Documents/Projects/re-region/re-region-api/static/docs.yml"
 
 var logger, _ = logging.GetLogger("file.log")
-var port string = ":" + os.Getenv("PORT")
 
 //go:embed static
 var content embed.FS
