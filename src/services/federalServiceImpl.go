@@ -3,20 +3,20 @@ package services
 /* Implementation of the Re-Region API federal service */
 
 import (
-	"github.com/Matthew-Curry/re-region-api/apperrors"
-	"github.com/Matthew-Curry/re-region-api/dao"
-	"github.com/Matthew-Curry/re-region-api/model"
+	"github.com/Matthew-Curry/re-region-api/src/apperrors"
+	"github.com/Matthew-Curry/re-region-api/src/dao"
+	"github.com/Matthew-Curry/re-region-api/src/model"
 )
 
 // indexes from the federal response
 const (
-	FEDERAL_RATE = iota          
-	FEDERAL_SINGLE_BRACKET   
-	FEDERAL_MARRIED_BRACKET  
-	FEDERAL_HEAD_BRACKET      
-	FEDERAL_STANDARD_DEDUCTION 
-	FEDERAL_MARRIED_DEDUCTION 
-	FEDERAL_HEAD_DEDUCTION   
+	FEDERAL_RATE = iota
+	FEDERAL_SINGLE_BRACKET
+	FEDERAL_MARRIED_BRACKET
+	FEDERAL_HEAD_BRACKET
+	FEDERAL_STANDARD_DEDUCTION
+	FEDERAL_MARRIED_DEDUCTION
+	FEDERAL_HEAD_DEDUCTION
 )
 
 type FederalServiceImpl struct {
@@ -72,8 +72,8 @@ func (f *FederalServiceImpl) GetFederalTaxInfo() (*model.FederalTaxInfo, *apperr
 	return f.federalTaxInfo, nil
 }
 
-// public method to get overall federal tax liability
-func (f *FederalServiceImpl) GetFederalLiability(filingStatus model.FilingStatus, dependents int, income int) int {
+// method to get overall federal tax liability
+func (f *FederalServiceImpl) getFederalLiability(filingStatus model.FilingStatus, dependents int, income int) int {
 	// use filing status to determine state deduction and exemption
 	switch filingStatus {
 	case model.Head:

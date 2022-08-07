@@ -8,7 +8,14 @@ import (
 
 // return var as int
 func readAsInt(i interface{}) int {
-	return int(i.(int64))
+	switch i.(type) {
+	case int64:
+		return int(i.(int64))
+	case int:
+		return i.(int)
+	}
+
+	return 0
 }
 
 // return var as string

@@ -3,7 +3,7 @@ package dao
 /* Interface for the Re-Region API dao */
 
 import (
-	"github.com/Matthew-Curry/re-region-api/apperrors"
+	"github.com/Matthew-Curry/re-region-api/src/apperrors"
 )
 
 type DaoInterface interface {

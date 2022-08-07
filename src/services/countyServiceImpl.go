@@ -3,9 +3,9 @@ package services
 /* Implementation of the Re-Region API county service */
 
 import (
-	"github.com/Matthew-Curry/re-region-api/apperrors"
-	"github.com/Matthew-Curry/re-region-api/dao"
-	"github.com/Matthew-Curry/re-region-api/model"
+	"github.com/Matthew-Curry/re-region-api/src/apperrors"
+	"github.com/Matthew-Curry/re-region-api/src/dao"
+	"github.com/Matthew-Curry/re-region-api/src/model"
 
 	"strings"
 )
@@ -269,7 +269,7 @@ func (c *CountyServiceImpl) GetCountyList(metricName string, n int, desc bool) (
 	logger.Info("Querying data access layer for list of counties ranked by metric %s", metricName)
 	// lowercase and trim the metric name
 	metricName = strings.TrimSpace(strings.ToLower(metricName))
-	
+
 	countyListData, err := c.daoImpl.GetCountyList(metricName, n, desc)
 	if err != nil {
 		return nil, err

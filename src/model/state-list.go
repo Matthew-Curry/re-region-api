@@ -1,30 +1,30 @@
 package model
 
 import (
-	"sort"
 	"encoding/json"
+	"sort"
 
-	"github.com/Matthew-Curry/re-region-api/apperrors"
+	"github.com/Matthew-Curry/re-region-api/src/apperrors"
 )
 
 type StateList struct {
 	Metric_name string
 	// store an ascending and descending list to be prepared for either request
-	asc_list []StateMetricPair
+	asc_list  []StateMetricPair
 	desc_list []StateMetricPair
 	// the ranked list returned
 	ranked_list []StateMetricPair
 }
 
 type StateMetricPair struct {
-	State_id int
-	State_name string
+	State_id     int
+	State_name   string
 	Metric_value int
 }
 
 // constructor for a metric state list, ranked list is private to enforce ordering
 func GetMetricStateList(metric string) *StateList {
-	return &StateList {Metric_name: metric, ranked_list: []StateMetricPair{}}
+	return &StateList{Metric_name: metric, ranked_list: []StateMetricPair{}}
 }
 
 // method called to set the ranked list and its length
@@ -45,7 +45,7 @@ func (s *StateList) AppendToRankedLists(metricPair StateMetricPair) {
 	s.asc_list = s.insertAtIndex(ia, metricPair, s.asc_list)
 	s.desc_list = s.insertAtIndex(id, metricPair, s.desc_list)
 
-	}
+}
 
 // insert at both ascending and descending lists
 func (s *StateList) insertAtIndex(i int, metricPair StateMetricPair, list []StateMetricPair) []StateMetricPair {
@@ -54,7 +54,7 @@ func (s *StateList) insertAtIndex(i int, metricPair StateMetricPair, list []Stat
 		list = append(list, metricPair)
 		return list
 	}
-	
+
 	// else shift elements in slice at the insertion index. Using append will not allocate extra memory
 	list = append(list[:i+1], list[i:]...)
 
@@ -66,13 +66,13 @@ func (s *StateList) insertAtIndex(i int, metricPair StateMetricPair, list []Stat
 
 // getter method for the controller to be able to marhsall private fields
 func (s *StateList) MarshallStateList() ([]byte, *apperrors.AppError) {
-	r, err := json.Marshal(struct{
-        Metric_name string
+	r, err := json.Marshal(struct {
+		Metric_name string
 		Ranked_list []StateMetricPair
-    }{
-        Metric_name: s.Metric_name,
-		Ranked_list :s.ranked_list,
-    })
+	}{
+		Metric_name: s.Metric_name,
+		Ranked_list: s.ranked_list,
+	})
 
 	if err != nil {
 		return nil, apperrors.UnableToMarshall(err)
@@ -80,4 +80,3 @@ func (s *StateList) MarshallStateList() ([]byte, *apperrors.AppError) {
 
 	return r, nil
 }
-

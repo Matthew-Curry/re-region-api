@@ -1,10 +1,10 @@
 package controller
 
 import (
-	"github.com/Matthew-Curry/re-region-api/apperrors"
-	"github.com/Matthew-Curry/re-region-api/dao"
-	"github.com/Matthew-Curry/re-region-api/logging"
-	"github.com/Matthew-Curry/re-region-api/services"
+	"github.com/Matthew-Curry/re-region-api/src/apperrors"
+	"github.com/Matthew-Curry/re-region-api/src/dao"
+	"github.com/Matthew-Curry/re-region-api/src/logging"
+	"github.com/Matthew-Curry/re-region-api/src/services"
 )
 
 /* Initiliaze logger, core services for the controller */
@@ -40,7 +40,7 @@ func InitServices(user, password, dbName, dbHost, dbPort string) error {
 
 		logger.Info("Successfully initialized federal service")
 	}
-	
+
 	if stateService == nil {
 		stateService, err = services.GetStateServiceImpl(daoImpl, federalService)
 		if err != nil {
@@ -50,7 +50,7 @@ func InitServices(user, password, dbName, dbHost, dbPort string) error {
 
 		logger.Info("Successfully initialized state service")
 	}
-	
+
 	if countyService == nil {
 		countyService, err = services.GetCountyServiceImpl(daoImpl, stateService)
 		if err != nil {

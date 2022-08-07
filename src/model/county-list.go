@@ -3,7 +3,7 @@ package model
 import (
 	"encoding/json"
 
-	"github.com/Matthew-Curry/re-region-api/apperrors"
+	"github.com/Matthew-Curry/re-region-api/src/apperrors"
 )
 
 type CountyList struct {
@@ -12,16 +12,16 @@ type CountyList struct {
 }
 
 type CountyMetricPair struct {
-	County_id int
-	County_name string
-	State_id int
-	State_name string
+	County_id    int
+	County_name  string
+	State_id     int
+	State_name   string
 	Metric_value int
 }
 
 // constructor for a metric county list
 func GetMetricCountyList(metric string) *CountyList {
-	return &CountyList {Metric_name: metric, Ranked_list: []CountyMetricPair{}}
+	return &CountyList{Metric_name: metric, Ranked_list: []CountyMetricPair{}}
 }
 
 // getter method for the controller to be able to marhsall private fields

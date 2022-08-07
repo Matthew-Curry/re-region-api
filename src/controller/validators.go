@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/Matthew-Curry/re-region-api/model"
+	"github.com/Matthew-Curry/re-region-api/src/model"
 )
 
 /* Holds validator functions used by the controllers */

@@ -3,8 +3,8 @@ package services
 /* Interface for the Re-Region API state service */
 
 import (
-	"github.com/Matthew-Curry/re-region-api/model"
-	"github.com/Matthew-Curry/re-region-api/apperrors"
+	"github.com/Matthew-Curry/re-region-api/src/apperrors"
+	"github.com/Matthew-Curry/re-region-api/src/model"
 )
 
 type StateServiceInterface interface {

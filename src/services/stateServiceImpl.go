@@ -5,9 +5,9 @@ package services
 import (
 	"strings"
 
-	"github.com/Matthew-Curry/re-region-api/apperrors"
-	"github.com/Matthew-Curry/re-region-api/dao"
-	"github.com/Matthew-Curry/re-region-api/model"
+	"github.com/Matthew-Curry/re-region-api/src/apperrors"
+	"github.com/Matthew-Curry/re-region-api/src/dao"
+	"github.com/Matthew-Curry/re-region-api/src/model"
 )
 
 const (
@@ -129,9 +129,9 @@ func buildStateListCaches(stateCensusData [][]interface{}) map[string]*model.Sta
 	for m, i := range metrics {
 		for _, state := range stateCensusData {
 			// initialize the metric pair for this row
-			metricPair := model.StateMetricPair{State_id: readAsInt(state[CENSUS_STATE_ID]), 
-												State_name: readAsString(state[CENSUS_STATE_NAME]), 
-												Metric_value: readAsInt(state[i])}
+			metricPair := model.StateMetricPair{State_id: readAsInt(state[CENSUS_STATE_ID]),
+				State_name:   readAsString(state[CENSUS_STATE_NAME]),
+				Metric_value: readAsInt(state[i])}
 			// insert the metric pair into the appropriate slice in order
 			mp[m].AppendToRankedLists(metricPair)
 		}
@@ -151,7 +151,7 @@ func buildStateTaxCaches(stateTaxData [][]interface{}) (map[int]*model.StateTaxI
 		sn := readAsString(row[TAX_STATE_NAME])
 		if _, ok := idMp[si]; !ok {
 			stateTaxInfo := model.GetStateTaxInfo(si, sn, readAsInt(row[SINGLE_DEDUCTION]), readAsInt(row[MARRIED_DEDUCTION]),
-			readAsInt(row[SINGLE_EXEMPTION]), readAsInt(row[MARRIED_EXEMPTION]), readAsInt(row[DEPENDENT_EXEMPTION]))
+				readAsInt(row[SINGLE_EXEMPTION]), readAsInt(row[MARRIED_EXEMPTION]), readAsInt(row[DEPENDENT_EXEMPTION]))
 
 			// lowercase the name + trim space to provide a standard naming API
 			sn = strings.TrimSpace(strings.ToLower(sn))
@@ -167,7 +167,7 @@ func buildStateTaxCaches(stateTaxData [][]interface{}) (map[int]*model.StateTaxI
 			Married_rate:    readAsFloat(row[MARRIED_RATE]),
 			Married_bracket: readAsInt(row[MARRIED_BRACKET]),
 		}
-		// add bracket to list in order of the single rate so they ascend properly. Call for just one map 
+		// add bracket to list in order of the single rate so they ascend properly. Call for just one map
 		// because they each point to the same tax info
 		idMp[si].AppendToOrderedList(sb)
 
@@ -237,7 +237,7 @@ func (s *StateServiceImpl) processTaxLiability(fs model.FilingStatus, dependents
 	}
 	// apply the rate to the income for the state tax amount
 	logger.Info("Processing federal liability")
-	federalTax := s.federalService.GetFederalLiability(fs, dependents, income)
+	federalTax := s.federalService.getFederalLiability(fs, dependents, income)
 
 	return stateTax + federalTax, stateTax, federalTax
 }

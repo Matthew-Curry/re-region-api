@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/Matthew-Curry/re-region-api/apperrors"
-	"github.com/Matthew-Curry/re-region-api/model"
+	"github.com/Matthew-Curry/re-region-api/src/apperrors"
+	"github.com/Matthew-Curry/re-region-api/src/model"
 )
 
 // helper method which returns whether an HTTP request method is GET or HEAD (supported methods)
@@ -248,7 +248,7 @@ func CountyTaxesHandler(w http.ResponseWriter, r *http.Request) {
 		} else {
 			writeNoEntityAvailable(w, isGet, "county", fmt.Sprint(id))
 		}
-	} 
+	}
 
 	// handle response based on response from county service
 	if err != nil {

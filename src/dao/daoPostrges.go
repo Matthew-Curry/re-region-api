@@ -13,8 +13,8 @@ import (
 
 	_ "github.com/lib/pq"
 
-	"github.com/Matthew-Curry/re-region-api/apperrors"
-	"github.com/Matthew-Curry/re-region-api/logging"
+	"github.com/Matthew-Curry/re-region-api/src/apperrors"
+	"github.com/Matthew-Curry/re-region-api/src/logging"
 )
 
 const (
@@ -52,7 +52,7 @@ type DaoImpl struct {
 func GetPostgresDao(user, password, dbname, host, port string) (DaoInterface, *apperrors.AppError) {
 	// map of identifiers to sql files
 	sqlMap := map[string]string{
-		"GET_METRIC_SET": GET_METRIC_SET_QUERY,
+		"GET_METRIC_SET":      GET_METRIC_SET_QUERY,
 		"COUNTY_DATA_BY_ID":   COUNTY_DATA_BY_ID_QUERY,
 		"COUNTY_DATA_BY_NAME": COUNTY_DATA_BY_NAME_QUERY,
 		"FEDERAL_TAX_DATA":    FEDERAL_TAX_DATA_QUERY,
@@ -60,7 +60,7 @@ func GetPostgresDao(user, password, dbname, host, port string) (DaoInterface, *a
 		"STATE_TAX_DATA":      STATE_TAX_DATA_QUERY,
 		"COUNTY_LIST_DATA":    COUNTY_LIST_DATA_QUERY,
 	}
-	
+
 	psqlInfo := fmt.Sprintf("host=%s port=%s user=%s "+
 		"password=%s dbname=%s sslmode=disable",
 		host, port, user, password, dbname)
@@ -151,6 +151,8 @@ func (d *DaoImpl) GetCountyList(metric string, n int, desc bool) ([][]interface{
 	if err != nil {
 		return nil, apperrors.UnableToGetCountyList(err)
 	}
+	fmt.Println("EREGERTHRTHRTHTRHRT")
+	fmt.Println(res)
 
 	return res, nil
 }
@@ -163,6 +165,8 @@ func (d *DaoImpl) GetStateTax() ([][]interface{}, *apperrors.AppError) {
 	}
 	logger.Info("Executing State tax query")
 	res, err := d.getRowsFromQuery(query)
+	fmt.Println("STATE CENSUS DATA")
+	fmt.Println(res)
 	if err != nil {
 		return nil, apperrors.UnableToGetStateTax(err)
 	}
@@ -183,7 +187,7 @@ func (d *DaoImpl) GetCountyDataByName(county_name string) ([][]interface{}, *app
 	logger.Info("Executing County by name query")
 	res, err := d.getRowsFromQuery(query, county_name)
 	if err != nil {
-		if err.IsKind(apperrors.DataNotFound){
+		if err.IsKind(apperrors.DataNotFound) {
 			return nil, apperrors.CountyNameNotFound(county_name)
 		} else if err.IsKind(apperrors.InternalError) || err != nil {
 			return nil, apperrors.UnableToGetCountyName(county_name, err)
@@ -205,7 +209,7 @@ func (d *DaoImpl) GetCountyDataById(county_id int) ([][]interface{}, *apperrors.
 	res, err := d.getRowsFromQuery(query, county_id)
 	fmt.Println(res)
 	if err != nil {
-		if err.IsKind(apperrors.DataNotFound){
+		if err.IsKind(apperrors.DataNotFound) {
 			return nil, apperrors.CountyIDNotFound(county_id)
 		} else if err.IsKind(apperrors.InternalError) || err != nil {
 			return nil, apperrors.UnableToGetCountyID(county_id, err)

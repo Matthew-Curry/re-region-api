@@ -1,16 +1,15 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
-	"io/fs"
-	"strings"
-	"os"
 	"embed"
+	"fmt"
+	"io/fs"
+	"net/http"
+	"os"
+	"strings"
 
-	"github.com/Matthew-Curry/re-region-api/controller"
-	"github.com/Matthew-Curry/re-region-api/logging"
-
+	"github.com/Matthew-Curry/re-region-api/src/controller"
+	"github.com/Matthew-Curry/re-region-api/src/logging"
 )
 
 const openApiYml = "/home/matthew/Documents/Projects/re-region/re-region-api/static/docs.yml"
@@ -27,7 +26,7 @@ func main() {
 	dbUser := os.Getenv("RE_REGION_API_USER")
 	dbPassword := os.Getenv("RE_REGION_API_PASSWORD")
 	dbName := os.Getenv("RE_REGION_DB")
-	dbHost := os.Getenv("DB_HOST") 
+	dbHost := os.Getenv("DB_HOST")
 	dbPort := os.Getenv("DB_PORT")
 
 	// initialize services in the controller package
@@ -57,7 +56,7 @@ func main() {
 
 	// swagger ui
 	// serve the open API yml for the swagger ui to point at
-	mux.HandleFunc("/docs/", func( res http.ResponseWriter, req *http.Request) {
+	mux.HandleFunc("/docs/", func(res http.ResponseWriter, req *http.Request) {
 		// restrict openapi doc to local, just for use by swagger ui
 		a := strings.Split(req.RemoteAddr, ":")[0]
 		if a == "127.0.0.1" {
