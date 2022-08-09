@@ -1,18 +1,21 @@
-FROM golang:latest
-
+# intermediate container to build the code
+FROM golang:latest AS builder
 LABEL maintainer="Matthew Curry <matt.curry56@gmail.com>"
-
 WORKDIR /app
-
 # handle dependencies using go.mod and go.sum
 COPY go.mod .
 COPY go.sum .
 RUN go mod download
-
 # copy remaining source code
 RUN mkdir /app/src
 COPY src/ /app/src
+# build the app
+RUN cd src; CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo
 
+# move artifact into final container and run
+FROM alpine:latest
+WORKDIR /app
+COPY --from=builder /app/src/src .
 # specify needed env variables. Secret variables passed in as args during build
 ARG RE_REGION_API_USER
 ARG RE_REGION_API_PASSWORD
@@ -27,9 +30,5 @@ ENV DB_PORT $DB_PORT
 ENV DB_HOST $DB_HOST
 ENV PORT 8080
 
-# build the app, expose the port, the CMD runs the build executable
-RUN cd src; go build
-
 EXPOSE 8080
-
-CMD ["./src/src"]
+CMD ["./src"]

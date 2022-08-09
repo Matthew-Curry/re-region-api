@@ -5,17 +5,19 @@ package dao
 import (
 	"database/sql"
 	"fmt"
-	"io/ioutil"
-	"path"
-	"runtime"
 	"strconv"
 	"strings"
+	"embed"
 
 	_ "github.com/lib/pq"
 
 	"github.com/Matthew-Curry/re-region-api/src/apperrors"
 	"github.com/Matthew-Curry/re-region-api/src/logging"
+
 )
+
+//go:embed sql
+var sqlDir embed.FS
 
 const (
 	// identifiers to sql query files
@@ -28,13 +30,13 @@ const (
 	COUNTY_LIST_DATA    string = "COUNTY_LIST_DATA"
 
 	// sql queries
-	GET_METRIC_SET_QUERY      string = "metric_set.sql"
-	COUNTY_DATA_BY_ID_QUERY   string = "county_data_by_id.sql"
-	COUNTY_DATA_BY_NAME_QUERY string = "county_data_by_name.sql"
-	FEDERAL_TAX_DATA_QUERY    string = "federal_tax_data.sql"
-	STATE_CENSUS_DATA_QUERY   string = "state_census_data.sql"
-	STATE_TAX_DATA_QUERY      string = "state_tax_data.sql"
-	COUNTY_LIST_DATA_QUERY    string = "county_list.sql"
+	GET_METRIC_SET_QUERY      string = "sql/metric_set.sql"
+	COUNTY_DATA_BY_ID_QUERY   string = "sql/county_data_by_id.sql"
+	COUNTY_DATA_BY_NAME_QUERY string = "sql/county_data_by_name.sql"
+	FEDERAL_TAX_DATA_QUERY    string = "sql/federal_tax_data.sql"
+	STATE_CENSUS_DATA_QUERY   string = "sql/state_census_data.sql"
+	STATE_TAX_DATA_QUERY      string = "sql/state_tax_data.sql"
+	COUNTY_LIST_DATA_QUERY    string = "sql/county_list.sql"
 )
 
 var logger, _ = logging.GetLogger("file.log")
@@ -238,12 +240,8 @@ func (d *DaoImpl) readSQLFileAsString(queryId string) (string, *apperrors.AppErr
 		return "", apperrors.NoSQLFileMappedToId(queryId, nil)
 	}
 
-	_, filename, _, ok := runtime.Caller(0)
-	sqlDir := path.Dir(filename)
-	fullSqlPath := sqlDir + "/sql/" + sqlFile
-
-	logger.Info("Reading in file %s", fullSqlPath)
-	b, e := ioutil.ReadFile(fullSqlPath)
+	logger.Info("Reading in file %s from SQL directory", sqlFile)
+	b, e := sqlDir.ReadFile(sqlFile)
 	if e != nil {
 		return "", apperrors.SQLFileReadError(sqlFile, e)
 	}
