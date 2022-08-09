@@ -12,7 +12,8 @@ import (
 	"github.com/Matthew-Curry/re-region-api/src/logging"
 )
 
-const openApiYml = "/home/matthew/Documents/Projects/re-region/re-region-api/src/static/docs.yml"
+const openApiYml = "/app/src/static/docs.yml"
+
 var logger logging.Logger
 var logFile *os.File
 

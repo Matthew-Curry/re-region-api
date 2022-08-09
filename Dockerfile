@@ -10,7 +10,8 @@ COPY go.sum .
 RUN go mod download
 
 # copy remaining source code
-COPY . .
+RUN mkdir /app/src
+COPY src/ /app/src
 
 # specify needed env variables. Secret variables passed in as args during build
 ARG RE_REGION_API_USER
@@ -27,8 +28,8 @@ ENV DB_HOST $DB_HOST
 ENV PORT 8080
 
 # build the app, expose the port, the CMD runs the build executable
-RUN go build
+RUN cd src; go build
 
 EXPOSE 8080
 
-CMD ["./re-region-api"]
+CMD ["./src/src"]
