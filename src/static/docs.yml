@@ -39,8 +39,10 @@ info:
   version: 0.0.3
 
 servers:
-  - url: http://127.0.0.1:8080/
-    description: Local server
+  #- url: http://127.0.0.1:8080/
+  #  description: Local server
+  - url: http://ec2-18-221-131-98.us-east-2.compute.amazonaws.com/
+    description: Production server
 
 tags: 
   - name: Request Demographic and Tax Info for a Region

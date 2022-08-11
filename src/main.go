@@ -6,18 +6,17 @@ import (
 	"io/fs"
 	"net/http"
 	"os"
-	"strings"
 
 	"github.com/Matthew-Curry/re-region-api/src/controller"
 	"github.com/Matthew-Curry/re-region-api/src/logging"
 )
 
-const openApiYml = "/app/src/static/docs.yml"
+const openApiYml = "docs.yml"
 
 var logger logging.Logger
 var logFile *os.File
 
-//go:embed static
+//go:embed static/swagger-ui
 var content embed.FS
 
 func main() {
@@ -59,17 +58,17 @@ func main() {
 
 	// swagger ui
 	// serve the open API yml for the swagger ui to point at
-	mux.HandleFunc("/docs/", func(res http.ResponseWriter, req *http.Request) {
-		// restrict openapi doc to local, just for use by swagger ui
-		a := strings.Split(req.RemoteAddr, ":")[0]
-		if a == "127.0.0.1" {
-			http.ServeFile(res, req, openApiYml)
-		}
+	mux.HandleFunc("/docs/", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Headers", "*")
+		w.Header().Set("Access-Control-Allow-Methods", "*")
+		http.ServeFile(w, r, openApiYml)
 	})
 
+
 	// the path for the UI
-	fsys, _ := fs.Sub(content, "static")
-	mux.Handle("/swagger-ui/", http.FileServer(http.FS(fsys)))
+	fsys, _ := fs.Sub(content, "static/swagger-ui")
+	mux.Handle("/", http.FileServer(http.FS(fsys)))
 
 	logger.Info(fmt.Sprintf("Listening at %s", port))
 	http.ListenAndServe(port, mux)

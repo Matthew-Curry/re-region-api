@@ -16,6 +16,7 @@ RUN cd src; CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo
 FROM alpine:latest
 WORKDIR /app
 COPY --from=builder /app/src/src .
+COPY --from=builder /app/src/static/docs.yml .
 # specify needed env variables. Secret variables passed in as args during build
 ARG RE_REGION_API_USER
 ARG RE_REGION_API_PASSWORD

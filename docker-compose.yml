@@ -1,0 +1,13 @@
+version: "3.6"
+services:
+  reregion:
+    image: re-region-api:latest
+    expose:
+      - "8080"
+    
+  nginx:
+    image: re-region-api_nginx:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - "reregion" 
