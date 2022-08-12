@@ -17,19 +17,6 @@ FROM alpine:latest
 WORKDIR /app
 COPY --from=builder /app/src/src .
 COPY --from=builder /app/src/static/docs.yml .
-# specify needed env variables. Secret variables passed in as args during build
-ARG RE_REGION_API_USER
-ARG RE_REGION_API_PASSWORD
-ARG RE_REGION_DB
-ARG DB_PORT
-ARG DB_HOST
-
-ENV RE_REGION_API_USER $RE_REGION_API_USER
-ENV RE_REGION_API_PASSWORD $RE_REGION_API_PASSWORD
-ENV RE_REGION_DB $RE_REGION_DB
-ENV DB_PORT $DB_PORT
-ENV DB_HOST $DB_HOST
-ENV PORT 8080
 
 EXPOSE 8080
 CMD ["./src"]

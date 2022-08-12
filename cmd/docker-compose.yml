@@ -1,0 +1,24 @@
+version: "3.6"
+services:
+  api:
+    image: re-region-api:latest
+    environment:
+      - RE_REGION_API_USER=${RE_REGION_API_USER}
+      - RE_REGION_API_PASSWORD=${RE_REGION_API_PASSWORD}
+      - RE_REGION_DB=${RE_REGION_DB}
+      - DB_PORT=${DB_PORT}
+      - DB_HOST=${DB_HOST}
+      - PORT=${PORT}
+    expose:
+      - "8080"
+    
+  nginx:
+    image: re-region-api_nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /code/re-region/certs/:/data/certs/
+      - /etc/letsencrypt/:/etc/letsencrypt/
+    depends_on:
+      - "api" 
