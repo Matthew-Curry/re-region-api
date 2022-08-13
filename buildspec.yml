@@ -51,6 +51,8 @@ phases:
       - echo "$(date) Successfully pushed to $SERVER_REPO_URI"
 
 artifacts:
+  files:
+    - '**/*'
   secondary-artifacts:
     compose:
       base-directory: /
