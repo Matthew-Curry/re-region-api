@@ -14,9 +14,13 @@ RUN cd src; CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo
 
 # move artifact into final container and run
 FROM alpine:latest
+RUN useradd app
+USER app
 WORKDIR /app
-COPY --from=builder /app/src/src .
-COPY --from=builder /app/src/static/docs.yml .
+COPY --from=builder --chown=app /app/src/src .
+RUN chmod 500 src
+COPY --from=builder --chown=app /app/src/static/docs.yml .
+RUN chmod 500 docs.yml
 
 EXPOSE 8080
 CMD ["./src"]
