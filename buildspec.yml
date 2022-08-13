@@ -1,18 +1,26 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-      - echo "executing install phase"
-  
   pre_build:
-    commands:
-      - echo "executing pre_build phase"
-  
+    - echo "Running unit tests"
+    - cd test
+    - go test
+
   build:
     commands:
-      - echo "executing build phase"
+      - echo "Building Docker container for app"
+      # api build
+      - docker build -f ./docker/app/Dockerfile -t re-region-api:latest
+      - docker save re-region-api:latest > reregion.tar
+      # server build
+      - docker build -f ./docker/server/Dockerfile -t re-region-api_nginx:latest .
+      - docker save re-region-api_nginx:latest > server.tar
+
+artifacts:
+  files:
+    - reregion.tar
+    - server.tar
+    - cmd/docker-compose.yml
+    - cmd/runserver.sh
+    
   
-  post_build:
-    commands:
-      - echo "executing post_build phase"
