@@ -14,7 +14,7 @@ RUN cd src; CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo
 
 # move artifact into final container and run
 FROM alpine:latest
-RUN useradd app
+RUN adduser --disabled-password app
 USER app
 WORKDIR /app
 COPY --from=builder --chown=app /app/src/src .
