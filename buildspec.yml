@@ -28,13 +28,13 @@ phases:
 
       # api build
       - echo "$(date) Building $API_IMAGE"
-      - docker build -f ./docker/app/Dockerfile -t re-region-api:latest .
-      - docker tag re-region-api:latest $API_REPO_URI
+      - docker build -f ./docker/app/Dockerfile -t $API_IMAGE .
+      - docker tag $API_IMAGE $API_REPO_URI
 
       # server build
       - echo "$(date) Building $SERVER_IMAGE"
-      - docker build -f ./docker/server/Dockerfile -t re-region-api_nginx:latest .
-      - docker tag re-region-nginx:latest $SERVER_REPO_URI
+      - docker build -f ./docker/server/Dockerfile -t $SERVER_IMAGE .
+      - docker tag $SERVER_IMAGE $SERVER_REPO_URI
 
       - echo "$(date) Successfully built images"
   
@@ -55,12 +55,10 @@ artifacts:
     - '**/*'
   secondary-artifacts:
     compose:
-      base-directory: /
       files:
         - docker-compose.yml
       name: compose
     run_server:
-      base-directory: /
       files:
         - run_server.sh
       name: run_server
