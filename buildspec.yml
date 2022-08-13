@@ -2,9 +2,10 @@ version: 0.2
 
 phases:
   pre_build:
-    - echo "Running unit tests"
-    - cd test
-    - go test
+    commands:
+      - echo "Running unit tests"
+      - cd test
+      - go test
 
   build:
     commands:
