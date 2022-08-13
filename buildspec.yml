@@ -4,6 +4,7 @@ phases:
   pre_build:
     commands:
       - echo "Running unit tests"
+      - echo $(pwd)
       - cd test
       - go test
 
