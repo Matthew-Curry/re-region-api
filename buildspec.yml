@@ -41,12 +41,12 @@ phases:
   post_build:
     commands: 
       # api push
-      - echo "$(date) Pushing $API_IMAGE to ECR"
+      - echo "$(date) Pushing $API_REPO_URI to ECR"
       - docker push $API_REPO_URI
       - echo "$(date) Successfully pushed to $API_REPO_URI"
 
       # server push
-      - echo "$(date) Pushing $SERVER_IMAGE to ECR"
+      - echo "$(date) Pushing $SERVER_REPO_URI to ECR"
       - docker push $SERVER_REPO_URI
       - echo "$(date) Successfully pushed to $SERVER_REPO_URI"
 
