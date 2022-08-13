@@ -11,7 +11,7 @@ phases:
     commands:
       - echo "Building Docker container for app"
       # api build
-      - docker build -f ./docker/app/Dockerfile -t re-region-api:latest
+      - docker build -f ./docker/app/Dockerfile -t re-region-api:latest .
       - docker save re-region-api:latest > reregion.tar
       # server build
       - docker build -f ./docker/server/Dockerfile -t re-region-api_nginx:latest .
