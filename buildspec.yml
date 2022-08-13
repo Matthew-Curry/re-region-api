@@ -3,26 +3,62 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo "Running unit tests"
+      # vars
+      - AWS_REGION='us-east-2'
+      - AWS_ACCOUNT='643931054710'
+      - API_IMAGE='re-region-api:latest'
+      - SERVER_IMAGE='re-region-nginx:latest'
+      - API_REPO_URI=${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/${API_IMAGE}
+      - SERVER_REPO_URI=${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/${SERVER_IMAGE}
+
+      # unit test
+      - echo "$(date) Running unit tests"
       - cd test
       - go test
       - cd ..
 
+      # login to ECR
+      - echo "$(date) Getting login from ECR"
+      - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT.dkr.ecr.$AWS_REGION.amazonaws.com
+      - echo "$(date) Successfully recieved login"
+
   build:
     commands:
-      - echo "Building Docker container for app"
+      - echo "$(date) Starting build"
+
       # api build
+      - echo "$(date) Building $API_IMAGE"
       - docker build -f ./docker/app/Dockerfile -t re-region-api:latest .
-      - docker save re-region-api:latest > reregion.tar
+      - docker tag re-region-api:latest $API_REPO_URI
+
       # server build
+      - echo "$(date) Building $SERVER_IMAGE"
       - docker build -f ./docker/server/Dockerfile -t re-region-api_nginx:latest .
-      - docker save re-region-api_nginx:latest > server.tar
+      - docker tag re-region-nginx:latest $SERVER_REPO_URI
+
+      - echo "$(date) Successfully built images"
+  
+  post_build:
+    commands: 
+      # api push
+      - echo "$(date) Pushing $API_IMAGE to ECR"
+      - docker push $API_REPO_URI
+      - echo "$(date) Successfully pushed to $API_REPO_URI"
+
+      # server push
+      - echo "$(date) Pushing $SERVER_IMAGE to ECR"
+      - docker push $SERVER_REPO_URI
+      - echo "$(date) Successfully pushed to $SERVER_REPO_URI"
 
 artifacts:
-  files:
-    - reregion.tar
-    - server.tar
-    - cmd/docker-compose.yml
-    - cmd/runserver.sh
-    
-  
+  secondary-artifacts:
+    compose:
+      base-directory: /
+      files:
+        - docker-compose.yml
+      name: compose
+    run_server:
+      base-directory: /
+      files:
+        - run_server.sh
+      name: run_server

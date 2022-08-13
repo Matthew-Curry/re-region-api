@@ -1,16 +1,35 @@
 #!/bin/bash
 # Script used to retrieve params and start the containers
+# include argument "r" if docker images should be refreshed
+
+# AWS vars
+export AWS_REGION='us-east-2'
+export AWS_ACCOUNT='643931054710'
+# docker images
+export API_IMAGE='re-region-api:latest'
+export SERVER_IMAGE='re-region-nginx:latest'
+# params to pull
+PARAM_PATH='/re-region'
 
 function logMessage() {
     echo "$(date) $1"
 }
+
+if [[ $1 == "r" ]]; then
+    logMessage "Refresh flag given, retrieving updated docker images"
+    # get ecr token
+    aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT.dkr.ecr.$AWS_REGION.amazonaws.com
+    # pull both images needed
+    docker pull $AWS_ACCOUNT.dkr.ecr.$AWS_REGION.amazonaws.com/$SERVER_IMAGE
+    docker pull $AWS_ACCOUNT.dkr.ecr.$AWS_REGION.amazonaws.com/$API_IMAGE
+fi
 
 logMessage "Setting app server to listen on 8080"
 export PORT="8080"
 
 logMessage "Reading in database parameters from ssm"
 
-params=`aws ssm get-parameters-by-path --path /re-region --with-decryption --region us-east-2`
+params=`aws ssm get-parameters-by-path --path $PARAM_PATH --with-decryption --region $AWS_REGION`
 logMessage "Successfully got params from ssm"
 
 # process the parameters into variables with the values

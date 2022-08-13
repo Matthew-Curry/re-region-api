@@ -1,7 +1,7 @@
 version: "3.6"
 services:
   api:
-    image: re-region-api:latest
+    image: ${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/${API_IMAGE}
     environment:
       - RE_REGION_API_USER=${RE_REGION_API_USER}
       - RE_REGION_API_PASSWORD=${RE_REGION_API_PASSWORD}
@@ -13,7 +13,7 @@ services:
       - "8080"
     
   nginx:
-    image: re-region-api_nginx:latest
+    image: ${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/${SERVER_IMAGE}
     ports:
       - "80:80"
       - "443:443"

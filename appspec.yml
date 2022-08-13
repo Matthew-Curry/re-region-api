@@ -1,0 +1,30 @@
+version: 0.0
+os: linux
+files:  
+  # copy all code to the instance for development purposes
+  - source: /
+    destination: /re-region/code
+  # copy the run_server and docker-compose files to the cmd/ directory 
+  # to easily run app from instance
+  - source: run_server.sh
+    destination: /re-region/cmd
+  - source: docker-compose.yml
+    destination: /re-region/cmd
+
+hooks:
+  # gracefully stop app for in place deployment
+  ApplicationStop: 
+    - location: /scripts/deploy/app_stop.sh 
+      timeout: 120
+      runas: root
+  # ensure permissions are set 
+  AfterInstall: 
+    - location: /scripts/deploy/app_start.sh 
+      timeout: 120
+      runas: root
+  # run the server from the cmd directory
+  ApplicationStart: 
+    - location: /scripts/deploy/app_start.sh 
+      timeout: 120
+      runas: root
+
