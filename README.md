@@ -22,7 +22,7 @@ The API is deployed on the AWS cloud. The configuration is as follows:
 Data is sourced to the app's Postgres DB using a dockerized ETL CLI tool I developed. The tool sources data from excel files published by the Tax Foundation and the Census Bureau Data API. The link to that repository and more information about the source data can be found here: https://github.com/Matthew-Curry/re-region-etl/tree/main
 
 ## Next steps
-When I have time (and before my free tier runs out) I would like to:
+When I have time (and before my AWS free tier runs out) I plan to:
 * Migrate the EC2 instance running Docker containers with docker-compose to an instance within an ECS cluster. I expect that seeing how docker-compose configuration maps to ECS service configuration will deepen my understanding of both Docker and ECS
 * Specify Infrastructure as code using Cloudformation. Similiar to the ECS point, I think seeing how the console configuration maps to CloudFormation syntax will help solidify my understanding of the tool more so than directly jumping into reading the documentation on it.
 * Add AWS CodeDeploy to the pipeline to directly deploy the code onto the instance. I realized after provisioning the instance that its OS (the latest version of Ubuntu) actually does not currently have a compatible CodeDeploy agent, so for now I am deploying my startup files to S3 and then pulling them onto the instance. When I migrate to ECS, I will take care to choose an instance type that has a compatible CodeDeploy agent to have a more complete CI/CD pipeline.
