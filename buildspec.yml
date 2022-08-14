@@ -5,6 +5,7 @@ phases:
     commands:
       # vars
       - AWS_ACCOUNT=$CODEBUILD_WEBHOOK_ACTOR_ACCOUNT_ID
+      - echo $CODEBUILD_WEBHOOK_ACTOR_ACCOUNT_ID
       - API_IMAGE='re-region-api:latest'
       - SERVER_IMAGE='re-region-nginx:latest'
       - API_REPO_URI=${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/${API_IMAGE}
