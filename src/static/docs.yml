@@ -5,7 +5,7 @@ info:
     API to request information about regions in the United States. The system is intended for educational purposes only. It has information on demographic, lifestyle, 
     and cost of living statistics along with taxation estimates based on individual filer status for counties and states.
 
-    Taxation information is sourced to the app's database from datasets published by the Tax Foundation. It is also from theses datasets that the app sources local tax jurisdictions.
+    Taxation information is sourced to the app's database from datasets published by the Tax Foundation. It is also from these datasets that the app sources local tax jurisdictions.
     The taxation estimates the API provides are based on the information given by these data sets, but it is the application building those estimates. The estimates are a simplification and should 
     not be taken as definitive taxation information or advice. The linking between the federal, state, and local tax data sets is done by the applicaiton. Notably, the application matches tax 
     jurisdictions to counties using an open source package implementing fuzzy matching functionality. Those links are not provided by any source dataset and are not guarenteed to be accurate. 

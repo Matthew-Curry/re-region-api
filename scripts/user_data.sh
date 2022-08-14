@@ -1,4 +1,4 @@
-# user_data script for re-region
+# user_data script for re-region ec2 instance
 
 function logMessage() {
     echo "$(date) $1"
