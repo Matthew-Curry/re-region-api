@@ -19,6 +19,8 @@ The API is deployed on the AWS cloud. The configuration is as follows:
   * IAM for roles and policies required by all services used
   * VPC containing:
     * Containers for both the http server and the API running on an EC2 instance
+       * Running containers for an nginx webserver and the API through Docker compose
+       * nginx configured to enforce HTTPS, the server has an SSL certifricate + private key that autorefreshes using Let's Encrypt and Certbot
     * Postgres RDS instance for the API's relational database
     * Needed subnets, route tables, and security groups
  ### CI/CD
