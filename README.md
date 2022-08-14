@@ -7,6 +7,8 @@ link to API spec: https://www.reregion.com/
 The API is deployed on the AWS cloud. The configuration is as follows:
  ### App
   * DNS records in Route53
+  * AWS Systems Manager Parameter Store for database secrets
+  * IAM for roles and policies required by all services used
   * VPC containing:
     * Containers for both the http server and the API running on an EC2 instance
     * Postgres RDS instance for the API's relational database
