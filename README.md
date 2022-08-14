@@ -25,8 +25,10 @@ The API is deployed on the AWS cloud. The configuration is as follows:
     * Needed subnets, route tables, and security groups
  ### CI/CD
   * AWS CodePipeline with integration with this repository to deploy changes
-  * AWS Codebuild to build Docker images from this repository's code and deploy to ECR,
-    as well as to deploy a shell script and docker-compose.yml file to S3 used to start the application containers (these are pulled onto the EC2).
+  * AWS Codebuild 
+     * Runs Unit tests defined in the repo's "test" folder
+     * Builds Docker images from this repository's code and deploys to ECR
+     * Deploys run_server.sh and docker-compose.yml files from repo to S3 used to start the application containers (these are pulled onto the EC2).
 
 ## Source Data
 Data is sourced to the app's Postgres DB using a dockerized ETL CLI tool I developed. The tool sources taxation related data from excel files published by the Tax Foundation and survery statistics from the Census Bureau Data API and loads to the database. This project is not affiliated with either of those orgnaizations and the ETL does modify the intial source data through aggregation and fuzzy matching. The link to that repository and more information about the source data can be found here: https://github.com/Matthew-Curry/re-region-etl/tree/main
