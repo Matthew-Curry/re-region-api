@@ -4,7 +4,7 @@ API to access demographic and cost of living estimates for US states and countie
 link to API spec: https://www.reregion.com/
 
 ## Code
-The API is developed in Go. Also, SQL scripts are called by the data access layer to pull from the database, and shell scripts are used to intitiate the app on the server as well as in the deployment pipeline. Some key points regarding the code developement:
+The API is developed in Go. Also, SQL scripts are called by the data access layer to pull from the database, and shell scripts are used to intitiate the app on the server and also in the deployment pipeline. Some key points regarding the code developement:
 * It is written using only standard libs (other than a Postrges driver dependency. I learned through this that Go's standard lib is very powerful!)
 * Swagger UI Dist is embedded in the app, and it is used to serve a defined yaml API spec at the root path of the domain (the link above)
 * Interfaces define all key services + data access layer
