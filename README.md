@@ -11,7 +11,7 @@ The API is developed in Go. Also, SQL scripts are called to pull from the databa
 * Custom error structures are leveraged throughout the application, with all expected app errors defined
 * Unit tests are defined leveraging interfaces to be based around mocks
 
-## Architecture
+## Infrastructure
 The API is deployed on the AWS cloud. The configuration is as follows:
  ### App
   * DNS records in Route53
