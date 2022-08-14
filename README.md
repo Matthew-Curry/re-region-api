@@ -28,7 +28,7 @@ The API is deployed on the AWS cloud. The configuration is as follows:
   * AWS CodePipeline with integration with this repository to deploy changes
   * AWS Codebuild 
      * Runs Unit tests defined in the repo's "test" folder
-     * Builds Docker images from this repository's code and deploys to ECR
+     * Builds Docker images from this repository's code and pushes to ECR
      * Deploys run_server.sh and docker-compose.yml files from repo to S3 used to start the application containers (these are pulled onto the EC2).
 
 ## Source Data
