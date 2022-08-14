@@ -45,7 +45,7 @@ The API is deployed on the AWS cloud. The configuration is as follows:
      * Deploys run_server.sh and docker-compose.yml files from repo to S3 used to start the application containers (these are pulled onto the EC2).
 
 ## Source Data
-Data is sourced to the app's Postgres DB using a dockerized ETL CLI tool I developed. The tool sources taxation related data from excel files published by the Tax Foundation and survery statistics from the Census Bureau Data API and loads to the database. This project is not affiliated with either of those orgnaizations and the ETL does modify the intial source data through aggregation and fuzzy matching. The link to that repository and more information about the source data can be found here: https://github.com/Matthew-Curry/re-region-etl/tree/main
+Data is sourced to the app's Postgres DB using a dockerized ETL CLI tool I developed. The tool sources taxation related data from excel files published by the Tax Foundation and survery statistics from the Census Bureau Data API and loads to the database. This project is not affiliated with either of those orgnaizations and the ETL does modify the intial source data through aggregation and fuzzy matching. The link to that repository and more information about the source data can be found here: https://github.com/Matthew-Curry/re-region-etl
 
 ## Next steps
 When I have time (and before my AWS free tier runs out) I plan to:
