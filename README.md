@@ -1,5 +1,5 @@
 # re-region-api
-API to access demographic and cost of living estimates for US states and counties. The API accepts individual tax filing variables as parameters to provide individualized cost of living information for a given region. This app was built for educational purposes (both mine and hopefully others!).
+API to access demographic and cost of living estimates for US states and counties. The API accepts individual tax filer variables as parameters to provide individualized cost of living information for a given region. This app was built for educational purposes (both mine and hopefully others!).
 
 link to API spec: https://www.reregion.com/
 
