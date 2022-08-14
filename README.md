@@ -11,6 +11,18 @@ The API is developed in Go. Also, SQL scripts are called by the data access laye
 * A custom error structure is leveraged throughout the application, with all expected app errors defined through different constructors
 * Unit tests are defined leveraging interfaces to be based around mocks
 
+Structure (in src folder)
+apperrors: Package implementing custom error struct, holds public constructors for each type of app error
+controller: Handler functions for the core endpoints. Also includes utilities to process input and write responses
+dao: The data access layer. Holds Postgres implementation of the layer's interface and a "sql" folder holding all source SQL.
+logging: Package holds my implementation of an aggregated with public methods for different log levels that is used throughout the app
+model: Holds structures returned by core services and marshalled by the controller into JSON responses. Models hold methods tied to their behavior
+services: Interfaces and implementations of County, State, and Federal services. These services query/cache source data and return entities
+         in the model package to the controller
+static: Where the Swagger-UI dist and config is embedded
+main.go: Holds the server, where the mux registers all handler functions from the controller. Also includes handlers for the Swagger-UI and health endpoint.
+
+
 ## Infrastructure
 The API is deployed on the AWS cloud. The configuration is as follows:
  ### App
