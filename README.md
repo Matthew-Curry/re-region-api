@@ -17,6 +17,7 @@ The API is deployed on the AWS cloud. The configuration is as follows:
   * DNS records in Route53
   * AWS Systems Manager Parameter Store for database secrets
   * IAM for roles and policies required by all services used
+  * S3 for artifacts used to run the app
   * VPC containing:
     * EC2 instance
        * Running containers for an nginx webserver and the API through Docker compose
