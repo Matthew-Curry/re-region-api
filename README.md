@@ -8,7 +8,7 @@ The API is developed in Go. Also, SQL scripts are called to pull from the databa
 * It is written using only standard libs (other than a Postrges driver dependency. I learned through this that Go's standard lib is very powerful!)
 * Swagger UI Dist is embedded in the app, and it is used to serve a defined yaml API spec at the root path of the domain (the link above)
 * Interfaces define all key services
-* Custom Error structures are leveraged throughout the application, with all expected app errors defined
+* Custom error structures are leveraged throughout the application, with all expected app errors defined
 * Unit tests are defined leveraging interfaces to be based around mocks
 
 ## Architecture
