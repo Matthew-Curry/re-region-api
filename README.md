@@ -8,9 +8,9 @@ The API is deployed on the AWS cloud. The configuration is as follows:
  ### App
   * DNS records in Route53
   * VPC containing:
-   * Containers for both the http server and the API running on an EC2 instance
-   * Postgres RDS instance for the API's relational database
-   * Needed subnets, route tables, and security groups
+    * Containers for both the http server and the API running on an EC2 instance
+    * Postgres RDS instance for the API's relational database
+    * Needed subnets, route tables, and security groups
  ### CI/CD
   * AWS CodePipeline with integration with this repository to deploy changes
   * AWS Codebuild to build Docker images from this repository and deploy to ECR,
