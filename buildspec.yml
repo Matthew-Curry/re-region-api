@@ -4,8 +4,7 @@ phases:
   pre_build:
     commands:
       # vars
-      - AWS_REGION='us-east-2'
-      - AWS_ACCOUNT='643931054710'
+      - AWS_ACCOUNT=$CODEBUILD_WEBHOOK_ACTOR_ACCOUNT_ID
       - API_IMAGE='re-region-api:latest'
       - SERVER_IMAGE='re-region-nginx:latest'
       - API_REPO_URI=${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/${API_IMAGE}

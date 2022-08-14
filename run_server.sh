@@ -3,8 +3,8 @@
 # include argument "r" if docker images should be refreshed
 
 # AWS vars
-export AWS_REGION='us-east-2'
-export AWS_ACCOUNT='643931054710'
+export AWS_REGION=$(curl -s http://169.254.169.254/latest/dynamic/instance-identity/document | jq -r .region)
+export AWS_ACCOUNT=$(curl -s http://169.254.169.254/latest/dynamic/instance-identity/document | jq -r .accountId)
 # docker images
 export API_IMAGE='re-region-api:latest'
 export SERVER_IMAGE='re-region-nginx:latest'
