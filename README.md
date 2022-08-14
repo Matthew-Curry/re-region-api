@@ -4,10 +4,10 @@ API to access demographic and cost of living estimates for US states and countie
 link to API spec: https://www.reregion.com/
 
 ## Code
-The API is developed in Go. Also, SQL scripts are called to pull from the database, and shell scripts are used to intitiate the app on the server as well as in the deployment pipeline. Some key points regarding the code developement:
+The API is developed in Go. Also, SQL scripts are called by the data access layer to pull from the database, and shell scripts are used to intitiate the app on the server as well as in the deployment pipeline. Some key points regarding the code developement:
 * It is written using only standard libs (other than a Postrges driver dependency. I learned through this that Go's standard lib is very powerful!)
 * Swagger UI Dist is embedded in the app, and it is used to serve a defined yaml API spec at the root path of the domain (the link above)
-* Interfaces define all key services
+* Interfaces define all key services + data access layer
 * Custom error structures are leveraged throughout the application, with all expected app errors defined
 * Unit tests are defined leveraging interfaces to be based around mocks
 
@@ -18,18 +18,18 @@ The API is deployed on the AWS cloud. The configuration is as follows:
   * AWS Systems Manager Parameter Store for database secrets
   * IAM for roles and policies required by all services used
   * VPC containing:
-    * Containers for both the http server and the API running on an EC2 instance
+    * EC2 instance
        * Running containers for an nginx webserver and the API through Docker compose
        * nginx configured to enforce HTTPS, the server has an SSL certifricate + private key that autorefreshes using Let's Encrypt and Certbot
     * Postgres RDS instance for the API's relational database
     * Needed subnets, route tables, and security groups
  ### CI/CD
   * AWS CodePipeline with integration with this repository to deploy changes
-  * AWS Codebuild to build Docker images from this repository and deploy to ECR,
-    as well as to deploy a shell script and docker-compose.yml file to S3 used to start the application containers.
+  * AWS Codebuild to build Docker images from this repository's code and deploy to ECR,
+    as well as to deploy a shell script and docker-compose.yml file to S3 used to start the application containers (these are pulled onto the EC2).
 
 ## Source Data
-Data is sourced to the app's Postgres DB using a dockerized ETL CLI tool I developed. The tool sources data from excel files published by the Tax Foundation and the Census Bureau Data API and loads to the database. This project is not affiliated with either of those orgnaizations and the ETL does modify the intial source data. The link to that repository and more information about the source data can be found here: https://github.com/Matthew-Curry/re-region-etl/tree/main
+Data is sourced to the app's Postgres DB using a dockerized ETL CLI tool I developed. The tool sources taxation related data from excel files published by the Tax Foundation and survery statistics from the Census Bureau Data API and loads to the database. This project is not affiliated with either of those orgnaizations and the ETL does modify the intial source data through aggregation and fuzzy matching. The link to that repository and more information about the source data can be found here: https://github.com/Matthew-Curry/re-region-etl/tree/main
 
 ## Next steps
 When I have time (and before my AWS free tier runs out) I plan to:
