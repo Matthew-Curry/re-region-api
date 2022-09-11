@@ -5,12 +5,7 @@ link to API spec: https://www.reregion.com/
 
 ## Code
 ### Summary
-The API is developed in Go. Also, SQL scripts are called by the data access layer to pull from the database, and shell scripts are used to intitiate the app on the server and also in the deployment pipeline. Some key points regarding the code developement:
-* It is written using only standard libs (other than a Postrges driver dependency. I learned through this that Go's standard lib is very powerful!)
-* Swagger UI Dist is embedded in the app, and it is used to serve a defined yaml API spec at the root path of the domain (the link above)
-* Interfaces define all key services + data access layer
-* A custom error structure is leveraged throughout the application, with all expected app errors defined through different constructors
-* Unit tests are defined leveraging interfaces to be based around mocks
+The API is developed using the Go standard library. Also, SQL scripts are called by the data access layer to pull from the database, and shell scripts are used to intitiate the app on the server and also in the deployment pipeline. 
 
 ### Structure (in src folder)
 **apperrors:** Package implementing custom error struct, holds public constructors for each type of app error <br>
